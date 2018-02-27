@@ -48,11 +48,11 @@ class chkcfg:
                 absent_config_lines.append(required_line)
                 # logger.info(file + ': Config missing: ' + str(i))
 
-    def validate_syslog_configuration(self):
-        # # SYSLOG check
-        # matching = [s for s in data if re.match(r'^logging.*\d+\.\d+\.\d+\.\d+', s, re.M | re.I)]
-        # if not matching:
-        #     not_cfg.append("SYSLOG server not set")
+    def validate_syslog_configuration(self, absent_config_lines, config_lines):
+        # SYSLOG check
+        matching = [config_line for config_line in config_lines if re.match(r'^logging.*\d+\.\d+\.\d+\.\d+', config_line, re.MULTILINE | re.IGNORECASE)]
+        if not matching:
+            absent_config_lines.append("SYSLOG server not set")
         # if 'rix' in file:
         #     if "logging server " + self.log['rix'] in matching:
         #         matching.remove("logging server " + self.log['rix'])
@@ -71,7 +71,42 @@ class chkcfg:
         # if matching:
         #     for i in matching:
         #         increct.append("SYSLOG: " + str(i))
-        logger.info("asdasd")
+
+    def validate_local_users(self, absent_config_lines, config_lines):
+        # Local user check
+        matching = [config_line for config_line in config_lines if re.match(r'^username .*', config_line, re.MULTILINE | re.IGNORECASE)]
+        if matching:
+            for i in LOCAL_USERS:
+                if i not in matching:
+                    absent_config_lines.append(i)
+                    # logger.info(file + ': Username not set for:' + str(i))
+                else:
+                    matching.remove(i)
+            # if matching:
+            #     for x in matching:
+            #         increct.append("Username should not be here: " + str(x))
+            #         logger.info(file + ': Username incorrect configured:' + x)
+        else:
+            absent_config_lines.append("Username not set")
+            # logger.info(file + ': Username not set:')
+
+    def validate_ntp_server(self, absent_config_lines, config_lines):
+        # NTP check
+        matching = [config_line for config_line in config_lines if "ntp server " in config_line]
+        if matching:
+            for i in VRF_NTP:
+                if i not in matching:
+                    absent_config_lines.append(i)
+                    # logger.info(file + ': NTP cfg server not set:' + str(i))
+                else:
+                    matching.remove(i)
+            # if matching:
+            #     for x in matching:
+            #         increct.append("NTP: " + str(x))
+            #         logger.info(file + ': NTP server incorrect setup:' + x)
+        else:
+            absent_config_lines.append("NTP server not set")
+            # logger.info(file + ': NTP server not set:')
 
     def run(self):
         for directory in os.listdir(RANCID_DIR):
@@ -132,7 +167,7 @@ class chkcfg:
                                 logger.info(file + ': Config missing: '+str(i))
 
                     # SYSLOG check
-                        matching = [s for s in data if re.match(r'^logging.*\d+\.\d+\.\d+\.\d+', s, re.M | re.I)]
+                        matching = [s for s in data if re.match(r'^logging.*\d+\.\d+\.\d+\.\d+', s, re.MULTILINE | re.IGNORECASE)]
                         if not matching:
                             not_cfg.append("SYSLOG server not set")
                         if 'rix' in file:
