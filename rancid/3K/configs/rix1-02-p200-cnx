@@ -1,0 +1,4306 @@
+!RANCID-CONTENT-TYPE: cisco-nx
+!
+!Chassis type:  - a NXOS router
+!Hardware: cisco Nexus 5672UP Chassis ("Nexus 5672UP Supervisor")
+!Hardware: Intel(R) Xeon(R) CPU  @ 1.80 with 8050 MB of memory.
+!Hardware: Processor Board ID FOC20330M0J
+!
+!
+!Memory: bootflash: 7512 MB
+!
+!Software: BIOS: version 2.1.5
+!Software: Power Sequencer Firmware: 
+!Software: Module 1: v4.0
+!Software: Module 1: v4.0
+!Software: Fabric Power Sequencer Firmware: Module 1: version v4.0
+!Software: Microcontroller Firmware: version v0.0.0.15
+!Software: QSFP Microcontroller Firmware: 
+!Software: Module 1: v2.0.0.0
+!Software: CXP Microcontroller Firmware: 
+!Software: kickstart: version 7.2(0)N1(1)
+!Software: system: version 7.2(0)N1(1)
+!Software: BIOS compile time: 12/03/2015
+!Software: kickstart image file is: bootflash:///n6000-uk9-kickstart.7.2.0.N1.1.bin
+!Software: kickstart compile time: 6/8/2015 0:00:00 [06/08/2015 10:36:48]
+!Software: system image file is: bootflash:///n6000-uk9.7.2.0.N1.1.bin
+!Software: system compile time: 6/8/2015 0:00:00 [06/08/2015 10:37:40]
+!
+!
+!
+!
+!LIC: license_FOC2033R116_23_1.lic:
+!LIC: SERVER this_host ANY
+!LIC: VENDOR cisco
+!LIC: INCREMENT LAN_BASE_SERVICES_PKG cisco 1.0 permanent uncounted \
+!LIC:         VENDOR_STRING=MDS HOSTID=VDH=FOC2033R116 \
+!LIC:         NOTICE=<LicFileID>20160829232009000</LicFileID><LicLineID>1</LicLineID><PAK>N5K-C5672UPFOC2033R116</PAK> \
+!LIC:         SIGN=1CADF93E027C
+!LIC: INCREMENT VMFEX_FEATURE_PKG cisco 1.0 permanent uncounted \
+!LIC:         VENDOR_STRING=MDS HOSTID=VDH=FOC2033R116 \
+!LIC:         NOTICE=<LicFileID>20160829232009000</LicFileID><LicLineID>2</LicLineID><PAK>N5K-C5672UPFOC2033R116</PAK> \
+!LIC:         SIGN=74432CCEDAB6
+!LIC: MDS201704250524175230-199.lic:
+!LIC: SERVER this_host ANY
+!LIC: VENDOR cisco
+!LIC: INCREMENT ENHANCED_LAYER2_PKG cisco 1.0 permanent uncounted \
+!LIC:         VENDOR_STRING=<LIC_SOURCE>MDS_SWIFT</LIC_SOURCE><SKU>N5672-EL2-P-SSK9=</SKU> \
+!LIC:         HOSTID=VDH=FOC2033R116 \
+!LIC:         NOTICE="<LicFileID>20170425052417523</LicFileID><LicLineID>1</LicLineID> \
+!LIC:         <PAK>3231J3D7586</PAK>" SIGN=CC88E7A885F8
+!
+!LIC: Feature                      Ins  Lic   Status Expiry Date Comments
+!LIC:                                  Count
+!LIC: FCOE_NPV_PKG                  No    -   Unused             -
+!LIC: FM_SERVER_PKG                 No    -   Unused             -
+!LIC: ENTERPRISE_PKG                No    -   Unused             -
+!LIC: FC_FEATURES_PKG               No    -   Unused             -
+!LIC: VMFEX_FEATURE_PKG             Yes   -   Unused never       -
+!LIC: ENHANCED_LAYER2_PKG           Yes   -   In use never       -
+!LIC: NETWORK_SERVICES_PKG          No    -   Unused             -
+!LIC: LAN_BASE_SERVICES_PKG         Yes   -   In use never       -
+!LIC: LAN_ENTERPRISE_SERVICES_PKG   No    -   Unused             -
+!
+!LIC: License hostid: VDH=FOC2033R116
+!
+!
+!Env: Fan:
+!Env: ------------------------------------------------------
+!Env: Fan             Model                Hw         Status
+!Env: ------------------------------------------------------
+!Env: Chassis-1       N6K-C6001-FAN-F      --         ok
+!Env: Chassis-2       N6K-C6001-FAN-F      --         ok
+!Env: Chassis-3       N6K-C6001-FAN-F      --         ok
+!Env: PS-1            NXA-PAC-1100W        --         ok
+!Env: PS-2            NXA-PAC-1100W        --         ok
+!
+!Env: Fan Fex: 101:
+!Env: ------------------------------------------------------
+!Env: Fan             Model                Hw         Status
+!Env: ------------------------------------------------------
+!Env: Chassis         N2K-C2248-FAN        --         ok
+!Env: PS-1            N2200-PAC-400W       --         ok
+!Env: PS-2            N2200-PAC-400W       --         ok
+!Env: Fan Fex: 102:
+!Env: ------------------------------------------------------
+!Env: Fan             Model                Hw         Status
+!Env: ------------------------------------------------------
+!Env: Chassis         N2K-C2248-FAN        --         ok
+!Env: PS-1            N2200-PAC-400W       --         ok
+!Env: PS-2            N2200-PAC-400W       --         ok
+!Env: Fan Fex: 103:
+!Env: ------------------------------------------------------
+!Env: Fan             Model                Hw         Status
+!Env: ------------------------------------------------------
+!Env: Chassis         N2K-C2248-FAN        --         ok
+!Env: PS-1            N2200-PAC-400W       --         ok
+!Env: PS-2            N2200-PAC-400W       --         ok
+!Env: Fan Fex: 104:
+!Env: ------------------------------------------------------
+!Env: Fan             Model                Hw         Status
+!Env: ------------------------------------------------------
+!Env: Chassis         N2K-C2248-FAN        --         ok
+!Env: PS-1            N2200-PAC-400W       --         ok
+!Env: PS-2            N2200-PAC-400W       --         ok
+!Env: Fan Fex: 105:
+!Env: ------------------------------------------------------
+!Env: Fan             Model                Hw         Status
+!Env: ------------------------------------------------------
+!Env: Chassis         N2K-C2248-FAN        --         ok
+!Env: PS-1            N2200-PAC-400W       --         ok
+!Env: PS-2            N2200-PAC-400W       --         ok
+!Env: Fan Fex: 106:
+!Env: ------------------------------------------------------
+!Env: Fan             Model                Hw         Status
+!Env: ------------------------------------------------------
+!Env: Chassis         N2K-C2248-FAN        --         ok
+!Env: PS-1            N2200-PAC-400W       --         ok
+!Env: PS-2            N2200-PAC-400W       --         ok
+!Env: Fan Fex: 107:
+!Env: ------------------------------------------------------
+!Env: Fan             Model                Hw         Status
+!Env: ------------------------------------------------------
+!Env: Chassis         N2K-C2248-FAN        --         ok
+!Env: PS-1            N2200-PAC-400W       --         ok
+!Env: PS-2            N2200-PAC-400W       --         ok
+!Env: Fan Fex: 108:
+!Env: ------------------------------------------------------
+!Env: Fan             Model                Hw         Status
+!Env: ------------------------------------------------------
+!Env: Chassis         N2K-C2248-FAN        --         ok
+!Env: PS-1            N2200-PAC-400W       --         ok
+!Env: PS-2            N2200-PAC-400W       --         ok
+!
+!Env: Temperature
+!Env: -----------------------------------------------------------------
+!Env: Module   Sensor     MajorThresh   MinorThres   Status
+!Env:                     (Celsius)     (Celsius)
+!Env: -----------------------------------------------------------------
+!Env: 1        Outlet     65            55           ok
+!Env: 1        Bigsur-0   125           110          ok
+!Env: 1        Bigsur-1   125           110          ok
+!Env: 1        Bigsur-2   125           110          ok
+!Env: 1        Bigsur-3   125           110          ok
+!Env: 1        Bigsur-4   125           110          ok
+!Env: 1        Bigsur-5   125           110          ok
+!Env: 1        Bigsur-6   125           110          ok
+!Env: 1        Pacifica   125           110          ok
+!
+!Env: Power Supply:
+!Env: Voltage: 12 Volts
+!Env: -----------------------------------------------------------
+!Env: PS  Model                Input Power       Current   Status
+!Env:                          Type  (Watts)     (Amps)
+!Env: -----------------------------------------------------------
+!Env: 1   NXA-PAC-1100W        AC    1080.00     90.00     ok
+!Env: 2   NXA-PAC-1100W        AC    1080.00     90.00     ok
+!Env: Mod Model                   Power     Current     Power     Current     Status
+!Env:                             Requested Requested   Allocated Allocated
+!Env:                             (Watts)   (Amps)      (Watts)   (Amps)
+!Env: --- ----------------------  -------   ----------  --------- ----------  ----------
+!Env: 1    N5K-C5672UP-SUP        450.00    37.50       450.00    37.50       powered-up
+!Env: 2    N5K-C5672UP-M6Q        165.00    13.75       165.00    13.75       powered-up
+!Env: Power Usage Summary:
+!Env: --------------------
+!Env: Power Supply redundancy mode:                 Redundant
+!Env: Power Supply redundancy operational mode:     Redundant
+!Env: Total Power Capacity                             2160.00 W
+!Env: Power reserved for Supervisor(s)                  450.00 W
+!Env: Power currently used by Modules                   165.00 W
+!Env:                                                 -------------
+!Env: Total Power Available                            1545.00 W
+!Env:                                                 -------------
+!
+!Variable: Current Boot Variables:
+!Variable: kickstart = bootflash:/n6000-uk9-kickstart.7.2.0.N1.1.bin
+!Variable: system = bootflash:/n6000-uk9.7.2.0.N1.1.bin
+!Variable: Boot POAP Disabled
+!Variable: Boot Variables on next reload:
+!Variable: kickstart = bootflash:/n6000-uk9-kickstart.7.2.0.N1.1.bin
+!Variable: system = bootflash:/n6000-uk9.7.2.0.N1.1.bin
+!Variable: Boot POAP Disabled
+!
+!Flash: bootflash:        4096    Jan 01 00:02:40 2001  .patch/
+!Flash: bootflash:     2097238    Mar 29 02:43:02 2001  20010327_040310_poap_5283_1.log
+!Flash: bootflash:     1288334    Mar 29 02:46:25 2001  20010327_040310_poap_5283_2.log
+!Flash: bootflash:          24    Mar 27 04:03:10 2001  20010327_040310_poap_5283_dhcp.pcap
+!Flash: bootflash:     1048601    Mar 27 06:45:29 2001  20010327_040310_poap_5283_init.log
+!Flash: bootflash:         321    Apr 25 10:29:43 2017  MDS201704250524175230-199.lic
+!Flash: bootflash:         500    Jan 01 00:08:38 2001  license_FOC2033R116_23_1.lic
+!Flash: bootflash:    34811392    Feb 12 07:11:51 2018  n6000-uk9-kickstart.7.1.4.N1.1.bin
+!Flash: bootflash:    38023168    Apr 24 07:41:15 2017  n6000-uk9-kickstart.7.2.0.N1.1.bin
+!Flash: bootflash:    35756544    Aug 30 06:10:04 2016  n6000-uk9-kickstart.7.3.0.N1.1.bin
+!Flash: bootflash:   327996218    Feb 12 07:10:22 2018  n6000-uk9.7.1.4.N1.1.bin
+!Flash: bootflash:   325055218    Apr 24 07:40:33 2017  n6000-uk9.7.2.0.N1.1.bin
+!Flash: bootflash:   325724988    Aug 30 06:11:06 2016  n6000-uk9.7.3.0.N1.1.bin
+!Flash: bootflash:       70688    Dec 11 10:35:42 2017  null
+!Flash: bootflash:        4096    Jan 01 00:06:55 2001  scripts/
+!Flash: bootflash:       70688    Dec 12 10:14:35 2017  startup-config
+!Flash: bootflash:        4096    Jan 01 00:02:39 2001  vdc_2/
+!Flash: bootflash:        4096    Jan 01 00:02:39 2001  vdc_3/
+!Flash: bootflash:        4096    Jan 01 00:02:39 2001  vdc_4/
+!Flash: bootflash:        4096    Jan 01 00:02:45 2001  virtual-instance/
+!Flash: bootflash:        4096    Apr 26 08:29:06 2017  virtual-instance-stby-sync/
+!Flash: bootflash:         131    Apr 24 07:54:54 2017  wrimem.txt
+!Flash: bootflash: Usage for bootflash://sup-local
+!Flash: bootflash:  1431 MB used
+!Flash: bootflash:  5585 MB free
+!Flash: bootflash:  7016 MB total
+!
+!Flash: debug: Usage for debug://sup-local
+!Flash: debug:           0 MB used
+!Flash: debug:    20 MB free
+!Flash: debug:    20 MB total
+!
+!Flash: volatile:         383    Jul 29 15:15:03 2017  event_archive_1
+!Flash: volatile: Usage for volatile://sup-local
+!Flash: volatile:        0 MB used
+!Flash: volatile:   149 MB free
+!Flash: volatile:   150 MB total
+!
+!Mod: Mod Ports Module-Type                         Model                  Status
+!Mod: --- ----- ----------------------------------- ---------------------- -----------
+!Mod: 1   48    Nexus 5672UP Supervisor             N5K-C5672UP-SUP        active
+!Mod: 2   6     Nexus 6xQSFP Ethernet Module        N5K-C5672UP-M6Q        ok
+!Mod: 
+!Mod: Mod  Sw              Hw      World-Wide-Name(s) (WWN)
+!Mod: ---  --------------  ------  ---------------------------------------------------
+!Mod: 1    7.2(0)N1(1)     1.0     --
+!Mod: 2    7.2(0)N1(1)     1.0     --
+!Mod: 
+!Mod: Mod  MAC-Address(es)                         Serial-Num
+!Mod: ---  --------------------------------------  ----------
+!Mod: 1    00de.fb33.5fe8 to 00de.fb33.6017         FOC20330M0J
+!Mod: 2    00de.fb33.5f18 to 00de.fb33.5f2f         FOC20330M0J
+!
+!NAME: "Chassis",               DESCR: "Nexus 5672UP Chassis"
+!PID: N5K-C5672UP
+!VID: V03
+!SN: FOC2033R116
+!NAME: "Module 1",              DESCR: "Nexus 5672UP Supervisor"
+!PID: N5K-C5672UP
+!VID: V03
+!SN: FOC20330M0J
+!NAME: "Module 2",              DESCR: "Nexus 6xQSFP Ethernet Module"
+!PID: N5K-C5672UP-M6Q
+!VID: V03
+!SN: FOC20330M0J
+!NAME: "Fan 1",                 DESCR: "Chassis fan module"
+!PID: N6K-C6001-FAN-F
+!VID: N/A
+!SN: N/A
+!NAME: "Fan 2",                 DESCR: "Chassis fan module"
+!PID: N6K-C6001-FAN-F
+!VID: N/A
+!SN: N/A
+!NAME: "Fan 3",                 DESCR: "Chassis fan module"
+!PID: N6K-C6001-FAN-F
+!VID: N/A
+!SN: N/A
+!NAME: "Power supply 1",        DESCR: "AC power supply"
+!PID: NXA-PAC-1100W
+!VID: V01
+!SN: ART202621B3
+!NAME: "Power supply 2",        DESCR: "AC power supply"
+!PID: NXA-PAC-1100W
+!VID: V01
+!SN: ART2025213H
+!NAME: "FEX 101 CHASSIS",       DESCR: "N2K-C2248TP-E-1GE  CHASSIS"
+!PID: N2K-C2248TP-E-1GE
+!VID: V03
+!SN: FOX2132P6TG
+!NAME: "FEX 101 Module 1",      DESCR: "Fabric Extender Module: 48x1GE, 4x10GE Supervisor"
+!PID: N2K-C2248TP-E-1GE
+!VID: V03
+!SN: FOC21343V9K
+!NAME: "FEX 101 Fan 1",         DESCR: "Fabric Extender Fan module"
+!PID: N2K-C2248-FAN
+!VID: N/A
+!SN: N/A
+!NAME: "FEX 101 Power Supply 1", DESCR: "Fabric Extender AC power supply"
+!PID: N2200-PAC-400W
+!VID: V06
+!SN: LIT21262HHM
+!NAME: "FEX 101 Power Supply 2", DESCR: "Fabric Extender AC power supply"
+!PID: N2200-PAC-400W
+!VID: V06
+!SN: LIT21262JHR
+!NAME: "FEX 102 CHASSIS",       DESCR: "N2K-C2248TP-E-1GE  CHASSIS"
+!PID: N2K-C2248TP-E-1GE
+!VID: V03
+!SN: FOX2129P7AS
+!NAME: "FEX 102 Module 1",      DESCR: "Fabric Extender Module: 48x1GE, 4x10GE Supervisor"
+!PID: N2K-C2248TP-E-1GE
+!VID: V03
+!SN: FOC21306TUR
+!NAME: "FEX 102 Fan 1",         DESCR: "Fabric Extender Fan module"
+!PID: N2K-C2248-FAN
+!VID: N/A
+!SN: N/A
+!NAME: "FEX 102 Power Supply 1", DESCR: "Fabric Extender AC power supply"
+!PID: N2200-PAC-400W
+!VID: V06
+!SN: DCA212654K7
+!NAME: "FEX 102 Power Supply 2", DESCR: "Fabric Extender AC power supply"
+!PID: N2200-PAC-400W
+!VID: V06
+!SN: DCA212654KL
+!NAME: "FEX 103 CHASSIS",       DESCR: "N2K-C2248TP-E-1GE  CHASSIS"
+!PID: N2K-C2248TP-E-1GE
+!VID: V03
+!SN: FOX2112P5VJ
+!NAME: "FEX 103 Module 1",      DESCR: "Fabric Extender Module: 48x1GE, 4x10GE Supervisor"
+!PID: N2K-C2248TP-E-1GE
+!VID: V03
+!SN: FOC21132MJ8
+!NAME: "FEX 103 Fan 1",         DESCR: "Fabric Extender Fan module"
+!PID: N2K-C2248-FAN
+!VID: N/A
+!SN: N/A
+!NAME: "FEX 103 Power Supply 1", DESCR: "Fabric Extender AC power supply"
+!PID: N2200-PAC-400W
+!VID: V05
+!SN: DCA2109520K
+!NAME: "FEX 103 Power Supply 2", DESCR: "Fabric Extender AC power supply"
+!PID: N2200-PAC-400W
+!VID: V05
+!SN: DCA21095200
+!NAME: "FEX 104 CHASSIS",       DESCR: "N2K-C2248TP-E-1GE  CHASSIS"
+!PID: N2K-C2248TP-E-1GE
+!VID: V03
+!SN: FOX2027GC8D
+!NAME: "FEX 104 Module 1",      DESCR: "Fabric Extender Module: 48x1GE, 4x10GE Supervisor"
+!PID: N2K-C2248TP-E-1GE
+!VID: V03
+!SN: FOC20277PTF
+!NAME: "FEX 104 Fan 1",         DESCR: "Fabric Extender Fan module"
+!PID: N2K-C2248-FAN
+!VID: N/A
+!SN: N/A
+!NAME: "FEX 104 Power Supply 1", DESCR: "Fabric Extender AC power supply"
+!PID: N2200-PAC-400W
+!VID: V05
+!SN: LIT20220UVM
+!NAME: "FEX 104 Power Supply 2", DESCR: "Fabric Extender AC power supply"
+!PID: N2200-PAC-400W
+!VID: V05
+!SN: LIT20220UNS
+!NAME: "FEX 105 CHASSIS",       DESCR: "N2K-C2248TP-E-1GE  CHASSIS"
+!PID: N2K-C2248TP-E-1GE
+!VID: V03
+!SN: FOX2112P5PR
+!NAME: "FEX 105 Module 1",      DESCR: "Fabric Extender Module: 48x1GE, 4x10GE Supervisor"
+!PID: N2K-C2248TP-E-1GE
+!VID: V03
+!SN: FOC21132KST
+!NAME: "FEX 105 Fan 1",         DESCR: "Fabric Extender Fan module"
+!PID: N2K-C2248-FAN
+!VID: N/A
+!SN: N/A
+!NAME: "FEX 105 Power Supply 1", DESCR: "Fabric Extender AC power supply"
+!PID: N2200-PAC-400W
+!VID: V05
+!SN: DCA210951X3
+!NAME: "FEX 105 Power Supply 2", DESCR: "Fabric Extender AC power supply"
+!PID: N2200-PAC-400W
+!VID: V05
+!SN: DCA210951X1
+!NAME: "FEX 106 CHASSIS",       DESCR: "N2K-C2248TP-E-1GE  CHASSIS"
+!PID: N2K-C2248TP-E-1GE
+!VID: V03
+!SN: FOX2052GFUV
+!NAME: "FEX 106 Module 1",      DESCR: "Fabric Extender Module: 48x1GE, 4x10GE Supervisor"
+!PID: N2K-C2248TP-E-1GE
+!VID: V03
+!SN: FOC20532EQT
+!NAME: "FEX 106 Fan 1",         DESCR: "Fabric Extender Fan module"
+!PID: N2K-C2248-FAN
+!VID: N/A
+!SN: N/A
+!NAME: "FEX 106 Power Supply 1", DESCR: "Fabric Extender AC power supply"
+!PID: N2200-PAC-400W
+!VID: V05
+!SN: DCA205256WX
+!NAME: "FEX 106 Power Supply 2", DESCR: "Fabric Extender AC power supply"
+!PID: N2200-PAC-400W
+!VID: V05
+!SN: DCA20525739
+!NAME: "FEX 107 CHASSIS",       DESCR: "N2K-C2248TP-E-1GE  CHASSIS"
+!PID: N2K-C2248TP-E-1GE
+!VID: V03
+!SN: FOX2112P3ZV
+!NAME: "FEX 107 Module 1",      DESCR: "Fabric Extender Module: 48x1GE, 4x10GE Supervisor"
+!PID: N2K-C2248TP-E-1GE
+!VID: V03
+!SN: FOC21132MGM
+!NAME: "FEX 107 Fan 1",         DESCR: "Fabric Extender Fan module"
+!PID: N2K-C2248-FAN
+!VID: N/A
+!SN: N/A
+!NAME: "FEX 107 Power Supply 1", DESCR: "Fabric Extender AC power supply"
+!PID: N2200-PAC-400W
+!VID: V05
+!SN: DCA2109520Y
+!NAME: "FEX 107 Power Supply 2", DESCR: "Fabric Extender AC power supply"
+!PID: N2200-PAC-400W
+!VID: V05
+!SN: DCA21095210
+!NAME: "FEX 108 CHASSIS",       DESCR: "N2K-C2248TP-E-1GE  CHASSIS"
+!PID: N2K-C2248TP-E-1GE
+!VID: V03
+!SN: FOX2112P5VD
+!NAME: "FEX 108 Module 1",      DESCR: "Fabric Extender Module: 48x1GE, 4x10GE Supervisor"
+!PID: N2K-C2248TP-E-1GE
+!VID: V03
+!SN: FOC21132MJC
+!NAME: "FEX 108 Fan 1",         DESCR: "Fabric Extender Fan module"
+!PID: N2K-C2248-FAN
+!VID: N/A
+!SN: N/A
+!NAME: "FEX 108 Power Supply 1", DESCR: "Fabric Extender AC power supply"
+!PID: N2200-PAC-400W
+!VID: V05
+!SN: DCA210951YN
+!NAME: "FEX 108 Power Supply 2", DESCR: "Fabric Extender AC power supply"
+!PID: N2200-PAC-400W
+!VID: V05
+!SN: DCA210951YU
+!
+!DEBUG: EEM_POLICY_DIR Daemon:
+!DEBUG:  Error debugging is on
+!DEBUG: Debug level is set to Minor(1) 
+!DEBUG:  default for new sessions logging level: 3
+!
+!CORES: VDC  Module  Instance  Process-name     PID       Date(Year-Month-Day Time)
+!CORES: ---  ------  --------  ---------------  --------  -------------------------
+!
+!PROC_LOGS: Process          PID     Normal-exit  Stack  Core   Log-create-time
+!PROC_LOGS: ---------------  ------  -----------  -----  -----  ---------------
+!
+!FEX: FEX Mod Ports Card Type                          Model              Status
+!FEX: --- --- ----- ---------------------------------- ------------------ -----------
+!FEX: 101 1   48    Fabric Extender 48x1GE + 4x10G Module   N2K-C2248TP-E-1GE  present
+!FEX: 102 1   48    Fabric Extender 48x1GE + 4x10G Module   N2K-C2248TP-E-1GE  present
+!FEX: 103 1   48    Fabric Extender 48x1GE + 4x10G Module   N2K-C2248TP-E-1GE  present
+!FEX: 104 1   48    Fabric Extender 48x1GE + 4x10G Module   N2K-C2248TP-E-1GE  present
+!FEX: 105 1   48    Fabric Extender 48x1GE + 4x10G Module   N2K-C2248TP-E-1GE  present
+!FEX: 106 1   48    Fabric Extender 48x1GE + 4x10G Module   N2K-C2248TP-E-1GE  present
+!FEX: 107 1   48    Fabric Extender 48x1GE + 4x10G Module   N2K-C2248TP-E-1GE  present
+!FEX: 108 1   48    Fabric Extender 48x1GE + 4x10G Module   N2K-C2248TP-E-1GE  present
+!FEX: FEX Mod Sw              Hw      World-Wide-Name(s) (WWN)
+!FEX: --- --- --------------  ------  -----------------------------------------------
+!FEX: 101 1   7.2(0)N1(1)     2.5     --
+!FEX: 102 1   7.2(0)N1(1)     2.5     --
+!FEX: 103 1   7.2(0)N1(1)     2.5     --
+!FEX: 104 1   7.2(0)N1(1)     2.5     --
+!FEX: 105 1   7.2(0)N1(1)     2.5     --
+!FEX: 106 1   7.2(0)N1(1)     2.5     --
+!FEX: 107 1   7.2(0)N1(1)     2.5     --
+!FEX: 108 1   7.2(0)N1(1)     2.5     --
+!FEX: FEX Mod  MAC-Address(es)                         Serial-Num
+!FEX: --- ---  --------------------------------------  ----------
+!FEX: 101 1    a0f8.493b.51a0 to a0f8.493b.51cf        FOX2132P6TG
+!FEX: 102 1    706e.6d65.d2a0 to 706e.6d65.d2cf        FOX2129P7AS
+!FEX: 103 1    2c86.d27a.3f80 to 2c86.d27a.3faf        FOX2112P5VJ
+!FEX: 104 1    00eb.d5a2.7ae0 to 00eb.d5a2.7a10f        FOX2027GC8D
+!FEX: 105 1    2c86.d27a.4300 to 2c86.d27a.432f        FOX2112P5PR
+!FEX: 106 1    2852.6100.3c20 to 2852.6100.3c4f        FOX2052GFUV
+!FEX: 107 1    f8a5.c541.6fc0 to f8a5.c541.6fef        FOX2112P3ZV
+!FEX: 108 1    2c86.d27a.41c0 to 2c86.d27a.41ef        FOX2112P5VD
+!
+!FEX:   FEX         FEX           FEX              FEX              Fex       
+!FEX: Number    Description      State            Model            Serial     
+!FEX: ------------------------------------------------------------------------
+!FEX: 101  2nd_floor_MSR_C17                Online   N2K-C2248TP-E-1GE   FOX2132P6TG
+!FEX: 102  2nd_floor_MSR_C17                Online   N2K-C2248TP-E-1GE   FOX2129P7AS
+!FEX: 103  2nd_floor_MSR_C18                Online   N2K-C2248TP-E-1GE   FOX2112P5VJ
+!FEX: 104  2nd_floor_MSR_C3                Online   N2K-C2248TP-E-1GE   FOX2027GC8D
+!FEX: 105  2nd_floor_MSR_C3                Online   N2K-C2248TP-E-1GE   FOX2112P5PR
+!FEX: 106  3rd_floor_BravoDC                Online   N2K-C2248TP-E-1GE   FOX2052GFUV
+!FEX: 107  2nd_floor_MSR_C16                Online   N2K-C2248TP-E-1GE   FOX2112P3ZV
+!FEX: 108  2nd_floor_MSR_C16                Online   N2K-C2248TP-E-1GE   FOX2112P5VD
+!
+
+
+version 7.2(0)N1(1)
+install feature-set fabricpath
+feature-set fabricpath
+hostname rix1-02-p199-cnx
+
+no feature telnet
+feature scp-server
+feature sftp-server
+feature tacacs+
+cfs eth distribute
+feature interface-vlan
+feature lacp
+feature vpc
+feature lldp
+feature fex
+
+logging level spanning-tree 6
+username admin password 5 $1$axjLk2q3$eZj.8dWWChj3bR0YEemND1  role network-admin
+username evogaming password 5 $1$FN/4pmVr$.KyzWEyIt21kEr9Kgm5BC.  role network-operator
+username evogaming role network-admin
+no password strength-check
+
+banner motd ^
+!!! To save config use "wrimem" alias command" !!!
+type "y" + enter if requesting to overwrite
+^
+
+ip domain-lookup
+ip domain-name evolutiongaming.com
+tacacs-server host 10.30.32.4 key 7 "Hr0y4c+"
+aaa group server tacacs+ TacacsGroup
+  server 10.30.32.4
+  deadtime 1
+  use-vrf management
+crypto key param rsa label RIX1-02-SW201`995672 modulus 512
+logging event link-status default
+logging event trunk-status default
+service unsupported-transceiver
+errdisable recovery cause link-flap
+errdisable recovery cause udld
+errdisable recovery cause bpduguard
+errdisable recovery cause loopback
+errdisable recovery cause psecure-violation
+errdisable recovery cause pause-rate-limit
+errdisable recovery cause miscabling
+ip access-list 66
+  10 permit ip 10.30.0.0/16 any
+policy-map type network-qos jumbo
+  class type network-qos class-default
+    mtu 9216
+system qos
+  service-policy type network-qos jumbo
+fex 101
+  pinning max-links 1
+  description "2nd_floor_MSR_C17"
+fex 102
+  pinning max-links 1
+  description "2nd_floor_MSR_C17"
+fex 103
+  pinning max-links 1
+  description "2nd_floor_MSR_C18"
+fex 104
+  pinning max-links 1
+  description "2nd_floor_MSR_C3"
+fex 105
+  pinning max-links 1
+  description "2nd_floor_MSR_C3"
+fex 106
+  pinning max-links 1
+  description "3rd_floor_BravoDC"
+fex 107
+  pinning max-links 1
+  description "2nd_floor_MSR_C16"
+fex 108
+  pinning max-links 1
+  description "2nd_floor_MSR_C16"
+snmp-server contact EVO_Infra_NOC
+snmp-server location RIX1_AL2P5 (MSR)
+snmp-server user admin network-admin auth md5 0x4ebbbd2270486d393f7ed9d081f3d35b priv 0x4ebbbd2270486d393f7ed9d081f3d35b localizedkey
+snmp-server user evogaming network-admin auth md5 0x4ebbbd2270486d393f7ed9d081f3d35b priv 0x4ebbbd2270486d393f7ed9d081f3d35b localizedkey
+snmp-server community 5uper5ecret group network-operator
+snmp-server community 5uper5ecret use-ipv4acl 66
+ntp distribute
+ntp server 10.30.9.210 prefer use-vrf management
+ntp server 10.30.235.210 prefer use-vrf management
+ntp commit
+aaa authentication login default group TacacsGroup local
+aaa authentication login console local
+aaa accounting default group TacacsGroup
+aaa authentication login ascii-authentication
+tacacs-server directed-request
+
+ip route 0.0.0.0/0 192.168.101.1
+no ip igmp snooping
+vlan 1
+vlan 5
+  name Prod_ASA_inside
+  mode fabricpath
+vlan 23
+  name gld
+  mode fabricpath
+vlan 24
+  name FW_Sync
+  mode fabricpath
+vlan 25
+  name FW_External
+  mode fabricpath
+vlan 31
+  name DataBase_10.5.10.0_24
+  mode fabricpath
+vlan 33
+  name Dealer_10.30.3.0_24
+  mode fabricpath
+vlan 36
+  name DataCentre_10.30.10.0_24
+  mode fabricpath
+vlan 37
+  name F5_front_10.30.11.0_24
+  mode fabricpath
+vlan 38
+  name F5_back_10.30.12.0_24
+  mode fabricpath
+vlan 39
+  name Pitboss_10.30.6.0_24
+  mode fabricpath
+vlan 44
+  name CCTV_10.30.15.0_24
+  mode fabricpath
+vlan 49
+  name Encman1_10.30.20.0_23
+  mode fabricpath
+vlan 51
+  name DealerPXE_10.30.28.0_23
+  mode fabricpath
+vlan 62
+  name CCTV2_10.30.62.0_24
+  mode fabricpath
+vlan 66
+  name prod_services_10.30.66.0/23
+  mode fabricpath
+vlan 76
+  name Server_Setup_10.30.76.0_24
+  mode fabricpath
+vlan 125
+  name iSCSI-A_10.30.125.0/24
+  mode fabricpath
+vlan 126
+  name iSCSI-B_10.30.126.0/24
+  mode fabricpath
+vlan 140
+  name Remote_TV_10.30.140.0_24
+  mode fabricpath
+vlan 265
+  name table_equipment
+  mode fabricpath
+vlan 777
+  mode fabricpath
+vlan 1100
+  name MCR-ASA_P2P
+  mode fabricpath
+
+spanning-tree port type edge bpduguard default
+spanning-tree vlan 1-3967 priority 8192
+spanning-tree pseudo-information
+  vlan 1-3967 root priority 4096
+vrf context management
+  ip route 0.0.0.0/0 10.30.0.129
+port-channel load-balance ethernet source-dest-port
+vpc domain 2
+  role priority 4092
+  peer-keepalive destination 10.30.0.198 source 10.30.0.199
+  delay restore 150
+  peer-gateway
+  fabricpath switch-id 1199
+
+logging level sysmgr 5
+
+
+interface Vlan1
+
+interface port-channel3
+  description A_rix1-02-p198-cnx (our e2/1, e2/2)
+  switchport mode fabricpath
+  speed 40000
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  vpc peer-link
+
+interface port-channel115
+  description A_rix1-02-p006-ios
+  switchport mode trunk
+  switchport trunk allowed vlan 44,62
+  speed 10000
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  vpc 115
+
+interface port-channel116
+  description A_rix1-02-p036-ios Te1/0/2
+  switchport mode trunk
+  switchport trunk allowed vlan 44,62,66,140
+  speed 10000
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  vpc 116
+
+interface port-channel119
+  description A_rix1-02-p039-ios Te1/0/2
+  switchport mode trunk
+  switchport trunk allowed vlan 44,62,66
+  speed 10000
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  vpc 119
+
+interface port-channel1001
+  description A_FEX101 (our Eth1/1; Eth1/8)
+  switchport mode fex-fabric
+  fex associate 101
+  no snmp trap link-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+
+interface port-channel1002
+  description A_FEX102 (our Eth1/2;Eth1/9)
+  switchport mode fex-fabric
+  fex associate 102
+  no snmp trap link-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+
+interface port-channel1003
+  description A_FEX103 (our Eth1/3; Eth1/11)
+  switchport mode fex-fabric
+  fex associate 103
+  no snmp trap link-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+
+interface port-channel1004
+  description A_FEX104 (our Eth1/4; Eth1/12)
+  switchport mode fex-fabric
+  fex associate 104
+  no snmp trap link-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+
+interface port-channel1005
+  description A_FEX105 (our Eth1/5; Eth1/13)
+  switchport mode fex-fabric
+  fex associate 105
+  no snmp trap link-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+
+interface port-channel1006
+  description A_FEX106 (our Eth1/6; Eth1/14)
+  switchport mode fex-fabric
+  fex associate 106
+  no snmp trap link-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+
+interface port-channel1007
+  description A_FEX107 (our Eth1/17; Eth1/25)
+  switchport mode fex-fabric
+  fex associate 107
+  no snmp trap link-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+
+interface port-channel1008
+  description A_FEX108 (our Eth1/18; Eth1/26)
+  switchport mode fex-fabric
+  fex associate 108
+  no snmp trap link-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+
+interface Ethernet1/1
+  description A_FEX101 (in Po1001)
+  switchport mode fex-fabric
+  fex associate 101
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  channel-group 1001
+
+interface Ethernet1/2
+  description A_FEX102 (in Po1002)
+  switchport mode fex-fabric
+  fex associate 102
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  channel-group 1002
+
+interface Ethernet1/3
+  description A_FEX103 (in Po1003)
+  switchport mode fex-fabric
+  fex associate 103
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  channel-group 1003
+
+interface Ethernet1/4
+  description A_FEX104 (in Po1004)
+  switchport mode fex-fabric
+  fex associate 104
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  channel-group 1004
+
+interface Ethernet1/5
+  description A_FEX105 (in Po1005)
+  switchport mode fex-fabric
+  fex associate 105
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  channel-group 1005
+
+interface Ethernet1/6
+  description A_FEX106 (in Po1006)
+  switchport mode fex-fabric
+  fex associate 106
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  channel-group 1006
+
+interface Ethernet1/7
+  shutdown
+
+interface Ethernet1/8
+  description A_FEX101 (in Po1001)
+  switchport mode fex-fabric
+  fex associate 101
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  channel-group 1001
+
+interface Ethernet1/9
+  description A_FEX102 (in Po1002)
+  switchport mode fex-fabric
+  fex associate 102
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  channel-group 1002
+
+interface Ethernet1/10
+  shutdown
+
+interface Ethernet1/11
+  description A_FEX103 (in Po1003)
+  switchport mode fex-fabric
+  fex associate 103
+  no snmp trap link-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  vpc orphan-port suspend
+
+interface Ethernet1/12
+  description A_FEX104 (in Po1004)
+  switchport mode fex-fabric
+  fex associate 104
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  channel-group 1004
+
+interface Ethernet1/13
+  description A_FEX105 (in Po1005)
+  switchport mode fex-fabric
+  fex associate 105
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  channel-group 1005
+
+interface Ethernet1/14
+  description A_FEX106 (in Po1006)
+  switchport mode fex-fabric
+  fex associate 106
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  channel-group 1006
+
+interface Ethernet1/15
+  description A_rix1-02-p006-ios Te1/0/2
+  switchport mode trunk
+  switchport trunk allowed vlan 44,62
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  channel-group 115 mode active
+
+interface Ethernet1/16
+  description A_rix1-02-p036-ios Te1/0/2
+  switchport mode trunk
+  switchport trunk allowed vlan 44,62,66,140
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  channel-group 116 mode active
+
+interface Ethernet1/17
+  description A_FEX107 (in Po1007)
+  switchport mode fex-fabric
+  fex associate 107
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  channel-group 1007
+
+interface Ethernet1/18
+  description A_FEX108 (in Po1008)
+  switchport mode fex-fabric
+  fex associate 108
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  channel-group 1008
+
+interface Ethernet1/19
+  description A_rix1-02-p039-ios Te1/0/2
+  switchport mode trunk
+  switchport trunk allowed vlan 44,62,66
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  channel-group 119 mode active
+
+interface Ethernet1/20
+  shutdown
+
+interface Ethernet1/21
+  shutdown
+
+interface Ethernet1/22
+  shutdown
+
+interface Ethernet1/23
+  shutdown
+
+interface Ethernet1/24
+  shutdown
+
+interface Ethernet1/25
+  description A_FEX107 (in Po1007)
+  switchport mode fex-fabric
+  fex associate 107
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  channel-group 1007
+
+interface Ethernet1/26
+  description A_FEX108 (in Po1008)
+  switchport mode fex-fabric
+  fex associate 108
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  channel-group 1008
+
+interface Ethernet1/27
+  shutdown
+
+interface Ethernet1/28
+  shutdown
+
+interface Ethernet1/29
+  shutdown
+
+interface Ethernet1/30
+  shutdown
+
+interface Ethernet1/31
+  shutdown
+
+interface Ethernet1/32
+  shutdown
+
+interface Ethernet1/33
+  shutdown
+
+interface Ethernet1/34
+  shutdown
+
+interface Ethernet1/35
+  shutdown
+
+interface Ethernet1/36
+  shutdown
+
+interface Ethernet1/37
+  shutdown
+
+interface Ethernet1/38
+  shutdown
+
+interface Ethernet1/39
+  shutdown
+
+interface Ethernet1/40
+  shutdown
+
+interface Ethernet1/41
+  shutdown
+
+interface Ethernet1/42
+  shutdown
+
+interface Ethernet1/43
+  shutdown
+
+interface Ethernet1/44
+  shutdown
+
+interface Ethernet1/45
+  shutdown
+
+interface Ethernet1/46
+  shutdown
+
+interface Ethernet1/47
+  shutdown
+
+interface Ethernet1/48
+  shutdown
+
+interface Ethernet2/1
+  description A_rix1-02-p198-cnx e2/1 (in Po3)
+  switchport mode fabricpath
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  channel-group 3 mode active
+
+interface Ethernet2/2
+  description A_rix1-02-p198-cnx e2/2 (in Po3)
+  switchport mode fabricpath
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  channel-group 3 mode active
+
+interface Ethernet2/3
+  description A_rix1-02-p200-cnx e2/3
+  switchport mode fabricpath
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+
+interface Ethernet2/4
+  description A_rix1-02-p201-cnx e2/4
+  switchport mode fabricpath
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+
+interface Ethernet2/5
+  shutdown
+
+interface Ethernet2/6
+  shutdown
+
+interface mgmt0
+  description A_rix1-wn-p003-ios Gi1/0/7
+  vrf member management
+  ip address 10.30.0.199/25
+
+interface Ethernet101/1/1
+  description DealerPC
+  switchport access vlan 51
+  spanning-tree port type edge
+  no snmp trap link-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  vpc orphan-port suspend
+
+interface Ethernet101/1/2
+  description DealerPC
+  switchport access vlan 51
+  spanning-tree port type edge
+  no snmp trap link-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  vpc orphan-port suspend
+
+interface Ethernet101/1/3
+  description DealerPC
+  switchport access vlan 51
+  spanning-tree port type edge
+  no snmp trap link-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  vpc orphan-port suspend
+
+interface Ethernet101/1/4
+  description DealerPC
+  switchport access vlan 51
+  spanning-tree port type edge
+  no snmp trap link-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  vpc orphan-port suspend
+
+interface Ethernet101/1/5
+  description DealerPC
+  switchport access vlan 51
+  spanning-tree port type edge
+  no snmp trap link-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  vpc orphan-port suspend
+
+interface Ethernet101/1/6
+  description DealerPC
+  switchport access vlan 51
+  spanning-tree port type edge
+  no snmp trap link-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  vpc orphan-port suspend
+
+interface Ethernet101/1/7
+  description DealerPC
+  switchport access vlan 51
+  spanning-tree port type edge
+  no snmp trap link-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  vpc orphan-port suspend
+
+interface Ethernet101/1/8
+  description DealerPC
+  switchport access vlan 51
+  spanning-tree port type edge
+  no snmp trap link-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  vpc orphan-port suspend
+
+interface Ethernet101/1/9
+  description DealerPC
+  switchport access vlan 51
+  spanning-tree port type edge
+  no snmp trap link-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  vpc orphan-port suspend
+
+interface Ethernet101/1/10
+  description DealerPC
+  switchport access vlan 51
+  spanning-tree port type edge
+  no snmp trap link-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  vpc orphan-port suspend
+
+interface Ethernet101/1/11
+  description DealerPC
+  switchport access vlan 51
+  spanning-tree port type edge
+  no snmp trap link-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  vpc orphan-port suspend
+
+interface Ethernet101/1/12
+  description DealerPC
+  switchport access vlan 51
+  spanning-tree port type edge
+  no snmp trap link-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  vpc orphan-port suspend
+
+interface Ethernet101/1/13
+  description DealerPC
+  switchport access vlan 51
+  spanning-tree port type edge
+  no snmp trap link-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  vpc orphan-port suspend
+
+interface Ethernet101/1/14
+  description DealerPC
+  switchport access vlan 51
+  spanning-tree port type edge
+  no snmp trap link-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  vpc orphan-port suspend
+
+interface Ethernet101/1/15
+  description DealerPC
+  switchport access vlan 51
+  spanning-tree port type edge
+  no snmp trap link-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  vpc orphan-port suspend
+
+interface Ethernet101/1/16
+  description DealerPC
+  switchport access vlan 51
+  spanning-tree port type edge
+  no snmp trap link-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  vpc orphan-port suspend
+
+interface Ethernet101/1/17
+  description DealerPC
+  switchport access vlan 51
+  spanning-tree port type edge
+  no snmp trap link-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  vpc orphan-port suspend
+
+interface Ethernet101/1/18
+  description DealerPC
+  switchport access vlan 51
+  spanning-tree port type edge
+  no snmp trap link-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  vpc orphan-port suspend
+
+interface Ethernet101/1/19
+  description DealerPC
+  switchport access vlan 51
+  spanning-tree port type edge
+  no snmp trap link-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  vpc orphan-port suspend
+
+interface Ethernet101/1/20
+  description DealerPC
+  switchport access vlan 51
+  spanning-tree port type edge
+  no snmp trap link-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  vpc orphan-port suspend
+
+interface Ethernet101/1/21
+  description DealerPC
+  switchport access vlan 51
+  spanning-tree port type edge
+  no snmp trap link-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  vpc orphan-port suspend
+
+interface Ethernet101/1/22
+  description DealerPC
+  switchport access vlan 51
+  spanning-tree port type edge
+  no snmp trap link-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  vpc orphan-port suspend
+
+interface Ethernet101/1/23
+  description DealerPC
+  switchport access vlan 51
+  spanning-tree port type edge
+  no snmp trap link-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  vpc orphan-port suspend
+
+interface Ethernet101/1/24
+  description DealerPC
+  switchport access vlan 51
+  spanning-tree port type edge
+  no snmp trap link-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  vpc orphan-port suspend
+
+interface Ethernet101/1/25
+  description DealerPC
+  switchport access vlan 51
+  spanning-tree port type edge
+  no snmp trap link-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  vpc orphan-port suspend
+
+interface Ethernet101/1/26
+  description DealerPC
+  switchport access vlan 51
+  spanning-tree port type edge
+  no snmp trap link-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  vpc orphan-port suspend
+
+interface Ethernet101/1/27
+  description DealerPC
+  switchport access vlan 51
+  spanning-tree port type edge
+  no snmp trap link-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  vpc orphan-port suspend
+
+interface Ethernet101/1/28
+  description DealerPC
+  switchport access vlan 51
+  spanning-tree port type edge
+  no snmp trap link-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  vpc orphan-port suspend
+
+interface Ethernet101/1/29
+  description DealerPC
+  switchport access vlan 51
+  spanning-tree port type edge
+  no snmp trap link-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  vpc orphan-port suspend
+
+interface Ethernet101/1/30
+  description DealerPC
+  switchport access vlan 51
+  spanning-tree port type edge
+  no snmp trap link-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  vpc orphan-port suspend
+
+interface Ethernet101/1/31
+  description DealerPC
+  switchport access vlan 51
+  spanning-tree port type edge
+  no snmp trap link-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  vpc orphan-port suspend
+
+interface Ethernet101/1/32
+  description DealerPC
+  switchport access vlan 51
+  spanning-tree port type edge
+  no snmp trap link-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  vpc orphan-port suspend
+
+interface Ethernet101/1/33
+  description DealerPC
+  switchport access vlan 51
+  spanning-tree port type edge
+  no snmp trap link-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  vpc orphan-port suspend
+
+interface Ethernet101/1/34
+  description DealerPC
+  switchport access vlan 51
+  spanning-tree port type edge
+  no snmp trap link-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  vpc orphan-port suspend
+
+interface Ethernet101/1/35
+  description DealerPC
+  switchport access vlan 51
+  spanning-tree port type edge
+  no snmp trap link-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  vpc orphan-port suspend
+
+interface Ethernet101/1/36
+  description DealerPC
+  switchport access vlan 51
+  spanning-tree port type edge
+  no snmp trap link-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  vpc orphan-port suspend
+
+interface Ethernet101/1/37
+  description DealerPC
+  switchport access vlan 51
+  spanning-tree port type edge
+  no snmp trap link-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  vpc orphan-port suspend
+
+interface Ethernet101/1/38
+  description DealerPC
+  switchport access vlan 51
+  spanning-tree port type edge
+  no snmp trap link-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  vpc orphan-port suspend
+
+interface Ethernet101/1/39
+  description DealerPC
+  switchport access vlan 51
+  spanning-tree port type edge
+  no snmp trap link-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  vpc orphan-port suspend
+
+interface Ethernet101/1/40
+  description DealerPC
+  switchport access vlan 51
+  spanning-tree port type edge
+  no snmp trap link-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  vpc orphan-port suspend
+
+interface Ethernet101/1/41
+  description DealerPC
+  switchport access vlan 51
+  spanning-tree port type edge
+  no snmp trap link-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  vpc orphan-port suspend
+
+interface Ethernet101/1/42
+  description DealerPC
+  switchport access vlan 51
+  spanning-tree port type edge
+  no snmp trap link-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  vpc orphan-port suspend
+
+interface Ethernet101/1/43
+  description DealerPC
+  switchport access vlan 51
+  spanning-tree port type edge
+  no snmp trap link-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  vpc orphan-port suspend
+
+interface Ethernet101/1/44
+  description DealerPC
+  switchport access vlan 51
+  spanning-tree port type edge
+  no snmp trap link-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  vpc orphan-port suspend
+
+interface Ethernet101/1/45
+  description DealerPC
+  switchport access vlan 51
+  spanning-tree port type edge
+  no snmp trap link-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  vpc orphan-port suspend
+
+interface Ethernet101/1/46
+  description DealerPC
+  switchport access vlan 51
+  spanning-tree port type edge
+  no snmp trap link-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  vpc orphan-port suspend
+
+interface Ethernet101/1/47
+  description DealerPC
+  switchport access vlan 51
+  spanning-tree port type edge
+  no snmp trap link-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  vpc orphan-port suspend
+
+interface Ethernet101/1/48
+  description DealerPC
+  switchport access vlan 51
+  spanning-tree port type edge
+  no snmp trap link-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  vpc orphan-port suspend
+
+interface Ethernet102/1/1
+  shutdown
+  vpc orphan-port suspend
+
+interface Ethernet102/1/2
+  shutdown
+  vpc orphan-port suspend
+
+interface Ethernet102/1/3
+  shutdown
+  vpc orphan-port suspend
+
+interface Ethernet102/1/4
+  shutdown
+  vpc orphan-port suspend
+
+interface Ethernet102/1/5
+  shutdown
+  vpc orphan-port suspend
+
+interface Ethernet102/1/6
+  shutdown
+  vpc orphan-port suspend
+
+interface Ethernet102/1/7
+  shutdown
+  vpc orphan-port suspend
+
+interface Ethernet102/1/8
+  shutdown
+  vpc orphan-port suspend
+
+interface Ethernet102/1/9
+  shutdown
+  vpc orphan-port suspend
+
+interface Ethernet102/1/10
+  shutdown
+  vpc orphan-port suspend
+
+interface Ethernet102/1/11
+  shutdown
+  vpc orphan-port suspend
+
+interface Ethernet102/1/12
+  shutdown
+  vpc orphan-port suspend
+
+interface Ethernet102/1/13
+  shutdown
+  vpc orphan-port suspend
+
+interface Ethernet102/1/14
+  shutdown
+  vpc orphan-port suspend
+
+interface Ethernet102/1/15
+  shutdown
+  vpc orphan-port suspend
+
+interface Ethernet102/1/16
+  shutdown
+  vpc orphan-port suspend
+
+interface Ethernet102/1/17
+  shutdown
+  vpc orphan-port suspend
+
+interface Ethernet102/1/18
+  shutdown
+  vpc orphan-port suspend
+
+interface Ethernet102/1/19
+  shutdown
+  vpc orphan-port suspend
+
+interface Ethernet102/1/20
+  shutdown
+  vpc orphan-port suspend
+
+interface Ethernet102/1/21
+  shutdown
+  vpc orphan-port suspend
+
+interface Ethernet102/1/22
+  shutdown
+  vpc orphan-port suspend
+
+interface Ethernet102/1/23
+  shutdown
+  vpc orphan-port suspend
+
+interface Ethernet102/1/24
+  shutdown
+  vpc orphan-port suspend
+
+interface Ethernet102/1/25
+  shutdown
+  vpc orphan-port suspend
+
+interface Ethernet102/1/26
+  shutdown
+  vpc orphan-port suspend
+
+interface Ethernet102/1/27
+  shutdown
+  vpc orphan-port suspend
+
+interface Ethernet102/1/28
+  shutdown
+  vpc orphan-port suspend
+
+interface Ethernet102/1/29
+  shutdown
+  vpc orphan-port suspend
+
+interface Ethernet102/1/30
+  shutdown
+  vpc orphan-port suspend
+
+interface Ethernet102/1/31
+  shutdown
+  vpc orphan-port suspend
+
+interface Ethernet102/1/32
+  shutdown
+  vpc orphan-port suspend
+
+interface Ethernet102/1/33
+  shutdown
+  vpc orphan-port suspend
+
+interface Ethernet102/1/34
+  shutdown
+  vpc orphan-port suspend
+
+interface Ethernet102/1/35
+  shutdown
+  vpc orphan-port suspend
+
+interface Ethernet102/1/36
+  shutdown
+  vpc orphan-port suspend
+
+interface Ethernet102/1/37
+  shutdown
+  vpc orphan-port suspend
+
+interface Ethernet102/1/38
+  shutdown
+  vpc orphan-port suspend
+
+interface Ethernet102/1/39
+  shutdown
+  vpc orphan-port suspend
+
+interface Ethernet102/1/40
+  shutdown
+  vpc orphan-port suspend
+
+interface Ethernet102/1/41
+  shutdown
+  vpc orphan-port suspend
+
+interface Ethernet102/1/42
+  shutdown
+  vpc orphan-port suspend
+
+interface Ethernet102/1/43
+  description Table 425 CardPC
+  switchport access vlan 265
+  spanning-tree port type edge
+  no snmp trap link-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  vpc orphan-port suspend
+
+interface Ethernet102/1/44
+  description table equipment
+  switchport access vlan 265
+  spanning-tree port type edge
+  no snmp trap link-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  vpc orphan-port suspend
+
+interface Ethernet102/1/45
+  description remoteTV
+  switchport access vlan 140
+  spanning-tree port type edge
+  no snmp trap link-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  vpc orphan-port suspend
+
+interface Ethernet102/1/46
+  description audio devices
+  switchport access vlan 39
+  spanning-tree port type edge
+  no snmp trap link-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  vpc orphan-port suspend
+
+interface Ethernet102/1/47
+  description audio devices
+  switchport access vlan 39
+  spanning-tree port type edge
+  no snmp trap link-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  vpc orphan-port suspend
+
+interface Ethernet102/1/48
+  description audio devices
+  switchport access vlan 39
+  spanning-tree port type edge
+  no snmp trap link-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  vpc orphan-port suspend
+
+interface Ethernet103/1/1
+  description DealerPC
+  switchport access vlan 51
+  spanning-tree port type edge
+  no snmp trap link-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  vpc orphan-port suspend
+
+interface Ethernet103/1/2
+  description DealerPC
+  switchport access vlan 51
+  spanning-tree port type edge
+  no snmp trap link-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  vpc orphan-port suspend
+
+interface Ethernet103/1/3
+  description DealerPC
+  switchport access vlan 51
+  spanning-tree port type edge
+  no snmp trap link-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  vpc orphan-port suspend
+
+interface Ethernet103/1/4
+  description DealerPC
+  switchport access vlan 51
+  spanning-tree port type edge
+  no snmp trap link-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  vpc orphan-port suspend
+
+interface Ethernet103/1/5
+  description DealerPC
+  switchport access vlan 51
+  spanning-tree port type edge
+  no snmp trap link-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  vpc orphan-port suspend
+
+interface Ethernet103/1/6
+  description DealerPC
+  switchport access vlan 51
+  spanning-tree port type edge
+  no snmp trap link-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  vpc orphan-port suspend
+
+interface Ethernet103/1/7
+  description DealerPC
+  switchport access vlan 51
+  spanning-tree port type edge
+  no snmp trap link-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  vpc orphan-port suspend
+
+interface Ethernet103/1/8
+  description DealerPC
+  switchport access vlan 51
+  spanning-tree port type edge
+  no snmp trap link-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  vpc orphan-port suspend
+
+interface Ethernet103/1/9
+  description DealerPC
+  switchport access vlan 51
+  spanning-tree port type edge
+  no snmp trap link-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  vpc orphan-port suspend
+
+interface Ethernet103/1/10
+  description DealerPC
+  switchport access vlan 51
+  spanning-tree port type edge
+  no snmp trap link-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  vpc orphan-port suspend
+
+interface Ethernet103/1/11
+  description DealerPC
+  switchport access vlan 51
+  spanning-tree port type edge
+  no snmp trap link-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  vpc orphan-port suspend
+
+interface Ethernet103/1/12
+  description DealerPC
+  switchport access vlan 51
+  spanning-tree port type edge
+  no snmp trap link-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  vpc orphan-port suspend
+
+interface Ethernet103/1/13
+  description DealerPC
+  switchport access vlan 51
+  spanning-tree port type edge
+  no snmp trap link-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  vpc orphan-port suspend
+
+interface Ethernet103/1/14
+  description DealerPC
+  switchport access vlan 51
+  spanning-tree port type edge
+  no snmp trap link-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  vpc orphan-port suspend
+
+interface Ethernet103/1/15
+  description DealerPC
+  switchport access vlan 51
+  spanning-tree port type edge
+  no snmp trap link-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  vpc orphan-port suspend
+
+interface Ethernet103/1/16
+  description DealerPC
+  switchport access vlan 51
+  spanning-tree port type edge
+  no snmp trap link-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  vpc orphan-port suspend
+
+interface Ethernet103/1/17
+  description DealerPC
+  switchport access vlan 51
+  spanning-tree port type edge
+  no snmp trap link-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  vpc orphan-port suspend
+
+interface Ethernet103/1/18
+  description DealerPC
+  switchport access vlan 51
+  spanning-tree port type edge
+  no snmp trap link-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  vpc orphan-port suspend
+
+interface Ethernet103/1/19
+  description DealerPC
+  switchport access vlan 51
+  spanning-tree port type edge
+  no snmp trap link-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  vpc orphan-port suspend
+
+interface Ethernet103/1/20
+  description DealerPC
+  switchport access vlan 51
+  spanning-tree port type edge
+  no snmp trap link-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  vpc orphan-port suspend
+
+interface Ethernet103/1/21
+  description DealerPC
+  switchport access vlan 51
+  spanning-tree port type edge
+  no snmp trap link-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  vpc orphan-port suspend
+
+interface Ethernet103/1/22
+  description DealerPC
+  switchport access vlan 51
+  spanning-tree port type edge
+  no snmp trap link-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  vpc orphan-port suspend
+
+interface Ethernet103/1/23
+  description DealerPC
+  switchport access vlan 51
+  spanning-tree port type edge
+  no snmp trap link-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  vpc orphan-port suspend
+
+interface Ethernet103/1/24
+  description DealerPC
+  switchport access vlan 51
+  spanning-tree port type edge
+  no snmp trap link-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  vpc orphan-port suspend
+
+interface Ethernet103/1/25
+  description DealerPC
+  switchport access vlan 51
+  spanning-tree port type edge
+  no snmp trap link-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  vpc orphan-port suspend
+
+interface Ethernet103/1/26
+  description DealerPC
+  switchport access vlan 51
+  spanning-tree port type edge
+  no snmp trap link-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  vpc orphan-port suspend
+
+interface Ethernet103/1/27
+  description DealerPC
+  switchport access vlan 51
+  spanning-tree port type edge
+  no snmp trap link-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  vpc orphan-port suspend
+
+interface Ethernet103/1/28
+  description DealerPC
+  switchport access vlan 51
+  spanning-tree port type edge
+  no snmp trap link-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  vpc orphan-port suspend
+
+interface Ethernet103/1/29
+  description DealerPC
+  switchport access vlan 51
+  spanning-tree port type edge
+  no snmp trap link-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  vpc orphan-port suspend
+
+interface Ethernet103/1/30
+  description DealerPC
+  switchport access vlan 51
+  spanning-tree port type edge
+  no snmp trap link-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  vpc orphan-port suspend
+
+interface Ethernet103/1/31
+  description DealerPC
+  switchport access vlan 51
+  spanning-tree port type edge
+  no snmp trap link-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  vpc orphan-port suspend
+
+interface Ethernet103/1/32
+  description DealerPC
+  switchport access vlan 51
+  spanning-tree port type edge
+  no snmp trap link-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  vpc orphan-port suspend
+
+interface Ethernet103/1/33
+  description DealerPC
+  switchport access vlan 51
+  spanning-tree port type edge
+  no snmp trap link-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  vpc orphan-port suspend
+
+interface Ethernet103/1/34
+  description DealerPC
+  switchport access vlan 51
+  spanning-tree port type edge
+  no snmp trap link-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  vpc orphan-port suspend
+
+interface Ethernet103/1/35
+  description DealerPC
+  switchport access vlan 51
+  spanning-tree port type edge
+  no snmp trap link-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  vpc orphan-port suspend
+
+interface Ethernet103/1/36
+  description DealerPC
+  switchport access vlan 51
+  spanning-tree port type edge
+  no snmp trap link-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  vpc orphan-port suspend
+
+interface Ethernet103/1/37
+  description DealerPC
+  switchport access vlan 51
+  spanning-tree port type edge
+  no snmp trap link-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  vpc orphan-port suspend
+
+interface Ethernet103/1/38
+  description DealerPC
+  switchport access vlan 51
+  spanning-tree port type edge
+  no snmp trap link-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  vpc orphan-port suspend
+
+interface Ethernet103/1/39
+  description DealerPC
+  switchport access vlan 51
+  spanning-tree port type edge
+  no snmp trap link-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  vpc orphan-port suspend
+
+interface Ethernet103/1/40
+  description DealerPC
+  switchport access vlan 51
+  spanning-tree port type edge
+  no snmp trap link-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  vpc orphan-port suspend
+
+interface Ethernet103/1/41
+  description DealerPC
+  switchport access vlan 51
+  spanning-tree port type edge
+  no snmp trap link-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  vpc orphan-port suspend
+
+interface Ethernet103/1/42
+  description DealerPC
+  switchport access vlan 51
+  spanning-tree port type edge
+  no snmp trap link-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  vpc orphan-port suspend
+
+interface Ethernet103/1/43
+  description DealerPC
+  switchport access vlan 51
+  spanning-tree port type edge
+  no snmp trap link-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  vpc orphan-port suspend
+
+interface Ethernet103/1/44
+  description DealerPC
+  switchport access vlan 51
+  spanning-tree port type edge
+  no snmp trap link-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  vpc orphan-port suspend
+
+interface Ethernet103/1/45
+  description DealerPC
+  switchport access vlan 39
+  spanning-tree port type edge
+  no snmp trap link-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  vpc orphan-port suspend
+
+interface Ethernet103/1/46
+  description DealerPC
+  switchport access vlan 51
+  spanning-tree port type edge
+  no snmp trap link-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  vpc orphan-port suspend
+
+interface Ethernet103/1/47
+  description Audio
+  switchport access vlan 39
+  spanning-tree port type edge
+  no snmp trap link-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  vpc orphan-port suspend
+
+interface Ethernet103/1/48
+  description Kramer 950
+  switchport access vlan 39
+  spanning-tree port type edge
+  no snmp trap link-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  vpc orphan-port suspend
+
+interface Ethernet104/1/1
+  description DealerPC
+  switchport access vlan 51
+  spanning-tree port type edge
+  no snmp trap link-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  vpc orphan-port suspend
+
+interface Ethernet104/1/2
+  description DealerPC
+  switchport access vlan 51
+  spanning-tree port type edge
+  no snmp trap link-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  vpc orphan-port suspend
+
+interface Ethernet104/1/3
+  description DealerPC
+  switchport access vlan 51
+  spanning-tree port type edge
+  no snmp trap link-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  vpc orphan-port suspend
+
+interface Ethernet104/1/4
+  description DealerPC
+  switchport access vlan 51
+  spanning-tree port type edge
+  no snmp trap link-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  vpc orphan-port suspend
+
+interface Ethernet104/1/5
+  description DealerPC
+  switchport access vlan 51
+  spanning-tree port type edge
+  no snmp trap link-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  vpc orphan-port suspend
+
+interface Ethernet104/1/6
+  description DealerPC
+  switchport access vlan 51
+  spanning-tree port type edge
+  no snmp trap link-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  vpc orphan-port suspend
+
+interface Ethernet104/1/7
+  description DealerPC
+  switchport access vlan 51
+  spanning-tree port type edge
+  no snmp trap link-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  vpc orphan-port suspend
+
+interface Ethernet104/1/8
+  description DealerPC
+  switchport access vlan 51
+  spanning-tree port type edge
+  no snmp trap link-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  vpc orphan-port suspend
+
+interface Ethernet104/1/9
+  description DealerPC
+  switchport access vlan 51
+  spanning-tree port type edge
+  no snmp trap link-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  vpc orphan-port suspend
+
+interface Ethernet104/1/10
+  description DealerPC
+  switchport access vlan 51
+  spanning-tree port type edge
+  no snmp trap link-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  vpc orphan-port suspend
+
+interface Ethernet104/1/11
+  description DealerPC
+  switchport access vlan 51
+  spanning-tree port type edge
+  no snmp trap link-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  vpc orphan-port suspend
+
+interface Ethernet104/1/12
+  description DealerPC
+  switchport access vlan 51
+  spanning-tree port type edge
+  no snmp trap link-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  vpc orphan-port suspend
+
+interface Ethernet104/1/13
+  description DealerPC
+  switchport access vlan 51
+  spanning-tree port type edge
+  no snmp trap link-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  vpc orphan-port suspend
+
+interface Ethernet104/1/14
+  description DealerPC
+  switchport access vlan 51
+  spanning-tree port type edge
+  no snmp trap link-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  vpc orphan-port suspend
+
+interface Ethernet104/1/15
+  description DealerPC
+  switchport access vlan 51
+  spanning-tree port type edge
+  no snmp trap link-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  vpc orphan-port suspend
+
+interface Ethernet104/1/16
+  description DealerPC
+  switchport access vlan 51
+  spanning-tree port type edge
+  no snmp trap link-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  vpc orphan-port suspend
+
+interface Ethernet104/1/17
+  description DealerPC
+  switchport access vlan 51
+  spanning-tree port type edge
+  no snmp trap link-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  vpc orphan-port suspend
+
+interface Ethernet104/1/18
+  description DealerPC
+  switchport access vlan 51
+  spanning-tree port type edge
+  no snmp trap link-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  vpc orphan-port suspend
+
+interface Ethernet104/1/19
+  description DealerPC
+  switchport access vlan 51
+  spanning-tree port type edge
+  no snmp trap link-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  vpc orphan-port suspend
+
+interface Ethernet104/1/20
+  description DealerPC
+  switchport access vlan 51
+  spanning-tree port type edge
+  no snmp trap link-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  vpc orphan-port suspend
+
+interface Ethernet104/1/21
+  description DealerPC
+  switchport access vlan 51
+  spanning-tree port type edge
+  no snmp trap link-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  vpc orphan-port suspend
+
+interface Ethernet104/1/22
+  description DealerPC
+  switchport access vlan 51
+  spanning-tree port type edge
+  no snmp trap link-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  vpc orphan-port suspend
+
+interface Ethernet104/1/23
+  description DealerPC
+  switchport access vlan 51
+  spanning-tree port type edge
+  no snmp trap link-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  vpc orphan-port suspend
+
+interface Ethernet104/1/24
+  description DealerPC
+  switchport access vlan 51
+  spanning-tree port type edge
+  no snmp trap link-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  vpc orphan-port suspend
+
+interface Ethernet104/1/25
+  description DealerPC
+  switchport access vlan 51
+  spanning-tree port type edge
+  no snmp trap link-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  vpc orphan-port suspend
+
+interface Ethernet104/1/26
+  description DealerPC
+  switchport access vlan 51
+  spanning-tree port type edge
+  no snmp trap link-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  vpc orphan-port suspend
+
+interface Ethernet104/1/27
+  description DealerPC
+  switchport access vlan 51
+  spanning-tree port type edge
+  no snmp trap link-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  vpc orphan-port suspend
+
+interface Ethernet104/1/28
+  description DealerPC
+  switchport access vlan 51
+  spanning-tree port type edge
+  no snmp trap link-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  vpc orphan-port suspend
+
+interface Ethernet104/1/29
+  description DealerPC
+  switchport access vlan 51
+  spanning-tree port type edge
+  no snmp trap link-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  vpc orphan-port suspend
+
+interface Ethernet104/1/30
+  description DealerPC
+  switchport access vlan 51
+  spanning-tree port type edge
+  no snmp trap link-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  vpc orphan-port suspend
+
+interface Ethernet104/1/31
+  description DealerPC
+  switchport access vlan 51
+  spanning-tree port type edge
+  no snmp trap link-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  vpc orphan-port suspend
+
+interface Ethernet104/1/32
+  description DealerPC
+  switchport access vlan 51
+  spanning-tree port type edge
+  no snmp trap link-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  vpc orphan-port suspend
+
+interface Ethernet104/1/33
+  description DealerPC
+  switchport access vlan 51
+  spanning-tree port type edge
+  no snmp trap link-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  vpc orphan-port suspend
+
+interface Ethernet104/1/34
+  description DealerPC
+  switchport access vlan 51
+  spanning-tree port type edge
+  no snmp trap link-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  vpc orphan-port suspend
+
+interface Ethernet104/1/35
+  description DealerPC
+  switchport access vlan 51
+  spanning-tree port type edge
+  no snmp trap link-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  vpc orphan-port suspend
+
+interface Ethernet104/1/36
+  description DealerPC
+  switchport access vlan 51
+  spanning-tree port type edge
+  no snmp trap link-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  vpc orphan-port suspend
+
+interface Ethernet104/1/37
+  description DealerPC
+  switchport access vlan 51
+  spanning-tree port type edge
+  no snmp trap link-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  vpc orphan-port suspend
+
+interface Ethernet104/1/38
+  description DealerPC
+  switchport access vlan 51
+  spanning-tree port type edge
+  no snmp trap link-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  vpc orphan-port suspend
+
+interface Ethernet104/1/39
+  description DealerPC
+  switchport access vlan 51
+  spanning-tree port type edge
+  no snmp trap link-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  vpc orphan-port suspend
+
+interface Ethernet104/1/40
+  description DealerPC
+  switchport access vlan 51
+  spanning-tree port type edge
+  no snmp trap link-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  vpc orphan-port suspend
+
+interface Ethernet104/1/41
+  description DealerPC
+  switchport access vlan 51
+  spanning-tree port type edge
+  no snmp trap link-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  vpc orphan-port suspend
+
+interface Ethernet104/1/42
+  description DealerPC
+  switchport access vlan 51
+  spanning-tree port type edge
+  no snmp trap link-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  vpc orphan-port suspend
+
+interface Ethernet104/1/43
+  description DealerPC
+  switchport access vlan 51
+  spanning-tree port type edge
+  no snmp trap link-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  vpc orphan-port suspend
+
+interface Ethernet104/1/44
+  description DealerPC
+  switchport access vlan 51
+  spanning-tree port type edge
+  no snmp trap link-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  vpc orphan-port suspend
+
+interface Ethernet104/1/45
+  description DealerPC
+  switchport access vlan 51
+  spanning-tree port type edge
+  no snmp trap link-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  vpc orphan-port suspend
+
+interface Ethernet104/1/46
+  description DealerPC
+  switchport access vlan 51
+  spanning-tree port type edge
+  no snmp trap link-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  vpc orphan-port suspend
+
+interface Ethernet104/1/47
+  description DealerPC
+  switchport access vlan 51
+  spanning-tree port type edge
+  no snmp trap link-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  vpc orphan-port suspend
+
+interface Ethernet104/1/48
+  description DealerPC
+  switchport access vlan 51
+  spanning-tree port type edge
+  no snmp trap link-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  vpc orphan-port suspend
+
+interface Ethernet105/1/1
+  description DealerPC
+  switchport access vlan 51
+  spanning-tree port type edge
+  no snmp trap link-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  vpc orphan-port suspend
+
+interface Ethernet105/1/2
+  description DealerPC
+  switchport access vlan 51
+  spanning-tree port type edge
+  no snmp trap link-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  vpc orphan-port suspend
+
+interface Ethernet105/1/3
+  description DealerPC
+  switchport access vlan 51
+  spanning-tree port type edge
+  no snmp trap link-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  vpc orphan-port suspend
+
+interface Ethernet105/1/4
+  description DealerPC
+  switchport access vlan 51
+  spanning-tree port type edge
+  no snmp trap link-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  vpc orphan-port suspend
+
+interface Ethernet105/1/5
+  description DealerPC
+  switchport access vlan 51
+  spanning-tree port type edge
+  no snmp trap link-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  vpc orphan-port suspend
+
+interface Ethernet105/1/6
+  description DealerPC
+  switchport access vlan 51
+  spanning-tree port type edge
+  no snmp trap link-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  vpc orphan-port suspend
+
+interface Ethernet105/1/7
+  description DealerPC
+  switchport access vlan 51
+  spanning-tree port type edge
+  no snmp trap link-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  vpc orphan-port suspend
+
+interface Ethernet105/1/8
+  description DealerPC
+  switchport access vlan 51
+  spanning-tree port type edge
+  no snmp trap link-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  vpc orphan-port suspend
+
+interface Ethernet105/1/9
+  description DealerPC
+  switchport access vlan 51
+  spanning-tree port type edge
+  no snmp trap link-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  vpc orphan-port suspend
+
+interface Ethernet105/1/10
+  description DealerPC
+  switchport access vlan 51
+  spanning-tree port type edge
+  no snmp trap link-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  vpc orphan-port suspend
+
+interface Ethernet105/1/11
+  description DealerPC
+  switchport access vlan 51
+  spanning-tree port type edge
+  no snmp trap link-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  vpc orphan-port suspend
+
+interface Ethernet105/1/12
+  description DealerPC
+  switchport access vlan 51
+  spanning-tree port type edge
+  no snmp trap link-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  vpc orphan-port suspend
+
+interface Ethernet105/1/13
+  description DealerPC
+  switchport access vlan 51
+  spanning-tree port type edge
+  no snmp trap link-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  vpc orphan-port suspend
+
+interface Ethernet105/1/14
+  description DealerPC
+  switchport access vlan 51
+  spanning-tree port type edge
+  no snmp trap link-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  vpc orphan-port suspend
+
+interface Ethernet105/1/15
+  description DealerPC
+  switchport access vlan 51
+  spanning-tree port type edge
+  no snmp trap link-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  vpc orphan-port suspend
+
+interface Ethernet105/1/16
+  description DealerPC
+  switchport access vlan 51
+  spanning-tree port type edge
+  no snmp trap link-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  vpc orphan-port suspend
+
+interface Ethernet105/1/17
+  description DealerPC
+  switchport access vlan 51
+  spanning-tree port type edge
+  no snmp trap link-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  vpc orphan-port suspend
+
+interface Ethernet105/1/18
+  description DealerPC
+  switchport access vlan 51
+  spanning-tree port type edge
+  no snmp trap link-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  vpc orphan-port suspend
+
+interface Ethernet105/1/19
+  description DealerPC
+  switchport access vlan 51
+  spanning-tree port type edge
+  no snmp trap link-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  vpc orphan-port suspend
+
+interface Ethernet105/1/20
+  description DealerPC
+  switchport access vlan 51
+  spanning-tree port type edge
+  no snmp trap link-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  vpc orphan-port suspend
+
+interface Ethernet105/1/21
+  description DealerPC
+  switchport access vlan 51
+  spanning-tree port type edge
+  no snmp trap link-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  vpc orphan-port suspend
+
+interface Ethernet105/1/22
+  description DealerPC
+  switchport access vlan 51
+  spanning-tree port type edge
+  no snmp trap link-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  vpc orphan-port suspend
+
+interface Ethernet105/1/23
+  description DealerPC
+  switchport access vlan 51
+  spanning-tree port type edge
+  no snmp trap link-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  vpc orphan-port suspend
+
+interface Ethernet105/1/24
+  description DealerPC
+  switchport access vlan 51
+  spanning-tree port type edge
+  no snmp trap link-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  vpc orphan-port suspend
+
+interface Ethernet105/1/25
+  description DealerPC
+  switchport access vlan 51
+  spanning-tree port type edge
+  no snmp trap link-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  vpc orphan-port suspend
+
+interface Ethernet105/1/26
+  description DealerPC
+  switchport access vlan 51
+  spanning-tree port type edge
+  no snmp trap link-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  vpc orphan-port suspend
+
+interface Ethernet105/1/27
+  description DealerPC
+  switchport access vlan 51
+  spanning-tree port type edge
+  no snmp trap link-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  vpc orphan-port suspend
+
+interface Ethernet105/1/28
+  description DealerPC
+  switchport access vlan 51
+  spanning-tree port type edge
+  no snmp trap link-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  vpc orphan-port suspend
+
+interface Ethernet105/1/29
+  description DealerPC
+  switchport access vlan 51
+  spanning-tree port type edge
+  no snmp trap link-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  vpc orphan-port suspend
+
+interface Ethernet105/1/30
+  description DealerPC
+  switchport access vlan 51
+  spanning-tree port type edge
+  no snmp trap link-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  vpc orphan-port suspend
+
+interface Ethernet105/1/31
+  description DealerPC
+  switchport access vlan 51
+  spanning-tree port type edge
+  no snmp trap link-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  vpc orphan-port suspend
+
+interface Ethernet105/1/32
+  description DealerPC
+  switchport access vlan 51
+  spanning-tree port type edge
+  no snmp trap link-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  vpc orphan-port suspend
+
+interface Ethernet105/1/33
+  description DealerPC
+  switchport access vlan 51
+  spanning-tree port type edge
+  no snmp trap link-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  vpc orphan-port suspend
+
+interface Ethernet105/1/34
+  description DealerPC
+  switchport access vlan 51
+  spanning-tree port type edge
+  no snmp trap link-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  vpc orphan-port suspend
+
+interface Ethernet105/1/35
+  description DealerPC
+  switchport access vlan 51
+  spanning-tree port type edge
+  no snmp trap link-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  vpc orphan-port suspend
+
+interface Ethernet105/1/36
+  description DealerPC
+  switchport access vlan 51
+  spanning-tree port type edge
+  no snmp trap link-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  vpc orphan-port suspend
+
+interface Ethernet105/1/37
+  description DealerPC
+  switchport access vlan 51
+  spanning-tree port type edge
+  no snmp trap link-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  vpc orphan-port suspend
+
+interface Ethernet105/1/38
+  description DealerPC
+  switchport access vlan 51
+  spanning-tree port type edge
+  no snmp trap link-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  vpc orphan-port suspend
+
+interface Ethernet105/1/39
+  description DealerPC
+  switchport access vlan 51
+  spanning-tree port type edge
+  no snmp trap link-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  vpc orphan-port suspend
+
+interface Ethernet105/1/40
+  description DealerPC
+  switchport access vlan 51
+  spanning-tree port type edge
+  no snmp trap link-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  vpc orphan-port suspend
+
+interface Ethernet105/1/41
+  description DealerPC
+  switchport access vlan 51
+  spanning-tree port type edge
+  no snmp trap link-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  vpc orphan-port suspend
+
+interface Ethernet105/1/42
+  description DealerPC
+  switchport access vlan 51
+  spanning-tree port type edge
+  no snmp trap link-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  vpc orphan-port suspend
+
+interface Ethernet105/1/43
+  description DealerPC
+  switchport access vlan 51
+  spanning-tree port type edge
+  no snmp trap link-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  vpc orphan-port suspend
+
+interface Ethernet105/1/44
+  description DealerPC
+  switchport access vlan 51
+  spanning-tree port type edge
+  no snmp trap link-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  vpc orphan-port suspend
+
+interface Ethernet105/1/45
+  description DealerPC
+  switchport access vlan 51
+  spanning-tree port type edge
+  no snmp trap link-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  vpc orphan-port suspend
+
+interface Ethernet105/1/46
+  description DealerPC
+  switchport access vlan 51
+  spanning-tree port type edge
+  no snmp trap link-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  vpc orphan-port suspend
+
+interface Ethernet105/1/47
+  description Behringer x32 in Alpha
+  switchport access vlan 39
+  spanning-tree port type edge
+  no snmp trap link-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  vpc orphan-port suspend
+
+interface Ethernet105/1/48
+  description Behringer x32
+  switchport access vlan 39
+  spanning-tree port type edge
+  no snmp trap link-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  vpc orphan-port suspend
+
+interface Ethernet106/1/1
+  description DealerPC
+  switchport access vlan 51
+  spanning-tree port type edge
+  no snmp trap link-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  vpc orphan-port suspend
+
+interface Ethernet106/1/2
+  description DealerPC
+  switchport access vlan 51
+  spanning-tree port type edge
+  no snmp trap link-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  vpc orphan-port suspend
+
+interface Ethernet106/1/3
+  description DealerPC
+  switchport access vlan 51
+  spanning-tree port type edge
+  no snmp trap link-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  vpc orphan-port suspend
+
+interface Ethernet106/1/4
+  description DealerPC
+  switchport access vlan 51
+  spanning-tree port type edge
+  no snmp trap link-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  vpc orphan-port suspend
+
+interface Ethernet106/1/5
+  description DealerPC
+  switchport access vlan 51
+  spanning-tree port type edge
+  no snmp trap link-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  vpc orphan-port suspend
+
+interface Ethernet106/1/6
+  description DealerPC
+  switchport access vlan 51
+  spanning-tree port type edge
+  no snmp trap link-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  vpc orphan-port suspend
+
+interface Ethernet106/1/7
+  description DealerPC
+  switchport access vlan 51
+  spanning-tree port type edge
+  no snmp trap link-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  vpc orphan-port suspend
+
+interface Ethernet106/1/8
+  description DealerPC
+  switchport access vlan 51
+  spanning-tree port type edge
+  no snmp trap link-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  vpc orphan-port suspend
+
+interface Ethernet106/1/9
+  description DealerPC
+  switchport access vlan 51
+  spanning-tree port type edge
+  no snmp trap link-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  vpc orphan-port suspend
+
+interface Ethernet106/1/10
+  description DealerPC
+  switchport access vlan 51
+  spanning-tree port type edge
+  no snmp trap link-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  vpc orphan-port suspend
+
+interface Ethernet106/1/11
+  description DealerPC
+  switchport access vlan 51
+  spanning-tree port type edge
+  no snmp trap link-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  vpc orphan-port suspend
+
+interface Ethernet106/1/12
+  description DealerPC
+  switchport access vlan 51
+  spanning-tree port type edge
+  no snmp trap link-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  vpc orphan-port suspend
+
+interface Ethernet106/1/13
+  description DealerPC
+  switchport access vlan 51
+  spanning-tree port type edge
+  no snmp trap link-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  vpc orphan-port suspend
+
+interface Ethernet106/1/14
+  description DealerPC
+  switchport access vlan 51
+  spanning-tree port type edge
+  no snmp trap link-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  vpc orphan-port suspend
+
+interface Ethernet106/1/15
+  description DealerPC
+  switchport access vlan 51
+  spanning-tree port type edge
+  no snmp trap link-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  vpc orphan-port suspend
+
+interface Ethernet106/1/16
+  description DealerPC
+  switchport access vlan 51
+  spanning-tree port type edge
+  no snmp trap link-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  vpc orphan-port suspend
+
+interface Ethernet106/1/17
+  description DealerPC
+  switchport access vlan 51
+  spanning-tree port type edge
+  no snmp trap link-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  vpc orphan-port suspend
+
+interface Ethernet106/1/18
+  description DealerPC
+  switchport access vlan 51
+  spanning-tree port type edge
+  no snmp trap link-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  vpc orphan-port suspend
+
+interface Ethernet106/1/19
+  description DealerPC
+  switchport access vlan 51
+  spanning-tree port type edge
+  no snmp trap link-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  vpc orphan-port suspend
+
+interface Ethernet106/1/20
+  description DealerPC
+  switchport access vlan 51
+  spanning-tree port type edge
+  no snmp trap link-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  vpc orphan-port suspend
+
+interface Ethernet106/1/21
+  description DealerPC
+  switchport access vlan 51
+  spanning-tree port type edge
+  no snmp trap link-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  vpc orphan-port suspend
+
+interface Ethernet106/1/22
+  description DealerPC
+  switchport access vlan 51
+  spanning-tree port type edge
+  no snmp trap link-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  vpc orphan-port suspend
+
+interface Ethernet106/1/23
+  description DealerPC
+  switchport access vlan 51
+  spanning-tree port type edge
+  no snmp trap link-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  vpc orphan-port suspend
+
+interface Ethernet106/1/24
+  description DealerPC
+  switchport access vlan 51
+  spanning-tree port type edge
+  no snmp trap link-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  vpc orphan-port suspend
+
+interface Ethernet106/1/25
+  description DealerPC
+  switchport access vlan 51
+  spanning-tree port type edge
+  no snmp trap link-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  vpc orphan-port suspend
+
+interface Ethernet106/1/26
+  description DealerPC
+  switchport access vlan 51
+  spanning-tree port type edge
+  no snmp trap link-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  vpc orphan-port suspend
+
+interface Ethernet106/1/27
+  description DealerPC
+  switchport access vlan 51
+  spanning-tree port type edge
+  no snmp trap link-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  vpc orphan-port suspend
+
+interface Ethernet106/1/28
+  description DealerPC
+  switchport access vlan 51
+  spanning-tree port type edge
+  no snmp trap link-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  vpc orphan-port suspend
+
+interface Ethernet106/1/29
+  description DealerPC
+  switchport access vlan 51
+  spanning-tree port type edge
+  no snmp trap link-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  vpc orphan-port suspend
+
+interface Ethernet106/1/30
+  description DealerPC
+  switchport access vlan 51
+  spanning-tree port type edge
+  no snmp trap link-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  vpc orphan-port suspend
+
+interface Ethernet106/1/31
+  description DealerPC
+  switchport access vlan 51
+  spanning-tree port type edge
+  no snmp trap link-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  vpc orphan-port suspend
+
+interface Ethernet106/1/32
+  description DealerPC
+  switchport access vlan 51
+  spanning-tree port type edge
+  no snmp trap link-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  vpc orphan-port suspend
+
+interface Ethernet106/1/33
+  description DealerPC
+  switchport access vlan 51
+  spanning-tree port type edge
+  no snmp trap link-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  vpc orphan-port suspend
+
+interface Ethernet106/1/34
+  description DealerPC
+  switchport access vlan 51
+  spanning-tree port type edge
+  no snmp trap link-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  vpc orphan-port suspend
+
+interface Ethernet106/1/35
+  description DealerPC
+  switchport access vlan 51
+  spanning-tree port type edge
+  no snmp trap link-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  vpc orphan-port suspend
+
+interface Ethernet106/1/36
+  description DealerPC
+  switchport access vlan 51
+  spanning-tree port type edge
+  no snmp trap link-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  vpc orphan-port suspend
+
+interface Ethernet106/1/37
+  description DealerPC
+  switchport access vlan 51
+  spanning-tree port type edge
+  no snmp trap link-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  vpc orphan-port suspend
+
+interface Ethernet106/1/38
+  description DealerPC
+  switchport access vlan 51
+  spanning-tree port type edge
+  no snmp trap link-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  vpc orphan-port suspend
+
+interface Ethernet106/1/39
+  description DealerPC
+  switchport access vlan 51
+  spanning-tree port type edge
+  no snmp trap link-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  vpc orphan-port suspend
+
+interface Ethernet106/1/40
+  description DealerPC
+  switchport access vlan 51
+  spanning-tree port type edge
+  no snmp trap link-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  vpc orphan-port suspend
+
+interface Ethernet106/1/41
+  description DealerPC
+  switchport access vlan 51
+  spanning-tree port type edge
+  no snmp trap link-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  vpc orphan-port suspend
+
+interface Ethernet106/1/42
+  description DealerPC
+  switchport access vlan 51
+  spanning-tree port type edge
+  no snmp trap link-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  vpc orphan-port suspend
+
+interface Ethernet106/1/43
+  description DealerPC
+  switchport access vlan 51
+  spanning-tree port type edge
+  no snmp trap link-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  vpc orphan-port suspend
+
+interface Ethernet106/1/44
+  description DealerPC
+  switchport access vlan 51
+  spanning-tree port type edge
+  no snmp trap link-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  vpc orphan-port suspend
+
+interface Ethernet106/1/45
+  description DealerPC
+  switchport access vlan 51
+  spanning-tree port type edge
+  no snmp trap link-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  vpc orphan-port suspend
+
+interface Ethernet106/1/46
+  description DealerPC
+  switchport access vlan 51
+  spanning-tree port type edge
+  no snmp trap link-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  vpc orphan-port suspend
+
+interface Ethernet106/1/47
+  description Leovegas DLR Info
+  switchport access vlan 140
+  spanning-tree port type edge
+  no snmp trap link-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  vpc orphan-port suspend
+
+interface Ethernet106/1/48
+  description TV-Screens
+  switchport access vlan 140
+  spanning-tree port type edge
+  no snmp trap link-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  vpc orphan-port suspend
+
+interface Ethernet107/1/1
+  description DealerPC
+  switchport access vlan 51
+  spanning-tree port type edge
+  no snmp trap link-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  vpc orphan-port suspend
+
+interface Ethernet107/1/2
+  description DealerPC
+  switchport access vlan 51
+  spanning-tree port type edge
+  no snmp trap link-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  vpc orphan-port suspend
+
+interface Ethernet107/1/3
+  description DealerPC
+  switchport access vlan 51
+  spanning-tree port type edge
+  no snmp trap link-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  vpc orphan-port suspend
+
+interface Ethernet107/1/4
+  description DealerPC
+  switchport access vlan 51
+  spanning-tree port type edge
+  no snmp trap link-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  vpc orphan-port suspend
+
+interface Ethernet107/1/5
+  description DealerPC
+  switchport access vlan 51
+  spanning-tree port type edge
+  no snmp trap link-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  vpc orphan-port suspend
+
+interface Ethernet107/1/6
+  description DealerPC
+  switchport access vlan 51
+  spanning-tree port type edge
+  no snmp trap link-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  vpc orphan-port suspend
+
+interface Ethernet107/1/7
+  description DealerPC
+  switchport access vlan 51
+  spanning-tree port type edge
+  no snmp trap link-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  vpc orphan-port suspend
+
+interface Ethernet107/1/8
+  description DealerPC
+  switchport access vlan 51
+  spanning-tree port type edge
+  no snmp trap link-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  vpc orphan-port suspend
+
+interface Ethernet107/1/9
+  description DealerPC
+  switchport access vlan 51
+  spanning-tree port type edge
+  no snmp trap link-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  vpc orphan-port suspend
+
+interface Ethernet107/1/10
+  description DealerPC
+  switchport access vlan 51
+  spanning-tree port type edge
+  no snmp trap link-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  vpc orphan-port suspend
+
+interface Ethernet107/1/11
+  description DealerPC
+  switchport access vlan 51
+  spanning-tree port type edge
+  no snmp trap link-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  vpc orphan-port suspend
+
+interface Ethernet107/1/12
+  description DealerPC
+  switchport access vlan 51
+  spanning-tree port type edge
+  no snmp trap link-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  vpc orphan-port suspend
+
+interface Ethernet107/1/13
+  description DealerPC
+  switchport access vlan 51
+  spanning-tree port type edge
+  no snmp trap link-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  vpc orphan-port suspend
+
+interface Ethernet107/1/14
+  description DealerPC
+  switchport access vlan 51
+  spanning-tree port type edge
+  no snmp trap link-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  vpc orphan-port suspend
+
+interface Ethernet107/1/15
+  description DealerPC
+  switchport access vlan 51
+  spanning-tree port type edge
+  no snmp trap link-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  vpc orphan-port suspend
+
+interface Ethernet107/1/16
+  description DealerPC
+  switchport access vlan 51
+  spanning-tree port type edge
+  no snmp trap link-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  vpc orphan-port suspend
+
+interface Ethernet107/1/17
+  description DealerPC
+  switchport access vlan 51
+  spanning-tree port type edge
+  no snmp trap link-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  vpc orphan-port suspend
+
+interface Ethernet107/1/18
+  description DealerPC
+  switchport access vlan 51
+  spanning-tree port type edge
+  no snmp trap link-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  vpc orphan-port suspend
+
+interface Ethernet107/1/19
+  description DealerPC
+  switchport access vlan 51
+  spanning-tree port type edge
+  no snmp trap link-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  vpc orphan-port suspend
+
+interface Ethernet107/1/20
+  description DealerPC
+  switchport access vlan 51
+  spanning-tree port type edge
+  no snmp trap link-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  vpc orphan-port suspend
+
+interface Ethernet107/1/21
+  description DealerPC
+  switchport access vlan 51
+  spanning-tree port type edge
+  no snmp trap link-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  vpc orphan-port suspend
+
+interface Ethernet107/1/22
+  description DealerPC
+  switchport access vlan 51
+  spanning-tree port type edge
+  no snmp trap link-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  vpc orphan-port suspend
+
+interface Ethernet107/1/23
+  description DealerPC
+  switchport access vlan 51
+  spanning-tree port type edge
+  no snmp trap link-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  vpc orphan-port suspend
+
+interface Ethernet107/1/24
+  description DealerPC
+  switchport access vlan 51
+  spanning-tree port type edge
+  no snmp trap link-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  vpc orphan-port suspend
+
+interface Ethernet107/1/25
+  description DealerPC
+  switchport access vlan 51
+  spanning-tree port type edge
+  no snmp trap link-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  vpc orphan-port suspend
+
+interface Ethernet107/1/26
+  description DealerPC
+  switchport access vlan 51
+  spanning-tree port type edge
+  no snmp trap link-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  vpc orphan-port suspend
+
+interface Ethernet107/1/27
+  description DealerPC
+  switchport access vlan 51
+  spanning-tree port type edge
+  no snmp trap link-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  vpc orphan-port suspend
+
+interface Ethernet107/1/28
+  description DealerPC
+  switchport access vlan 51
+  spanning-tree port type edge
+  no snmp trap link-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  vpc orphan-port suspend
+
+interface Ethernet107/1/29
+  description DealerPC
+  switchport access vlan 51
+  spanning-tree port type edge
+  no snmp trap link-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  vpc orphan-port suspend
+
+interface Ethernet107/1/30
+  description DealerPC
+  switchport access vlan 51
+  spanning-tree port type edge
+  no snmp trap link-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  vpc orphan-port suspend
+
+interface Ethernet107/1/31
+  description DealerPC
+  switchport access vlan 51
+  spanning-tree port type edge
+  no snmp trap link-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  vpc orphan-port suspend
+
+interface Ethernet107/1/32
+  description DealerPC
+  switchport access vlan 51
+  spanning-tree port type edge
+  no snmp trap link-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  vpc orphan-port suspend
+
+interface Ethernet107/1/33
+  description DealerPC
+  switchport access vlan 51
+  spanning-tree port type edge
+  no snmp trap link-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  vpc orphan-port suspend
+
+interface Ethernet107/1/34
+  description DealerPC
+  switchport access vlan 51
+  spanning-tree port type edge
+  no snmp trap link-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  vpc orphan-port suspend
+
+interface Ethernet107/1/35
+  description DealerPC
+  switchport access vlan 51
+  spanning-tree port type edge
+  no snmp trap link-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  vpc orphan-port suspend
+
+interface Ethernet107/1/36
+  description DealerPC
+  switchport access vlan 51
+  spanning-tree port type edge
+  no snmp trap link-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  vpc orphan-port suspend
+
+interface Ethernet107/1/37
+  description DealerPC
+  switchport access vlan 51
+  spanning-tree port type edge
+  no snmp trap link-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  vpc orphan-port suspend
+
+interface Ethernet107/1/38
+  description DealerPC
+  switchport access vlan 51
+  spanning-tree port type edge
+  no snmp trap link-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  vpc orphan-port suspend
+
+interface Ethernet107/1/39
+  description DealerPC
+  switchport access vlan 51
+  spanning-tree port type edge
+  no snmp trap link-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  vpc orphan-port suspend
+
+interface Ethernet107/1/40
+  description DealerPC
+  switchport access vlan 51
+  spanning-tree port type edge
+  no snmp trap link-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  vpc orphan-port suspend
+
+interface Ethernet107/1/41
+  description DealerPC
+  switchport access vlan 51
+  spanning-tree port type edge
+  no snmp trap link-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  vpc orphan-port suspend
+
+interface Ethernet107/1/42
+  description DealerPC
+  switchport access vlan 51
+  spanning-tree port type edge
+  no snmp trap link-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  vpc orphan-port suspend
+
+interface Ethernet107/1/43
+  description DealerPC
+  switchport access vlan 51
+  spanning-tree port type edge
+  no snmp trap link-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  vpc orphan-port suspend
+
+interface Ethernet107/1/44
+  description DealerPC
+  switchport access vlan 51
+  spanning-tree port type edge
+  no snmp trap link-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  vpc orphan-port suspend
+
+interface Ethernet107/1/45
+  description DealerPC
+  switchport access vlan 51
+  spanning-tree port type edge
+  no snmp trap link-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  vpc orphan-port suspend
+
+interface Ethernet107/1/46
+  description DealerPC
+  switchport access vlan 51
+  spanning-tree port type edge
+  no snmp trap link-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  vpc orphan-port suspend
+
+interface Ethernet107/1/47
+  description DealerPC
+  switchport access vlan 51
+  spanning-tree port type edge
+  no snmp trap link-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  vpc orphan-port suspend
+
+interface Ethernet107/1/48
+  description DealerPC
+  switchport access vlan 51
+  spanning-tree port type edge
+  no snmp trap link-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  vpc orphan-port suspend
+
+interface Ethernet108/1/1
+  description DealerPC
+  switchport access vlan 51
+  spanning-tree port type edge
+  no snmp trap link-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  vpc orphan-port suspend
+
+interface Ethernet108/1/2
+  description DealerPC
+  switchport access vlan 51
+  spanning-tree port type edge
+  no snmp trap link-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  vpc orphan-port suspend
+
+interface Ethernet108/1/3
+  description DealerPC
+  switchport access vlan 51
+  spanning-tree port type edge
+  no snmp trap link-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  vpc orphan-port suspend
+
+interface Ethernet108/1/4
+  description DealerPC
+  switchport access vlan 51
+  spanning-tree port type edge
+  no snmp trap link-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  vpc orphan-port suspend
+
+interface Ethernet108/1/5
+  description DealerPC
+  switchport access vlan 51
+  spanning-tree port type edge
+  no snmp trap link-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  vpc orphan-port suspend
+
+interface Ethernet108/1/6
+  description DealerPC
+  switchport access vlan 51
+  spanning-tree port type edge
+  no snmp trap link-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  vpc orphan-port suspend
+
+interface Ethernet108/1/7
+  description DealerPC
+  switchport access vlan 51
+  spanning-tree port type edge
+  no snmp trap link-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  vpc orphan-port suspend
+
+interface Ethernet108/1/8
+  description DealerPC
+  switchport access vlan 51
+  spanning-tree port type edge
+  no snmp trap link-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  vpc orphan-port suspend
+
+interface Ethernet108/1/9
+  description DealerPC
+  switchport access vlan 51
+  spanning-tree port type edge
+  no snmp trap link-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  vpc orphan-port suspend
+
+interface Ethernet108/1/10
+  description DealerPC
+  switchport access vlan 51
+  spanning-tree port type edge
+  no snmp trap link-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  vpc orphan-port suspend
+
+interface Ethernet108/1/11
+  description DealerPC
+  switchport access vlan 51
+  spanning-tree port type edge
+  no snmp trap link-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  vpc orphan-port suspend
+
+interface Ethernet108/1/12
+  description DealerPC
+  switchport access vlan 51
+  spanning-tree port type edge
+  no snmp trap link-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  vpc orphan-port suspend
+
+interface Ethernet108/1/13
+  description DealerPC
+  switchport access vlan 51
+  spanning-tree port type edge
+  no snmp trap link-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  vpc orphan-port suspend
+
+interface Ethernet108/1/14
+  description DealerPC
+  switchport access vlan 51
+  spanning-tree port type edge
+  no snmp trap link-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  vpc orphan-port suspend
+
+interface Ethernet108/1/15
+  description DealerPC
+  switchport access vlan 51
+  spanning-tree port type edge
+  no snmp trap link-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  vpc orphan-port suspend
+
+interface Ethernet108/1/16
+  description DealerPC
+  switchport access vlan 51
+  spanning-tree port type edge
+  no snmp trap link-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  vpc orphan-port suspend
+
+interface Ethernet108/1/17
+  description DealerPC
+  switchport access vlan 51
+  spanning-tree port type edge
+  no snmp trap link-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  vpc orphan-port suspend
+
+interface Ethernet108/1/18
+  description DealerPC
+  switchport access vlan 51
+  spanning-tree port type edge
+  no snmp trap link-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  vpc orphan-port suspend
+
+interface Ethernet108/1/19
+  description DealerPC
+  switchport access vlan 51
+  spanning-tree port type edge
+  no snmp trap link-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  vpc orphan-port suspend
+
+interface Ethernet108/1/20
+  description DealerPC
+  switchport access vlan 51
+  spanning-tree port type edge
+  no snmp trap link-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  vpc orphan-port suspend
+
+interface Ethernet108/1/21
+  description DealerPC
+  switchport access vlan 51
+  spanning-tree port type edge
+  no snmp trap link-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  vpc orphan-port suspend
+
+interface Ethernet108/1/22
+  description DealerPC
+  switchport access vlan 51
+  spanning-tree port type edge
+  no snmp trap link-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  vpc orphan-port suspend
+
+interface Ethernet108/1/23
+  description DealerPC
+  switchport access vlan 51
+  spanning-tree port type edge
+  no snmp trap link-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  vpc orphan-port suspend
+
+interface Ethernet108/1/24
+  description DealerPC
+  switchport access vlan 51
+  spanning-tree port type edge
+  no snmp trap link-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  vpc orphan-port suspend
+
+interface Ethernet108/1/25
+  description DealerPC
+  switchport access vlan 51
+  spanning-tree port type edge
+  no snmp trap link-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  vpc orphan-port suspend
+
+interface Ethernet108/1/26
+  description DealerPC
+  switchport access vlan 51
+  spanning-tree port type edge
+  no snmp trap link-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  vpc orphan-port suspend
+
+interface Ethernet108/1/27
+  description DealerPC
+  switchport access vlan 51
+  spanning-tree port type edge
+  no snmp trap link-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  vpc orphan-port suspend
+
+interface Ethernet108/1/28
+  description DealerPC
+  switchport access vlan 51
+  spanning-tree port type edge
+  no snmp trap link-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  vpc orphan-port suspend
+
+interface Ethernet108/1/29
+  description DealerPC
+  switchport access vlan 51
+  spanning-tree port type edge
+  no snmp trap link-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  vpc orphan-port suspend
+
+interface Ethernet108/1/30
+  description DealerPC
+  switchport access vlan 51
+  spanning-tree port type edge
+  no snmp trap link-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  vpc orphan-port suspend
+
+interface Ethernet108/1/31
+  description DealerPC
+  switchport access vlan 51
+  spanning-tree port type edge
+  no snmp trap link-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  vpc orphan-port suspend
+
+interface Ethernet108/1/32
+  description DealerPC
+  switchport access vlan 51
+  spanning-tree port type edge
+  no snmp trap link-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  vpc orphan-port suspend
+
+interface Ethernet108/1/33
+  description DealerPC
+  switchport access vlan 51
+  spanning-tree port type edge
+  no snmp trap link-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  vpc orphan-port suspend
+
+interface Ethernet108/1/34
+  description DealerPC
+  switchport access vlan 51
+  spanning-tree port type edge
+  no snmp trap link-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  vpc orphan-port suspend
+
+interface Ethernet108/1/35
+  description DealerPC
+  switchport access vlan 51
+  spanning-tree port type edge
+  no snmp trap link-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  vpc orphan-port suspend
+
+interface Ethernet108/1/36
+  description DealerPC
+  switchport access vlan 51
+  spanning-tree port type edge
+  no snmp trap link-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  vpc orphan-port suspend
+
+interface Ethernet108/1/37
+  description DealerPC
+  switchport access vlan 39
+  spanning-tree port type edge
+  no snmp trap link-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  vpc orphan-port suspend
+
+interface Ethernet108/1/38
+  description Remote_TV
+  switchport access vlan 140
+  spanning-tree port type edge
+  no snmp trap link-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  vpc orphan-port suspend
+
+interface Ethernet108/1/39
+  description Remote_TV
+  switchport access vlan 140
+  spanning-tree port type edge
+  no snmp trap link-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  vpc orphan-port suspend
+
+interface Ethernet108/1/40
+  description Remote_TV
+  switchport access vlan 140
+  spanning-tree port type edge
+  no snmp trap link-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  vpc orphan-port suspend
+
+interface Ethernet108/1/41
+  description ATEM
+  switchport access vlan 39
+  spanning-tree port type edge
+  no snmp trap link-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  vpc orphan-port suspend
+
+interface Ethernet108/1/42
+  description ATEM
+  switchport access vlan 39
+  spanning-tree port type edge
+  no snmp trap link-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  vpc orphan-port suspend
+
+interface Ethernet108/1/43
+  description ATEM
+  switchport access vlan 39
+  spanning-tree port type edge
+  no snmp trap link-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  vpc orphan-port suspend
+
+interface Ethernet108/1/44
+  description ATEM
+  switchport access vlan 39
+  spanning-tree port type edge
+  no snmp trap link-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  vpc orphan-port suspend
+
+interface Ethernet108/1/45
+  description ATEM
+  switchport access vlan 39
+  spanning-tree port type edge
+  no snmp trap link-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  vpc orphan-port suspend
+
+interface Ethernet108/1/46
+  description ATEM
+  switchport access vlan 39
+  spanning-tree port type edge
+  no snmp trap link-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  vpc orphan-port suspend
+
+interface Ethernet108/1/47
+  description Remote TV
+  switchport access vlan 140
+  spanning-tree port type edge
+  no snmp trap link-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  vpc orphan-port suspend
+
+interface Ethernet108/1/48
+  description ATEM
+  switchport access vlan 39
+  spanning-tree port type edge
+  no snmp trap link-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  vpc orphan-port suspend
+clock timezone GMT 0 0
+cli alias name wrimem run-script wrimem.txt
+line console
+  exec-timeout 15
+line vty
+boot kickstart bootflash:/n6000-uk9-kickstart.7.2.0.N1.1.bin
+boot system bootflash:/n6000-uk9.7.2.0.N1.1.bin
+fabricpath domain default
+poap transit
+monitor session 4 type erspan-source
+  erspan-id 201
+  vrf default
+  destination ip 10.30.55.122
+  source interface Ethernet1/11 both
+monitor erspan origin ip-address 192.168.101.225 global
+logging logfile messages 6
+logging server 10.30.230.90 7 use-vrf management
+logging timestamp milliseconds
+logging level syslog 6
+
+
+

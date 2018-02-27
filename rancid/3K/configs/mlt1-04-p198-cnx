@@ -1,0 +1,2605 @@
+!RANCID-CONTENT-TYPE: cisco-nx
+!
+!Chassis type: Nexus9000 - a NXOS router
+!Hardware: cisco Nexus9000 C9372PX chassis 
+!Hardware: Intel(R) Core(TM) i3- CPU @ 2.50GHz with 16016 MB of memory.
+!Hardware: Processor Board ID FDO2103018B
+!
+!
+!Memory: bootflash: 52049 MB
+!
+!Software: BIOS: version 07.59
+!Software: NXOS: version 7.0(3)I5(2)
+!Software: BIOS compile time: 08/26/2016
+!Software: NXOS image file is: bootflash:///nxos.7.0.3.I5.2.bin
+!Software: NXOS compile time: 2/16/2017 8:00:00 [02/16/2017 17:03:27]
+!
+!
+!
+!
+!
+!LIC: Feature                      Ins  Lic   Status Expiry Date Comments
+!LIC:                                  Count
+!LIC: FCOE_NPV_PKG                  No    -   Unused             -
+!LIC: TP_SERVICES_PKG               No    -   Unused             -
+!LIC: NETWORK_SERVICES_PKG          No    -   Unused             -
+!LIC: LAN_ENTERPRISE_SERVICES_PKG   No    -   Unused             -
+!
+!LIC: License hostid: VDH=FDO2103018B
+!
+!Red: Redundancy mode
+!Red: ---------------
+!Red:       administrative:   HA
+!Red:          operational:   None
+!Red: This supervisor (sup-1)
+!Red: -----------------------
+!Red:     Redundancy state:   Active, SC not present
+!Red:     Supervisor state:   Active
+!Red:       Internal state:   Active with no standby
+!Red: Other supervisor (sup-1)
+!Red: ------------------------
+!Red:     Redundancy state:   Not present
+!
+!Env: Fan:
+!Env: ---------------------------------------------------------------------------
+!Env: Fan             Model                Hw     Direction       Status
+!Env: ---------------------------------------------------------------------------
+!Env: Fan1(sys_fan1)  NXA-FAN-30CFM-B      --     front-to-back   Ok
+!Env: Fan2(sys_fan2)  NXA-FAN-30CFM-B      --     front-to-back   Ok
+!Env: Fan3(sys_fan3)  NXA-FAN-30CFM-B      --     front-to-back   Ok
+!Env: Fan4(sys_fan4)  NXA-FAN-30CFM-B      --     front-to-back   Ok
+!Env: Fan_in_PS1      --                   --     front-to-back   Ok
+!Env: Fan_in_PS2      --                   --     front-to-back   Ok
+!Env: Fan Air Filter : NotSupported
+!
+!Env: Fan Fex : 101:
+!Env: ------------------------------------------------------
+!Env: Fan             Model                Hw         Status
+!Env: ------------------------------------------------------
+!Env: Chassis         N2K-C2248-FAN        --         ok
+!Env: PS-1            N2200-PAC-400W       --         ok
+!Env: PS-2            N2200-PAC-400W       --         ok
+!Env: Fan Fex : 102:
+!Env: ------------------------------------------------------
+!Env: Fan             Model                Hw         Status
+!Env: ------------------------------------------------------
+!Env: Chassis         N2K-C2248-FAN        --         ok
+!Env: PS-1            N2200-PAC-400W       --         ok
+!Env: PS-2            N2200-PAC-400W       --         ok
+!Env: Fan Fex : 103:
+!Env: ------------------------------------------------------
+!Env: Fan             Model                Hw         Status
+!Env: ------------------------------------------------------
+!Env: Chassis         N2K-C2248-FAN        --         ok
+!Env: PS-1            N2200-PAC-400W       --         ok
+!Env: PS-2            N2200-PAC-400W       --         ok
+!Env: Fan Fex : 104:
+!Env: ------------------------------------------------------
+!Env: Fan             Model                Hw         Status
+!Env: ------------------------------------------------------
+!Env: Chassis         N2K-C2248-FAN        --         ok
+!Env: PS-1            N2200-PAC-400W       --         ok
+!Env: PS-2            N2200-PAC-400W       --         ok
+!Env: Fan Fex : 105:
+!Env: ------------------------------------------------------
+!Env: Fan             Model                Hw         Status
+!Env: ------------------------------------------------------
+!Env: Chassis         N2K-C2248-FAN        --         ok
+!Env: PS-1            N2200-PAC-400W       --         ok
+!Env: PS-2            N2200-PAC-400W       --         ok
+!
+!Env: Temperature:
+!Env: --------------------------------------------------------------------
+!Env: Module   Sensor        MajorThresh   MinorThres   Status
+!Env:                        (Celsius)     (Celsius)
+!Env: --------------------------------------------------------------------
+!Env: 1        FRONT           70              42          Ok
+!Env: 1        BACK            80              70          Ok
+!Env: 1        CPU             90              80          Ok
+!Env: 1        TD2             105             90          Ok
+!Env: 1        DONNER          105             90          Ok
+!
+!Env: Power Supply:
+!Env: Voltage: 12 Volts
+!Env: Power                             Actual      Actual        Total
+!Env: Supply    Model                   Output      Input      Capacity    Status
+!Env:                                 (Watts )    (Watts )     (Watts )
+!Env: -------  -------------------  ----------  ----------  ----------  --------------
+!Env: 1        N9K-PAC-650W               69 W                   650 W     Ok
+!Env: 2        N9K-PAC-650W               74 W                   650 W     Ok
+!Env: Power Usage Summary:
+!Env: --------------------
+!Env: Power Supply redundancy mode (configured)                Non-Redundant(combined)
+!Env: Power Supply redundancy mode (operational)               Non-Redundant(combined)
+!Env: Total Power Capacity (based on configured mode)            1300.00 W
+!Env: Total Grid-A (first half of PS slots) Power Capacity        650.00 W
+!Env: Total Grid-B (second half of PS slots) Power Capacity       650.00 W
+!Env: Total Power of all Inputs (cumulative)                     1300.00 W
+!Env: Total Power Allocated (budget)                                N/A
+!Env: Total Power Available for additional modules                  N/A
+!
+!Variable: Current Boot Variables:
+!Variable: sup-1
+!Variable: NXOS = bootflash:/nxos.7.0.3.I5.2.bin
+!Variable: No module boot variable set
+!Variable: Boot Variables on next reload:
+!Variable: sup-1
+!Variable: NXOS = bootflash:/nxos.7.0.3.I5.2.bin
+!Variable: No module boot variable set
+!
+!Flash: bootflash:        4096    Mar 21 18:42:50 2017  .rpmstore/
+!Flash: bootflash:        4096    Mar 21 18:48:28 2017  .swtam/
+!Flash: bootflash:     2097219    May 17 07:06:33 2017  20170516_130315_poap_26090_1.log
+!Flash: bootflash:     1076197    May 17 08:37:48 2017  20170516_130315_poap_26090_2.log
+!Flash: bootflash:     1048616    May 16 14:26:34 2017  20170516_130315_poap_26090_init.log
+!Flash: bootflash:       16694    May 17 09:54:56 2017  20170517_095319_poap_26116_init.log
+!Flash: bootflash:        4096    Mar 21 18:44:32 2017  home/
+!Flash: bootflash:       16384    Mar 21 18:42:45 2017  lost+found/
+!Flash: bootflash:       47828    Oct 30 12:56:09 2017  null
+!Flash: bootflash:   757307904    Mar 21 18:44:29 2017  nxos.7.0.3.I5.2.bin
+!Flash: bootflash:           0    May 17 08:38:56 2017  platform-sdk.cmd
+!Flash: bootflash:        4096    Mar 21 18:48:56 2017  scripts/
+!Flash: bootflash:       47988    Oct 30 14:01:32 2017  startup-config
+!Flash: bootflash:        4096    Mar 21 18:48:32 2017  virtual-instance/
+!Flash: bootflash:         328    May 17 10:04:01 2017  vlan.dat
+!Flash: bootflash:         131    May 18 11:02:55 2017  wrimem.txt
+!Flash: bootflash: Usage for bootflash://sup-local
+!Flash: bootflash:  965 MB used
+!Flash: bootflash: 50266 MB free
+!Flash: bootflash: 51231 MB total
+!
+!Flash: debug:      210269    Feb 25 03:21:04 2018  bootvar_debug.log
+!Flash: debug:           6    Feb 25 03:21:04 2018  bootvar_debug.meta
+!Flash: debug: Usage for debug://sup-local
+!Flash: debug:      0 MB used
+!Flash: debug:     4 MB free
+!Flash: debug:     5 MB total
+!
+!Flash: logflash:        4096    Mar 21 18:38:03 2017  core/
+!Flash: logflash:        4096    Mar 21 18:38:03 2017  debug/
+!Flash: logflash:        4096    Feb 25 23:39:42 2018  debug_logs/
+!Flash: logflash:        4096    Mar 21 18:38:03 2017  generic/
+!Flash: logflash:        4096                          log/
+!Flash: logflash:       16384    Mar 21 18:38:00 2017  lost+found/
+!Flash: logflash:        4096    Aug 21 03:17:00 2017  vdc_1/
+!Flash: logflash: Usage for logflash://sup-local
+!Flash: logflash:   571 MB used
+!Flash: logflash:  7492 MB free
+!Flash: logflash:  8063 MB total
+!
+!Flash: volatile:          40    Aug 23 06:06:49 2017  virtual-instance/
+!Flash: volatile: Usage for volatile://sup-local
+!Flash: volatile:           0 MB used
+!Flash: volatile:  2048 MB free
+!Flash: volatile:  2048 MB total
+!
+!Mod: Mod Ports             Module-Type                       Model          Status
+!Mod: --- ----- ------------------------------------- --------------------- ---------
+!Mod: 1    54   48x1/10G SFP+ 6x40G Ethernet Module   N9K-C9372PX-E         active *
+!Mod: 
+!Mod: Mod  Sw                Hw     Slot
+!Mod: ---  ----------------  ------ ----
+!Mod: 1    7.0(3)I5(2)       1.0    NA
+!Mod: 
+!Mod: 
+!Mod: Mod  MAC-Address(es)                         Serial-Num
+!Mod: ---  --------------------------------------  ----------
+!Mod: 1    2c-5a-0f-73-22-6e to 2c-5a-0f-73-22-ab  FDO2103018B
+!Mod: 
+!
+!NAME: "Chassis",               DESCR: "Nexus9000 C9372PX chassis"
+!PID: N9K-C9372PX-E
+!VID: V01
+!SN: FDO2103018B
+!NAME: "Slot 1",                DESCR: "48x1/10G SFP+ 6x40G Ethernet Module"
+!PID: N9K-C9372PX-E
+!VID: V01
+!SN: FDO2103018B
+!NAME: "Power Supply 1",        DESCR: "Nexus9000 C9372PX chassis Power Supply"
+!PID: N9K-PAC-650W
+!VID: V01
+!SN: DCB2102X2EJ
+!NAME: "Power Supply 2",        DESCR: "Nexus9000 C9372PX chassis Power Supply"
+!PID: N9K-PAC-650W
+!VID: V01
+!SN: DCB2102X2EC
+!NAME: "Fan 1",                 DESCR: "Nexus9000 C9372PX chassis Fan Module"
+!PID: NXA-FAN-30CFM-B
+!VID: V01
+!SN: N/A
+!NAME: "Fan 2",                 DESCR: "Nexus9000 C9372PX chassis Fan Module"
+!PID: NXA-FAN-30CFM-B
+!VID: V01
+!SN: N/A
+!NAME: "Fan 3",                 DESCR: "Nexus9000 C9372PX chassis Fan Module"
+!PID: NXA-FAN-30CFM-B
+!VID: V01
+!SN: N/A
+!NAME: "Fan 4",                 DESCR: "Nexus9000 C9372PX chassis Fan Module"
+!PID: NXA-FAN-30CFM-B
+!VID: V01
+!SN: N/A
+!NAME: "FEX 101 CHASSIS",       DESCR: "N2K-C2248TP-E-1GE  CHASSIS"
+!PID: N2K-C2248TP-E-1GE
+!VID: V03
+!SN: FOX2108PCQ4
+!NAME: "FEX 101 Module 1",      DESCR: "Fabric Extender Module: 48x1GE, 4x10GE Supervisor"
+!PID: N2K-C2248TP-E-1GE
+!VID: V03
+!SN: FOC21094400
+!NAME: "FEX 101 Fan 1",         DESCR: "Fabric Extender Fan module"
+!PID: N2K-C2248-FAN
+!VID: N/A
+!SN: N/A
+!NAME: "FEX 101 Power Supply 1", DESCR: "Fabric Extender AC power supply"
+!PID: N2200-PAC-400W
+!VID: V05
+!SN: DCA210553YH
+!NAME: "FEX 101 Power Supply 2", DESCR: "Fabric Extender AC power supply"
+!PID: N2200-PAC-400W
+!VID: V05
+!SN: DCA210553YE
+!NAME: "FEX 102 CHASSIS",       DESCR: "N2K-C2248TP-E-1GE  CHASSIS"
+!PID: N2K-C2248TP-E-1GE
+!VID: V03
+!SN: FOX2108PCMQ
+!NAME: "FEX 102 Module 1",      DESCR: "Fabric Extender Module: 48x1GE, 4x10GE Supervisor"
+!PID: N2K-C2248TP-E-1GE
+!VID: V03
+!SN: FOC21094556
+!NAME: "FEX 102 Fan 1",         DESCR: "Fabric Extender Fan module"
+!PID: N2K-C2248-FAN
+!VID: N/A
+!SN: N/A
+!NAME: "FEX 102 Power Supply 1", DESCR: "Fabric Extender AC power supply"
+!PID: N2200-PAC-400W
+!VID: V05
+!SN: DCA210555J0
+!NAME: "FEX 102 Power Supply 2", DESCR: "Fabric Extender AC power supply"
+!PID: N2200-PAC-400W
+!VID: V05
+!SN: DCA210555GV
+!NAME: "FEX 103 CHASSIS",       DESCR: "N2K-C2248TP-E-1GE  CHASSIS"
+!PID: N2K-C2248TP-E-1GE
+!VID: V03
+!SN: FOX2108PC66
+!NAME: "FEX 103 Module 1",      DESCR: "Fabric Extender Module: 48x1GE, 4x10GE Supervisor"
+!PID: N2K-C2248TP-E-1GE
+!VID: V03
+!SN: FOC2107046L
+!NAME: "FEX 103 Fan 1",         DESCR: "Fabric Extender Fan module"
+!PID: N2K-C2248-FAN
+!VID: N/A
+!SN: N/A
+!NAME: "FEX 103 Power Supply 1", DESCR: "Fabric Extender AC power supply"
+!PID: N2200-PAC-400W
+!VID: V05
+!SN: DCA210555G8
+!NAME: "FEX 103 Power Supply 2", DESCR: "Fabric Extender AC power supply"
+!PID: N2200-PAC-400W
+!VID: V05
+!SN: DCA210555FH
+!NAME: "FEX 104 CHASSIS",       DESCR: "N2K-C2248TP-E-1GE  CHASSIS"
+!PID: N2K-C2248TP-E-1GE
+!VID: V03
+!SN: FOX2108PCNF
+!NAME: "FEX 104 Module 1",      DESCR: "Fabric Extender Module: 48x1GE, 4x10GE Supervisor"
+!PID: N2K-C2248TP-E-1GE
+!VID: V03
+!SN: FOC21094553
+!NAME: "FEX 104 Fan 1",         DESCR: "Fabric Extender Fan module"
+!PID: N2K-C2248-FAN
+!VID: N/A
+!SN: N/A
+!NAME: "FEX 104 Power Supply 1", DESCR: "Fabric Extender AC power supply"
+!PID: N2200-PAC-400W
+!VID: V05
+!SN: DCA210555E9
+!NAME: "FEX 104 Power Supply 2", DESCR: "Fabric Extender AC power supply"
+!PID: N2200-PAC-400W
+!VID: V05
+!SN: DCA210555DC
+!NAME: "FEX 105 CHASSIS",       DESCR: "N2K-C2248TP-E-1GE  CHASSIS"
+!PID: N2K-C2248TP-E-1GE
+!VID: V03
+!SN: FOX2108PCPB
+!NAME: "FEX 105 Module 1",      DESCR: "Fabric Extender Module: 48x1GE, 4x10GE Supervisor"
+!PID: N2K-C2248TP-E-1GE
+!VID: V03
+!SN: FOC21094405
+!NAME: "FEX 105 Fan 1",         DESCR: "Fabric Extender Fan module"
+!PID: N2K-C2248-FAN
+!VID: N/A
+!SN: N/A
+!NAME: "FEX 105 Power Supply 1", DESCR: "Fabric Extender AC power supply"
+!PID: N2200-PAC-400W
+!VID: V05
+!SN: DCA210553YY
+!NAME: "FEX 105 Power Supply 2", DESCR: "Fabric Extender AC power supply"
+!PID: N2200-PAC-400W
+!VID: V05
+!SN: DCA210553Z0
+!
+!VTP: Service not enabled
+!
+!DEBUG: Debug level is set to Detail 
+!DEBUG: Debug level is set to Minor(1) 
+!DEBUG: L2RIB Enabled Debugs:
+!DEBUG:  default for new sessions logging level: 3
+!
+!CORES: VDC  Module  Instance  Process-name     PID       Date(Year-Month-Day Time)
+!CORES: ---  ------  --------  ---------------  --------  -------------------------
+!
+!PROC_LOGS: VDC Process          PID     Normal-exit  Stack  Core   Log-create-time
+!PROC_LOGS: --- ---------------  ------  -----------  -----  -----  ---------------
+!
+!FEX: FEX Mod Ports Card Type                          Model              Status.
+!FEX: --- --- ----- ---------------------------------- ------------------ -----------
+!FEX: 101  1  48    Fabric Extender 48x1G + 4x10G Mo   N2K-C2248TP-E-1GE  ok
+!FEX: FEX Mod Sw              Hw      World-Wide-Name(s) (WWN)
+!FEX: --- --- --------------  ------  -----------------------------------------------
+!FEX: 101  1  7.0(3)I5(2)     2.5     --                                                 
+!FEX: FEX Mod  MAC-Address(es)                         Serial-Num
+!FEX: --- ---  --------------------------------------  ----------
+!FEX: 101  1   2c31.2484.6220 to 2c31.2484.624f        FOX2108PCQ4
+!FEX: FEX Mod Ports Card Type                          Model              Status.
+!FEX: --- --- ----- ---------------------------------- ------------------ -----------
+!FEX: 102  1  48    Fabric Extender 48x1G + 4x10G Mo   N2K-C2248TP-E-1GE  ok
+!FEX: FEX Mod Sw              Hw      World-Wide-Name(s) (WWN)
+!FEX: --- --- --------------  ------  -----------------------------------------------
+!FEX: 102  1  7.0(3)I5(2)     2.5     --                                                 
+!FEX: FEX Mod  MAC-Address(es)                         Serial-Num
+!FEX: --- ---  --------------------------------------  ----------
+!FEX: 102  1   f8a5.c540.a080 to f8a5.c540.a0af        FOX2108PCMQ
+!FEX: FEX Mod Ports Card Type                          Model              Status.
+!FEX: --- --- ----- ---------------------------------- ------------------ -----------
+!FEX: 103  1  48    Fabric Extender 48x1G + 4x10G Mo   N2K-C2248TP-E-1GE  ok
+!FEX: FEX Mod Sw              Hw      World-Wide-Name(s) (WWN)
+!FEX: --- --- --------------  ------  -----------------------------------------------
+!FEX: 103  1  7.0(3)I5(2)     2.5     --                                                 
+!FEX: FEX Mod  MAC-Address(es)                         Serial-Num
+!FEX: --- ---  --------------------------------------  ----------
+!FEX: 103  1   2c31.2484.5fa0 to 2c31.2484.5fcf        FOX2108PC66
+!FEX: FEX Mod Ports Card Type                          Model              Status.
+!FEX: --- --- ----- ---------------------------------- ------------------ -----------
+!FEX: 104  1  48    Fabric Extender 48x1G + 4x10G Mo   N2K-C2248TP-E-1GE  ok
+!FEX: FEX Mod Sw              Hw      World-Wide-Name(s) (WWN)
+!FEX: --- --- --------------  ------  -----------------------------------------------
+!FEX: 104  1  7.0(3)I5(2)     2.5     --                                                 
+!FEX: FEX Mod  MAC-Address(es)                         Serial-Num
+!FEX: --- ---  --------------------------------------  ----------
+!FEX: 104  1   2c86.d26b.7660 to 2c86.d26b.768f        FOX2108PCNF
+!FEX: FEX Mod Ports Card Type                          Model              Status.
+!FEX: --- --- ----- ---------------------------------- ------------------ -----------
+!FEX: 105  1  48    Fabric Extender 48x1G + 4x10G Mo   N2K-C2248TP-E-1GE  ok
+!FEX: FEX Mod Sw              Hw      World-Wide-Name(s) (WWN)
+!FEX: --- --- --------------  ------  -----------------------------------------------
+!FEX: 105  1  7.0(3)I5(2)     2.5     --                                                 
+!FEX: FEX Mod  MAC-Address(es)                         Serial-Num
+!FEX: --- ---  --------------------------------------  ----------
+!FEX: 105  1   2c31.2484.60e0 to 2c31.2484.6010f       FOX2108PCPB
+!
+!FEX:   FEX         FEX           FEX                       FEX               
+!FEX: Number    Description      State            Model            Serial     
+!FEX: ------------------------------------------------------------------------
+!FEX: 101  L4_Rack-Spare2                Online   N2K-C2248TP-E-1GE   FOX2108PCQ4
+!FEX: 102    L4_Rack-ER2                Online   N2K-C2248TP-E-1GE   FOX2108PCMQ
+!FEX: 103    L4_Rack-DR2                Online   N2K-C2248TP-E-1GE   FOX2108PC66
+!FEX: 104    L4_Rack-DR3                Online   N2K-C2248TP-E-1GE   FOX2108PCNF
+!FEX: 105         Level2                Online   N2K-C2248TP-E-1GE   FOX2108PCPB
+!
+
+
+version 7.0(3)I5(2)
+power redundancy-mode combined force
+
+hostname mlt1-04-p198-cnx
+install feature-set fex
+vdc mlt1-04-p198-cnx id 1
+  allow feature-set fex
+  limit-resource vlan minimum 16 maximum 4094
+  limit-resource vrf minimum 2 maximum 4096
+  limit-resource port-channel minimum 0 maximum 511
+  limit-resource u4route-mem minimum 248 maximum 248
+  limit-resource u6route-mem minimum 96 maximum 96
+  limit-resource m4route-mem minimum 58 maximum 58
+  limit-resource m6route-mem minimum 8 maximum 8
+feature-set fex
+
+feature scp-server
+feature tacacs+
+cfs eth distribute
+feature udld
+feature interface-vlan
+feature hsrp
+feature lacp
+feature vpc
+feature lldp
+clock timezone GMT 0 0
+
+no password strength-check
+username admin password 5 $5$SQy/tmIj$42hkukNe4ROx4Hs88YzMfOZjdR4r31IZ9l7zwbeElnC  role network-admin
+username admin role network-operator
+username evogaming password 5 $5$FLcMhC4I$CLGR7q1xQYCrbLSYvYAC.xXjRu.cweX/Eldzu3wL5T.  role network-admin
+
+banner motd #
+!!! To save config use "wrimem" alias command" !!!
+#
+
+no ip domain-lookup
+ip domain-name evolutiongaming.com
+tacacs-server host 10.30.32.4 key 7 "Hr0y4c+" 
+aaa group server tacacs+ TacacsGroup 
+    server 10.30.32.4 
+    deadtime 1
+    use-vrf management
+logging event trunk-status default
+errdisable recovery cause link-flap
+errdisable recovery cause udld
+errdisable recovery cause bpduguard
+errdisable recovery cause loopback
+errdisable recovery cause psecure-violation
+ip access-list 66
+  10 permit ip 10.30.0.0/16 any 
+  20 permit ip 10.0.1.0 0.255.0.255 any 
+ip access-list Evo-SNMP
+ip access-list Evo_SNMP
+  10 permit ip 10.32.230.192/32 any 
+  20 permit ip 10.30.10.61/32 any 
+  30 permit ip 10.30.10.201/32 any 
+copp profile strict
+fex 101
+  pinning max-links 1
+  description "L4_Rack-Spare2"
+fex 102
+  pinning max-links 1
+  description "L4_Rack-ER2"
+fex 103
+  pinning max-links 1
+  description "L4_Rack-DR2"
+fex 104
+  pinning max-links 1
+  description "L4_Rack-DR3"
+fex 105
+  pinning max-links 1
+  description "Level2"
+snmp-server contact EVO_Infra_NOC
+snmp-server location MLT1_L4Spare2
+snmp-server user admin network-admin auth md5 0x5b84a1259b8f71ad2579601a132bf321 priv 0x5b84a1259b8f71ad2579601a132bf321 localizedkey
+snmp-server user admin network-operator
+snmp-server user evogaming network-admin auth md5 0x301227b8937b6c8c2955986c4e6dae87 priv 0x301227b8937b6c8c2955986c4e6dae87 localizedkey
+rmon event 1 description FATAL(1) owner PMON@FATAL
+rmon event 2 description CRITICAL(2) owner PMON@CRITICAL
+rmon event 3 description ERROR(3) owner PMON@ERROR
+rmon event 4 description WARNING(4) owner PMON@WARNING
+rmon event 5 description INFORMATION(5) owner PMON@INFO
+snmp-server community 5uper5ecret group network-operator
+snmp-server community 5uper5ecret use-ipv4acl 66
+snmp-server community spiceinvn0c group network-operator
+snmp-server community spiceinvn0c use-ipv4acl 66
+ntp server 10.30.9.210 use-vrf default
+ntp server 10.30.235.210 use-vrf default
+aaa authentication login default group TacacsGroup 
+aaa accounting default group TacacsGroup 
+aaa authentication login ascii-authentication 
+tacacs-server directed-request 
+
+no ip igmp snooping
+vlan 1-2,5,8,10-12,19-27,29-32,34,36,40,76,81,93,99,256,998-999,1026
+vlan 2
+  name prod-services_10.40.2.0/24
+vlan 5
+  name ASA-CoreInside192.168.94.72/29
+vlan 8
+  name Console_10.40.10.232/29
+vlan 10
+  name Core-10.40.10.248/29
+vlan 11
+  name MGMT-10.40.11.0/24
+vlan 12
+  name ILO-10.40.12.0/24
+vlan 19
+  name SrvProd-10.40.9.0/24
+vlan 20
+  name Man_10.40.20.0/24
+vlan 21
+  name Encoders_10.40.21.0/24
+vlan 22
+  name Dealer_10.40.22.0/24
+vlan 23
+  name Office_10.40.23.0/24
+vlan 24
+  name WiFi_10.40.24.0/24
+vlan 25
+  name GuestWiFi_10.40.25.0/24
+vlan 26
+  name MCR_10.40.26.0/24
+vlan 27
+  name Encoders_mgmt_10.40.27.0/24
+vlan 29
+  name CCTV_10.40.29.0/24
+vlan 30
+  name VIDEO_10.40.30.0/24
+vlan 31
+  name Dealer2_10.40.31.0/24
+vlan 32
+  name cctv-sec_10.40.32.0/24
+vlan 34
+  name Printer_10.40.34.0/24
+vlan 36
+  name mgmt-srv_10.40.36.0/24
+vlan 40
+  name Tipico_10.40.40.0_24
+vlan 76
+  name Linux_ServSetup_10.40.76.0_24
+vlan 81
+  name BackupAgent_10.40.81.0
+vlan 93
+  name BI_10.40.93.0/24
+vlan 99
+  name TechOps_10.40.99.0/24
+vlan 256
+  name ssb
+vlan 998
+  name Vodafone_Int-Primary
+vlan 999
+  name Melita_Int-Secondary
+vlan 1026
+  name MCR-P2P-192.168.94.80_24
+
+vrf context PEER_KEEPALIVE
+vrf context management
+  ip route 0.0.0.0/0 10.40.11.1
+vpc domain 1
+  role priority 10
+  peer-keepalive destination 192.168.254.2 source 192.168.254.1 vrf PEER_KEEPALIVE
+  delay restore 31
+  peer-gateway
+  auto-recovery
+
+interface Vlan1
+
+interface port-channel120
+  description A_mlt1-04-p001-ios  (our Et1/20)
+  switchport mode trunk
+  switchport trunk allowed vlan 2,8,10-12,19-27,29-32,34,36,40,76,81,93,99,256,998-999
+  no buffer-boost
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  vpc 120
+
+interface port-channel121
+  description A_mlt1-04-p043-ios Po1 (our TG1/21 VPC)
+  switchport mode trunk
+  switchport trunk allowed vlan 2,29,40
+  no buffer-boost
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  vpc 121
+
+interface port-channel122
+  description A_mlt1-04-p044-ios Po1 (our TG1/22 VPC)
+  switchport mode trunk
+  switchport trunk allowed vlan 2,29,40
+  no buffer-boost
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  vpc 122
+
+interface port-channel123
+  description A_mlt1-04-p045-ios Po1 (our TG1/23 VPC)
+  switchport mode trunk
+  switchport trunk allowed vlan 2,29
+  no buffer-boost
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  vpc 123
+
+interface port-channel124
+  description A_mlt1-04-p046-ios Po1 (our TG1/24 VPC)
+  switchport mode trunk
+  switchport trunk allowed vlan 2,29
+  no buffer-boost
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  vpc 124
+
+interface port-channel125
+  description A_mlt1-04-p047-ios Po1 (our TG1/25 VPC)
+  switchport mode trunk
+  switchport trunk allowed vlan 2,29
+  no buffer-boost
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  vpc 125
+
+interface port-channel126
+  description A_mlt1-02-p048-ios Po1 (our TG1/26 VPC)
+  switchport mode trunk
+  switchport trunk allowed vlan 2,29
+  no buffer-boost
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  vpc 126
+
+interface port-channel142
+  description A_mlt1-fw-t254-asa/pri Po10 (our Et1/42, Et1/43)
+  switchport mode trunk
+  switchport trunk allowed vlan 5
+  spanning-tree port type edge trunk
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+
+interface port-channel144
+  description A_mlt1-fw-t254-asa/pri Po10 (our Et1/44, Et1/45)
+  switchport mode trunk
+  switchport trunk allowed vlan 2,21-22,29,31,40,256,1026
+  spanning-tree port type edge trunk
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+
+interface port-channel146
+  description A_mlt1-wn-p001-ios Po100  (our Et1/46)
+  switchport mode trunk
+  switchport trunk allowed vlan 5,10,1026
+  no buffer-boost
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  vpc 146
+
+interface port-channel147
+  description A_mlt1-wn-p002-ios Po100  (our Et1/47)
+  switchport mode trunk
+  switchport trunk allowed vlan 5,10,1026
+  spanning-tree port type edge trunk
+  no buffer-boost
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  vpc 147
+
+interface port-channel1001
+  description A_FEX101 (our Eth1/1; Eth1/2)
+  switchport mode fex-fabric
+  fex associate 101
+  no snmp trap link-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+
+interface port-channel1002
+  description A_FEX102 (our Eth1/3; Eth1/4)
+  switchport mode fex-fabric
+  fex associate 102
+  no snmp trap link-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+
+interface port-channel1003
+  description A_FEX103 (our Eth1/5; Eth1/6)
+  switchport mode fex-fabric
+  fex associate 103
+  no snmp trap link-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+
+interface port-channel1004
+  description A_FEX104 (our Eth1/7; Eth1/8)
+  switchport mode fex-fabric
+  fex associate 104
+  no snmp trap link-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+
+interface port-channel1005
+  description A_FEX105 (our Eth1/9; Eth1/10)
+  switchport mode fex-fabric
+  fex associate 105
+  no snmp trap link-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+
+interface port-channel4095
+  description A_mlt1-04-p199-cnx (our E1/49-50) !!!VPC PEER LINK!!!
+  switchport mode trunk
+  switchport trunk allowed vlan 2,5,8,10-12,19-27,29-32,34,36,40,76,81,93,99,256,998-999,1026
+  spanning-tree port type network
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  vpc peer-link
+
+interface port-channel4096
+  description A_mlt1-04-p199-cnx (our E1/48) !!!PEER KEEPALIVE!!!
+  no switchport
+  vrf member PEER_KEEPALIVE
+  ip address 192.168.254.1/30
+
+interface Ethernet1/1
+  description A_FEX101 (in Po1001)
+  switchport mode fex-fabric
+  fex associate 101
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  channel-group 1001
+
+interface Ethernet1/2
+  description A_FEX101 (in Po1001)
+  switchport mode fex-fabric
+  fex associate 101
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  channel-group 1001
+
+interface Ethernet1/3
+  description A_FEX102 (in Po1002)
+  switchport mode fex-fabric
+  fex associate 102
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  channel-group 1002
+
+interface Ethernet1/4
+  description A_FEX102 (in Po1002)
+  switchport mode fex-fabric
+  fex associate 102
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  channel-group 1002
+
+interface Ethernet1/5
+  description A_FEX103 (in Po1003)
+  switchport mode fex-fabric
+  fex associate 103
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  channel-group 1003
+
+interface Ethernet1/6
+  description A_FEX103 (in Po1003)
+  switchport mode fex-fabric
+  fex associate 103
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  channel-group 1003
+
+interface Ethernet1/7
+  description A_FEX104 (in Po1004)
+  switchport mode fex-fabric
+  fex associate 104
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  channel-group 1004
+
+interface Ethernet1/8
+  description A_FEX104 (in Po1004)
+  switchport mode fex-fabric
+  fex associate 104
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  channel-group 1004
+
+interface Ethernet1/9
+  description A_FEX105 (in Po1005)
+  switchport mode fex-fabric
+  fex associate 105
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  channel-group 1005
+
+interface Ethernet1/10
+  description A_FEX105 (in Po1005)
+  switchport mode fex-fabric
+  fex associate 105
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  channel-group 1005
+
+interface Ethernet1/11
+  shutdown
+
+interface Ethernet1/12
+  shutdown
+
+interface Ethernet1/13
+  shutdown
+
+interface Ethernet1/14
+  shutdown
+
+interface Ethernet1/15
+  shutdown
+
+interface Ethernet1/16
+  shutdown
+
+interface Ethernet1/17
+  shutdown
+
+interface Ethernet1/18
+  shutdown
+
+interface Ethernet1/19
+  shutdown
+
+interface Ethernet1/20
+  description A_mlt1-04-p001-ios
+  switchport mode trunk
+  switchport trunk allowed vlan 2,8,10-12,19-27,29-32,34,36,40,76,81,93,99,256,998-999
+  spanning-tree port type edge trunk
+  no buffer-boost
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  channel-group 120 mode active
+
+interface Ethernet1/21
+  description A_mlt1-04-p043-ios (in po121)
+  switchport mode trunk
+  switchport trunk allowed vlan 2,29,40
+  no buffer-boost
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  channel-group 121 mode active
+
+interface Ethernet1/22
+  description A_mlt1-04-p044-ios (in po122)
+  switchport mode trunk
+  switchport trunk allowed vlan 2,29,40
+  no buffer-boost
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  channel-group 122 mode active
+
+interface Ethernet1/23
+  description A_mlt1-04-p045-ios (in po123)
+  switchport mode trunk
+  switchport trunk allowed vlan 2,29
+  no buffer-boost
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  channel-group 123 mode active
+
+interface Ethernet1/24
+  description A_mlt1-04-p046-ios (in po124)
+  switchport mode trunk
+  switchport trunk allowed vlan 2,29
+  no buffer-boost
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  channel-group 124 mode active
+
+interface Ethernet1/25
+  description A_mlt1-04-p047-ios (in po125)
+  switchport mode trunk
+  switchport trunk allowed vlan 2,29
+  no buffer-boost
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  channel-group 125 mode active
+
+interface Ethernet1/26
+  description A_mlt1-02-p048-ios (in po126)
+  switchport mode trunk
+  switchport trunk allowed vlan 2,29
+  no buffer-boost
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  channel-group 126 mode active
+
+interface Ethernet1/27
+  shutdown
+
+interface Ethernet1/28
+  shutdown
+
+interface Ethernet1/29
+  shutdown
+
+interface Ethernet1/30
+  shutdown
+
+interface Ethernet1/31
+  shutdown
+
+interface Ethernet1/32
+  shutdown
+
+interface Ethernet1/33
+  shutdown
+
+interface Ethernet1/34
+  shutdown
+
+interface Ethernet1/35
+  shutdown
+
+interface Ethernet1/36
+  shutdown
+
+interface Ethernet1/37
+  shutdown
+
+interface Ethernet1/38
+  shutdown
+
+interface Ethernet1/39
+  shutdown
+
+interface Ethernet1/40
+  shutdown
+
+interface Ethernet1/41
+  shutdown
+
+interface Ethernet1/42
+  description A_mlt1-fw-t254-asa/pri Gi0/0
+  switchport mode trunk
+  switchport trunk allowed vlan 5
+  spanning-tree port type edge trunk
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  channel-group 142 mode active
+
+interface Ethernet1/43
+  description A_mlt1-fw-t254-asa/pri Gi0/1
+  switchport mode trunk
+  switchport trunk allowed vlan 5
+  spanning-tree port type edge trunk
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  channel-group 142 mode active
+
+interface Ethernet1/44
+  description A_mlt1-fw-t254-asa/pri Gi0/5
+  switchport mode trunk
+  switchport trunk allowed vlan 2,21-22,29,31,40,256,1026
+  spanning-tree port type edge trunk
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  channel-group 144 mode active
+
+interface Ethernet1/45
+  description A_mlt1-fw-t254-asa/pri Gi0/6
+  switchport mode trunk
+  switchport trunk allowed vlan 2,21-22,29,31,40,256,1026
+  spanning-tree port type edge trunk
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  channel-group 144 mode active
+
+interface Ethernet1/46
+  description A_mlt1-wn-p001-ios Te1/1
+  switchport mode trunk
+  switchport trunk allowed vlan 5,10,1026
+  spanning-tree port type edge trunk
+  no buffer-boost
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  channel-group 146 mode active
+
+interface Ethernet1/47
+  description A_mlt1-wn-p002-ios Te1/1
+  switchport mode trunk
+  switchport trunk allowed vlan 5,10,1026
+  spanning-tree port type edge trunk
+  no buffer-boost
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  channel-group 147 mode active
+
+interface Ethernet1/48
+  description A_mlt1-04-p198-cnx E1/48 (in Po4096) !!!PEER KEEPALIVE!!!
+  no switchport
+  channel-group 4096
+  no shutdown
+
+interface Ethernet1/49
+  description A_mlt1-04-p199-cnx E1/49 (in Po4095) !!!VPC PEER LINK!!!
+  switchport mode trunk
+  switchport trunk allowed vlan 2,5,8,10-12,19-27,29-32,34,36,40,76,81,93,99,256,998-999,1026
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  channel-group 4095 mode active
+
+interface Ethernet1/50
+  description A_mlt1-04-p199-cnx E1/50 (in Po4095) !!!VPC PEER LINK!!!
+  switchport mode trunk
+  switchport trunk allowed vlan 2,5,8,10-12,19-27,29-32,34,36,40,76,81,93,99,256,998-999,1026
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  channel-group 4095 mode active
+
+interface Ethernet1/51
+  shutdown
+
+interface Ethernet1/52
+  shutdown
+
+interface Ethernet1/53
+  shutdown
+
+interface Ethernet1/54
+  shutdown
+
+interface mgmt0
+  vrf member management
+  ip address 10.40.11.198/24
+
+interface Ethernet101/1/1
+  description Encoders
+  switchport access vlan 21
+  spanning-tree port type edge
+  no snmp trap link-status
+  vpc orphan-port suspend
+
+interface Ethernet101/1/2
+  description Encoders
+  switchport access vlan 21
+  spanning-tree port type edge
+  no snmp trap link-status
+  vpc orphan-port suspend
+
+interface Ethernet101/1/3
+  description Encoders
+  switchport access vlan 21
+  spanning-tree port type edge
+  no snmp trap link-status
+  vpc orphan-port suspend
+
+interface Ethernet101/1/4
+  description Encoders
+  switchport access vlan 21
+  spanning-tree port type edge
+  no snmp trap link-status
+  vpc orphan-port suspend
+
+interface Ethernet101/1/5
+  description Encoders
+  switchport access vlan 21
+  spanning-tree port type edge
+  no snmp trap link-status
+  vpc orphan-port suspend
+
+interface Ethernet101/1/6
+  description Encoders
+  switchport access vlan 21
+  spanning-tree port type edge
+  no snmp trap link-status
+  vpc orphan-port suspend
+
+interface Ethernet101/1/7
+  description Encoders
+  switchport access vlan 21
+  spanning-tree port type edge
+  no snmp trap link-status
+  vpc orphan-port suspend
+
+interface Ethernet101/1/8
+  description Encoders
+  switchport access vlan 21
+  spanning-tree port type edge
+  no snmp trap link-status
+  vpc orphan-port suspend
+
+interface Ethernet101/1/9
+  description Encoders
+  switchport access vlan 21
+  spanning-tree port type edge
+  no snmp trap link-status
+  vpc orphan-port suspend
+
+interface Ethernet101/1/10
+  description Encoders
+  switchport access vlan 21
+  spanning-tree port type edge
+  no snmp trap link-status
+  vpc orphan-port suspend
+
+interface Ethernet101/1/11
+  description Encoders
+  switchport access vlan 21
+  spanning-tree port type edge
+  no snmp trap link-status
+  vpc orphan-port suspend
+
+interface Ethernet101/1/12
+  description Encoders
+  switchport access vlan 21
+  spanning-tree port type edge
+  no snmp trap link-status
+  vpc orphan-port suspend
+
+interface Ethernet101/1/13
+  description Encoders
+  switchport access vlan 21
+  spanning-tree port type edge
+  no snmp trap link-status
+  vpc orphan-port suspend
+
+interface Ethernet101/1/14
+  description Encoders
+  switchport access vlan 21
+  spanning-tree port type edge
+  no snmp trap link-status
+  vpc orphan-port suspend
+
+interface Ethernet101/1/15
+  description Encoders
+  switchport access vlan 21
+  spanning-tree port type edge
+  no snmp trap link-status
+  vpc orphan-port suspend
+
+interface Ethernet101/1/16
+  description Encoders
+  switchport access vlan 21
+  spanning-tree port type edge
+  no snmp trap link-status
+  vpc orphan-port suspend
+
+interface Ethernet101/1/17
+  description Encoders
+  switchport access vlan 21
+  spanning-tree port type edge
+  no snmp trap link-status
+  vpc orphan-port suspend
+
+interface Ethernet101/1/18
+  description Encoders
+  switchport access vlan 21
+  spanning-tree port type edge
+  no snmp trap link-status
+  vpc orphan-port suspend
+
+interface Ethernet101/1/19
+  description Encoders
+  switchport access vlan 21
+  spanning-tree port type edge
+  no snmp trap link-status
+  vpc orphan-port suspend
+
+interface Ethernet101/1/20
+  description Encoders
+  switchport access vlan 21
+  spanning-tree port type edge
+  no snmp trap link-status
+  vpc orphan-port suspend
+
+interface Ethernet101/1/21
+  description Encoders
+  switchport access vlan 21
+  spanning-tree port type edge
+  no snmp trap link-status
+  vpc orphan-port suspend
+
+interface Ethernet101/1/22
+  description Encoders
+  switchport access vlan 21
+  spanning-tree port type edge
+  no snmp trap link-status
+  vpc orphan-port suspend
+
+interface Ethernet101/1/23
+  description Encoders
+  switchport access vlan 21
+  spanning-tree port type edge
+  no snmp trap link-status
+  vpc orphan-port suspend
+
+interface Ethernet101/1/24
+  description Encoders
+  switchport access vlan 21
+  spanning-tree port type edge
+  no snmp trap link-status
+  vpc orphan-port suspend
+
+interface Ethernet101/1/25
+  description Encoders
+  switchport access vlan 21
+  spanning-tree port type edge
+  no snmp trap link-status
+  vpc orphan-port suspend
+
+interface Ethernet101/1/26
+  description Encoders
+  switchport access vlan 21
+  spanning-tree port type edge
+  no snmp trap link-status
+  vpc orphan-port suspend
+
+interface Ethernet101/1/27
+  description Encoders
+  switchport access vlan 21
+  spanning-tree port type edge
+  no snmp trap link-status
+  vpc orphan-port suspend
+
+interface Ethernet101/1/28
+  description Encoders
+  switchport access vlan 21
+  spanning-tree port type edge
+  no snmp trap link-status
+  vpc orphan-port suspend
+
+interface Ethernet101/1/29
+  description Encoders
+  switchport access vlan 21
+  spanning-tree port type edge
+  no snmp trap link-status
+  vpc orphan-port suspend
+
+interface Ethernet101/1/30
+  description Encoders
+  switchport access vlan 21
+  spanning-tree port type edge
+  no snmp trap link-status
+  vpc orphan-port suspend
+
+interface Ethernet101/1/31
+  description Encoders
+  switchport access vlan 21
+  spanning-tree port type edge
+  no snmp trap link-status
+  vpc orphan-port suspend
+
+interface Ethernet101/1/32
+  description Encoders
+  switchport access vlan 21
+  spanning-tree port type edge
+  no snmp trap link-status
+  vpc orphan-port suspend
+
+interface Ethernet101/1/33
+  description Encoders
+  switchport access vlan 21
+  spanning-tree port type edge
+  no snmp trap link-status
+  vpc orphan-port suspend
+
+interface Ethernet101/1/34
+  description Encoders
+  switchport access vlan 21
+  spanning-tree port type edge
+  no snmp trap link-status
+  vpc orphan-port suspend
+
+interface Ethernet101/1/35
+  description Encoders
+  switchport access vlan 21
+  spanning-tree port type edge
+  no snmp trap link-status
+  vpc orphan-port suspend
+
+interface Ethernet101/1/36
+  description Encoders
+  switchport access vlan 21
+  spanning-tree port type edge
+  no snmp trap link-status
+  vpc orphan-port suspend
+
+interface Ethernet101/1/37
+  description Encoders
+  switchport access vlan 21
+  spanning-tree port type edge
+  no snmp trap link-status
+  vpc orphan-port suspend
+
+interface Ethernet101/1/38
+  description Encoders
+  switchport access vlan 21
+  spanning-tree port type edge
+  no snmp trap link-status
+  vpc orphan-port suspend
+
+interface Ethernet101/1/39
+  description Encoders
+  switchport access vlan 21
+  spanning-tree port type edge
+  no snmp trap link-status
+  vpc orphan-port suspend
+
+interface Ethernet101/1/40
+  description Encoders
+  switchport access vlan 21
+  spanning-tree port type edge
+  no snmp trap link-status
+  vpc orphan-port suspend
+
+interface Ethernet101/1/41
+  description Encoders
+  switchport access vlan 21
+  spanning-tree port type edge
+  no snmp trap link-status
+  vpc orphan-port suspend
+
+interface Ethernet101/1/42
+  description Encoders
+  switchport access vlan 21
+  spanning-tree port type edge
+  no snmp trap link-status
+  vpc orphan-port suspend
+
+interface Ethernet101/1/43
+  description Encoders
+  switchport access vlan 21
+  spanning-tree port type edge
+  no snmp trap link-status
+  vpc orphan-port suspend
+
+interface Ethernet101/1/44
+  description Encoders
+  switchport access vlan 21
+  spanning-tree port type edge
+  no snmp trap link-status
+  vpc orphan-port suspend
+
+interface Ethernet101/1/45
+  description Encoders
+  switchport access vlan 21
+  spanning-tree port type edge
+  no snmp trap link-status
+  vpc orphan-port suspend
+
+interface Ethernet101/1/46
+  description Encoders
+  switchport access vlan 21
+  spanning-tree port type edge
+  no snmp trap link-status
+  vpc orphan-port suspend
+
+interface Ethernet101/1/47
+  description Encoders
+  switchport access vlan 21
+  spanning-tree port type edge
+  no snmp trap link-status
+  vpc orphan-port suspend
+
+interface Ethernet101/1/48
+  description Encoders
+  switchport access vlan 21
+  spanning-tree port type edge
+  no snmp trap link-status
+  vpc orphan-port suspend
+
+interface Ethernet102/1/1
+  description Encoders
+  switchport access vlan 21
+  spanning-tree port type edge
+  no snmp trap link-status
+  vpc orphan-port suspend
+
+interface Ethernet102/1/2
+  description Encoders
+  switchport access vlan 21
+  spanning-tree port type edge
+  no snmp trap link-status
+  vpc orphan-port suspend
+
+interface Ethernet102/1/3
+  description Encoders
+  switchport access vlan 21
+  spanning-tree port type edge
+  no snmp trap link-status
+  vpc orphan-port suspend
+
+interface Ethernet102/1/4
+  description Encoders
+  switchport access vlan 21
+  spanning-tree port type edge
+  no snmp trap link-status
+  vpc orphan-port suspend
+
+interface Ethernet102/1/5
+  description Encoders
+  switchport access vlan 21
+  spanning-tree port type edge
+  no snmp trap link-status
+  vpc orphan-port suspend
+
+interface Ethernet102/1/6
+  description Encoders
+  switchport access vlan 21
+  spanning-tree port type edge
+  no snmp trap link-status
+  vpc orphan-port suspend
+
+interface Ethernet102/1/7
+  description Encoders
+  switchport access vlan 21
+  spanning-tree port type edge
+  no snmp trap link-status
+  vpc orphan-port suspend
+
+interface Ethernet102/1/8
+  description Encoders
+  switchport access vlan 21
+  spanning-tree port type edge
+  no snmp trap link-status
+  vpc orphan-port suspend
+
+interface Ethernet102/1/9
+  description Encoders
+  switchport access vlan 21
+  spanning-tree port type edge
+  no snmp trap link-status
+  vpc orphan-port suspend
+
+interface Ethernet102/1/10
+  description Encoders
+  switchport access vlan 21
+  spanning-tree port type edge
+  no snmp trap link-status
+  vpc orphan-port suspend
+
+interface Ethernet102/1/11
+  description Encoders
+  switchport access vlan 21
+  spanning-tree port type edge
+  no snmp trap link-status
+  vpc orphan-port suspend
+
+interface Ethernet102/1/12
+  description Encoders
+  switchport access vlan 21
+  spanning-tree port type edge
+  no snmp trap link-status
+  vpc orphan-port suspend
+
+interface Ethernet102/1/13
+  description Encoders
+  switchport access vlan 21
+  spanning-tree port type edge
+  no snmp trap link-status
+  vpc orphan-port suspend
+
+interface Ethernet102/1/14
+  description Encoders
+  switchport access vlan 21
+  spanning-tree port type edge
+  no snmp trap link-status
+  vpc orphan-port suspend
+
+interface Ethernet102/1/15
+  description Encoders
+  switchport access vlan 21
+  spanning-tree port type edge
+  no snmp trap link-status
+  vpc orphan-port suspend
+
+interface Ethernet102/1/16
+  description Encoders
+  switchport access vlan 21
+  spanning-tree port type edge
+  no snmp trap link-status
+  vpc orphan-port suspend
+
+interface Ethernet102/1/17
+  description Encoders
+  switchport access vlan 21
+  spanning-tree port type edge
+  no snmp trap link-status
+  vpc orphan-port suspend
+
+interface Ethernet102/1/18
+  description Encoders
+  switchport access vlan 21
+  spanning-tree port type edge
+  no snmp trap link-status
+  vpc orphan-port suspend
+
+interface Ethernet102/1/19
+  description Encoders
+  switchport access vlan 21
+  spanning-tree port type edge
+  no snmp trap link-status
+  vpc orphan-port suspend
+
+interface Ethernet102/1/20
+  description Encoders
+  switchport access vlan 21
+  spanning-tree port type edge
+  no snmp trap link-status
+  vpc orphan-port suspend
+
+interface Ethernet102/1/21
+  description Encoders
+  switchport access vlan 21
+  spanning-tree port type edge
+  no snmp trap link-status
+  vpc orphan-port suspend
+
+interface Ethernet102/1/22
+  description Encoders
+  switchport access vlan 21
+  spanning-tree port type edge
+  no snmp trap link-status
+  vpc orphan-port suspend
+
+interface Ethernet102/1/23
+  description Encoders
+  switchport access vlan 21
+  spanning-tree port type edge
+  no snmp trap link-status
+  vpc orphan-port suspend
+
+interface Ethernet102/1/24
+  description Encoders
+  switchport access vlan 21
+  spanning-tree port type edge
+  no snmp trap link-status
+  vpc orphan-port suspend
+
+interface Ethernet102/1/25
+  description Encoders
+  switchport access vlan 21
+  spanning-tree port type edge
+  no snmp trap link-status
+  vpc orphan-port suspend
+
+interface Ethernet102/1/26
+  description Encoders
+  switchport access vlan 21
+  spanning-tree port type edge
+  no snmp trap link-status
+  vpc orphan-port suspend
+
+interface Ethernet102/1/27
+  description Encoders
+  switchport access vlan 21
+  spanning-tree port type edge
+  no snmp trap link-status
+  vpc orphan-port suspend
+
+interface Ethernet102/1/28
+  description Encoders
+  switchport access vlan 21
+  spanning-tree port type edge
+  no snmp trap link-status
+  vpc orphan-port suspend
+
+interface Ethernet102/1/29
+  description Encoders
+  switchport access vlan 21
+  spanning-tree port type edge
+  no snmp trap link-status
+  vpc orphan-port suspend
+
+interface Ethernet102/1/30
+  description Encoders
+  switchport access vlan 21
+  spanning-tree port type edge
+  no snmp trap link-status
+  vpc orphan-port suspend
+
+interface Ethernet102/1/31
+  description Encoders
+  switchport access vlan 21
+  spanning-tree port type edge
+  no snmp trap link-status
+  vpc orphan-port suspend
+
+interface Ethernet102/1/32
+  description Encoders
+  switchport access vlan 21
+  spanning-tree port type edge
+  no snmp trap link-status
+  vpc orphan-port suspend
+
+interface Ethernet102/1/33
+  description Encoders
+  switchport access vlan 21
+  spanning-tree port type edge
+  no snmp trap link-status
+  vpc orphan-port suspend
+
+interface Ethernet102/1/34
+  description Encoders
+  switchport access vlan 21
+  spanning-tree port type edge
+  no snmp trap link-status
+  vpc orphan-port suspend
+
+interface Ethernet102/1/35
+  description Encoders
+  switchport access vlan 21
+  spanning-tree port type edge
+  no snmp trap link-status
+  vpc orphan-port suspend
+
+interface Ethernet102/1/36
+  description Encoders
+  switchport access vlan 21
+  spanning-tree port type edge
+  no snmp trap link-status
+  vpc orphan-port suspend
+
+interface Ethernet102/1/37
+  description Encoders
+  switchport access vlan 21
+  spanning-tree port type edge
+  no snmp trap link-status
+  vpc orphan-port suspend
+
+interface Ethernet102/1/38
+  description Encoders
+  switchport access vlan 21
+  spanning-tree port type edge
+  no snmp trap link-status
+  vpc orphan-port suspend
+
+interface Ethernet102/1/39
+  description Encoders
+  switchport access vlan 21
+  spanning-tree port type edge
+  no snmp trap link-status
+  vpc orphan-port suspend
+
+interface Ethernet102/1/40
+  description Encoders
+  switchport access vlan 21
+  spanning-tree port type edge
+  no snmp trap link-status
+  vpc orphan-port suspend
+
+interface Ethernet102/1/41
+  description Encoders
+  switchport access vlan 21
+  spanning-tree port type edge
+  no snmp trap link-status
+  vpc orphan-port suspend
+
+interface Ethernet102/1/42
+  description Encoders
+  switchport access vlan 21
+  spanning-tree port type edge
+  no snmp trap link-status
+  vpc orphan-port suspend
+
+interface Ethernet102/1/43
+  description Encoders
+  switchport access vlan 21
+  spanning-tree port type edge
+  no snmp trap link-status
+  vpc orphan-port suspend
+
+interface Ethernet102/1/44
+  description Encoders
+  switchport access vlan 21
+  spanning-tree port type edge
+  no snmp trap link-status
+  vpc orphan-port suspend
+
+interface Ethernet102/1/45
+  description Encoders
+  switchport access vlan 21
+  spanning-tree port type edge
+  no snmp trap link-status
+  vpc orphan-port suspend
+
+interface Ethernet102/1/46
+  description Encoders
+  switchport access vlan 21
+  spanning-tree port type edge
+  no snmp trap link-status
+  vpc orphan-port suspend
+
+interface Ethernet102/1/47
+  description Encoders
+  switchport access vlan 21
+  spanning-tree port type edge
+  no snmp trap link-status
+  vpc orphan-port suspend
+
+interface Ethernet102/1/48
+  description Encoders
+  switchport access vlan 21
+  spanning-tree port type edge
+  no snmp trap link-status
+  vpc orphan-port suspend
+
+interface Ethernet103/1/1
+  description DealerPC
+  switchport access vlan 31
+  spanning-tree port type edge
+  no snmp trap link-status
+  vpc orphan-port suspend
+
+interface Ethernet103/1/2
+  description DealerPC
+  switchport access vlan 31
+  spanning-tree port type edge
+  no snmp trap link-status
+  vpc orphan-port suspend
+
+interface Ethernet103/1/3
+  description DealerPC
+  switchport access vlan 31
+  spanning-tree port type edge
+  no snmp trap link-status
+  vpc orphan-port suspend
+
+interface Ethernet103/1/4
+  description DealerPC
+  switchport access vlan 31
+  spanning-tree port type edge
+  no snmp trap link-status
+  vpc orphan-port suspend
+
+interface Ethernet103/1/5
+  description DealerPC
+  switchport access vlan 31
+  spanning-tree port type edge
+  no snmp trap link-status
+  vpc orphan-port suspend
+
+interface Ethernet103/1/6
+  description DealerPC
+  switchport access vlan 31
+  spanning-tree port type edge
+  no snmp trap link-status
+  vpc orphan-port suspend
+
+interface Ethernet103/1/7
+  description DealerPC
+  switchport access vlan 31
+  spanning-tree port type edge
+  no snmp trap link-status
+  vpc orphan-port suspend
+
+interface Ethernet103/1/8
+  description DealerPC
+  switchport access vlan 31
+  spanning-tree port type edge
+  no snmp trap link-status
+  vpc orphan-port suspend
+
+interface Ethernet103/1/9
+  description DealerPC
+  switchport access vlan 31
+  spanning-tree port type edge
+  no snmp trap link-status
+  vpc orphan-port suspend
+
+interface Ethernet103/1/10
+  description DealerPC
+  switchport access vlan 31
+  spanning-tree port type edge
+  no snmp trap link-status
+  vpc orphan-port suspend
+
+interface Ethernet103/1/11
+  description DealerPC
+  switchport access vlan 31
+  spanning-tree port type edge
+  no snmp trap link-status
+  vpc orphan-port suspend
+
+interface Ethernet103/1/12
+  description DealerPC
+  switchport access vlan 31
+  spanning-tree port type edge
+  no snmp trap link-status
+  vpc orphan-port suspend
+
+interface Ethernet103/1/13
+  description DealerPC
+  switchport access vlan 31
+  spanning-tree port type edge
+  no snmp trap link-status
+  vpc orphan-port suspend
+
+interface Ethernet103/1/14
+  description DealerPC
+  switchport access vlan 31
+  spanning-tree port type edge
+  no snmp trap link-status
+  vpc orphan-port suspend
+
+interface Ethernet103/1/15
+  description DealerPC
+  switchport access vlan 31
+  spanning-tree port type edge
+  no snmp trap link-status
+  vpc orphan-port suspend
+
+interface Ethernet103/1/16
+  description DealerPC
+  switchport access vlan 31
+  spanning-tree port type edge
+  no snmp trap link-status
+  vpc orphan-port suspend
+
+interface Ethernet103/1/17
+  description DealerPC
+  switchport access vlan 31
+  spanning-tree port type edge
+  no snmp trap link-status
+  vpc orphan-port suspend
+
+interface Ethernet103/1/18
+  description DealerPC
+  switchport access vlan 31
+  spanning-tree port type edge
+  no snmp trap link-status
+  vpc orphan-port suspend
+
+interface Ethernet103/1/19
+  description DealerPC
+  switchport access vlan 31
+  spanning-tree port type edge
+  no snmp trap link-status
+  vpc orphan-port suspend
+
+interface Ethernet103/1/20
+  description DealerPC
+  switchport access vlan 31
+  spanning-tree port type edge
+  no snmp trap link-status
+  vpc orphan-port suspend
+
+interface Ethernet103/1/21
+  description DealerPC
+  switchport access vlan 31
+  spanning-tree port type edge
+  no snmp trap link-status
+  vpc orphan-port suspend
+
+interface Ethernet103/1/22
+  description DealerPC
+  switchport access vlan 31
+  spanning-tree port type edge
+  no snmp trap link-status
+  vpc orphan-port suspend
+
+interface Ethernet103/1/23
+  description DealerPC
+  switchport access vlan 31
+  spanning-tree port type edge
+  no snmp trap link-status
+  vpc orphan-port suspend
+
+interface Ethernet103/1/24
+  description DealerPC
+  switchport access vlan 31
+  spanning-tree port type edge
+  no snmp trap link-status
+  vpc orphan-port suspend
+
+interface Ethernet103/1/25
+  description TV Controllers for Studio
+  switchport access vlan 40
+  spanning-tree port type edge
+  no snmp trap link-status
+  vpc orphan-port suspend
+
+interface Ethernet103/1/26
+  description TV Controllers for Studio
+  switchport access vlan 40
+  spanning-tree port type edge
+  no snmp trap link-status
+  vpc orphan-port suspend
+
+interface Ethernet103/1/27
+  description TV Controllers for Studio
+  switchport access vlan 40
+  spanning-tree port type edge
+  no snmp trap link-status
+  vpc orphan-port suspend
+
+interface Ethernet103/1/28
+  description TV Controllers for Studio
+  switchport access vlan 40
+  spanning-tree port type edge
+  no snmp trap link-status
+  vpc orphan-port suspend
+
+interface Ethernet103/1/29
+  shutdown
+
+interface Ethernet103/1/30
+  shutdown
+
+interface Ethernet103/1/31
+  shutdown
+
+interface Ethernet103/1/32
+  shutdown
+
+interface Ethernet103/1/33
+  shutdown
+
+interface Ethernet103/1/34
+  shutdown
+
+interface Ethernet103/1/35
+  shutdown
+
+interface Ethernet103/1/36
+  shutdown
+
+interface Ethernet103/1/37
+  description A_mlt1-vmware01
+  switchport mode trunk
+  switchport trunk allowed vlan 2,19,21-22,31,36,76,81,256
+  spanning-tree port type edge trunk
+  no snmp trap link-status
+  vpc orphan-port suspend
+
+interface Ethernet103/1/38
+  description A_mlt1-vmware02
+  switchport mode trunk
+  switchport trunk allowed vlan 2,19,21-22,31,36,76,81,256
+  spanning-tree port type edge trunk
+  no snmp trap link-status
+  vpc orphan-port suspend
+
+interface Ethernet103/1/39
+  shutdown
+
+interface Ethernet103/1/40
+  shutdown
+
+interface Ethernet103/1/41
+  shutdown
+
+interface Ethernet103/1/42
+  shutdown
+
+interface Ethernet103/1/43
+  shutdown
+
+interface Ethernet103/1/44
+  shutdown
+
+interface Ethernet103/1/45
+  shutdown
+
+interface Ethernet103/1/46
+  shutdown
+
+interface Ethernet103/1/47
+  description TV screens
+  switchport access vlan 40
+  spanning-tree port type edge
+  no snmp trap link-status
+  vpc orphan-port suspend
+
+interface Ethernet103/1/48
+  description TV screens
+  switchport access vlan 40
+  spanning-tree port type edge
+  no snmp trap link-status
+  vpc orphan-port suspend
+
+interface Ethernet104/1/1
+  description DealerPC
+  switchport access vlan 31
+  spanning-tree port type edge
+  no snmp trap link-status
+  vpc orphan-port suspend
+
+interface Ethernet104/1/2
+  description DealerPC
+  switchport access vlan 31
+  spanning-tree port type edge
+  no snmp trap link-status
+  vpc orphan-port suspend
+
+interface Ethernet104/1/3
+  description DealerPC
+  switchport access vlan 31
+  spanning-tree port type edge
+  no snmp trap link-status
+  vpc orphan-port suspend
+
+interface Ethernet104/1/4
+  description DealerPC
+  switchport access vlan 31
+  spanning-tree port type edge
+  no snmp trap link-status
+  vpc orphan-port suspend
+
+interface Ethernet104/1/5
+  description DealerPC
+  switchport access vlan 31
+  spanning-tree port type edge
+  no snmp trap link-status
+  vpc orphan-port suspend
+
+interface Ethernet104/1/6
+  description DealerPC
+  switchport access vlan 31
+  spanning-tree port type edge
+  no snmp trap link-status
+  vpc orphan-port suspend
+
+interface Ethernet104/1/7
+  description DealerPC
+  switchport access vlan 31
+  spanning-tree port type edge
+  no snmp trap link-status
+  vpc orphan-port suspend
+
+interface Ethernet104/1/8
+  description DealerPC
+  switchport access vlan 31
+  spanning-tree port type edge
+  no snmp trap link-status
+  vpc orphan-port suspend
+
+interface Ethernet104/1/9
+  description DealerPC
+  switchport access vlan 31
+  spanning-tree port type edge
+  no snmp trap link-status
+  vpc orphan-port suspend
+
+interface Ethernet104/1/10
+  description DealerPC
+  switchport access vlan 31
+  spanning-tree port type edge
+  no snmp trap link-status
+  vpc orphan-port suspend
+
+interface Ethernet104/1/11
+  description DealerPC
+  switchport access vlan 31
+  spanning-tree port type edge
+  no snmp trap link-status
+  vpc orphan-port suspend
+
+interface Ethernet104/1/12
+  description DealerPC
+  switchport access vlan 31
+  spanning-tree port type edge
+  no snmp trap link-status
+  vpc orphan-port suspend
+
+interface Ethernet104/1/13
+  description DealerPC
+  switchport access vlan 31
+  spanning-tree port type edge
+  no snmp trap link-status
+  vpc orphan-port suspend
+
+interface Ethernet104/1/14
+  description DealerPC
+  switchport access vlan 31
+  spanning-tree port type edge
+  no snmp trap link-status
+  vpc orphan-port suspend
+
+interface Ethernet104/1/15
+  description DealerPC
+  switchport access vlan 31
+  spanning-tree port type edge
+  no snmp trap link-status
+  vpc orphan-port suspend
+
+interface Ethernet104/1/16
+  description DealerPC
+  switchport access vlan 31
+  spanning-tree port type edge
+  no snmp trap link-status
+  vpc orphan-port suspend
+
+interface Ethernet104/1/17
+  description DealerPC
+  switchport access vlan 31
+  spanning-tree port type edge
+  no snmp trap link-status
+  vpc orphan-port suspend
+
+interface Ethernet104/1/18
+  description DealerPC
+  switchport access vlan 31
+  spanning-tree port type edge
+  no snmp trap link-status
+  vpc orphan-port suspend
+
+interface Ethernet104/1/19
+  description DealerPC
+  switchport access vlan 31
+  spanning-tree port type edge
+  no snmp trap link-status
+  vpc orphan-port suspend
+
+interface Ethernet104/1/20
+  description DealerPC
+  switchport access vlan 31
+  spanning-tree port type edge
+  no snmp trap link-status
+  vpc orphan-port suspend
+
+interface Ethernet104/1/21
+  description DealerPC
+  switchport access vlan 31
+  spanning-tree port type edge
+  no snmp trap link-status
+  vpc orphan-port suspend
+
+interface Ethernet104/1/22
+  description DealerPC
+  switchport access vlan 31
+  spanning-tree port type edge
+  no snmp trap link-status
+  vpc orphan-port suspend
+
+interface Ethernet104/1/23
+  description DealerPC
+  switchport access vlan 31
+  spanning-tree port type edge
+  no snmp trap link-status
+  vpc orphan-port suspend
+
+interface Ethernet104/1/24
+  description DealerPC
+  switchport access vlan 31
+  spanning-tree port type edge
+  no snmp trap link-status
+  vpc orphan-port suspend
+
+interface Ethernet104/1/25
+  description DealerPC
+  switchport access vlan 31
+  spanning-tree port type edge
+  no snmp trap link-status
+  vpc orphan-port suspend
+
+interface Ethernet104/1/26
+  description DealerPC
+  switchport access vlan 31
+  spanning-tree port type edge
+  no snmp trap link-status
+  vpc orphan-port suspend
+
+interface Ethernet104/1/27
+  description DealerPC
+  switchport access vlan 31
+  spanning-tree port type edge
+  no snmp trap link-status
+  vpc orphan-port suspend
+
+interface Ethernet104/1/28
+  description DealerPC
+  switchport access vlan 31
+  spanning-tree port type edge
+  no snmp trap link-status
+  vpc orphan-port suspend
+
+interface Ethernet104/1/29
+  description DealerPC
+  switchport access vlan 31
+  spanning-tree port type edge
+  no snmp trap link-status
+  vpc orphan-port suspend
+
+interface Ethernet104/1/30
+  description DealerPC
+  switchport access vlan 31
+  spanning-tree port type edge
+  no snmp trap link-status
+  vpc orphan-port suspend
+
+interface Ethernet104/1/31
+  description DealerPC
+  switchport access vlan 31
+  spanning-tree port type edge
+  no snmp trap link-status
+  vpc orphan-port suspend
+
+interface Ethernet104/1/32
+  description DealerPC
+  switchport access vlan 31
+  spanning-tree port type edge
+  no snmp trap link-status
+  vpc orphan-port suspend
+
+interface Ethernet104/1/33
+  description DealerPC
+  switchport access vlan 31
+  spanning-tree port type edge
+  no snmp trap link-status
+  vpc orphan-port suspend
+
+interface Ethernet104/1/34
+  description DealerPC
+  switchport access vlan 31
+  spanning-tree port type edge
+  no snmp trap link-status
+  vpc orphan-port suspend
+
+interface Ethernet104/1/35
+  description DealerPC
+  switchport access vlan 31
+  spanning-tree port type edge
+  no snmp trap link-status
+  vpc orphan-port suspend
+
+interface Ethernet104/1/36
+  description DealerPC
+  switchport access vlan 31
+  spanning-tree port type edge
+  no snmp trap link-status
+  vpc orphan-port suspend
+
+interface Ethernet104/1/37
+  shutdown
+
+interface Ethernet104/1/38
+  shutdown
+
+interface Ethernet104/1/39
+  shutdown
+
+interface Ethernet104/1/40
+  shutdown
+
+interface Ethernet104/1/41
+  shutdown
+
+interface Ethernet104/1/42
+  shutdown
+
+interface Ethernet104/1/43
+  shutdown
+
+interface Ethernet104/1/44
+  shutdown
+
+interface Ethernet104/1/45
+  shutdown
+
+interface Ethernet104/1/46
+  shutdown
+
+interface Ethernet104/1/47
+  shutdown
+
+interface Ethernet104/1/48
+  shutdown
+
+interface Ethernet105/1/1
+  description DealerPC
+  switchport access vlan 31
+  spanning-tree port type edge
+  no snmp trap link-status
+  vpc orphan-port suspend
+
+interface Ethernet105/1/2
+  description DealerPC
+  switchport access vlan 31
+  spanning-tree port type edge
+  no snmp trap link-status
+  vpc orphan-port suspend
+
+interface Ethernet105/1/3
+  description DealerPC
+  switchport access vlan 31
+  spanning-tree port type edge
+  no snmp trap link-status
+  vpc orphan-port suspend
+
+interface Ethernet105/1/4
+  description DealerPC
+  switchport access vlan 31
+  spanning-tree port type edge
+  no snmp trap link-status
+  vpc orphan-port suspend
+
+interface Ethernet105/1/5
+  description DealerPC
+  switchport access vlan 31
+  spanning-tree port type edge
+  no snmp trap link-status
+  vpc orphan-port suspend
+
+interface Ethernet105/1/6
+  description DealerPC
+  switchport access vlan 31
+  spanning-tree port type edge
+  no snmp trap link-status
+  vpc orphan-port suspend
+
+interface Ethernet105/1/7
+  description DealerPC
+  switchport access vlan 31
+  spanning-tree port type edge
+  no snmp trap link-status
+  vpc orphan-port suspend
+
+interface Ethernet105/1/8
+  description DealerPC
+  switchport access vlan 31
+  spanning-tree port type edge
+  no snmp trap link-status
+  vpc orphan-port suspend
+
+interface Ethernet105/1/9
+  description DealerPC
+  switchport access vlan 31
+  spanning-tree port type edge
+  no snmp trap link-status
+  vpc orphan-port suspend
+
+interface Ethernet105/1/10
+  description DealerPC
+  switchport access vlan 31
+  spanning-tree port type edge
+  no snmp trap link-status
+  vpc orphan-port suspend
+
+interface Ethernet105/1/11
+  description DealerPC
+  switchport access vlan 31
+  spanning-tree port type edge
+  no snmp trap link-status
+  vpc orphan-port suspend
+
+interface Ethernet105/1/12
+  description DealerPC
+  switchport access vlan 31
+  spanning-tree port type edge
+  no snmp trap link-status
+  vpc orphan-port suspend
+
+interface Ethernet105/1/13
+  description DealerPC
+  switchport access vlan 31
+  spanning-tree port type edge
+  no snmp trap link-status
+  vpc orphan-port suspend
+
+interface Ethernet105/1/14
+  description DealerPC
+  switchport access vlan 31
+  spanning-tree port type edge
+  no snmp trap link-status
+  vpc orphan-port suspend
+
+interface Ethernet105/1/15
+  description DealerPC
+  switchport access vlan 31
+  spanning-tree port type edge
+  no snmp trap link-status
+  vpc orphan-port suspend
+
+interface Ethernet105/1/16
+  description DealerPC
+  switchport access vlan 31
+  spanning-tree port type edge
+  no snmp trap link-status
+  vpc orphan-port suspend
+
+interface Ethernet105/1/17
+  description DealerPC
+  switchport access vlan 31
+  spanning-tree port type edge
+  no snmp trap link-status
+  vpc orphan-port suspend
+
+interface Ethernet105/1/18
+  description DealerPC
+  switchport access vlan 31
+  spanning-tree port type edge
+  no snmp trap link-status
+  vpc orphan-port suspend
+
+interface Ethernet105/1/19
+  description DealerPC
+  switchport access vlan 31
+  spanning-tree port type edge
+  no snmp trap link-status
+  vpc orphan-port suspend
+
+interface Ethernet105/1/20
+  description DealerPC
+  switchport access vlan 31
+  spanning-tree port type edge
+  no snmp trap link-status
+  vpc orphan-port suspend
+
+interface Ethernet105/1/21
+  description DealerPC
+  switchport access vlan 31
+  spanning-tree port type edge
+  no snmp trap link-status
+  vpc orphan-port suspend
+
+interface Ethernet105/1/22
+  description DealerPC
+  switchport access vlan 31
+  spanning-tree port type edge
+  no snmp trap link-status
+  vpc orphan-port suspend
+
+interface Ethernet105/1/23
+  description DealerPC
+  switchport access vlan 31
+  spanning-tree port type edge
+  no snmp trap link-status
+  vpc orphan-port suspend
+
+interface Ethernet105/1/24
+  description DealerPC
+  switchport access vlan 31
+  spanning-tree port type edge
+  no snmp trap link-status
+  vpc orphan-port suspend
+
+interface Ethernet105/1/25
+  description DealerPC
+  switchport access vlan 31
+  spanning-tree port type edge
+  no snmp trap link-status
+  vpc orphan-port suspend
+
+interface Ethernet105/1/26
+  description DealerPC
+  switchport access vlan 31
+  spanning-tree port type edge
+  no snmp trap link-status
+  vpc orphan-port suspend
+
+interface Ethernet105/1/27
+  description DealerPC
+  switchport access vlan 31
+  spanning-tree port type edge
+  no snmp trap link-status
+  vpc orphan-port suspend
+
+interface Ethernet105/1/28
+  description DealerPC
+  switchport access vlan 31
+  spanning-tree port type edge
+  no snmp trap link-status
+  vpc orphan-port suspend
+
+interface Ethernet105/1/29
+  description DealerPC
+  switchport access vlan 31
+  spanning-tree port type edge
+  no snmp trap link-status
+  vpc orphan-port suspend
+
+interface Ethernet105/1/30
+  description DealerPC
+  switchport access vlan 31
+  spanning-tree port type edge
+  no snmp trap link-status
+  vpc orphan-port suspend
+
+interface Ethernet105/1/31
+  description DealerPC
+  switchport access vlan 31
+  spanning-tree port type edge
+  no snmp trap link-status
+  vpc orphan-port suspend
+
+interface Ethernet105/1/32
+  description DealerPC
+  switchport access vlan 31
+  spanning-tree port type edge
+  no snmp trap link-status
+  vpc orphan-port suspend
+
+interface Ethernet105/1/33
+  description DealerPC
+  switchport access vlan 31
+  spanning-tree port type edge
+  no snmp trap link-status
+  vpc orphan-port suspend
+
+interface Ethernet105/1/34
+  description DealerPC
+  switchport access vlan 31
+  spanning-tree port type edge
+  no snmp trap link-status
+  vpc orphan-port suspend
+
+interface Ethernet105/1/35
+  description DealerPC
+  switchport access vlan 31
+  spanning-tree port type edge
+  no snmp trap link-status
+  vpc orphan-port suspend
+
+interface Ethernet105/1/36
+  description DealerPC
+  switchport access vlan 31
+  spanning-tree port type edge
+  no snmp trap link-status
+  vpc orphan-port suspend
+
+interface Ethernet105/1/37
+  description DealerPC
+  switchport access vlan 31
+  spanning-tree port type edge
+  no snmp trap link-status
+  vpc orphan-port suspend
+
+interface Ethernet105/1/38
+  description DealerPC
+  switchport access vlan 31
+  spanning-tree port type edge
+  no snmp trap link-status
+  vpc orphan-port suspend
+
+interface Ethernet105/1/39
+  description DealerPC
+  switchport access vlan 31
+  spanning-tree port type edge
+  no snmp trap link-status
+  vpc orphan-port suspend
+
+interface Ethernet105/1/40
+  description DealerPC
+  switchport access vlan 31
+  spanning-tree port type edge
+  no snmp trap link-status
+  vpc orphan-port suspend
+
+interface Ethernet105/1/41
+  description DealerPC
+  switchport access vlan 31
+  spanning-tree port type edge
+  no snmp trap link-status
+  vpc orphan-port suspend
+
+interface Ethernet105/1/42
+  description DealerPC
+  switchport access vlan 31
+  spanning-tree port type edge
+  no snmp trap link-status
+  vpc orphan-port suspend
+
+interface Ethernet105/1/43
+  description DealerPC
+  switchport access vlan 31
+  spanning-tree port type edge
+  no snmp trap link-status
+  vpc orphan-port suspend
+
+interface Ethernet105/1/44
+  description DealerPC
+  switchport access vlan 31
+  spanning-tree port type edge
+  no snmp trap link-status
+  vpc orphan-port suspend
+
+interface Ethernet105/1/45
+  description remoteTV
+  switchport access vlan 40
+  spanning-tree port type edge
+  no snmp trap link-status
+  vpc orphan-port suspend
+
+interface Ethernet105/1/46
+  description remoteTV
+  switchport access vlan 40
+  spanning-tree port type edge
+  no snmp trap link-status
+  vpc orphan-port suspend
+
+interface Ethernet105/1/47
+  description remoteTV
+  switchport access vlan 40
+  spanning-tree port type edge
+  no snmp trap link-status
+  vpc orphan-port suspend
+
+interface Ethernet105/1/48
+  description remoteTV
+  switchport access vlan 40
+  spanning-tree port type edge
+  no snmp trap link-status
+  vpc orphan-port suspend
+cli alias name save run-script wrimem.txt
+cli alias name wrimem run-script wrimem.txt
+line console
+  exec-timeout 15
+line vty
+boot nxos bootflash:/nxos.7.0.3.I5.2.bin 
+logging server 10.40.36.7
+logging source-interface mgmt0
+logging timestamp milliseconds
+
+
+

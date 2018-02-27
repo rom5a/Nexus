@@ -1,0 +1,985 @@
+!RANCID-CONTENT-TYPE: cisco-nx
+!
+!Chassis type:  - a NXOS router
+!Hardware: cisco Nexus 3172T Chassis 
+!Hardware: Intel(R) Core(TM) i3-3227U CPU @ 2.50GHz with 7961 MB of memory.
+!Hardware: Processor Board ID FOC21344KMQ
+!
+!
+!Memory: bootflash: 14775 MB
+!
+!Software: BIOS: version 4.0.0
+!Software: NXOS: version 7.0(3)I5(2)
+!Software: BIOS compile time: 12/05/2016
+!Software: NXOS image file is: bootflash:///nxos.7.0.3.I5.2.bin
+!Software: NXOS compile time: 2/16/2017 8:00:00 [02/16/2017 17:03:27]
+!
+!
+!
+!
+!LIC: license_FOC2133R1XR_9_1.lic:
+!LIC: SERVER this_host ANY
+!LIC: VENDOR cisco
+!LIC: FEATURE LAN_ENTERPRISE_SERVICES_PKG cisco 1.0 permanent uncounted \
+!LIC:         VENDOR_STRING=<LIC_SOURCE>NEXUS_PRODUCTION</LIC_SOURCE><SKU>N3K-LAN1K9</SKU> \
+!LIC:         HOSTID=VDH=FOC2133R1XR \
+!LIC:         NOTICE=<LicFileID>20171010235716000</LicFileID><LicLineID>1</LicLineID><PAK>N3K-C3172TQ-XLFOC2133R1XR</PAK> \
+!LIC:         SIGN=C97CE3F6383E
+!LIC: FEATURE LAN_BASE_SERVICES_PKG cisco 1.0 permanent uncounted \
+!LIC:         VENDOR_STRING=<LIC_SOURCE>NEXUS_PRODUCTION</LIC_SOURCE><SKU>N3K-BAS1K9</SKU> \
+!LIC:         HOSTID=VDH=FOC2133R1XR \
+!LIC:         NOTICE=<LicFileID>20171010235716000</LicFileID><LicLineID>2</LicLineID><PAK>N3K-C3172TQ-XLFOC2133R1XR</PAK> \
+!LIC:         SIGN=2ECE39882BE0
+!
+!LIC: Feature                      Ins  Lic   Status Expiry Date Comments
+!LIC:                                  Count
+!LIC: 16P_UPG_PKG                   No    -   Unused             -
+!LIC: 32P_LIC_PKG                   No    -   Unused             -
+!LIC: NXOS_OE_PKG                   No    -   Unused             -
+!LIC: 24P_N3K_LIC_PKG               No    -   Unused             -
+!LIC: 48P_N3K_UPG_PKG               No    -   Unused             -
+!LIC: TP_SERVICES_PKG               No    -   Unused             -
+!LIC: NETWORK_SERVICES_PKG          No    -   Unused             -
+!LIC: LAN_BASE_SERVICES_PKG         Yes   -   Unused Never       -
+!LIC: LAN_ENTERPRISE_SERVICES_PKG   Yes   -   Unused Never       -
+!
+!LIC: License hostid: VDH=FOC2133R1XR
+!
+!Red: Redundancy mode
+!Red: ---------------
+!Red:       administrative:   HA
+!Red:          operational:   None
+!Red: This supervisor (sup-1)
+!Red: -----------------------
+!Red:     Redundancy state:   Active, SC not present
+!Red:     Supervisor state:   Active
+!Red:       Internal state:   Active with no standby
+!Red: Other supervisor (sup-1)
+!Red: ------------------------
+!Red:     Redundancy state:   Not present
+!
+!Env: Fan:
+!Env: ---------------------------------------------------------------------------
+!Env: Fan             Model                Hw     Direction       Status
+!Env: ---------------------------------------------------------------------------
+!Env: Fan1(sys_fan1)  NXA-FAN-30CFM-F      0.0    front-to-back   Ok
+!Env: Fan2(sys_fan2)  NXA-FAN-30CFM-F      0.0    front-to-back   Ok
+!Env: Fan3(sys_fan3)  NXA-FAN-30CFM-F      0.0    front-to-back   Ok
+!Env: Fan4(sys_fan4)  NXA-FAN-30CFM-F      0.0    front-to-back   Ok
+!Env: Fan_in_PS1      NXA-PAC-500W         --     front-to-back   Ok
+!Env: Fan_in_PS2      NXA-PAC-500W         --     front-to-back   Ok
+!Env: Fan Air Filter : NotSupported
+!
+!Env: Temperature:
+!Env: -------------------------------------------------------------------------
+!Env: Module  Sensor             MajorThresh   MinorThres   Status
+!Env:                            (Celsius)     (Celsius)
+!Env: -------------------------------------------------------------------------
+!Env: 1        Front-Left (D1)   70            60            Ok
+!Env: 1        Front-Right(D2)   70            56            Ok
+!Env: 1        Back       (D3)   70            46            Ok
+!
+!Env: Power Supply:
+!Env: Voltage: 12 Volts
+!Env: -----------------------------------------------------------
+!Env: PS  Model                Input Power       Current   Status
+!Env:                          Type  (Watts)     (Amps)
+!Env: -----------------------------------------------------------
+!Env: 1   NXA-PAC-500W         AC  504.00       42.00   ok
+!Env: 2   NXA-PAC-500W         AC  504.00       42.00   ok
+!Env: Mod Model                   Power     Current     Power     Current     Status
+!Env:                             Requested Requested   Allocated Allocated
+!Env:                             (Watts)   (Amps)      (Watts)   (Amps)
+!Env: --- ----------------------  -------   ----------  --------- ----------  ----------
+!Env: 1    N3K-C3172TQ-XL         348.00       29.00       348.00      29.00       powered-up
+!Env: Power Usage Summary:
+!Env: --------------------
+!Env: Power Supply redundancy mode:                 Redundant
+!Env: Power Supply redundancy operational mode:     Redundant
+!Env: Total Power Capacity                             1008.00 W
+!Env: Power reserved for Supervisor(s)                  348.00 W
+!Env: Power currently used by Modules                     0.00 W
+!Env:                                                 -------------
+!Env: Total Power Available                             660.00 W
+!Env:                                                 -------------
+!
+!Variable: Current Boot Variables:
+!Variable: sup-1
+!Variable: NXOS = bootflash:/nxos.7.0.3.I5.2.bin
+!Variable: No module boot variable set
+!Variable: Boot Variables on next reload:
+!Variable: sup-1
+!Variable: NXOS = bootflash:/nxos.7.0.3.I5.2.bin
+!Variable: No module boot variable set
+!
+!Flash: bootflash:        4096    Dec 11 08:45:08 2017  .rpmstore/
+!Flash: bootflash:        4096    Dec 11 08:45:36 2017  .swtam/
+!Flash: bootflash:           0    Oct 11 06:36:08 2017  .tclsh-history
+!Flash: bootflash:         208    Oct 11 06:55:19 2017  20171011_065518_poap_5881_init.log
+!Flash: bootflash:         208    Oct 11 07:08:48 2017  20171011_070846_poap_6010_init.log
+!Flash: bootflash:      396729    Nov 17 15:09:10 2017  20171117_083441_poap_6004_init.log
+!Flash: bootflash:      180148    Nov 21 09:34:21 2017  20171121_063610_poap_6002_init.log
+!Flash: bootflash:         923    Dec 11 08:43:00 2017  bios_daemon.dbg
+!Flash: bootflash:         636    Oct 11 06:56:53 2017  license_FOC2133R1XR_9_1.lic
+!Flash: bootflash:        4096    Oct 11 07:02:42 2017  logflash/
+!Flash: bootflash:        4096    Dec 11 08:38:39 2017  lost+found/
+!Flash: bootflash:   538114048    Oct 11 06:35:04 2017  nxos.7.0.3.I2.2b.bin
+!Flash: bootflash:   757307904    Dec 08 07:36:16 2017  nxos.7.0.3.I5.2.bin
+!Flash: bootflash:           0    Dec 11 08:46:43 2017  platform-sdk.cmd
+!Flash: bootflash:        4096    Oct 11 06:55:18 2017  scripts/
+!Flash: bootflash:        1024    Dec 11 08:45:00 2017  sprom_2_0_1
+!Flash: bootflash:        1024    Dec 11 08:45:00 2017  sprom_3_0_0
+!Flash: bootflash:        4096    Oct 11 06:55:26 2017  virt_strg_pool_bf_vdc_1/
+!Flash: bootflash:        4096    Oct 11 06:54:45 2017  virtual-instance/
+!Flash: bootflash:          59    Oct 11 06:54:34 2017  virtual-instance.conf
+!Flash: bootflash: Usage for bootflash://sup-local
+!Flash: bootflash:  1496 MB used
+!Flash: bootflash: 13046 MB free
+!Flash: bootflash: 14542 MB total
+!
+!Flash: debug:      194506    Feb 25 03:38:10 2018  bootvar_debug.log
+!Flash: debug:           6    Feb 25 03:38:10 2018  bootvar_debug.meta
+!Flash: debug: Usage for debug://sup-local
+!Flash: debug:      0 MB used
+!Flash: debug:     1 MB free
+!Flash: debug:     2 MB total
+!
+!Flash: logflash:        4096    Dec 11 08:39:37 2017  ISSU_debug_logs/
+!Flash: logflash:        4096    Oct 11 06:53:50 2017  core/
+!Flash: logflash:        4096    Oct 11 06:53:50 2017  debug/
+!Flash: logflash:      167936    Feb 26 02:43:24 2018  debug_logs/
+!Flash: logflash:        4096    Oct 11 06:53:50 2017  generic/
+!Flash: logflash:        4096                          log/
+!Flash: logflash:        4096    Oct 11 07:02:42 2017  vdc_1/
+!Flash: logflash: Usage for logflash://sup-local
+!Flash: logflash:  1496 MB used
+!Flash: logflash: 13046 MB free
+!Flash: logflash: 14542 MB total
+!
+!Flash: volatile:         100    Feb 01 10:02:40 2018  switchport-29041/
+!Flash: volatile:         100    Feb 01 10:21:11 2018  switchport-30270/
+!Flash: volatile:          60    Dec 11 08:46:12 2017  virtual-instance/
+!Flash: volatile: Usage for volatile://sup-local
+!Flash: volatile:       0 MB used
+!Flash: volatile:   599 MB free
+!Flash: volatile:   600 MB total
+!
+!Mod: Mod Ports             Module-Type                       Model          Status
+!Mod: --- ----- ------------------------------------- --------------------- ---------
+!Mod: 1    54   48x10GT + 6x40G Supervisor            N3K-C3172TQ-XL        active *
+!Mod: 
+!Mod: Mod  Sw                Hw     Slot
+!Mod: ---  ----------------  ------ ----
+!Mod: 1    7.0(3)I5(2)       1.2    NA
+!Mod: 
+!Mod: 
+!Mod: Mod  MAC-Address(es)                         Serial-Num
+!Mod: ---  --------------------------------------  ----------
+!Mod: 1    38-90-a5-a2-dc-a8 to 38-90-a5-a2-dc-ef  FOC21344KMQ
+!Mod: 
+!
+!NAME: "Chassis",               DESCR: "Nexus 3172T Chassis"
+!PID: N3K-C3172TQ-XL
+!VID: V01
+!SN: FOC2133R1XR
+!NAME: "Slot 1",                DESCR: "48x10GT + 6x40G Supervisor"
+!PID: N3K-C3172TQ-XL
+!VID: V01
+!SN: FOC21344KMQ
+!NAME: "Power Supply 1",        DESCR: "Nexus 3172T Chassis Power Supply"
+!PID: NXA-PAC-500W
+!VID: V02
+!SN: LIT195205E2
+!NAME: "Power Supply 2",        DESCR: "Nexus 3172T Chassis Power Supply"
+!PID: NXA-PAC-500W
+!VID: V02
+!SN: LIT195205FS
+!NAME: "Fan 1",                 DESCR: "Nexus 3172T Chassis Fan Module"
+!PID: NXA-FAN-30CFM-F
+!VID: V00
+!SN: N/A
+!NAME: "Fan 2",                 DESCR: "Nexus 3172T Chassis Fan Module"
+!PID: NXA-FAN-30CFM-F
+!VID: V00
+!SN: N/A
+!NAME: "Fan 3",                 DESCR: "Nexus 3172T Chassis Fan Module"
+!PID: NXA-FAN-30CFM-F
+!VID: V00
+!SN: N/A
+!NAME: "Fan 4",                 DESCR: "Nexus 3172T Chassis Fan Module"
+!PID: NXA-FAN-30CFM-F
+!VID: V00
+!SN: N/A
+!
+!VTP: Service not enabled
+!
+!DEBUG: Debug level is set to Minor(1) 
+!DEBUG: L2RIB Enabled Debugs:
+!DEBUG:  default for new sessions logging level: 3
+!
+!CORES: VDC  Module  Instance  Process-name     PID       Date(Year-Month-Day Time)
+!CORES: ---  ------  --------  ---------------  --------  -------------------------
+!
+!PROC_LOGS: VDC Process          PID     Normal-exit  Stack  Core   Log-create-time
+!PROC_LOGS: --- ---------------  ------  -----------  -----  -----  ---------------
+!
+
+
+version 7.0(3)I5(2)
+power redundancy-mode combined force
+
+hostname rix3-03-p030-cnx
+vdc rix3-03-p030-cnx id 1
+  limit-resource vlan minimum 16 maximum 4094
+  limit-resource vrf minimum 2 maximum 4096
+  limit-resource port-channel minimum 0 maximum 104
+  limit-resource u4route-mem minimum 128 maximum 128
+  limit-resource u6route-mem minimum 96 maximum 96
+  limit-resource m4route-mem minimum 58 maximum 58
+  limit-resource m6route-mem minimum 8 maximum 8
+
+feature scp-server
+feature tacacs+
+cfs eth distribute
+feature udld
+feature lacp
+feature vpc
+feature lldp
+clock timezone GMT 0 0
+
+no password strength-check
+username admin password 5 $5$SQy/tmIj$42hkukNe4ROx4Hs88YzMfOZjdR4r31IZ9l7zwbeElnC  role network-admin
+username admin role network-operator
+username evogaming password 5 $5$FLcMhC4I$CLGR7q1xQYCrbLSYvYAC.xXjRu.cweX/Eldzu3wL5T.  role network-admin
+username evogaming role network-operator
+
+banner motd #
+!!! To save config use "wrimem" alias command" !!!
+#
+
+no ip domain-lookup
+ip domain-name evolutiongaming.com
+tacacs-server host 10.30.32.4 key 7 "Hr0y4c+" 
+aaa group server tacacs+ TacacsGroup 
+    server 10.30.32.4 
+    deadtime 1
+    use-vrf management
+crypto key param rsa label rix3-03-p030-cnx modulus 1024 
+service unsupported-transceiver
+interface breakout module 1 port 51-52 map 10g-4x
+ip access-list 66
+  10 permit ip 10.30.0.0/16 any 
+  20 permit ip 192.168.103.0 0.0.0.255 any 
+ip access-list Evo-SNMP
+ip access-list Evo_SNMP
+  10 permit ip 10.32.230.192/32 any 
+  20 permit ip 10.30.10.61/32 any 
+  30 permit ip 10.30.10.201/32 any 
+ip access-list copp-system-acl-eigrp
+  10 permit eigrp any 224.0.0.10/32 
+ipv6 access-list copp-system-acl-eigrp6
+  10 permit eigrp any ff02::a/128 
+ip access-list copp-system-acl-icmp
+  10 permit icmp any any 
+ip access-list copp-system-acl-igmp
+  10 permit igmp any any 
+ip access-list copp-system-acl-ntp
+  10 permit udp any any eq ntp 
+  20 permit udp any eq ntp any 
+ip access-list copp-system-acl-pimreg
+  10 permit pim any any 
+ip access-list copp-system-acl-ping
+  10 permit icmp any any echo 
+  20 permit icmp any any echo-reply 
+ip access-list copp-system-acl-routingproto1
+  10 permit tcp any gt 1024 any eq bgp 
+  20 permit tcp any eq bgp any gt 1024 
+  30 permit udp any 224.0.0.0/24 eq rip 
+  40 permit tcp any gt 1024 any eq 639 
+  50 permit tcp any eq 639 any gt 1024 
+  70 permit ospf any any 
+  80 permit ospf any 224.0.0.5/32 
+  90 permit ospf any 224.0.0.6/32 
+ip access-list copp-system-acl-routingproto2
+  10 permit udp any 224.0.0.0/24 eq 1985 
+  20 permit 112 any 224.0.0.0/24 
+ip access-list copp-system-acl-snmp
+  10 permit udp any any eq snmp 
+  20 permit udp any any eq snmptrap 
+ip access-list copp-system-acl-ssh
+  10 permit tcp any any eq 22 
+  20 permit tcp any eq 22 any 
+ip access-list copp-system-acl-stftp
+  10 permit udp any any eq tftp 
+  20 permit udp any any eq 1758 
+  30 permit udp any eq tftp any 
+  40 permit udp any eq 1758 any 
+  50 permit tcp any any eq 115 
+  60 permit tcp any eq 115 any 
+ip access-list copp-system-acl-tacacsradius
+  10 permit tcp any any eq tacacs 
+  20 permit tcp any eq tacacs any 
+  30 permit udp any any eq 1812 
+  40 permit udp any any eq 1813 
+  50 permit udp any any eq 1645 
+  60 permit udp any any eq 1646 
+  70 permit udp any eq 1812 any 
+  80 permit udp any eq 1813 any 
+  90 permit udp any eq 1645 any 
+  100 permit udp any eq 1646 any 
+ip access-list copp-system-acl-telnet
+  10 permit tcp any any eq telnet 
+  20 permit tcp any any eq 107 
+  30 permit tcp any eq telnet any 
+  40 permit tcp any eq 107 any 
+ipv6 access-list copp-system-acl-v6routingProto2
+  10 permit udp any ff02::66/128 eq 2029 
+  20 permit udp any ff02::fb/128 eq 5353 
+  30 permit 112 any ff02::12/128 
+ipv6 access-list copp-system-acl-v6routingproto1
+  10 permit 89 any ff02::5/128 
+  20 permit 89 any ff02::6/128 
+  30 permit udp any ff02::9/128 eq 521 
+ip access-list copp-system-dhcp-relay
+  10 permit udp any eq bootps any eq bootps 
+class-map type control-plane match-any copp-icmp
+  match access-group name copp-system-acl-icmp
+class-map type control-plane match-any copp-ntp
+  match access-group name copp-system-acl-ntp
+class-map type control-plane match-any copp-s-arp
+class-map type control-plane match-any copp-s-bfd
+class-map type control-plane match-any copp-s-bpdu
+class-map type control-plane match-any copp-s-dai
+class-map type control-plane match-any copp-s-default
+class-map type control-plane match-any copp-s-dhcpreq
+class-map type control-plane match-any copp-s-dhcpresp
+  match access-group name copp-system-dhcp-relay
+class-map type control-plane match-any copp-s-dpss
+class-map type control-plane match-any copp-s-eigrp
+  match access-group name copp-system-acl-eigrp
+  match access-group name copp-system-acl-eigrp6
+class-map type control-plane match-any copp-s-glean
+class-map type control-plane match-any copp-s-igmp
+  match access-group name copp-system-acl-igmp
+class-map type control-plane match-any copp-s-ipmcmiss
+class-map type control-plane match-any copp-s-l2switched
+class-map type control-plane match-any copp-s-l3destmiss
+class-map type control-plane match-any copp-s-l3mtufail
+class-map type control-plane match-any copp-s-l3slowpath
+class-map type control-plane match-any copp-s-mpls
+class-map type control-plane match-any copp-s-pimautorp
+class-map type control-plane match-any copp-s-pimreg
+  match access-group name copp-system-acl-pimreg
+class-map type control-plane match-any copp-s-ping
+  match access-group name copp-system-acl-ping
+class-map type control-plane match-any copp-s-ptp
+class-map type control-plane match-any copp-s-routingProto1
+  match access-group name copp-system-acl-routingproto1
+  match access-group name copp-system-acl-v6routingproto1
+class-map type control-plane match-any copp-s-routingProto2
+  match access-group name copp-system-acl-routingproto2
+class-map type control-plane match-any copp-s-selfIp
+class-map type control-plane match-any copp-s-ttl1
+class-map type control-plane match-any copp-s-v6routingProto2
+  match access-group name copp-system-acl-v6routingProto2
+class-map type control-plane match-any copp-s-vxlan
+class-map type control-plane match-any copp-snmp
+  match access-group name copp-system-acl-snmp
+class-map type control-plane match-any copp-ssh
+  match access-group name copp-system-acl-ssh
+class-map type control-plane match-any copp-stftp
+  match access-group name copp-system-acl-stftp
+class-map type control-plane match-any copp-tacacsradius
+  match access-group name copp-system-acl-tacacsradius
+class-map type control-plane match-any copp-telnet
+  match access-group name copp-system-acl-telnet
+policy-map type control-plane copp-system-policy 
+  class copp-s-default
+    police pps 400 
+  class copp-s-l2switched
+    police pps 200 
+  class copp-s-ping
+    police pps 100 
+  class copp-s-l3destmiss
+    police pps 100 
+  class copp-s-glean
+    police pps 500 
+  class copp-s-selfIp
+    police pps 500 
+  class copp-s-l3mtufail
+    police pps 100 
+  class copp-s-ttl1
+    police pps 100 
+  class copp-s-ipmcmiss
+    police pps 400 
+  class copp-s-l3slowpath
+    police pps 100 
+  class copp-s-dhcpreq
+    police pps 300 
+  class copp-s-dhcpresp
+    police pps 300 
+  class copp-s-dai
+    police pps 300 
+  class copp-s-igmp
+    police pps 400 
+  class copp-s-routingProto2
+    police pps 1300 
+  class copp-s-v6routingProto2
+    police pps 1300 
+  class copp-s-eigrp
+    police pps 200 
+  class copp-s-pimreg
+    police pps 200 
+  class copp-s-pimautorp
+    police pps 200 
+  class copp-s-routingProto1
+    police pps 1000 
+  class copp-s-arp
+    police pps 200 
+  class copp-s-ptp
+    police pps 1000 
+  class copp-s-vxlan
+    police pps 1000 
+  class copp-s-bfd
+    police pps 900 
+  class copp-s-bpdu
+    police pps 12000 
+  class copp-s-dpss
+    police pps 1000 
+  class copp-s-mpls
+    police pps 100 
+  class copp-icmp
+    police pps 200 
+  class copp-telnet
+    police pps 500 
+  class copp-ssh
+    police pps 500 
+  class copp-snmp
+    police pps 500 
+  class copp-ntp
+    police pps 100 
+  class copp-tacacsradius
+    police pps 400 
+  class copp-stftp
+    police pps 400 
+control-plane
+  service-policy input copp-system-policy 
+snmp-server contact EVO NOC
+snmp-server location RIX3-DC
+snmp-server user admin network-admin auth md5 0x413f2b2584f41cc074fa8a334c8f872e priv 0x413f2b2584f41cc074fa8a334c8f872e localizedkey
+snmp-server user admin network-operator
+snmp-server user evogaming network-admin auth md5 0x301227b8937b6c8c2955986c4e6dae87 priv 0x301227b8937b6c8c2955986c4e6dae87 localizedkey
+rmon event 1 description FATAL(1) owner PMON@FATAL
+rmon event 2 description CRITICAL(2) owner PMON@CRITICAL
+rmon event 3 description ERROR(3) owner PMON@ERROR
+rmon event 4 description WARNING(4) owner PMON@WARNING
+rmon event 5 description INFORMATION(5) owner PMON@INFO
+snmp-server community 5uper5ecret group network-operator
+snmp-server community 5uper5ecret use-ipv4acl 66
+snmp-server community spiceinvn0c group network-operator
+snmp-server community spiceinvn0c use-ipv4acl 66
+ntp server 10.4.2.220 use-vrf management
+ntp server 10.4.2.221 use-vrf management
+aaa authentication login default group TacacsGroup 
+aaa accounting default group TacacsGroup 
+aaa authentication login ascii-authentication 
+tacacs-server directed-request 
+
+vlan 1
+vlan 135
+  name pre1-core-10.30.135.0_24
+vlan 139
+  name srv_netgroup_10.30.139.0/24
+vlan 141
+  name goc_netgroup_pre_10.30.141.0/24
+vlan 142
+  name backup_prodops_10.30.142.0/24
+vlan 143
+  name ssb_netgroup_pre_10.30.143.0/24
+vlan 176
+  name Srv_setup_10.30.176.0_24
+vlan 218
+  name gid_serivces_10.30.218.0/24
+vlan 223
+  name gld-services_10.30.223.0/24
+vlan 229
+  name Deploy_10.30.229.0_24
+vrf context management
+  ip route 0.0.0.0/0 192.168.103.1
+no system urpf disable
+hardware profile portmode 48X10G+breakout6x40g
+
+vpc domain 1
+  role priority 10
+  peer-keepalive destination 192.168.103.31 source 192.168.103.30
+  delay restore 31
+  peer-gateway
+  auto-recovery
+
+
+interface port-channel100
+  description A_rix3-03-p020/21-cnx (our eth1/47;eth1/47)
+  switchport mode trunk
+  switchport trunk allowed vlan 135,139,141-143,176,218,223,229
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  vpc 100
+
+interface port-channel101
+  description A_rix3-ppcoredb1
+  switchport access vlan 223
+  no snmp trap link-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  vpc 101
+
+interface port-channel102
+  description A_rix3-pprepdb1
+  switchport access vlan 223
+  no snmp trap link-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  vpc 102
+
+interface port-channel103
+  description A_rix3-ppcoredb2
+  switchport access vlan 223
+  no snmp trap link-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  vpc 103
+
+interface port-channel104
+  description A_rix3-pprepdb2
+  switchport access vlan 223
+  no snmp trap link-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  vpc 104
+
+interface port-channel105
+  description A_rix3-kafka3-pp
+  switchport mode trunk
+  switchport trunk native vlan 176
+  switchport trunk allowed vlan 176,218
+  no snmp trap link-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  vpc 105
+
+interface port-channel106
+  description A_rix3-kafka1-pp
+  switchport mode trunk
+  switchport trunk native vlan 176
+  switchport trunk allowed vlan 176,218
+  no snmp trap link-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  vpc 106
+
+interface port-channel107
+  description A_rix3-kafka2-pp
+  switchport mode trunk
+  switchport trunk native vlan 176
+  switchport trunk allowed vlan 176,218
+  no snmp trap link-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  vpc 107
+
+interface port-channel108
+  description A_rix3-dwh-proxmox09
+  switchport mode trunk
+  switchport trunk allowed vlan 229
+  no snmp trap link-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  vpc 108
+
+interface port-channel109
+  description A_rix3-dwh-proxmox10
+  switchport mode trunk
+  switchport trunk allowed vlan 229
+  no snmp trap link-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  vpc 109
+
+interface port-channel110
+  description B_rix3-kvm1-pp
+  switchport mode trunk
+  switchport trunk allowed vlan 135,139,141,143,176
+  no snmp trap link-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  lacp suspend-individual
+  vpc 110
+
+interface port-channel111
+  description B_rix3-kvm2-pp
+  switchport mode trunk
+  switchport trunk allowed vlan 135,139,141,143,176
+  no snmp trap link-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  lacp suspend-individual
+  vpc 111
+
+interface port-channel112
+  description B_rix3-kvm3-pp
+  switchport mode trunk
+  switchport trunk allowed vlan 135,139,141,176
+  no snmp trap link-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  lacp suspend-individual
+  vpc 112
+
+interface port-channel113
+  description B_rix3-kvm4-pp
+  switchport mode trunk
+  switchport trunk allowed vlan 135,139,141,143,176
+  no snmp trap link-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  lacp suspend-individual
+  vpc 113
+
+interface port-channel114
+  description B_rix3-kvm5-pp
+  switchport mode trunk
+  switchport trunk allowed vlan 135,139,141,176
+  no snmp trap link-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  lacp suspend-individual
+  vpc 114
+
+interface port-channel115
+  description B_rix3-kvm6-pp
+  switchport mode trunk
+  switchport trunk allowed vlan 135,139,141,176
+  no snmp trap link-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  lacp suspend-individual
+  vpc 115
+
+interface port-channel116
+  description R_rix3-backup-storage1-pr (out eth1/16)
+  switchport mode trunk
+  switchport trunk native vlan 176
+  switchport trunk allowed vlan 142,176
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  vpc 116
+
+interface port-channel4095
+  description A_rix3-03-p031-cnx (our Eth1/49-50) !!!VPC PEER LINK!!!
+  switchport mode trunk
+  spanning-tree port type network
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  vpc peer-link
+
+interface Ethernet1/1
+  description A_rix3-ppcoredb1 int1
+  switchport access vlan 223
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  channel-group 101 mode active
+
+interface Ethernet1/2
+  description A_rix3-pprepdb1 int1
+  switchport access vlan 223
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  channel-group 102 mode active
+
+interface Ethernet1/3
+  description A_rix3-ppcoredb2 int1
+  switchport access vlan 223
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  channel-group 103 mode active
+
+interface Ethernet1/4
+  description A_rix3-pprepdb2 int1
+  switchport access vlan 223
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  channel-group 104 mode active
+
+interface Ethernet1/5
+  description A_rix3-kafka3-pp int1
+  switchport mode trunk
+  switchport trunk native vlan 176
+  switchport trunk allowed vlan 176,218
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  channel-group 105 mode active
+
+interface Ethernet1/6
+  description A_rix3-kafka1-pp int1
+  switchport mode trunk
+  switchport trunk native vlan 176
+  switchport trunk allowed vlan 176,218
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  channel-group 106 mode active
+
+interface Ethernet1/7
+  description A_rix3-kafka2-pp int1
+  switchport mode trunk
+  switchport trunk native vlan 176
+  switchport trunk allowed vlan 176,218
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  channel-group 107 mode active
+
+interface Ethernet1/8
+  description A_rix3-dwh-proxmox09
+  switchport mode trunk
+  switchport trunk allowed vlan 229
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  channel-group 108 mode active
+
+interface Ethernet1/9
+  description A_rix3-dwh-proxmox10
+  switchport mode trunk
+  switchport trunk allowed vlan 229
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  channel-group 109 mode active
+
+interface Ethernet1/10
+  description B_rix3-kvm1-pp int2
+  switchport mode trunk
+  switchport trunk allowed vlan 135,139,141,143,176
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  channel-group 110 mode active
+
+interface Ethernet1/11
+  description B_rix3-kvm2-pp int2
+  switchport mode trunk
+  switchport trunk allowed vlan 135,139,141,143,176
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  channel-group 111 mode active
+
+interface Ethernet1/12
+  description B_rix3-kvm3-pp int2
+  switchport mode trunk
+  switchport trunk allowed vlan 135,139,141,176
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  channel-group 112 mode active
+
+interface Ethernet1/13
+  description B_rix3-kvm4-pp int2
+  switchport mode trunk
+  switchport trunk allowed vlan 135,139,141,143,176
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  channel-group 113 mode active
+
+interface Ethernet1/14
+  description B_rix3-kvm5-pp int2
+  switchport mode trunk
+  switchport trunk allowed vlan 135,139,141,176
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  channel-group 114 mode active
+
+interface Ethernet1/15
+  description B_rix3-kvm6-pp int2
+  switchport mode trunk
+  switchport trunk allowed vlan 135,139,141,176
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  channel-group 115 mode active
+
+interface Ethernet1/16
+  description R_rix3-backup-storage1-pr (in Po116)
+  switchport mode trunk
+  switchport trunk native vlan 176
+  switchport trunk allowed vlan 142,176
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  channel-group 116 mode active
+
+interface Ethernet1/17
+  shutdown
+
+interface Ethernet1/18
+  shutdown
+
+interface Ethernet1/19
+  shutdown
+
+interface Ethernet1/20
+  shutdown
+
+interface Ethernet1/21
+  shutdown
+
+interface Ethernet1/22
+  shutdown
+
+interface Ethernet1/23
+  shutdown
+
+interface Ethernet1/24
+  shutdown
+
+interface Ethernet1/25
+  shutdown
+
+interface Ethernet1/26
+  shutdown
+
+interface Ethernet1/27
+  shutdown
+
+interface Ethernet1/28
+  shutdown
+
+interface Ethernet1/29
+  shutdown
+
+interface Ethernet1/30
+  shutdown
+
+interface Ethernet1/31
+  shutdown
+
+interface Ethernet1/32
+  shutdown
+
+interface Ethernet1/33
+  shutdown
+
+interface Ethernet1/34
+  shutdown
+
+interface Ethernet1/35
+  shutdown
+
+interface Ethernet1/36
+  shutdown
+
+interface Ethernet1/37
+  shutdown
+
+interface Ethernet1/38
+  shutdown
+
+interface Ethernet1/39
+  shutdown
+
+interface Ethernet1/40
+  shutdown
+
+interface Ethernet1/41
+  shutdown
+
+interface Ethernet1/42
+  shutdown
+
+interface Ethernet1/43
+  shutdown
+
+interface Ethernet1/44
+  shutdown
+
+interface Ethernet1/45
+  shutdown
+
+interface Ethernet1/46
+  shutdown
+
+interface Ethernet1/47
+  shutdown
+
+interface Ethernet1/48
+  shutdown
+
+interface Ethernet1/49
+  description A_rix3-03-p031-cnx e1/49 (in Po4095) !!!VPC PEER LINK!!!
+  switchport mode trunk
+  speed 40000
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  channel-group 4095 mode active
+  no shutdown
+
+interface Ethernet1/50
+  description A_rix3-03-p031-cnx e1/50 (in Po4095) !!!VPC PEER LINK!!!
+  switchport mode trunk
+  speed 40000
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  channel-group 4095 mode active
+  no shutdown
+
+interface Ethernet1/51/1
+  description A_rix3-03-p020-cnx eth1/47 (in Po100)
+  switchport mode trunk
+  switchport trunk allowed vlan 135,139,141-143,176,218,223,229
+  speed 10000
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  channel-group 100 mode active
+  no shutdown
+
+interface Ethernet1/51/2
+  shutdown
+
+interface Ethernet1/51/3
+  no shutdown
+
+interface Ethernet1/51/4
+  no shutdown
+
+interface Ethernet1/52/1
+  description A_rix3-03-p021-cnx eth1/47 (in Po100)
+  switchport mode trunk
+  switchport trunk allowed vlan 135,139,141-143,176,218,223,229
+  speed 10000
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  channel-group 100 mode active
+  no shutdown
+
+interface Ethernet1/52/2
+  no shutdown
+
+interface Ethernet1/52/3
+  no shutdown
+
+interface Ethernet1/52/4
+  no shutdown
+
+interface Ethernet1/53
+  shutdown
+
+interface Ethernet1/54
+  shutdown
+
+interface mgmt0
+  description B_rix3-03-p024-ios fa0/24
+  vrf member management
+  ip address 192.168.103.30/24
+cli alias name save run-script wrimem.txt
+cli alias name wrimem run-script wrimem.txt
+line console
+  exec-timeout 15
+line vty
+boot nxos bootflash:/nxos.7.0.3.I5.2.bin 
+logging source-interface mgmt0
+logging timestamp milliseconds
+
+
+
