@@ -36,3 +36,13 @@ COMMON_CONFIG = [
     'policy-map type network-qos jumbo',
     'system qos',
 ]
+
+LOCAL_USERS = [
+    'username admin password 5 $1$axjLk2q3$eZj.8dWWChj3bR0YEemND1  role network-admin',
+    'username evogaming password 5 $1$FN/4pmVr$.KyzWEyIt21kEr9Kgm5BC.  role network-admin',
+]
+
+VRF_NTP = [
+    'ntp server 10.30.235.210 prefer use-vrf management',
+    'ntp server 10.30.9.210 prefer use-vrf management',
+]
