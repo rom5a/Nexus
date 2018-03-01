@@ -3,6 +3,9 @@ import logging
 import re
 from config.common_config import *
 
+CHASSIS_TYPE_MARKER = "!Chassis type:"
+HARDWARE_MARKER = "!Hardware:"
+INTERFACE_ETHERNET_MARKER = "interface Ethernet"
 
 class DeviceValidator:
 
@@ -13,11 +16,68 @@ class DeviceValidator:
         self.location = file_name.split('-')[0]
         self.absent_config_lines = []
         self.redundant_config_lines = []
+
+        self.device_name = None
+        self.device_model = None
+        self.ethernet_ports = []
+
         self.logger.debug("Creating device validator for location(" + str(self.location) + ")")
 
         self.logger.debug("Reading file(" + str(file_name) + ") in directory(" + str(directory) + ")")
         with open(directory + file_name, 'r') as f:
             self.config_lines = f.read().splitlines()
+        self.parse_config_file()
+
+    def parse_config_file(self):
+        self.logger.debug("Start parsing configuration file")
+
+        current_line =0
+        while current_line < len(self.config_lines):
+            config_line = self.config_lines[current_line]
+
+            if not self.device_name and CHASSIS_TYPE_MARKER in config_line:
+                self.logger.debug("Detected chassis type")
+                current_line += self.parse_hardware_info(current_line)
+
+            if re.match(r'^' + INTERFACE_ETHERNET_MARKER, config_line, re.IGNORECASE):
+                self.logger.debug("Detected ethernet port")
+                current_line += self.parse_ethernet_configuration(current_line)
+
+            current_line += 1
+
+        self.logger.debug("Finish parsing configuration file")
+
+    def parse_hardware_info(self, line_number):
+        self.logger.debug("Searching device name and model")
+        parsed_lines = 0
+        hardware_info_found = False
+        while not hardware_info_found:
+            config_line = self.config_lines[line_number + parsed_lines]
+
+            if HARDWARE_MARKER in config_line and re.match(r'.*cisco.*', config_line, re.IGNORECASE):
+                hardware_info = config_line.split(" ")
+                self.device_name = hardware_info[2]
+                self.device_model = hardware_info[3]
+
+            parsed_lines += 1
+            hardware_info_found = (self.device_name is not None) or (line_number + parsed_lines >= len(self.config_lines))
+
+        self.logger.debug("Finish searching device name and model")
+        return parsed_lines
+
+    def parse_ethernet_configuration(self, line_number):
+        parsed_lines = 1
+        config_line = self.config_lines[line_number]
+        port_name = config_line.split(" ")[1]
+        ethernet_port_parsed = False
+        while not ethernet_port_parsed:
+            config_line = self.config_lines[line_number + parsed_lines]
+            # TODO finish port parsing
+            parsed_lines += 1
+            ethernet_port_parsed = len(config_line) == 0 or (line_number + parsed_lines >= len(self.config_lines))
+
+
+        return parsed_lines
 
     def validate(self):
         self.logger.info("Validation result for " + str(self.file_name))
@@ -25,6 +85,7 @@ class DeviceValidator:
         self.validate_syslog_configuration()
         self.validate_local_users()
         self.validate_ntp_server()
+        self.validate_port_configuration()
 
     def validate_mandatory_lines(self):
         self.logger.info("\tMandatory config lines missed: ")
@@ -141,83 +202,83 @@ class DeviceValidator:
                         re.match(r'.*(-hpc|-ios|-asa|-cnx|-csb|-h3c)', z, re.M | re.I)]:
                         if "storm-control broadcast level 5.00" not in port_cfg.get(port):
                             self.absent_config_lines.append("interface " + port + "\n       storm-control broadcast level 5.00")
-                            # logger.info(file + ': interface ' + port + ' config missing: storm-control broadcast level 5.00')
+                            self.logger.info('\t\tinterface ' + port + ' config missing: storm-control broadcast level 5.00')
                         if "storm-control multicast level 5.00" not in port_cfg.get(port):
                             self.absent_config_lines.append("interface " + port + "\n       storm-control multicast level 5.00")
-                            # logger.info(file + ': interface ' + port + ' config missing: storm-control multicast level 5.00')
+                            self.logger.info('\t\tinterface ' + port + ' config missing: storm-control multicast level 5.00')
                     else:
                         if "storm-control broadcast level 5.00" not in port_cfg.get(port):
                             self.absent_config_lines.append("interface " + port + "\n       storm-control broadcast level 5.00")
-                            # logger.info(file + ': interface ' + port + ' config missing: storm-control broadcast level 5.00')
+                            self.logger.info('\t\tinterface ' + port + ' config missing: storm-control broadcast level 5.00')
                         if "storm-control multicast level 5.00" not in port_cfg.get(port):
                             self.absent_config_lines.append("interface " + port + "\n       storm-control multicast level 5.00")
-                            # logger.info(file + ': interface ' + port + ' config missing: storm-control multicast level 5.00')
+                            self.logger.info('\t\tinterface ' + port + ' config missing: storm-control multicast level 5.00')
                         if "no snmp trap link-status" not in port_cfg.get(port):
                             self.absent_config_lines.append("interface " + port + "\n       no snmp trap link-status")
-                            # logger.info(file + ': interface ' + port + ' config missing: no snmp trap link-status')
+                            self.logger.info('\t\tinterface ' + port + ' config missing: no snmp trap link-status')
                         if "vpc orphan-port suspend" not in port_cfg.get(port):
                             self.absent_config_lines.append("interface " + port + "\n       vpc orphan-port suspend")
-                            # logger.info(file + ': interface ' + port + ' config missing: vpc orphan-port suspend')
+                            self.logger.info('\t\tinterface ' + port + ' config missing: vpc orphan-port suspend')
                         if "switchport mode trunk" in port_cfg.get(port):
                             if "spanning-tree port type edge trunk" not in port_cfg.get(port):
                                 self.absent_config_lines.append("interface " + port + "\n       spanning-tree port type edge trunk")
-                                # logger.info(file + ': interface ' + port + ' config missing: spanning-tree port type edge trunk')
+                                self.logger.info('\t\tinterface ' + port + ' config missing: spanning-tree port type edge trunk')
                         else:
                             if "spanning-tree port type edge" not in port_cfg.get(port):
                                 self.absent_config_lines.append("interface " + port + "\n       spanning-tree port type edge")
-                                # logger.info(file + ': interface ' + port + ' config missing: spanning-tree port type edge')
+                                self.logger.info('\t\tinterface ' + port + ' config missing: spanning-tree port type edge')
             elif 'port-channel' in port:
                 if [z for z in port_cfg.get(port) if re.match(r'.*(-hpc|-ios|-asa|-cnx|-csb|-h3c)', z, re.M | re.I)]:
                     if "storm-control broadcast level 5.00" not in port_cfg.get(port):
                         self.absent_config_lines.append("interface " + port + "\n       storm-control broadcast level 5.00")
-                        # logger.info(file + ': interface ' + port + ' config missing: storm-control broadcast level 5.00')
+                        self.logger.info('\t\tinterface ' + port + ' config missing: storm-control broadcast level 5.00')
                     if "storm-control multicast level 5.00" not in port_cfg.get(port):
                         self.absent_config_lines.append("interface " + port + "\n       storm-control multicast level 5.00")
-                        # logger.info(file + ': interface ' + port + ' config missing: storm-control multicast level 5.00')
+                        self.logger.info('\t\tinterface ' + port + ' config missing: storm-control multicast level 5.00')
                 else:
                     if "storm-control broadcast level 5.00" not in port_cfg.get(port):
                         self.absent_config_lines.append("interface " + port + "\n       storm-control broadcast level 5.00")
-                        # logger.info(file + ': interface ' + port + ' config missing: storm-control broadcast level 5.00')
+                        self.logger.info('\t\tinterface ' + port + ' config missing: storm-control broadcast level 5.00')
                     if "storm-control multicast level 5.00" not in port_cfg.get(port):
                         self.absent_config_lines.append("interface " + port + "\n       storm-control multicast level 5.00")
-                        # logger.info(file + ': interface ' + port + ' config missing: storm-control multicast level 5.00')
+                        self.logger.info('\t\tinterface ' + port + ' config missing: storm-control multicast level 5.00')
                     if "no snmp trap link-status" not in port_cfg.get(port):
                         self.absent_config_lines.append("interface " + port + "\n       no snmp trap link-status")
-                        # logger.info(file + ': interface ' + port + ' config missing: no snmp trap link-status')
+                        self.logger.info('\t\tinterface ' + port + ' config missing: no snmp trap link-status')
                     if "switchport mode trunk" in port_cfg.get(port):
                         if "spanning-tree port type edge trunk" not in port_cfg.get(port):
                             self.absent_config_lines.append("interface " + port + "\n       spanning-tree port type edge trunk")
-                            # logger.info(file + ': interface ' + port + ' config missing: spanning-tree port type edge trunk')
+                            self.logger.info('\t\tinterface ' + port + ' config missing: spanning-tree port type edge trunk')
                     else:
                         if "spanning-tree port type edge" not in port_cfg.get(port):
                             self.absent_config_lines.append("interface " + port + "\n       spanning-tree port type edge")
-                            # logger.info(file + ': interface ' + port + ' config missing: spanning-tree port type edge')
+                            self.logger.info('\t\tinterface ' + port + ' config missing: spanning-tree port type edge')
             elif 'con' in port:
                 if "exec-timeout 15" not in port_cfg.get(port):
                     self.absent_config_lines.append("line " + port + "\n       exec-timeout 15")
-                    # logger.info(file + ': line ' + port + ' config missing: exec-timeout 15')
+                    self.logger.info('\t\tline ' + port + ' config missing: exec-timeout 15')
             elif 'group server tacacs+' in port:
                 if "server 10.30.32.4" not in port_cfg.get(port):
                     self.absent_config_lines.append("aaa " + port + "\n       server 10.30.32.4")
-                    # logger.info(file + ': aaa ' + port + ' config missing: TAC+ server ip')
+                    self.logger.info('\t\taaa ' + port + ' config missing: TAC+ server ip')
                 if "use-vrf management" not in port_cfg.get(port):
                     self.absent_config_lines.append("aaa " + port + "\n       use-vrf management")
-                    # logger.info(file + ': aaa ' + port + ' config missing: use-vrf management')
+                    self.logger.info('\t\taaa ' + port + ' config missing: use-vrf management')
                 if "deadtime 1" not in port_cfg.get(port):
                     self.absent_config_lines.append("aaa " + port + "\n       deadtime 1")
-                    # logger.info(file + ': aaa ' + port + ' config missing: deadtime 1')
+                    self.logger.info('\t\taaa ' + port + ' config missing: deadtime 1')
             elif 'jumbo' in port:
                 if "class type network-qos class-default" not in port_cfg.get(port):
                     self.absent_config_lines.append("policy-map type network-qos " + port + "\n       class type network-qos class-default")
-                    # logger.info(file + ': policy-map type network-qos ' + port + ' config missing: exec-timeout 15')
+                    self.logger.info('\t\tpolicy-map type network-qos ' + port + ' config missing: exec-timeout 15')
                 if " mtu 9100" not in port_cfg.get(port):
                     self.absent_config_lines.append("policy-map type network-qos " + port + "\n        mtu 9100")
-                    # logger.info(file + ': policy-map type network-qos ' + port + ' config missing:  mtu 9100')
+                    self.logger.info('\t\tpolicy-map type network-qos ' + port + ' config missing:  mtu 9100')
             elif 'qos' in port:
                 if "service-policy type network-qos jumbo" not in port_cfg.get(port):
                     self.absent_config_lines.append("system " + port + "\n       service-policy type network-qos jumbo")
-                    # logger.info(file + ': system ' + port + ' config missing: service-policy type network-qos jumbo')
+                    self.logger.info('\t\tsystem ' + port + ' config missing: service-policy type network-qos jumbo')
             elif re.match(r"^\d+", port, re.M | re.I):
                 if "pinning max-links 1" not in port_cfg.get(port):
                     self.absent_config_lines.append("fex " + port + "\n       pinning max-links 1")
-                    # logger.info(file + ': fex ' + port + ' config missing: pinning max-links 1')
+                    self.logger.info('\t\tfex ' + port + ' config missing: pinning max-links 1')
