@@ -6,6 +6,12 @@ from config.common_config import *
 CHASSIS_TYPE_MARKER = "!Chassis type:"
 HARDWARE_MARKER = "!Hardware:"
 INTERFACE_ETHERNET_MARKER = "interface Ethernet"
+INTERFACE_PORT_CHANNEL_MARKER = "interface port-channel"
+CONSOLE_MARKER = "line console"
+TACACS_MARKER = "aaa group server tacacs+"
+JUMBO_POLICY_MAP_MARKER = "policy-map type network-qos jumbo"
+SYSTEM_QOS_MARKER = "system qos"
+FEX_MARKER = "fex"
 
 class DeviceValidator:
 
@@ -19,7 +25,13 @@ class DeviceValidator:
 
         self.device_name = None
         self.device_model = None
-        self.ethernet_ports = []
+        self.ethernet_ports = dict()
+        self.channel_ports = dict()
+        self.fex = dict()
+        self.console_config = []
+        self.tacacs_config = []
+        self.jumbo_config = []
+        self.qos_config = []
 
         self.logger.debug("Creating device validator for location(" + str(self.location) + ")")
 
@@ -39,11 +51,36 @@ class DeviceValidator:
                 self.logger.debug("Detected chassis type")
                 current_line += self.parse_hardware_info(current_line)
 
-            if re.match(r'^' + INTERFACE_ETHERNET_MARKER, config_line, re.IGNORECASE):
+            elif re.match(r'^' + INTERFACE_ETHERNET_MARKER, config_line, re.IGNORECASE):
                 self.logger.debug("Detected ethernet port")
-                current_line += self.parse_ethernet_configuration(current_line)
+                current_line += self.parse_port_configuration(current_line, self.ethernet_ports)
 
-            current_line += 1
+            elif re.match(r'^' + INTERFACE_PORT_CHANNEL_MARKER, config_line, re.IGNORECASE):
+                self.logger.debug("Detected port channel")
+                current_line += self.parse_port_configuration(current_line, self.channel_ports)
+
+            elif re.match(r'^' + CONSOLE_MARKER, config_line, re.IGNORECASE):
+                self.logger.debug("Detected console configuration")
+                current_line += self.common_config_parser(current_line, self.console_config)
+
+            elif re.match(r'^' + TACACS_MARKER, config_line, re.IGNORECASE):
+                self.logger.debug("Detected tacacs configuration")
+                current_line += self.common_config_parser(current_line, self.tacacs_config)
+
+            elif re.match(r'^' + JUMBO_POLICY_MAP_MARKER, config_line, re.IGNORECASE):
+                self.logger.debug("Detected jumbo configuration")
+                current_line += self.common_config_parser(current_line, self.jumbo_config)
+
+            elif re.match(r'^' + SYSTEM_QOS_MARKER, config_line, re.IGNORECASE):
+                self.logger.debug("Detected qos configuration")
+                current_line += self.common_config_parser(current_line, self.qos_config)
+
+            elif re.match(r'^' + FEX_MARKER, config_line, re.IGNORECASE):
+                self.logger.debug("Detected fex configuration")
+                current_line += self.parse_port_configuration(current_line, self.fex)
+
+            else:
+                current_line += 1
 
         self.logger.debug("Finish parsing configuration file")
 
@@ -65,17 +102,40 @@ class DeviceValidator:
         self.logger.debug("Finish searching device name and model")
         return parsed_lines
 
-    def parse_ethernet_configuration(self, line_number):
-        parsed_lines = 1
+    def parse_port_configuration(self, line_number, port_container):
+        self.logger.debug("Parsing port configuration at line(" + str(line_number) + ")")
+        parsed_lines = 0
         config_line = self.config_lines[line_number]
         port_name = config_line.split(" ")[1]
-        ethernet_port_parsed = False
-        while not ethernet_port_parsed:
-            config_line = self.config_lines[line_number + parsed_lines]
-            # TODO finish port parsing
+        port_parsed = False
+        while not port_parsed:
             parsed_lines += 1
-            ethernet_port_parsed = len(config_line) == 0 or (line_number + parsed_lines >= len(self.config_lines))
+            config_line = self.config_lines[line_number + parsed_lines]
+            config_line_length = len(config_line)
+            if port_name not in port_container:
+                port_container[port_name] = []
 
+            if config_line_length > 0:
+                port_container[port_name].append(config_line.lstrip())
+
+            port_parsed = config_line_length == 0 or config_line[0] != ' ' or (line_number + parsed_lines >= len(self.config_lines))
+
+        return parsed_lines
+
+    def common_config_parser(self, line_number, array_container):
+        self.logger.debug("Parsing configuration")
+        parsed_lines = 1
+        console_config_parsed = False
+
+        while not console_config_parsed:
+            config_line = self.config_lines[line_number + parsed_lines]
+
+            if len(config_line) == 0 or config_line[0] != ' ' or line_number + parsed_lines >= len(self.config_lines):
+                console_config_parsed = True
+            else:
+                array_container.append(config_line.lstrip())
+
+            parsed_lines += 1
 
         return parsed_lines
 
@@ -85,6 +145,7 @@ class DeviceValidator:
         self.validate_syslog_configuration()
         self.validate_local_users()
         self.validate_ntp_server()
+        self.validate_ethernet()
         self.validate_port_configuration()
 
     def validate_mandatory_lines(self):
@@ -179,6 +240,30 @@ class DeviceValidator:
 
         self.logger.info("")
 
+    def validate_ethernet(self):
+        self.logger.info("\tEthernet config validation:")
+
+        for ethernet_port in self.ethernet_ports:
+            port_configs = self.ethernet_ports[ethernet_port]
+            if "shutdown" in port_configs:
+                continue
+
+            self.logger.info('\t\t' + ethernet_port)
+
+            for common_config in ETHERNET_COMMON_CONFIG:
+                if common_config in port_configs:
+                    self.logger.info('\t\t\t' + common_config)
+                    self.absent_config_lines.append(common_config)
+
+            for port_config in port_configs:
+                if re.match(r'^switchport access', port_config, re.IGNORECASE) and 'spanning-tree port type edge' not in port_configs:
+                    self.logger.info('\t\t\tspanning-tree port type edge')
+                    self.absent_config_lines.append('spanning-tree port type edge')
+                elif 'switchport mode trunk' is port_config and 'spanning-tree port type edge trunk' not in port_configs:
+                    self.logger.info('\t\t\tspanning-tree port type edge trunk')
+                    self.absent_config_lines.append('spanning-tree port type edge trunk')
+        self.logger.info("")
+
     def validate_port_configuration(self):
         self.logger.info("\tPort config validation:")
         port_cfg = {}
@@ -198,8 +283,7 @@ class DeviceValidator:
                 continue
             if 'Ethernet' in port:
                 if not [z for z in port_cfg.get(port) if re.match(r'^channel-group.*', z, re.M | re.I)]:
-                    if [z for z in port_cfg.get(port) if
-                        re.match(r'.*(-hpc|-ios|-asa|-cnx|-csb|-h3c)', z, re.M | re.I)]:
+                    if [z for z in port_cfg.get(port) if re.match(r'.*(-hpc|-ios|-asa|-cnx|-csb|-h3c)', z, re.M | re.I)]:
                         if "storm-control broadcast level 5.00" not in port_cfg.get(port):
                             self.absent_config_lines.append("interface " + port + "\n       storm-control broadcast level 5.00")
                             self.logger.info('\t\tinterface ' + port + ' config missing: storm-control broadcast level 5.00')
