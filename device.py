@@ -1,6 +1,7 @@
 #!/usr/bin/python
 import logging
 import re
+import ConfigParser
 from config.common_config import *
 
 CHASSIS_TYPE_MARKER = "!Chassis type:"
@@ -17,6 +18,7 @@ class DeviceValidator:
 
     def __init__(self, file_name, directory):
         self.logger = logging.getLogger(__name__)
+        self.config = ConfigParser.ConfigParser()
         self.file_name = file_name
         self.directory = directory
         self.location = file_name.split('-')[0]
@@ -84,6 +86,12 @@ class DeviceValidator:
 
         self.logger.debug("Finish parsing configuration file")
 
+        self.logger.debug("Read location specific config")
+        if not self.config.read('config_template/' + self.location + '-config.ini'):
+            self.logger.error("Failed read config")
+            raise ValueError("Failed read config")
+        self.logger.debug("Reading finished")
+
     def parse_hardware_info(self, line_number):
         self.logger.debug("Searching device name and model")
         parsed_lines = 0
@@ -146,7 +154,12 @@ class DeviceValidator:
         self.validate_local_users()
         self.validate_ntp_server()
         self.validate_ethernet()
-        self.validate_port_configuration()
+        self.validate_channel_ports()
+        self.validate_console_configuration()
+        self.validate_tacacs_configuration()
+        self.validate_jumbo_configuration()
+        self.validate_qos_configuration()
+        self.validate_fex()
 
     def validate_mandatory_lines(self):
         self.logger.info("\tMandatory config lines missed: ")
@@ -166,6 +179,11 @@ class DeviceValidator:
             self.absent_config_lines.append("SYSLOG server not set")
             self.logger.info("\t\tSYSLOG server not set")
 
+        server_configs = self.config.get("Main", "log_server_config")
+        for server_config in server_configs:
+            if server_config not in matching:
+                self.logger.info("\t\t" + server_config)
+                self.absent_config_lines.append(server_config)
         # if 'rix' in self.location:
         #     if "logging server " + self.log['rix'] in matching:
         #         matching.remove("logging server " + self.log['rix'])
@@ -264,105 +282,72 @@ class DeviceValidator:
                     self.absent_config_lines.append('spanning-tree port type edge trunk')
         self.logger.info("")
 
-    def validate_port_configuration(self):
-        self.logger.info("\tPort config validation:")
-        port_cfg = {}
-        for line in self.config_lines:
-            indent = len(line) - len(line.lstrip())
-            if indent == 0 and re.match(r'^(line|interface|aaa group server tacacs+|policy-map type network-qos|system|fex) (\S+)', line):
-                port = " ".join(line.split()[1:])
-                port_cfg[port] = []
-            elif indent == 0:
-                port = None
-            elif port and indent > 0:
-                port_cfg[port].append(line.lstrip())
-
-                # Check port configuration
-        for port in port_cfg:
-            if [z for z in port_cfg.get(port) if re.match(r'^shutdown$', z, re.M | re.I)]:
+    def validate_channel_ports(self):
+        self.logger.info("\tChannel ports config validation:")
+        for channel_port in self.channel_ports:
+            port_configs = self.channel_ports[channel_port]
+            if "shutdown" in port_configs:
                 continue
-            if 'Ethernet' in port:
-                if not [z for z in port_cfg.get(port) if re.match(r'^channel-group.*', z, re.M | re.I)]:
-                    if [z for z in port_cfg.get(port) if re.match(r'.*(-hpc|-ios|-asa|-cnx|-csb|-h3c)', z, re.M | re.I)]:
-                        if "storm-control broadcast level 5.00" not in port_cfg.get(port):
-                            self.absent_config_lines.append("interface " + port + "\n       storm-control broadcast level 5.00")
-                            self.logger.info('\t\tinterface ' + port + ' config missing: storm-control broadcast level 5.00')
-                        if "storm-control multicast level 5.00" not in port_cfg.get(port):
-                            self.absent_config_lines.append("interface " + port + "\n       storm-control multicast level 5.00")
-                            self.logger.info('\t\tinterface ' + port + ' config missing: storm-control multicast level 5.00')
-                    else:
-                        if "storm-control broadcast level 5.00" not in port_cfg.get(port):
-                            self.absent_config_lines.append("interface " + port + "\n       storm-control broadcast level 5.00")
-                            self.logger.info('\t\tinterface ' + port + ' config missing: storm-control broadcast level 5.00')
-                        if "storm-control multicast level 5.00" not in port_cfg.get(port):
-                            self.absent_config_lines.append("interface " + port + "\n       storm-control multicast level 5.00")
-                            self.logger.info('\t\tinterface ' + port + ' config missing: storm-control multicast level 5.00')
-                        if "no snmp trap link-status" not in port_cfg.get(port):
-                            self.absent_config_lines.append("interface " + port + "\n       no snmp trap link-status")
-                            self.logger.info('\t\tinterface ' + port + ' config missing: no snmp trap link-status')
-                        if "vpc orphan-port suspend" not in port_cfg.get(port):
-                            self.absent_config_lines.append("interface " + port + "\n       vpc orphan-port suspend")
-                            self.logger.info('\t\tinterface ' + port + ' config missing: vpc orphan-port suspend')
-                        if "switchport mode trunk" in port_cfg.get(port):
-                            if "spanning-tree port type edge trunk" not in port_cfg.get(port):
-                                self.absent_config_lines.append("interface " + port + "\n       spanning-tree port type edge trunk")
-                                self.logger.info('\t\tinterface ' + port + ' config missing: spanning-tree port type edge trunk')
-                        else:
-                            if "spanning-tree port type edge" not in port_cfg.get(port):
-                                self.absent_config_lines.append("interface " + port + "\n       spanning-tree port type edge")
-                                self.logger.info('\t\tinterface ' + port + ' config missing: spanning-tree port type edge')
-            elif 'port-channel' in port:
-                if [z for z in port_cfg.get(port) if re.match(r'.*(-hpc|-ios|-asa|-cnx|-csb|-h3c)', z, re.M | re.I)]:
-                    if "storm-control broadcast level 5.00" not in port_cfg.get(port):
-                        self.absent_config_lines.append("interface " + port + "\n       storm-control broadcast level 5.00")
-                        self.logger.info('\t\tinterface ' + port + ' config missing: storm-control broadcast level 5.00')
-                    if "storm-control multicast level 5.00" not in port_cfg.get(port):
-                        self.absent_config_lines.append("interface " + port + "\n       storm-control multicast level 5.00")
-                        self.logger.info('\t\tinterface ' + port + ' config missing: storm-control multicast level 5.00')
-                else:
-                    if "storm-control broadcast level 5.00" not in port_cfg.get(port):
-                        self.absent_config_lines.append("interface " + port + "\n       storm-control broadcast level 5.00")
-                        self.logger.info('\t\tinterface ' + port + ' config missing: storm-control broadcast level 5.00')
-                    if "storm-control multicast level 5.00" not in port_cfg.get(port):
-                        self.absent_config_lines.append("interface " + port + "\n       storm-control multicast level 5.00")
-                        self.logger.info('\t\tinterface ' + port + ' config missing: storm-control multicast level 5.00')
-                    if "no snmp trap link-status" not in port_cfg.get(port):
-                        self.absent_config_lines.append("interface " + port + "\n       no snmp trap link-status")
-                        self.logger.info('\t\tinterface ' + port + ' config missing: no snmp trap link-status')
-                    if "switchport mode trunk" in port_cfg.get(port):
-                        if "spanning-tree port type edge trunk" not in port_cfg.get(port):
-                            self.absent_config_lines.append("interface " + port + "\n       spanning-tree port type edge trunk")
-                            self.logger.info('\t\tinterface ' + port + ' config missing: spanning-tree port type edge trunk')
-                    else:
-                        if "spanning-tree port type edge" not in port_cfg.get(port):
-                            self.absent_config_lines.append("interface " + port + "\n       spanning-tree port type edge")
-                            self.logger.info('\t\tinterface ' + port + ' config missing: spanning-tree port type edge')
-            elif 'con' in port:
-                if "exec-timeout 15" not in port_cfg.get(port):
-                    self.absent_config_lines.append("line " + port + "\n       exec-timeout 15")
-                    self.logger.info('\t\tline ' + port + ' config missing: exec-timeout 15')
-            elif 'group server tacacs+' in port:
-                if "server 10.30.32.4" not in port_cfg.get(port):
-                    self.absent_config_lines.append("aaa " + port + "\n       server 10.30.32.4")
-                    self.logger.info('\t\taaa ' + port + ' config missing: TAC+ server ip')
-                if "use-vrf management" not in port_cfg.get(port):
-                    self.absent_config_lines.append("aaa " + port + "\n       use-vrf management")
-                    self.logger.info('\t\taaa ' + port + ' config missing: use-vrf management')
-                if "deadtime 1" not in port_cfg.get(port):
-                    self.absent_config_lines.append("aaa " + port + "\n       deadtime 1")
-                    self.logger.info('\t\taaa ' + port + ' config missing: deadtime 1')
-            elif 'jumbo' in port:
-                if "class type network-qos class-default" not in port_cfg.get(port):
-                    self.absent_config_lines.append("policy-map type network-qos " + port + "\n       class type network-qos class-default")
-                    self.logger.info('\t\tpolicy-map type network-qos ' + port + ' config missing: exec-timeout 15')
-                if " mtu 9100" not in port_cfg.get(port):
-                    self.absent_config_lines.append("policy-map type network-qos " + port + "\n        mtu 9100")
-                    self.logger.info('\t\tpolicy-map type network-qos ' + port + ' config missing:  mtu 9100')
-            elif 'qos' in port:
-                if "service-policy type network-qos jumbo" not in port_cfg.get(port):
-                    self.absent_config_lines.append("system " + port + "\n       service-policy type network-qos jumbo")
-                    self.logger.info('\t\tsystem ' + port + ' config missing: service-policy type network-qos jumbo')
-            elif re.match(r"^\d+", port, re.M | re.I):
-                if "pinning max-links 1" not in port_cfg.get(port):
-                    self.absent_config_lines.append("fex " + port + "\n       pinning max-links 1")
-                    self.logger.info('\t\tfex ' + port + ' config missing: pinning max-links 1')
+
+            self.logger.info('\t\t' + channel_port)
+
+            for common_config in ETHERNET_COMMON_CONFIG:
+                if common_config in port_configs:
+                    self.logger.info('\t\t\t' + common_config)
+                    self.absent_config_lines.append(common_config)
+
+            for port_config in port_configs:
+                if re.match(r'^switchport access', port_config, re.IGNORECASE) and 'spanning-tree port type edge' not in port_configs:
+                    self.logger.info('\t\t\tspanning-tree port type edge')
+                    self.absent_config_lines.append('spanning-tree port type edge')
+                elif 'switchport mode trunk' is port_config and 'spanning-tree port type edge trunk' not in port_configs:
+                    self.logger.info('\t\t\tspanning-tree port type edge trunk')
+                    self.absent_config_lines.append('spanning-tree port type edge trunk')
+        self.logger.info("")
+
+    def validate_console_configuration(self):
+        self.logger.info("\tConsole config validation:")
+        for console_config in CONSOLE_CONFIG:
+            if console_config not in self.console_config:
+                self.logger.info("\t\t" + console_config)
+                self.absent_config_lines.append(console_config)
+        self.logger.info("")
+
+    def validate_tacacs_configuration(self):
+        self.logger.info("\tTacacs config validation:")
+        for group_config in GROUP_SERVICE_CONFIG:
+            if group_config not in self.tacacs_config:
+                self.logger.info("\t\t" + group_config)
+                self.absent_config_lines.append(group_config)
+        self.logger.info("")
+
+    def validate_jumbo_configuration(self):
+        self.logger.info("\tJumbo config validation:")
+        for jumbo_config in JUMBO_CONFIG:
+            if jumbo_config not in self.jumbo_config:
+                self.logger.info("\t\t" + jumbo_config)
+                self.absent_config_lines.append(jumbo_config)
+        self.logger.info("")
+
+    def validate_qos_configuration(self):
+        self.logger.info("\tQOS config validation:")
+        for qos_config in QOS_CONFIG:
+            if qos_config not in self.qos_config:
+                self.logger.info("\t\t" + qos_config)
+                self.absent_config_lines.append(qos_config)
+        self.logger.info("")
+
+    def validate_fex(self):
+        self.logger.info("\tFex config validation:")
+        for fex_port in self.fex:
+            port_configs = self.fex[fex_port]
+            if "shutdown" in port_configs:
+                continue
+
+            self.logger.info('\t\t' + fex_port)
+
+            for common_config in FEX_CONFIG:
+                if common_config in port_configs:
+                    self.logger.info('\t\t\t' + common_config)
+                    self.absent_config_lines.append(common_config)
+        self.logger.info("")

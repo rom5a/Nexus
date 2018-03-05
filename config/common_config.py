@@ -47,9 +47,32 @@ VRF_NTP = [
     'ntp server 10.30.9.210 prefer use-vrf management',
 ]
 
+CONSOLE_CONFIG = [
+    "exec-timeout 15"
+]
+
 ETHERNET_COMMON_CONFIG = [
     'storm-control broadcast level 5.00',
     'storm-control multicast level 5.00',
     'no snmp trap link-status',
     'vpc orphan-port suspend',
+]
+
+GROUP_SERVICE_CONFIG = [
+    "server 10.30.32.4",
+    "use-vrf management",
+    "deadtime 1",
+]
+
+JUMBO_CONFIG = [
+    "class type network-qos class-default",
+    "mtu 9100"
+]
+
+QOS_CONFIG = [
+    "service-policy type network-qos jumbo"
+]
+
+FEX_CONFIG = [
+    "pinning max-links 1"
 ]

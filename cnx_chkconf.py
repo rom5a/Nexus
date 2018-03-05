@@ -43,8 +43,12 @@ class chkcfg:
                 continue
             for file in os.listdir(backup_dir):
                 if re.match(r'^.*-cnx$',file) and not os.stat(backup_dir+file).st_size == 0:
-                    device_validator = DeviceValidator(file, backup_dir)
-                    device_validator.validate()
+                    try:
+                        device_validator = DeviceValidator(file, backup_dir)
+                        device_validator.validate()
+
+                    except:
+                        logger.error(file + " ignored")
                     # self.validate_config_file(backup_dir + file)
 
                     # not_cfg = [] # config should be but absence
@@ -57,7 +61,7 @@ class chkcfg:
                     # if not_cfg or increct:
                     #     self.report[file] = (not_cfg, increct)
     
-                    logger.info(file + ': finished')
+                    # logger.info(file + ': finished')
 
 
         # if self.report:
@@ -79,6 +83,6 @@ class chkcfg:
 
 if __name__ == '__main__':
     logger = logging.getLogger(__name__)
-    logger.info("Test")
+    logger.setLevel(logging.DEBUG)
     r = chkcfg()
     r.run()
