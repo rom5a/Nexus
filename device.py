@@ -27,6 +27,7 @@ class DeviceValidator:
 
         self.device_name = None
         self.device_model = None
+        self.model_series = None
         self.ethernet_ports = dict()
         self.channel_ports = dict()
         self.fex = dict()
@@ -87,7 +88,8 @@ class DeviceValidator:
         self.logger.debug("Finish parsing configuration file")
 
         self.logger.debug("Read location specific config")
-        if not self.config.read('config_template/' + self.location + '-config.ini'):
+        self.model_series = re.search(r'\d', self.device_model).group()
+        if not self.config.read('config_template/' + self.location + '-' + self.model_series + '-config.ini'):
             self.logger.error("Failed read config")
             raise ValueError("Failed read config")
         self.logger.debug("Reading finished")
@@ -179,28 +181,11 @@ class DeviceValidator:
             self.absent_config_lines.append("SYSLOG server not set")
             self.logger.info("\t\tSYSLOG server not set")
 
-        server_configs = self.config.get("Main", "log_server_config")
+        server_configs = eval(self.config.get("Main", "log_server_config"))
         for server_config in server_configs:
             if server_config not in matching:
                 self.logger.info("\t\t" + server_config)
                 self.absent_config_lines.append(server_config)
-        # if 'rix' in self.location:
-        #     if "logging server " + self.log['rix'] in matching:
-        #         matching.remove("logging server " + self.log['rix'])
-        #     if "logging server " + self.log['rix'] + " 7 use-vrf management" in matching:
-        #         matching.remove("logging server " + self.log['rix'] + " 7 use-vrf management")
-        #
-        # elif 'mlt1' in self.location:
-        #     if "logging server " + self.log['mlt'] in matching:
-        #         matching.remove("logging server " + self.log['mlt'])
-        #     if "logging server " + self.log['mlt'] + " 7 use-vrf management" in matching:
-        #         matching.remove("logging server " + self.log['mlt'] + " 7 use-vrf management")
-        #
-        # else:
-        #     if "logging server " + self.log['zzz'] in matching:
-        #         matching.remove("logging server " + self.log['zzz'])
-        #     if "logging server " + self.log['zzz'] + " 7 use-vrf management" in matching:
-        #         matching.remove("logging server " + self.log['zzz'] + " 7 use-vrf management")
 
         if matching:
             self.logger.info("\tRedundant SYSLOG config")
@@ -260,6 +245,7 @@ class DeviceValidator:
 
     def validate_ethernet(self):
         self.logger.info("\tEthernet config validation:")
+        ethernet_configs = eval(self.config.get('Main', 'ethernet_config'))
 
         for ethernet_port in self.ethernet_ports:
             port_configs = self.ethernet_ports[ethernet_port]
@@ -268,7 +254,7 @@ class DeviceValidator:
 
             self.logger.info('\t\t' + ethernet_port)
 
-            for common_config in ETHERNET_COMMON_CONFIG:
+            for common_config in ethernet_configs:
                 if common_config in port_configs:
                     self.logger.info('\t\t\t' + common_config)
                     self.absent_config_lines.append(common_config)
