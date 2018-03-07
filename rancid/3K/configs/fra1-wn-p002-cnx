@@ -65,6 +65,7 @@
 !Env: Fan_in_PS8                           --     front-to-back   None
 !Env: Fan Air Filter : NotSupported
 !
+!
 !Env: Temperature:
 !Env: --------------------------------------------------------------------
 !Env: Module   Sensor        MajorThresh   MinorThres   Status
@@ -120,7 +121,7 @@
 !Env: Supply    Model                   Output      Input      Capacity    Status
 !Env:                                 (Watts )    (Watts )     (Watts )
 !Env: -------  -------------------  ----------  ----------  ----------  --------------
-!Env: 1        N9K-PAC-3000W-B           274 W                  3000 W     Ok
+!Env: 1        N9K-PAC-3000W-B           270 W                  3000 W     Ok
 !Env: 2        N9K-PAC-3000W-B           281 W                  3000 W     Ok
 !Env: 3        N9K-PAC-3000W-B           295 W                  3000 W     Ok
 !Env: 4        N9K-PAC-3000W-B           281 W                  3000 W     Ok
@@ -132,20 +133,20 @@
 !Env: Module    Model                     Draw    Allocated    Status
 !Env:                                  (Watts )     (Watts )
 !Env: -------  -------------------  -----------  -----------  --------------
-!Env: 1        N9K-X9564PX             251.00 W     399.60 W    Powered-Up
-!Env: 2        N9K-X9564PX             240.00 W     399.60 W    Powered-Up
+!Env: 1        N9K-X9564PX             252.00 W     399.60 W    Powered-Up
+!Env: 2        N9K-X9564PX             241.00 W     399.60 W    Powered-Up
 !Env: Xb21     xbar                      N/A          0.00 W    Absent
 !Env: Xb22     N9K-C9508-FM            140.00 W     250.80 W    Powered-Up
-!Env: Xb23     N9K-C9508-FM            125.00 W     250.80 W    Powered-Up
+!Env: Xb23     N9K-C9508-FM            126.00 W     250.80 W    Powered-Up
 !Env: Xb24     N9K-C9508-FM            133.00 W     250.80 W    Powered-Up
 !Env: Xb25     xbar                      N/A          0.00 W    Absent
 !Env: Xb26     N9K-C9508-FM            128.00 W     250.80 W    Powered-Up
-!Env: 27       N9K-SUP-A                62.00 W      79.92 W    Powered-Up
+!Env: 27       N9K-SUP-A                60.00 W      79.92 W    Powered-Up
 !Env: 28       supervisor                N/A          0.00 W    Absent
 !Env: 29       N9K-SC-A                 14.00 W      25.20 W    Powered-Up
 !Env: 30       N9K-SC-A                 14.00 W      25.20 W    Powered-Up
-!Env: fan1     N9K-C9508-FAN            40.00 W     249.00 W    Powered-Up
-!Env: fan2     N9K-C9508-FAN            38.00 W     249.00 W    Powered-Up
+!Env: fan1     N9K-C9508-FAN            39.00 W     249.00 W    Powered-Up
+!Env: fan2     N9K-C9508-FAN            37.00 W     249.00 W    Powered-Up
 !Env: fan3     N9K-C9508-FAN            38.00 W     249.00 W    Powered-Up
 !Env: N/A - Per module power not available
 !Env: Power Usage Summary:
@@ -194,8 +195,8 @@
 !Flash: bootflash: 49596 MB free
 !Flash: bootflash: 51231 MB total
 !
-!Flash: debug:      407971    Feb 25 03:20:01 2018  bootvar_debug.log
-!Flash: debug:           6    Feb 25 03:20:01 2018  bootvar_debug.meta
+!Flash: debug:      466835    Mar 06 08:17:51 2018  bootvar_debug.log
+!Flash: debug:           6    Mar 06 08:17:51 2018  bootvar_debug.meta
 !Flash: debug: Usage for debug://sup-local
 !Flash: debug:      0 MB used
 !Flash: debug:     4 MB free
@@ -204,20 +205,21 @@
 !Flash: logflash:        4096    Mar 28 02:38:40 2011  ISSU_debug_logs/
 !Flash: logflash:        4096    Jan 02 11:02:29 2011  core/
 !Flash: logflash:        4096    Jan 02 11:02:29 2011  debug/
-!Flash: logflash:      585728    Feb 26 03:16:16 2018  debug_logs/
+!Flash: logflash:      585728    Mar 07 03:17:17 2018  debug_logs/
 !Flash: logflash:        4096    Jan 02 11:02:29 2011  generic/
 !Flash: logflash:        4096                          log/
 !Flash: logflash:       16384    Jan 02 10:48:38 2011  lost+found/
 !Flash: logflash:        4096    Dec 28 03:16:21 2017  vdc_1/
 !Flash: logflash: Usage for logflash://sup-local
-!Flash: logflash:   570 MB used
-!Flash: logflash:  7493 MB free
+!Flash: logflash:   572 MB used
+!Flash: logflash:  7491 MB free
 !Flash: logflash:  8063 MB total
 !
+!Flash: volatile:         100    Mar 06 06:34:52 2018  switchport-24384/
 !Flash: volatile:          40    Nov 28 06:21:11 2017  virtual-instance/
 !Flash: volatile: Usage for volatile://sup-local
-!Flash: volatile:           0 MB used
-!Flash: volatile:  2048 MB free
+!Flash: volatile:       0 MB used
+!Flash: volatile:  2047 MB free
 !Flash: volatile:  2048 MB total
 !
 !Mod: Mod Ports             Module-Type                       Model          Status
@@ -340,6 +342,8 @@
 !PROC_LOGS: VDC Process          PID     Normal-exit  Stack  Core   Log-create-time
 !PROC_LOGS: --- ---------------  ------  -----------  -----  -----  ---------------
 !
+!
+!
 
 
 version 7.0(3)I5(2)
@@ -347,7 +351,9 @@ hostname fra1-wn-p002-cnx
 policy-map type network-qos jumbo
   class type network-qos class-default
     mtu 9216
+install feature-set fex
 vdc fra1-wn-p002-cnx id 1
+  allow feature-set fex
   limit-resource vlan minimum 16 maximum 4094
   limit-resource vrf minimum 2 maximum 4096
   limit-resource port-channel minimum 0 maximum 511
@@ -355,6 +361,7 @@ vdc fra1-wn-p002-cnx id 1
   limit-resource u6route-mem minimum 96 maximum 96
   limit-resource m4route-mem minimum 58 maximum 58
   limit-resource m6route-mem minimum 8 maximum 8
+feature-set fex
 
 feature scp-server
 feature sftp-server
@@ -404,6 +411,7 @@ ip access-list 15
 ip access-list 66
   10 permit ip 10.30.0.0/16 any 
   20 permit ip 10.0.1.0 0.255.0.255 any 
+  30 permit ip 10.19.240.0/24 any 
 ip access-list acl_vlan1016_in
   statistics per-entry
   10 remark common rules
@@ -1032,6 +1040,9 @@ policy-map type control-plane custom-cp-profile-copp-policy-strict
     police cir 50 pps bc 32 packets conform transmit violate drop 
 control-plane
   service-policy input custom-cp-profile-copp-policy-strict 
+fex 101
+  pinning max-links 1
+  description "FRA1"
 bfd interval 50 min_rx 50 multiplier 5
 snmp-server contact EVO_Infra_NOC
 snmp-server location Interxion_FRA12_R51B05
@@ -1461,6 +1472,8 @@ interface port-channel113
   spanning-tree port type edge trunk
   logging event port link-status
   logging event port trunk-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
   vpc 113
 
 interface port-channel114
@@ -1722,6 +1735,22 @@ interface port-channel133
   storm-control multicast level 5.00
   vpc 133
 
+interface port-channel1000
+  shutdown
+  switchport
+  switchport mode trunk
+  switchport trunk allowed vlan none
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  vpc 1000
+
+interface port-channel1001
+  switchport
+  switchport mode fex-fabric
+  fex associate 101
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+
 interface port-channel3000
   description A_fra1-fw-p002-fpr-a
   switchport
@@ -1777,6 +1806,7 @@ interface Ethernet1/2
 
 interface Ethernet1/3
   description A_WAN buc1-wn-p154-ios Gi0/1 - EVOL_FRA/BUC_ETHL-1128/INT
+  bandwidth 300000
   vrf member core
   ip address 192.168.121.22/30
   no shutdown
@@ -1810,12 +1840,14 @@ interface Ethernet1/5.101
 
 interface Ethernet1/6
   description A_WAN spa1-02-p011-hpc eth25 - EVOL_FRA/SPA_ETHL-1118/2/COLT
+  bandwidth 100000
   vrf member core
   ip address 192.168.121.118/30
   no shutdown
 
 interface Ethernet1/7
   description A_WAN als1-wn-p067-ios Gi0/1 - EVOL_FRA/ERM_ETHL-1133/2/COLT
+  bandwidth 100000
   vrf member core
   ip address 192.168.121.10/30
   no shutdown
@@ -1830,6 +1862,7 @@ interface Ethernet1/8
 
 interface Ethernet1/9
   description A_WAN lnd4-00-p010-ios Gi1/0/39 - EVOL_FRA/LON_ETHL-1135/COLT
+  bandwidth 50000
   vrf member core
   ip address 192.168.121.58/30
   no shutdown
@@ -1839,12 +1872,14 @@ interface Ethernet1/10
   speed 1000
   duplex full
   no negotiate auto
+  bandwidth 50000
   vrf member core
   ip address 192.168.121.30/30
   no shutdown
 
 interface Ethernet1/11
   description A_WAN lnd6-wn-p001-ios Gi0/1 EVOL_FRA/LON_ETHL-1237/GTT
+  bandwidth 50000
   vrf member core
   ip address 192.168.121.74/30
   no shutdown
@@ -1969,6 +2004,8 @@ interface Ethernet1/27
   switchport
   switchport mode trunk
   switchport trunk allowed vlan 901
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
   channel-group 113 mode active
   no shutdown
 
@@ -2077,6 +2114,8 @@ interface Ethernet1/42
   spanning-tree port type edge trunk
   logging event port link-status
   logging event port trunk-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
 
 interface Ethernet1/43
   description A_fra1-ic-p001-ios Te0/1/2
@@ -2123,13 +2162,21 @@ interface Ethernet1/48
   no shutdown
 
 interface Ethernet1/49
-  lacp rate fast
-
-interface Ethernet1/50
-  lacp rate fast
   switchport
   switchport mode trunk
-  switchport trunk allowed vlan 2-2000
+  switchport trunk allowed vlan none
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  channel-group 1000 mode active
+  no shutdown
+
+interface Ethernet1/50
+  switchport
+  switchport mode fex-fabric
+  fex associate 101
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  channel-group 1001
 
 interface Ethernet1/51
   description A_fra1-wn-p001-cnx Eth1/51
@@ -2392,8 +2439,21 @@ interface Ethernet2/48
   no shutdown
 
 interface Ethernet2/49
+  switchport
+  switchport mode trunk
+  switchport trunk allowed vlan none
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  channel-group 1000 mode active
+  no shutdown
 
 interface Ethernet2/50
+  switchport
+  switchport mode fex-fabric
+  fex associate 101
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  channel-group 1001
 
 interface Ethernet2/51
   description A_fra1-wn-p001-cnx eth1/49

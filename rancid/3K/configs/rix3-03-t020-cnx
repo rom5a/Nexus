@@ -360,6 +360,7 @@ errdisable recovery cause miscabling
 ip access-list 66
   10 permit ip 10.30.0.0/16 any
   20 permit ip 192.168.103.0/24 any
+  30 permit ip 10.19.240.0/24 any
 class-map type qos match-any test
 class-map type network-qos test
 policy-map type network-qos jumbo
@@ -940,6 +941,7 @@ interface port-channel1001
   description A_FEX101 (our Eth1/33; Eth1/41)
   switchport mode fex-fabric
   fex associate 101
+  spanning-tree port type network
   no snmp trap link-status
   storm-control broadcast level 5.00
   storm-control multicast level 5.00
@@ -948,6 +950,7 @@ interface port-channel1002
   description A_FEX102 (our Eth1/34; Eth1/42)
   switchport mode fex-fabric
   fex associate 102
+  spanning-tree port type network
   no snmp trap link-status
   storm-control broadcast level 5.00
   storm-control multicast level 5.00
@@ -956,6 +959,7 @@ interface port-channel1003
   description A_FEX101 (our Eth1/13; Eth1/19)
   switchport mode fex-fabric
   fex associate 103
+  spanning-tree port type network
   no snmp trap link-status
   storm-control broadcast level 5.00
   storm-control multicast level 5.00
@@ -1947,13 +1951,13 @@ interface Ethernet103/1/7
   shutdown
 
 interface Ethernet103/1/8
-  shutdown
+  description B_rix3-docker1-dyn int1
 
 interface Ethernet103/1/9
   shutdown
 
 interface Ethernet103/1/10
-  shutdown
+  description B_rix3-docker2-dyn int 1
 
 interface Ethernet103/1/11
   shutdown

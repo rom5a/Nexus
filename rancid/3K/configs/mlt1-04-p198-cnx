@@ -105,8 +105,8 @@
 !Env: Supply    Model                   Output      Input      Capacity    Status
 !Env:                                 (Watts )    (Watts )     (Watts )
 !Env: -------  -------------------  ----------  ----------  ----------  --------------
-!Env: 1        N9K-PAC-650W               69 W                   650 W     Ok
-!Env: 2        N9K-PAC-650W               74 W                   650 W     Ok
+!Env: 1        N9K-PAC-650W               70 W                   650 W     Ok
+!Env: 2        N9K-PAC-650W               70 W                   650 W     Ok
 !Env: Power Usage Summary:
 !Env: --------------------
 !Env: Power Supply redundancy mode (configured)                Non-Redundant(combined)
@@ -148,8 +148,8 @@
 !Flash: bootflash: 50266 MB free
 !Flash: bootflash: 51231 MB total
 !
-!Flash: debug:      210269    Feb 25 03:21:04 2018  bootvar_debug.log
-!Flash: debug:           6    Feb 25 03:21:04 2018  bootvar_debug.meta
+!Flash: debug:      229835    Mar 06 08:03:15 2018  bootvar_debug.log
+!Flash: debug:           6    Mar 06 08:03:15 2018  bootvar_debug.meta
 !Flash: debug: Usage for debug://sup-local
 !Flash: debug:      0 MB used
 !Flash: debug:     4 MB free
@@ -157,7 +157,7 @@
 !
 !Flash: logflash:        4096    Mar 21 18:38:03 2017  core/
 !Flash: logflash:        4096    Mar 21 18:38:03 2017  debug/
-!Flash: logflash:        4096    Feb 25 23:39:42 2018  debug_logs/
+!Flash: logflash:        4096    Mar 06 22:01:24 2018  debug_logs/
 !Flash: logflash:        4096    Mar 21 18:38:03 2017  generic/
 !Flash: logflash:        4096                          log/
 !Flash: logflash:       16384    Mar 21 18:38:00 2017  lost+found/
@@ -442,6 +442,7 @@ errdisable recovery cause psecure-violation
 ip access-list 66
   10 permit ip 10.30.0.0/16 any 
   20 permit ip 10.0.1.0 0.255.0.255 any 
+  30 permit ip 10.19.240.0/24 any 
 ip access-list Evo-SNMP
 ip access-list Evo_SNMP
   10 permit ip 10.32.230.192/32 any 
@@ -549,6 +550,7 @@ vlan 1026
 
 vrf context PEER_KEEPALIVE
 vrf context management
+  ip route 0.0.0.0/0 10.40.0.1
   ip route 0.0.0.0/0 10.40.11.1
 vpc domain 1
   role priority 10
@@ -661,6 +663,7 @@ interface port-channel1001
   description A_FEX101 (our Eth1/1; Eth1/2)
   switchport mode fex-fabric
   fex associate 101
+  spanning-tree port type network
   no snmp trap link-status
   storm-control broadcast level 5.00
   storm-control multicast level 5.00
@@ -669,6 +672,7 @@ interface port-channel1002
   description A_FEX102 (our Eth1/3; Eth1/4)
   switchport mode fex-fabric
   fex associate 102
+  spanning-tree port type network
   no snmp trap link-status
   storm-control broadcast level 5.00
   storm-control multicast level 5.00
@@ -677,6 +681,7 @@ interface port-channel1003
   description A_FEX103 (our Eth1/5; Eth1/6)
   switchport mode fex-fabric
   fex associate 103
+  spanning-tree port type network
   no snmp trap link-status
   storm-control broadcast level 5.00
   storm-control multicast level 5.00
@@ -685,6 +690,7 @@ interface port-channel1004
   description A_FEX104 (our Eth1/7; Eth1/8)
   switchport mode fex-fabric
   fex associate 104
+  spanning-tree port type network
   no snmp trap link-status
   storm-control broadcast level 5.00
   storm-control multicast level 5.00
@@ -693,6 +699,7 @@ interface port-channel1005
   description A_FEX105 (our Eth1/9; Eth1/10)
   switchport mode fex-fabric
   fex associate 105
+  spanning-tree port type network
   no snmp trap link-status
   storm-control broadcast level 5.00
   storm-control multicast level 5.00
@@ -1020,7 +1027,7 @@ interface Ethernet1/54
 
 interface mgmt0
   vrf member management
-  ip address 10.40.11.198/24
+  ip address 10.40.0.198/24
 
 interface Ethernet101/1/1
   description Encoders

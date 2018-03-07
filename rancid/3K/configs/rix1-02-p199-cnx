@@ -528,6 +528,7 @@ errdisable recovery cause pause-rate-limit
 errdisable recovery cause miscabling
 ip access-list 66
   10 permit ip 10.30.0.0/16 any
+  20 permit ip 10.19.240.0/24 any
 policy-map type network-qos jumbo
   class type network-qos class-default
     mtu 9216
@@ -700,6 +701,7 @@ interface port-channel1001
   description A_FEX101 (our Eth1/1; Eth1/8)
   switchport mode fex-fabric
   fex associate 101
+  spanning-tree port type network
   no snmp trap link-status
   storm-control broadcast level 5.00
   storm-control multicast level 5.00
@@ -708,6 +710,7 @@ interface port-channel1002
   description A_FEX102 (our Eth1/2;Eth1/9)
   switchport mode fex-fabric
   fex associate 102
+  spanning-tree port type network
   no snmp trap link-status
   storm-control broadcast level 5.00
   storm-control multicast level 5.00
@@ -716,6 +719,7 @@ interface port-channel1003
   description A_FEX103 (our Eth1/3; Eth1/11)
   switchport mode fex-fabric
   fex associate 103
+  spanning-tree port type network
   no snmp trap link-status
   storm-control broadcast level 5.00
   storm-control multicast level 5.00
@@ -724,6 +728,7 @@ interface port-channel1004
   description A_FEX104 (our Eth1/4; Eth1/12)
   switchport mode fex-fabric
   fex associate 104
+  spanning-tree port type network
   no snmp trap link-status
   storm-control broadcast level 5.00
   storm-control multicast level 5.00
@@ -732,6 +737,7 @@ interface port-channel1005
   description A_FEX105 (our Eth1/5; Eth1/13)
   switchport mode fex-fabric
   fex associate 105
+  spanning-tree port type network
   no snmp trap link-status
   storm-control broadcast level 5.00
   storm-control multicast level 5.00
@@ -740,6 +746,7 @@ interface port-channel1006
   description A_FEX106 (our Eth1/6; Eth1/14)
   switchport mode fex-fabric
   fex associate 106
+  spanning-tree port type network
   no snmp trap link-status
   storm-control broadcast level 5.00
   storm-control multicast level 5.00
@@ -748,6 +755,7 @@ interface port-channel1007
   description A_FEX107 (our Eth1/17; Eth1/25)
   switchport mode fex-fabric
   fex associate 107
+  spanning-tree port type network
   no snmp trap link-status
   storm-control broadcast level 5.00
   storm-control multicast level 5.00
@@ -756,6 +764,7 @@ interface port-channel1008
   description A_FEX108 (our Eth1/18; Eth1/26)
   switchport mode fex-fabric
   fex associate 108
+  spanning-tree port type network
   no snmp trap link-status
   storm-control broadcast level 5.00
   storm-control multicast level 5.00
@@ -2016,7 +2025,7 @@ interface Ethernet103/1/36
   vpc orphan-port suspend
 
 interface Ethernet103/1/37
-  description DealerPC
+  description bwin TV PC
   switchport access vlan 51
   spanning-tree port type edge
   no snmp trap link-status
@@ -2107,7 +2116,7 @@ interface Ethernet103/1/46
 
 interface Ethernet103/1/47
   description Audio
-  switchport access vlan 39
+  switchport access vlan 140
   spanning-tree port type edge
   no snmp trap link-status
   storm-control broadcast level 5.00
@@ -4301,3 +4310,6 @@ logging logfile messages 6
 logging server 10.30.230.90 7 use-vrf management
 logging timestamp milliseconds
 logging level syslog 6
+
+
+

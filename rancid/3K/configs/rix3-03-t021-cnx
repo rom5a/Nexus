@@ -358,6 +358,7 @@ errdisable recovery cause miscabling
 ip access-list 66
   10 permit ip 10.30.0.0/16 any
   20 permit ip 192.168.103.0/24 any
+  30 permit ip 10.19.240.0/24 any
 policy-map type network-qos jumbo
   class type network-qos class-default
     mtu 9216
@@ -1824,8 +1825,6 @@ interface Ethernet102/1/28
   switchport access vlan 309
   spanning-tree port type edge
   no snmp trap link-status
-  storm-control broadcast level 5.00
-  storm-control multicast level 5.00
   vpc orphan-port suspend
 
 interface Ethernet102/1/29
@@ -1953,7 +1952,7 @@ interface Ethernet103/1/7
   storm-control multicast level 5.00
 
 interface Ethernet103/1/8
-  shutdown
+  description B_rix3-docker1-dyn int2
   storm-control broadcast level 5.00
 
 interface Ethernet103/1/9
@@ -1965,7 +1964,7 @@ interface Ethernet103/1/9
   channel-group 1409 mode active
 
 interface Ethernet103/1/10
-  shutdown
+  description B_rix3-docker2-dyn int2
 
 interface Ethernet103/1/11
   shutdown

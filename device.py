@@ -121,7 +121,7 @@ class DeviceValidator:
         while not port_parsed:
             parsed_lines += 1
             config_line = self.config_lines[line_number + parsed_lines]
-            config_line_length = len(config_line)
+            config_line_length = len(config_line.lstrip())
             if port_name not in port_container:
                 port_container[port_name] = []
 
@@ -248,15 +248,16 @@ class DeviceValidator:
         ethernet_configs = eval(self.config.get('Main', 'ethernet_config'))
 
         for ethernet_port in self.ethernet_ports:
+            log_result = []
             port_configs = self.ethernet_ports[ethernet_port]
             if "shutdown" in port_configs:
                 continue
 
-            self.logger.info('\t\t' + ethernet_port)
+            log_result.append('\t\t' + ethernet_port)
 
             for common_config in ethernet_configs:
-                if common_config in port_configs:
-                    self.logger.info('\t\t\t' + common_config)
+                if common_config not in port_configs:
+                    log_result.append('\t\t\t' + common_config)
                     self.absent_config_lines.append(common_config)
 
             for port_config in port_configs:
@@ -264,31 +265,44 @@ class DeviceValidator:
                     self.logger.info('\t\t\tspanning-tree port type edge')
                     self.absent_config_lines.append('spanning-tree port type edge')
                 elif 'switchport mode trunk' is port_config and 'spanning-tree port type edge trunk' not in port_configs:
-                    self.logger.info('\t\t\tspanning-tree port type edge trunk')
+                    log_result.append('\t\t\tspanning-tree port type edge trunk')
                     self.absent_config_lines.append('spanning-tree port type edge trunk')
+
+            if len(log_result) > 1:
+                for log_line in log_result:
+                    self.logger.info(log_line)
+
         self.logger.info("")
 
     def validate_channel_ports(self):
         self.logger.info("\tChannel ports config validation:")
+        port_channel_configs = eval(self.config.get('Main', 'ethernet_config'))
+
         for channel_port in self.channel_ports:
+            log_result = []
             port_configs = self.channel_ports[channel_port]
             if "shutdown" in port_configs:
                 continue
 
-            self.logger.info('\t\t' + channel_port)
+            log_result.append('\t\t' + channel_port)
 
-            for common_config in ETHERNET_COMMON_CONFIG:
-                if common_config in port_configs:
-                    self.logger.info('\t\t\t' + common_config)
+            for common_config in port_channel_configs:
+                if common_config not in port_configs:
+                    log_result.append('\t\t\t' + common_config)
                     self.absent_config_lines.append(common_config)
 
             for port_config in port_configs:
                 if re.match(r'^switchport access', port_config, re.IGNORECASE) and 'spanning-tree port type edge' not in port_configs:
-                    self.logger.info('\t\t\tspanning-tree port type edge')
+                    log_result.append('\t\t\tspanning-tree port type edge')
                     self.absent_config_lines.append('spanning-tree port type edge')
                 elif 'switchport mode trunk' is port_config and 'spanning-tree port type edge trunk' not in port_configs:
-                    self.logger.info('\t\t\tspanning-tree port type edge trunk')
+                    log_result.append('\t\t\tspanning-tree port type edge trunk')
                     self.absent_config_lines.append('spanning-tree port type edge trunk')
+
+            if len(log_result) > 1:
+                for log_line in log_result:
+                    self.logger.info(log_line)
+
         self.logger.info("")
 
     def validate_console_configuration(self):
@@ -325,6 +339,7 @@ class DeviceValidator:
 
     def validate_fex(self):
         self.logger.info("\tFex config validation:")
+
         for fex_port in self.fex:
             port_configs = self.fex[fex_port]
             if "shutdown" in port_configs:

@@ -106,7 +106,7 @@
 !Env:                                 (Watts )    (Watts )     (Watts )
 !Env: -------  -------------------  ----------  ----------  ----------  --------------
 !Env: 1        N9K-PAC-650W               76 W                   650 W     Ok
-!Env: 2        N9K-PAC-650W               76 W                   650 W     Ok
+!Env: 2        N9K-PAC-650W               75 W                   650 W     Ok
 !Env: Power Usage Summary:
 !Env: --------------------
 !Env: Power Supply redundancy mode (configured)                Non-Redundant(combined)
@@ -148,8 +148,8 @@
 !Flash: bootflash: 50265 MB free
 !Flash: bootflash: 51231 MB total
 !
-!Flash: debug:      163343    Feb 25 03:23:26 2018  bootvar_debug.log
-!Flash: debug:           6    Feb 25 03:23:26 2018  bootvar_debug.meta
+!Flash: debug:      177893    Mar 06 08:09:07 2018  bootvar_debug.log
+!Flash: debug:           6    Mar 06 08:09:07 2018  bootvar_debug.meta
 !Flash: debug: Usage for debug://sup-local
 !Flash: debug:      0 MB used
 !Flash: debug:     4 MB free
@@ -157,7 +157,7 @@
 !
 !Flash: logflash:        4096    Mar 21 17:49:15 2017  core/
 !Flash: logflash:        4096    Mar 21 17:49:15 2017  debug/
-!Flash: logflash:        4096    Feb 25 21:24:40 2018  debug_logs/
+!Flash: logflash:        4096    Mar 07 03:05:45 2018  debug_logs/
 !Flash: logflash:        4096    Mar 21 17:49:15 2017  generic/
 !Flash: logflash:        4096                          log/
 !Flash: logflash:       16384    Mar 21 17:49:11 2017  lost+found/
@@ -441,6 +441,7 @@ errdisable recovery cause psecure-violation
 ip access-list 66
   10 permit ip 10.30.0.0/16 any 
   20 permit ip 10.0.1.0 0.255.0.255 any 
+  30 permit ip 10.19.240.0/24 any 
 ip access-list Evo-SNMP
 ip access-list Evo_SNMP
   10 permit ip 10.32.230.192/32 any 
@@ -546,6 +547,7 @@ vlan 1026
 
 vrf context PEER_KEEPALIVE
 vrf context management
+  ip route 0.0.0.0/0 10.40.0.1
   ip route 0.0.0.0/0 10.40.11.1
 vpc domain 1
   role priority 20
@@ -1023,7 +1025,7 @@ interface Ethernet1/54
 
 interface mgmt0
   vrf member management
-  ip address 10.40.11.199/24
+  ip address 10.40.0.199/24
 
 interface Ethernet101/1/1
   description Encoders
@@ -1856,6 +1858,7 @@ interface Ethernet103/1/23
   switchport access vlan 31
   spanning-tree port type edge
   no snmp trap link-status
+  vpc orphan-port suspend
 
 interface Ethernet103/1/24
   description DealerPC
@@ -1930,6 +1933,7 @@ interface Ethernet103/1/37
   switchport trunk allowed vlan 2,19,21-22,31,36,76,81,256
   spanning-tree port type edge trunk
   no snmp trap link-status
+  vpc orphan-port suspend
 
 interface Ethernet103/1/38
   description A_mlt1-vmware02
@@ -1937,6 +1941,7 @@ interface Ethernet103/1/38
   switchport trunk allowed vlan 2,19,21-22,31,36,76,81,256
   spanning-tree port type edge trunk
   no snmp trap link-status
+  vpc orphan-port suspend
 
 interface Ethernet103/1/39
   shutdown

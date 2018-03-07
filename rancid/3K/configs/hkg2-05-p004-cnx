@@ -127,8 +127,8 @@
 !Flash: bootflash:   419 MB free
 !Flash: bootflash:  1534 MB total
 !
-!Flash: debug:      126011    Feb 25 03:21:33 2018  bootvar_debug.log
-!Flash: debug:           6    Feb 25 03:21:33 2018  bootvar_debug.meta
+!Flash: debug:      130017    Mar 06 03:20:46 2018  bootvar_debug.log
+!Flash: debug:           6    Mar 06 03:20:46 2018  bootvar_debug.meta
 !Flash: debug: Usage for debug://sup-local
 !Flash: debug:      0 MB used
 !Flash: debug:     1 MB free
@@ -247,6 +247,7 @@ errdisable recovery cause psecure-violation
 ip access-list 66
   10 permit ip 10.30.0.0/16 any 
   20 permit ip 10.0.1.0 0.255.0.255 any 
+  30 permit ip 10.19.240.0/24 any 
 ip access-list copp-system-acl-eigrp
   10 permit eigrp any 224.0.0.10/32 
 ipv6 access-list copp-system-acl-eigrp6
