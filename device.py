@@ -4,6 +4,7 @@ import re
 import ConfigParser
 from config.common_config import *
 
+
 CHASSIS_TYPE_MARKER = "!Chassis type:"
 HARDWARE_MARKER = "!Hardware:"
 INTERFACE_ETHERNET_MARKER = "interface Ethernet"
@@ -246,11 +247,16 @@ class DeviceValidator:
     def validate_ethernet(self):
         self.logger.info("\tEthernet config validation:")
         ethernet_configs = eval(self.config.get('Main', 'ethernet_config'))
+        description_pattern = re.compile('^description.*')
+        channel_group_pattern = re.compile("^channel-group.*")
+        ip_address_pattern = re.compile("^ip address.*")
 
         for ethernet_port in self.ethernet_ports:
             log_result = []
             port_configs = self.ethernet_ports[ethernet_port]
-            if "shutdown" in port_configs:
+
+            if (self.model_series == "5" and "shutdown" in port_configs) or len(port_configs) == 0 or \
+                    filter(ip_address_pattern.match, port_configs):
                 continue
 
             log_result.append('\t\t' + ethernet_port)
@@ -260,10 +266,19 @@ class DeviceValidator:
                     log_result.append('\t\t\t' + common_config)
                     self.absent_config_lines.append(common_config)
 
+            if not filter(description_pattern.match, port_configs):
+                log_result.append('\t\t\tdescription')
+                self.absent_config_lines.append('description')
+
+            if not filter(channel_group_pattern.match, port_configs) and "vpc orphan-port suspend" not in port_configs:
+                log_result.append('\t\t\tvpc orphan-port suspend')
+                self.absent_config_lines.append('vpc orphan-port suspend')
+
             for port_config in port_configs:
                 if re.match(r'^switchport access', port_config, re.IGNORECASE) and 'spanning-tree port type edge' not in port_configs:
                     self.logger.info('\t\t\tspanning-tree port type edge')
                     self.absent_config_lines.append('spanning-tree port type edge')
+
                 elif 'switchport mode trunk' is port_config and 'spanning-tree port type edge trunk' not in port_configs:
                     log_result.append('\t\t\tspanning-tree port type edge trunk')
                     self.absent_config_lines.append('spanning-tree port type edge trunk')
@@ -276,7 +291,8 @@ class DeviceValidator:
 
     def validate_channel_ports(self):
         self.logger.info("\tChannel ports config validation:")
-        port_channel_configs = eval(self.config.get('Main', 'ethernet_config'))
+        ethernet_configs = eval(self.config.get('Main', 'ethernet_config'))
+        description_pattern = re.compile('^description.*')
 
         for channel_port in self.channel_ports:
             log_result = []
@@ -286,10 +302,14 @@ class DeviceValidator:
 
             log_result.append('\t\t' + channel_port)
 
-            for common_config in port_channel_configs:
+            for common_config in ethernet_configs:
                 if common_config not in port_configs:
                     log_result.append('\t\t\t' + common_config)
                     self.absent_config_lines.append(common_config)
+
+            if not filter(description_pattern.match, port_configs):
+                log_result.append('\t\t\tdescription')
+                self.absent_config_lines.append('description')
 
             for port_config in port_configs:
                 if re.match(r'^switchport access', port_config, re.IGNORECASE) and 'spanning-tree port type edge' not in port_configs:
@@ -308,7 +328,7 @@ class DeviceValidator:
     def validate_console_configuration(self):
         self.logger.info("\tConsole config validation:")
         for console_config in CONSOLE_CONFIG:
-            if console_config not in self.console_config:
+            if console_config in self.console_config:
                 self.logger.info("\t\t" + console_config)
                 self.absent_config_lines.append(console_config)
         self.logger.info("")
@@ -339,16 +359,27 @@ class DeviceValidator:
 
     def validate_fex(self):
         self.logger.info("\tFex config validation:")
+        description_pattern = re.compile('^description.*')
 
         for fex_port in self.fex:
+            log_result = []
             port_configs = self.fex[fex_port]
             if "shutdown" in port_configs:
                 continue
 
-            self.logger.info('\t\t' + fex_port)
+            log_result.append('\t\t' + fex_port)
 
             for common_config in FEX_CONFIG:
-                if common_config in port_configs:
-                    self.logger.info('\t\t\t' + common_config)
+                if common_config not in port_configs:
+                    log_result.append('\t\t\t' + common_config)
                     self.absent_config_lines.append(common_config)
+
+            if not filter(description_pattern.match, port_configs):
+                log_result.append('\t\t\tdescription')
+                self.absent_config_lines.append('description')
+
+            if len(log_result) > 1:
+                for log_line in log_result:
+                    self.logger.info(log_line)
+
         self.logger.info("")
