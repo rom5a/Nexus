@@ -127,8 +127,8 @@
 !Flash: bootflash:   419 MB free
 !Flash: bootflash:  1534 MB total
 !
-!Flash: debug:      130017    Mar 06 03:20:46 2018  bootvar_debug.log
-!Flash: debug:           6    Mar 06 03:20:46 2018  bootvar_debug.meta
+!Flash: debug:      131529    Mar 14 03:16:15 2018  bootvar_debug.log
+!Flash: debug:           6    Mar 14 03:16:15 2018  bootvar_debug.meta
 !Flash: debug: Usage for debug://sup-local
 !Flash: debug:      0 MB used
 !Flash: debug:     1 MB free

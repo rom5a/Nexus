@@ -432,9 +432,11 @@
 !
 !CORES: VDC  Module  Instance  Process-name     PID       Date(Year-Month-Day Time)
 !CORES: ---  ------  --------  ---------------  --------  -------------------------
+!CORES: 1    1       1         snmpd            3974      2018-03-07 05:51:55
 !
 !PROC_LOGS: Process          PID     Normal-exit  Stack  Core   Log-create-time
 !PROC_LOGS: ---------------  ------  -----------  -----  -----  ---------------
+!PROC_LOGS:   1 snmpd            3974              N      Y      Y Wed Mar  7 05:51:44 2018
 !
 !FEX: FEX Mod Ports Card Type                          Model              Status
 !FEX: --- --- ----- ---------------------------------- ------------------ -----------
@@ -673,7 +675,7 @@ interface port-channel3
 interface port-channel115
   description A_rix1-02-p006-ios
   switchport mode trunk
-  switchport trunk allowed vlan 44,62
+  switchport trunk allowed vlan 44,62,140
   speed 10000
   storm-control broadcast level 5.00
   storm-control multicast level 5.00
@@ -832,6 +834,7 @@ interface Ethernet1/9
   description A_FEX102 (in Po1002)
   switchport mode fex-fabric
   fex associate 102
+  no snmp trap link-status
   storm-control broadcast level 5.00
   storm-control multicast level 5.00
   channel-group 1002
@@ -875,7 +878,7 @@ interface Ethernet1/14
 interface Ethernet1/15
   description A_rix1-02-p006-ios Te1/0/2
   switchport mode trunk
-  switchport trunk allowed vlan 44,62
+  switchport trunk allowed vlan 44,62,140
   storm-control broadcast level 5.00
   storm-control multicast level 5.00
   channel-group 115 mode active
@@ -4176,8 +4179,8 @@ interface Ethernet108/1/35
   vpc orphan-port suspend
 
 interface Ethernet108/1/36
-  description DealerPC
-  switchport access vlan 51
+  description Table 957_LAN
+  switchport access vlan 140
   spanning-tree port type edge
   no snmp trap link-status
   storm-control broadcast level 5.00

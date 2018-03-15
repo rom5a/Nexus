@@ -57,7 +57,7 @@
 !Env: Fan             Model                Hw         Status
 !Env: ------------------------------------------------------
 !Env: Chassis         N2K-C2248-FAN        --         ok
-!Env: PS-1            N2200-PAC-400W       --         no power source
+!Env: PS-1            N2200-PAC-400W       --         ok
 !Env: PS-2            N2200-PAC-400W       --         ok
 !Env: Fan Fex : 102:
 !Env: ------------------------------------------------------
@@ -91,7 +91,7 @@
 !Env: Supply    Model                   Output      Input      Capacity    Status
 !Env:                                 (Watts )    (Watts )     (Watts )
 !Env: -------  -------------------  ----------  ----------  ----------  --------------
-!Env: 1        N9K-PAC-650W               70 W                   650 W     Ok
+!Env: 1        N9K-PAC-650W               71 W                   650 W     Ok
 !Env: 2        N9K-PAC-650W               70 W                   650 W     Ok
 !Env: Power Usage Summary:
 !Env: --------------------
@@ -127,8 +127,8 @@
 !Flash: bootflash: 50269 MB free
 !Flash: bootflash: 51231 MB total
 !
-!Flash: debug:      338937    Mar 06 03:45:05 2018  bootvar_debug.log
-!Flash: debug:           6    Mar 06 03:45:05 2018  bootvar_debug.meta
+!Flash: debug:      342585    Mar 14 03:41:29 2018  bootvar_debug.log
+!Flash: debug:           6    Mar 14 03:41:29 2018  bootvar_debug.meta
 !Flash: debug: Usage for debug://sup-local
 !Flash: debug:      0 MB used
 !Flash: debug:     4 MB free
@@ -136,14 +136,14 @@
 !
 !Flash: logflash:        4096    Jun 24 00:44:05 2017  core/
 !Flash: logflash:        4096    Jun 24 00:44:05 2017  debug/
-!Flash: logflash:        4096    Mar 07 00:37:19 2018  debug_logs/
+!Flash: logflash:        4096    Mar 14 22:35:12 2018  debug_logs/
 !Flash: logflash:        4096    Jun 24 00:44:05 2017  generic/
 !Flash: logflash:        4096                          log/
 !Flash: logflash:       16384    Jun 24 00:44:02 2017  lost+found/
 !Flash: logflash:        4096    Sep 12 08:11:03 2017  vdc_1/
 !Flash: logflash: Usage for logflash://sup-local
-!Flash: logflash:   579 MB used
-!Flash: logflash:  7483 MB free
+!Flash: logflash:   578 MB used
+!Flash: logflash:  7484 MB free
 !Flash: logflash:  8063 MB total
 !
 !Flash: volatile:          40    Aug 07 21:00:51 2017  virtual-instance/

@@ -105,8 +105,8 @@
 !Env: Supply    Model                   Output      Input      Capacity    Status
 !Env:                                 (Watts )    (Watts )     (Watts )
 !Env: -------  -------------------  ----------  ----------  ----------  --------------
-!Env: 1        N9K-PAC-650W               70 W                   650 W     Ok
-!Env: 2        N9K-PAC-650W               70 W                   650 W     Ok
+!Env: 1        N9K-PAC-650W               69 W                   650 W     Ok
+!Env: 2        N9K-PAC-650W               69 W                   650 W     Ok
 !Env: Power Usage Summary:
 !Env: --------------------
 !Env: Power Supply redundancy mode (configured)                Non-Redundant(combined)
@@ -148,8 +148,8 @@
 !Flash: bootflash: 50266 MB free
 !Flash: bootflash: 51231 MB total
 !
-!Flash: debug:      229835    Mar 06 08:03:15 2018  bootvar_debug.log
-!Flash: debug:           6    Mar 06 08:03:15 2018  bootvar_debug.meta
+!Flash: debug:      238333    Mar 14 03:11:13 2018  bootvar_debug.log
+!Flash: debug:           6    Mar 14 03:11:13 2018  bootvar_debug.meta
 !Flash: debug: Usage for debug://sup-local
 !Flash: debug:      0 MB used
 !Flash: debug:     4 MB free
@@ -157,7 +157,7 @@
 !
 !Flash: logflash:        4096    Mar 21 18:38:03 2017  core/
 !Flash: logflash:        4096    Mar 21 18:38:03 2017  debug/
-!Flash: logflash:        4096    Mar 06 22:01:24 2018  debug_logs/
+!Flash: logflash:        4096    Mar 14 20:13:49 2018  debug_logs/
 !Flash: logflash:        4096    Mar 21 18:38:03 2017  generic/
 !Flash: logflash:        4096                          log/
 !Flash: logflash:       16384    Mar 21 18:38:00 2017  lost+found/
@@ -1026,6 +1026,7 @@ interface Ethernet1/54
   shutdown
 
 interface mgmt0
+  description A_mlt1-wn-p003-ios gi1/0/9
   vrf member management
   ip address 10.40.0.198/24
 

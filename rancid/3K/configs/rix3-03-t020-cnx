@@ -453,6 +453,9 @@ vlan 221
 vlan 223
   name gld-services_10.30.223.0/24
   mode fabricpath
+vlan 225
+  name gs_prod_10.30.225.0_24
+  mode fabricpath
 vlan 228
   mode fabricpath
 vlan 229
@@ -929,10 +932,28 @@ interface port-channel150
   storm-control multicast level 5.00
   vpc 150
 
+interface port-channel151
+  description B_rix3-docker1-dyn (Eth 103/1/8, vpc151)
+  switchport access vlan 234
+  spanning-tree port type edge
+  no snmp trap link-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  vpc 151
+
+interface port-channel152
+  description B_rix3-docker2-dyn (Eth 103/1/10, vpc152)
+  switchport access vlan 234
+  spanning-tree port type edge
+  no snmp trap link-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  vpc 152
+
 interface port-channel1000
   description A_rix3-03-p030/1-cnx Eth1/51/1 (our Eth1/25;Eth1/47)
   switchport mode trunk
-  switchport trunk allowed vlan 135,139,141-143,176,218,223,229
+  switchport trunk allowed vlan 135,139,141-143,176,218,223,225,229
   storm-control broadcast level 5.00
   storm-control multicast level 5.00
   vpc 1000
@@ -1194,7 +1215,7 @@ interface Ethernet1/24
 interface Ethernet1/25
   description A_rix3-03-p031-cnx Eth1/51/1 (our Po1000)
   switchport mode trunk
-  switchport trunk allowed vlan 135,139,141-143,176,218,223,229
+  switchport trunk allowed vlan 135,139,141-143,176,218,223,225,229
   storm-control broadcast level 5.00
   storm-control multicast level 5.00
   channel-group 1000 mode active
@@ -1368,7 +1389,7 @@ interface Ethernet1/46
 interface Ethernet1/47
   description A_rix3-03-p030-cnx Eth1/51/1 (our Po1000)
   switchport mode trunk
-  switchport trunk allowed vlan 135,139,141-143,176,218,223,229
+  switchport trunk allowed vlan 135,139,141-143,176,218,223,225,229
   storm-control broadcast level 5.00
   storm-control multicast level 5.00
   channel-group 1000 mode active
@@ -1952,12 +1973,20 @@ interface Ethernet103/1/7
 
 interface Ethernet103/1/8
   description B_rix3-docker1-dyn int1
+  switchport access vlan 234
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  channel-group 151 mode active
 
 interface Ethernet103/1/9
   shutdown
 
 interface Ethernet103/1/10
   description B_rix3-docker2-dyn int 1
+  switchport access vlan 234
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  channel-group 152 mode active
 
 interface Ethernet103/1/11
   shutdown

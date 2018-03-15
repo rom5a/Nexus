@@ -853,7 +853,6 @@ interface port-channel3
   vpc peer-link
 
 interface port-channel101
-  description A_PCoreDB01 (our Eth104/1/1-3)
   switchport access vlan 31
   switchport trunk native vlan 31
   spanning-tree port type edge
@@ -863,7 +862,6 @@ interface port-channel101
   vpc 101
 
 interface port-channel102
-  description A_PCoreDB02 (our Eth104/1/4-6)
   switchport access vlan 31
   spanning-tree port type edge
   no snmp trap link-status
@@ -892,7 +890,6 @@ interface port-channel104
   vpc 104
 
 interface port-channel105
-  description A_PCoreDBWitness
   switchport access vlan 31
   spanning-tree port type edge
   no snmp trap link-status
@@ -906,8 +903,6 @@ interface port-channel106
   switchport trunk allowed vlan 36,38,76,256,261,263
   spanning-tree port type edge trunk
   no snmp trap link-status
-  storm-control broadcast level 5.00
-  storm-control multicast level 5.00
   vpc 106
 
 interface port-channel107
@@ -2963,7 +2958,6 @@ interface Ethernet103/1/48
   vpc orphan-port suspend
 
 interface Ethernet104/1/1
-  description A_PCoreDB01-331FLR-P1
   switchport access vlan 31
   switchport trunk native vlan 31
   storm-control broadcast level 5.00
@@ -2971,7 +2965,6 @@ interface Ethernet104/1/1
   channel-group 101 mode active
 
 interface Ethernet104/1/2
-  description A_PCoreDB01-331FLR-P2
   switchport access vlan 31
   switchport trunk native vlan 31
   storm-control broadcast level 5.00
@@ -2979,7 +2972,6 @@ interface Ethernet104/1/2
   channel-group 101 mode active
 
 interface Ethernet104/1/3
-  description A_PCoreDB01-366T-P3
   switchport access vlan 31
   switchport trunk native vlan 31
   storm-control broadcast level 5.00
@@ -2987,35 +2979,30 @@ interface Ethernet104/1/3
   channel-group 101 mode active
 
 interface Ethernet104/1/4
-  description A_PCoreDB02-331FLR-P1
   switchport access vlan 31
   storm-control broadcast level 5.00
   storm-control multicast level 5.00
   channel-group 102 mode active
 
 interface Ethernet104/1/5
-  description A_PCoreDB02-331FLR-P2
   switchport access vlan 31
   storm-control broadcast level 5.00
   storm-control multicast level 5.00
   channel-group 102 mode active
 
 interface Ethernet104/1/6
-  description A_PCoreDB02-366T-P3
   switchport access vlan 31
   storm-control broadcast level 5.00
   storm-control multicast level 5.00
   channel-group 102 mode active
 
 interface Ethernet104/1/7
-  description A_PCoreDBWitness-331FLR-P1
   switchport access vlan 31
   storm-control broadcast level 5.00
   storm-control multicast level 5.00
   channel-group 105 mode active
 
 interface Ethernet104/1/8
-  description A_PCoreDBWitness-366T-P1
   switchport access vlan 31
   storm-control broadcast level 5.00
   storm-control multicast level 5.00
@@ -3035,8 +3022,6 @@ interface Ethernet104/1/10
   switchport mode trunk
   switchport trunk allowed vlan 36,38,76,256,261,263
   spanning-tree port type edge trunk
-  storm-control broadcast level 5.00
-  storm-control multicast level 5.00
   channel-group 106 mode active
 
 interface Ethernet104/1/11

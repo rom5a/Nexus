@@ -138,8 +138,8 @@
 !Flash: bootflash: 13044 MB free
 !Flash: bootflash: 14542 MB total
 !
-!Flash: debug:      216456    Mar 06 07:43:28 2018  bootvar_debug.log
-!Flash: debug:           6    Mar 06 07:43:28 2018  bootvar_debug.meta
+!Flash: debug:      236752    Mar 14 08:01:13 2018  bootvar_debug.log
+!Flash: debug:           6    Mar 14 08:01:13 2018  bootvar_debug.meta
 !Flash: debug: Usage for debug://sup-local
 !Flash: debug:      0 MB used
 !Flash: debug:     1 MB free
@@ -148,7 +148,7 @@
 !Flash: logflash:        4096    Dec 11 08:59:32 2017  ISSU_debug_logs/
 !Flash: logflash:        4096    Oct 11 07:33:34 2017  core/
 !Flash: logflash:        4096    Oct 11 07:33:34 2017  debug/
-!Flash: logflash:      172032    Mar 06 22:37:09 2018  debug_logs/
+!Flash: logflash:      172032    Mar 15 01:58:23 2018  debug_logs/
 !Flash: logflash:        4096    Oct 11 07:33:34 2017  generic/
 !Flash: logflash:        4096                          log/
 !Flash: logflash:        4096    Oct 11 07:43:14 2017  vdc_1/
@@ -504,6 +504,8 @@ vlan 218
   name gid_serivces_10.30.218.0/24
 vlan 223
   name gld-services_10.30.223.0/24
+vlan 225
+  name gs_prod_10.30.225.0_24
 vlan 229
   name Deploy_10.30.229.0_24
 vrf context management
@@ -522,7 +524,7 @@ vpc domain 1
 interface port-channel100
   description A_rix3-03-p020/21-cnx (our eth1/25;eth1/25)
   switchport mode trunk
-  switchport trunk allowed vlan 135,139,141-143,176,218,223,229
+  switchport trunk allowed vlan 135,139,141-143,176,218,223,225,229
   storm-control broadcast level 5.00
   storm-control multicast level 5.00
   vpc 100
@@ -692,6 +694,17 @@ interface port-channel116
   storm-control multicast level 5.00
   vpc 116
 
+interface port-channel117
+  description B_rix3-Kubernetes-srv (out eth1/17)
+  switchport mode trunk
+  switchport trunk native vlan 139
+  switchport trunk allowed vlan 135,139,141,225
+  spanning-tree port type edge trunk
+  no snmp trap link-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  vpc 117
+
 interface port-channel4095
   description A_rix3-03-p030-cnx (our E1/49-50) !!!VPC PEER LINK!!!
   switchport mode trunk
@@ -827,7 +840,13 @@ interface Ethernet1/16
   channel-group 116 mode active
 
 interface Ethernet1/17
-  shutdown
+  description B_rix3-kubernetes-srv
+  switchport mode trunk
+  switchport trunk native vlan 139
+  switchport trunk allowed vlan 135,139,141,225
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  channel-group 117 mode active
 
 interface Ethernet1/18
   shutdown
@@ -939,7 +958,7 @@ interface Ethernet1/50
 interface Ethernet1/51/1
   description A_rix3-03-p020-cnx eth1/25 (in Po100)
   switchport mode trunk
-  switchport trunk allowed vlan 135,139,141-143,176,218,223,229
+  switchport trunk allowed vlan 135,139,141-143,176,218,223,225,229
   speed 10000
   storm-control broadcast level 5.00
   storm-control multicast level 5.00
@@ -973,7 +992,7 @@ interface Ethernet1/51/4
 interface Ethernet1/52/1
   description A_rix3-03-p021-cnx eth1/25 (in Po100)
   switchport mode trunk
-  switchport trunk allowed vlan 135,139,141-143,176,218,223,229
+  switchport trunk allowed vlan 135,139,141-143,176,218,223,225,229
   speed 10000
   storm-control broadcast level 5.00
   storm-control multicast level 5.00
