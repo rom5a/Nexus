@@ -43,8 +43,8 @@ LOCAL_USERS = [
 ]
 
 VRF_NTP = [
-    'ntp server 10.30.235.210 prefer use-vrf management',
-    'ntp server 10.30.9.210 prefer use-vrf management',
+ #   'ntp server 10.30.235.210 prefer use-vrf management',
+  #  'ntp server 10.30.9.210 prefer use-vrf management',
 ]
 
 CONSOLE_CONFIG = [

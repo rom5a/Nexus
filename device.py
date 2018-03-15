@@ -164,9 +164,12 @@ class DeviceValidator:
         self.validate_qos_configuration()
         self.validate_fex()
 
+        self.logger.info("\tMissed config lines: " + str(len(self.absent_config_lines)))
+
     def validate_mandatory_lines(self):
         self.logger.info("\tMandatory config lines missed: ")
-        for required_line in COMMON_CONFIG:
+        common_configs = eval(self.config.get("Main", "common_config"))
+        for required_line in common_configs:
             if required_line not in self.config_lines:
                 self.absent_config_lines.append(required_line)
                 self.logger.info("\t\t" + str(required_line))
@@ -232,12 +235,6 @@ class DeviceValidator:
                     self.logger.info("\t\t" + str(ntp_server))
                 else:
                     matching.remove(ntp_server)
-
-            if matching:
-                self.logger.info("\tNTP server redundant config:")
-                for ntp_config_line in matching:
-                    self.redundant_config_lines.append("NTP: " + str(ntp_config_line))
-                    self.logger.info("\t\t" + str(ntp_config_line))
         else:
             self.absent_config_lines.append("NTP server not set")
             self.logger.info("\t\tNTP server not set")
@@ -275,8 +272,8 @@ class DeviceValidator:
                 self.absent_config_lines.append('vpc orphan-port suspend')
 
             for port_config in port_configs:
-                if re.match(r'^switchport access', port_config, re.IGNORECASE) and 'spanning-tree port type edge' not in port_configs:
-                    self.logger.info('\t\t\tspanning-tree port type edge')
+                if re.match(r'^switchport access.*', port_config, re.IGNORECASE) and 'spanning-tree port type edge' not in port_configs:
+                    log_result.append('\t\t\tspanning-tree port type edge')
                     self.absent_config_lines.append('spanning-tree port type edge')
 
                 elif 'switchport mode trunk' is port_config and 'spanning-tree port type edge trunk' not in port_configs:
