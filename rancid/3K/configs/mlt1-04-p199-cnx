@@ -105,8 +105,8 @@
 !Env: Supply    Model                   Output      Input      Capacity    Status
 !Env:                                 (Watts )    (Watts )     (Watts )
 !Env: -------  -------------------  ----------  ----------  ----------  --------------
-!Env: 1        N9K-PAC-650W               77 W                   650 W     Ok
-!Env: 2        N9K-PAC-650W               73 W                   650 W     Ok
+!Env: 1        N9K-PAC-650W               78 W                   650 W     Ok
+!Env: 2        N9K-PAC-650W               75 W                   650 W     Ok
 !Env: Power Usage Summary:
 !Env: --------------------
 !Env: Power Supply redundancy mode (configured)                Non-Redundant(combined)
@@ -148,8 +148,8 @@
 !Flash: bootflash: 50265 MB free
 !Flash: bootflash: 51231 MB total
 !
-!Flash: debug:      185479    Mar 14 03:13:40 2018  bootvar_debug.log
-!Flash: debug:           6    Mar 14 03:13:40 2018  bootvar_debug.meta
+!Flash: debug:      191241    Mar 20 03:15:31 2018  bootvar_debug.log
+!Flash: debug:           6    Mar 20 03:15:31 2018  bootvar_debug.meta
 !Flash: debug: Usage for debug://sup-local
 !Flash: debug:      0 MB used
 !Flash: debug:     4 MB free
@@ -157,7 +157,7 @@
 !
 !Flash: logflash:        4096    Mar 21 17:49:15 2017  core/
 !Flash: logflash:        4096    Mar 21 17:49:15 2017  debug/
-!Flash: logflash:        4096    Mar 15 01:56:08 2018  debug_logs/
+!Flash: logflash:        4096    Mar 21 02:18:51 2018  debug_logs/
 !Flash: logflash:        4096    Mar 21 17:49:15 2017  generic/
 !Flash: logflash:        4096                          log/
 !Flash: logflash:       16384    Mar 21 17:49:11 2017  lost+found/
@@ -563,6 +563,7 @@ interface port-channel120
   switchport mode trunk
   switchport trunk allowed vlan 2,8,10-12,19-27,29-32,34,36,40,76,81,93,99,256,998-999
   no buffer-boost
+  no snmp trap link-status
   storm-control broadcast level 5.00
   storm-control multicast level 5.00
   vpc 120
@@ -572,6 +573,7 @@ interface port-channel121
   switchport mode trunk
   switchport trunk allowed vlan 2,29,40
   no buffer-boost
+  no snmp trap link-status
   storm-control broadcast level 5.00
   storm-control multicast level 5.00
   vpc 121
@@ -581,6 +583,7 @@ interface port-channel122
   switchport mode trunk
   switchport trunk allowed vlan 2,29,40
   no buffer-boost
+  no snmp trap link-status
   storm-control broadcast level 5.00
   storm-control multicast level 5.00
   vpc 122
@@ -590,6 +593,7 @@ interface port-channel123
   switchport mode trunk
   switchport trunk allowed vlan 2,29
   no buffer-boost
+  no snmp trap link-status
   storm-control broadcast level 5.00
   storm-control multicast level 5.00
   vpc 123
@@ -599,6 +603,7 @@ interface port-channel124
   switchport mode trunk
   switchport trunk allowed vlan 2,29
   no buffer-boost
+  no snmp trap link-status
   storm-control broadcast level 5.00
   storm-control multicast level 5.00
   vpc 124
@@ -608,6 +613,7 @@ interface port-channel125
   switchport mode trunk
   switchport trunk allowed vlan 2,29
   no buffer-boost
+  no snmp trap link-status
   storm-control broadcast level 5.00
   storm-control multicast level 5.00
   vpc 125
@@ -617,6 +623,7 @@ interface port-channel126
   switchport mode trunk
   switchport trunk allowed vlan 2,29
   no buffer-boost
+  no snmp trap link-status
   storm-control broadcast level 5.00
   storm-control multicast level 5.00
   vpc 126
@@ -627,6 +634,7 @@ interface port-channel142
   switchport trunk allowed vlan 5
   spanning-tree port type edge trunk
   no buffer-boost
+  no snmp trap link-status
   storm-control broadcast level 5.00
   storm-control multicast level 5.00
 
@@ -636,6 +644,7 @@ interface port-channel144
   switchport trunk allowed vlan 2,21-22,29,31,40,256,1026
   spanning-tree port type edge trunk
   no buffer-boost
+  no snmp trap link-status
   storm-control broadcast level 5.00
   storm-control multicast level 5.00
 
@@ -644,6 +653,7 @@ interface port-channel146
   switchport mode trunk
   switchport trunk allowed vlan 5,10,1026
   no buffer-boost
+  no snmp trap link-status
   storm-control broadcast level 5.00
   storm-control multicast level 5.00
   vpc 146
@@ -654,6 +664,7 @@ interface port-channel147
   switchport trunk allowed vlan 5,10,1026
   spanning-tree port type edge trunk
   no buffer-boost
+  no snmp trap link-status
   storm-control broadcast level 5.00
   storm-control multicast level 5.00
   vpc 147
@@ -703,6 +714,7 @@ interface port-channel4095
   switchport mode trunk
   switchport trunk allowed vlan 2,5,8,10-12,19-27,29-32,34,36,40,76,81,93,99,256,998-999,1026
   spanning-tree port type network
+  no snmp trap link-status
   storm-control broadcast level 5.00
   storm-control multicast level 5.00
   vpc peer-link
@@ -710,6 +722,7 @@ interface port-channel4095
 interface port-channel4096
   description A_mlt1-04-p198-cnx (our E1/48) !!!PEER KEEPALIVE!!!
   no switchport
+  no snmp trap link-status
   vrf member PEER_KEEPALIVE
   ip address 192.168.254.2/30
 
@@ -717,6 +730,7 @@ interface Ethernet1/1
   description A_FEX101 (in Po1001)
   switchport mode fex-fabric
   fex associate 101
+  no snmp trap link-status
   storm-control broadcast level 5.00
   storm-control multicast level 5.00
   channel-group 1001
@@ -725,6 +739,7 @@ interface Ethernet1/2
   description A_FEX101 (in Po1001)
   switchport mode fex-fabric
   fex associate 101
+  no snmp trap link-status
   storm-control broadcast level 5.00
   storm-control multicast level 5.00
   channel-group 1001
@@ -733,6 +748,7 @@ interface Ethernet1/3
   description A_FEX102 (in Po1002)
   switchport mode fex-fabric
   fex associate 102
+  no snmp trap link-status
   storm-control broadcast level 5.00
   storm-control multicast level 5.00
   channel-group 1002
@@ -741,6 +757,7 @@ interface Ethernet1/4
   description A_FEX102 (in Po1002)
   switchport mode fex-fabric
   fex associate 102
+  no snmp trap link-status
   storm-control broadcast level 5.00
   storm-control multicast level 5.00
   channel-group 1002
@@ -749,6 +766,7 @@ interface Ethernet1/5
   description A_FEX103 (in Po1003)
   switchport mode fex-fabric
   fex associate 103
+  no snmp trap link-status
   storm-control broadcast level 5.00
   storm-control multicast level 5.00
   channel-group 1003
@@ -757,6 +775,7 @@ interface Ethernet1/6
   description A_FEX103 (in Po1003)
   switchport mode fex-fabric
   fex associate 103
+  no snmp trap link-status
   storm-control broadcast level 5.00
   storm-control multicast level 5.00
   channel-group 1003
@@ -765,6 +784,7 @@ interface Ethernet1/7
   description A_FEX104 (in Po1004)
   switchport mode fex-fabric
   fex associate 104
+  no snmp trap link-status
   storm-control broadcast level 5.00
   storm-control multicast level 5.00
   channel-group 1004
@@ -773,6 +793,7 @@ interface Ethernet1/8
   description A_FEX104 (in Po1004)
   switchport mode fex-fabric
   fex associate 104
+  no snmp trap link-status
   storm-control broadcast level 5.00
   storm-control multicast level 5.00
   channel-group 1004
@@ -781,6 +802,7 @@ interface Ethernet1/9
   description A_FEX105 (in Po1005)
   switchport mode fex-fabric
   fex associate 105
+  no snmp trap link-status
   storm-control broadcast level 5.00
   storm-control multicast level 5.00
   channel-group 1005
@@ -789,36 +811,46 @@ interface Ethernet1/10
   description A_FEX105 (in Po1005)
   switchport mode fex-fabric
   fex associate 105
+  no snmp trap link-status
   storm-control broadcast level 5.00
   storm-control multicast level 5.00
   channel-group 1005
 
 interface Ethernet1/11
   shutdown
+  no snmp trap link-status
 
 interface Ethernet1/12
   shutdown
+  no snmp trap link-status
 
 interface Ethernet1/13
   shutdown
+  no snmp trap link-status
 
 interface Ethernet1/14
   shutdown
+  no snmp trap link-status
 
 interface Ethernet1/15
   shutdown
+  no snmp trap link-status
 
 interface Ethernet1/16
   shutdown
+  no snmp trap link-status
 
 interface Ethernet1/17
   shutdown
+  no snmp trap link-status
 
 interface Ethernet1/18
   shutdown
+  no snmp trap link-status
 
 interface Ethernet1/19
   shutdown
+  no snmp trap link-status
 
 interface Ethernet1/20
   description A_mlt1-04-p001-ios
@@ -826,6 +858,7 @@ interface Ethernet1/20
   switchport trunk allowed vlan 2,8,10-12,19-27,29-32,34,36,40,76,81,93,99,256,998-999
   spanning-tree port type edge trunk
   no buffer-boost
+  no snmp trap link-status
   storm-control broadcast level 5.00
   storm-control multicast level 5.00
   channel-group 120 mode active
@@ -835,6 +868,7 @@ interface Ethernet1/21
   switchport mode trunk
   switchport trunk allowed vlan 2,29,40
   no buffer-boost
+  no snmp trap link-status
   storm-control broadcast level 5.00
   storm-control multicast level 5.00
   channel-group 121 mode active
@@ -844,6 +878,7 @@ interface Ethernet1/22
   switchport mode trunk
   switchport trunk allowed vlan 2,29,40
   no buffer-boost
+  no snmp trap link-status
   storm-control broadcast level 5.00
   storm-control multicast level 5.00
   channel-group 122 mode active
@@ -853,6 +888,7 @@ interface Ethernet1/23
   switchport mode trunk
   switchport trunk allowed vlan 2,29
   no buffer-boost
+  no snmp trap link-status
   storm-control broadcast level 5.00
   storm-control multicast level 5.00
   channel-group 123 mode active
@@ -862,6 +898,7 @@ interface Ethernet1/24
   switchport mode trunk
   switchport trunk allowed vlan 2,29
   no buffer-boost
+  no snmp trap link-status
   storm-control broadcast level 5.00
   storm-control multicast level 5.00
   channel-group 124 mode active
@@ -871,6 +908,7 @@ interface Ethernet1/25
   switchport mode trunk
   switchport trunk allowed vlan 2,29
   no buffer-boost
+  no snmp trap link-status
   storm-control broadcast level 5.00
   storm-control multicast level 5.00
   channel-group 125 mode active
@@ -880,54 +918,70 @@ interface Ethernet1/26
   switchport mode trunk
   switchport trunk allowed vlan 2,29
   no buffer-boost
+  no snmp trap link-status
   storm-control broadcast level 5.00
   storm-control multicast level 5.00
   channel-group 126 mode active
 
 interface Ethernet1/27
   shutdown
+  no snmp trap link-status
 
 interface Ethernet1/28
   shutdown
+  no snmp trap link-status
 
 interface Ethernet1/29
   shutdown
+  no snmp trap link-status
 
 interface Ethernet1/30
   shutdown
+  no snmp trap link-status
 
 interface Ethernet1/31
   shutdown
+  no snmp trap link-status
 
 interface Ethernet1/32
   shutdown
+  no snmp trap link-status
 
 interface Ethernet1/33
   shutdown
+  no snmp trap link-status
 
 interface Ethernet1/34
   shutdown
+  no snmp trap link-status
 
 interface Ethernet1/35
   shutdown
+  no snmp trap link-status
 
 interface Ethernet1/36
   shutdown
+  no snmp trap link-status
 
 interface Ethernet1/37
   shutdown
+  no snmp trap link-status
 
 interface Ethernet1/38
   shutdown
+  no snmp trap link-status
 
 interface Ethernet1/39
   shutdown
+  no snmp trap link-status
 
 interface Ethernet1/40
   shutdown
+  no snmp trap link-status
 
 interface Ethernet1/41
   shutdown
+  no snmp trap link-status
 
 interface Ethernet1/42
   description A_mlt1-fw-t254-asa/sec Gi0/0
@@ -935,6 +989,7 @@ interface Ethernet1/42
   switchport trunk allowed vlan 5
   spanning-tree port type edge trunk
   no buffer-boost
+  no snmp trap link-status
   storm-control broadcast level 5.00
   storm-control multicast level 5.00
   channel-group 142 mode active
@@ -945,6 +1000,7 @@ interface Ethernet1/43
   switchport trunk allowed vlan 5
   spanning-tree port type edge trunk
   no buffer-boost
+  no snmp trap link-status
   storm-control broadcast level 5.00
   storm-control multicast level 5.00
   channel-group 142 mode active
@@ -955,6 +1011,7 @@ interface Ethernet1/44
   switchport trunk allowed vlan 2,21-22,29,31,40,256,1026
   spanning-tree port type edge trunk
   no buffer-boost
+  no snmp trap link-status
   storm-control broadcast level 5.00
   storm-control multicast level 5.00
   channel-group 144 mode active
@@ -965,6 +1022,7 @@ interface Ethernet1/45
   switchport trunk allowed vlan 2,21-22,29,31,40,256,1026
   spanning-tree port type edge trunk
   no buffer-boost
+  no snmp trap link-status
   storm-control broadcast level 5.00
   storm-control multicast level 5.00
   channel-group 144 mode active
@@ -975,6 +1033,7 @@ interface Ethernet1/46
   switchport trunk allowed vlan 5,10,1026
   spanning-tree port type edge trunk
   no buffer-boost
+  no snmp trap link-status
   storm-control broadcast level 5.00
   storm-control multicast level 5.00
   channel-group 146 mode active
@@ -985,6 +1044,7 @@ interface Ethernet1/47
   switchport trunk allowed vlan 5,10,1026
   spanning-tree port type edge trunk
   no buffer-boost
+  no snmp trap link-status
   storm-control broadcast level 5.00
   storm-control multicast level 5.00
   channel-group 147 mode active
@@ -992,6 +1052,7 @@ interface Ethernet1/47
 interface Ethernet1/48
   description A_mlt1-04-p198-cnx E1/48 (in Po4096) !!!PEER KEEPALIVE!!!
   no switchport
+  no snmp trap link-status
   channel-group 4096
   no shutdown
 
@@ -999,6 +1060,7 @@ interface Ethernet1/49
   description A_mlt1-04-p198-cnx E1/49 (in Po4095) !!!VPC PEER LINK!!!
   switchport mode trunk
   switchport trunk allowed vlan 2,5,8,10-12,19-27,29-32,34,36,40,76,81,93,99,256,998-999,1026
+  no snmp trap link-status
   storm-control broadcast level 5.00
   storm-control multicast level 5.00
   channel-group 4095 mode active
@@ -1007,21 +1069,26 @@ interface Ethernet1/50
   description A_mlt1-04-p198-cnx E1/50 (in Po4095) !!!VPC PEER LINK!!!
   switchport mode trunk
   switchport trunk allowed vlan 2,5,8,10-12,19-27,29-32,34,36,40,76,81,93,99,256,998-999,1026
+  no snmp trap link-status
   storm-control broadcast level 5.00
   storm-control multicast level 5.00
   channel-group 4095 mode active
 
 interface Ethernet1/51
   shutdown
+  no snmp trap link-status
 
 interface Ethernet1/52
   shutdown
+  no snmp trap link-status
 
 interface Ethernet1/53
   shutdown
+  no snmp trap link-status
 
 interface Ethernet1/54
   shutdown
+  no snmp trap link-status
 
 interface mgmt0
   description A_mlt1-wn-p003-ios gi1/0/10
@@ -2252,39 +2319,51 @@ interface Ethernet104/1/36
 
 interface Ethernet104/1/37
   shutdown
+  no snmp trap link-status
 
 interface Ethernet104/1/38
   shutdown
+  no snmp trap link-status
 
 interface Ethernet104/1/39
   shutdown
+  no snmp trap link-status
 
 interface Ethernet104/1/40
   shutdown
+  no snmp trap link-status
 
 interface Ethernet104/1/41
   shutdown
+  no snmp trap link-status
 
 interface Ethernet104/1/42
   shutdown
+  no snmp trap link-status
 
 interface Ethernet104/1/43
   shutdown
+  no snmp trap link-status
 
 interface Ethernet104/1/44
   shutdown
+  no snmp trap link-status
 
 interface Ethernet104/1/45
   shutdown
+  no snmp trap link-status
 
 interface Ethernet104/1/46
   shutdown
+  no snmp trap link-status
 
 interface Ethernet104/1/47
   shutdown
+  no snmp trap link-status
 
 interface Ethernet104/1/48
   shutdown
+  no snmp trap link-status
 
 interface Ethernet105/1/1
   description DealerPC

@@ -192,9 +192,9 @@
 !Flash: bootflash:   327996218    Feb 12 07:10:22 2018  n6000-uk9.7.1.4.N1.1.bin
 !Flash: bootflash:   325055218    Apr 24 07:40:33 2017  n6000-uk9.7.2.0.N1.1.bin
 !Flash: bootflash:   325724988    Aug 30 06:11:06 2016  n6000-uk9.7.3.0.N1.1.bin
-!Flash: bootflash:       70688    Dec 11 10:35:42 2017  null
+!Flash: bootflash:       98617    Mar 19 11:21:03 2018  null
 !Flash: bootflash:        4096    Jan 01 00:06:55 2001  scripts/
-!Flash: bootflash:       70688    Dec 12 10:14:35 2017  startup-config
+!Flash: bootflash:       98595    Mar 19 11:22:56 2018  startup-config
 !Flash: bootflash:        4096    Jan 01 00:02:39 2001  vdc_2/
 !Flash: bootflash:        4096    Jan 01 00:02:39 2001  vdc_3/
 !Flash: bootflash:        4096    Jan 01 00:02:39 2001  vdc_4/
@@ -699,6 +699,24 @@ interface port-channel119
   storm-control multicast level 5.00
   vpc 119
 
+interface port-channel120
+  description A_rix1-02-p146-ios(our Eth1/20)
+  switchport mode trunk
+  switchport trunk allowed vlan 44,62,66
+  speed 10000
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  vpc 120
+
+interface port-channel121
+  description A_rix1-02-p147-ios(our Eth1/21)
+  switchport mode trunk
+  switchport trunk allowed vlan 66
+  speed 10000
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  vpc 121
+
 interface port-channel1001
   description A_FEX101 (our Eth1/1; Eth1/8)
   switchport mode fex-fabric
@@ -916,10 +934,20 @@ interface Ethernet1/19
   channel-group 119 mode active
 
 interface Ethernet1/20
-  shutdown
+  description A_rix1-02-p146-ios Te1/0/2
+  switchport mode trunk
+  switchport trunk allowed vlan 44,62,66
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  channel-group 120 mode active
 
 interface Ethernet1/21
-  shutdown
+  description A_rix1-02-p147-ios Te1/0/2
+  switchport mode trunk
+  switchport trunk allowed vlan 66
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  channel-group 121 mode active
 
 interface Ethernet1/22
   shutdown

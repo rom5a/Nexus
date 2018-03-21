@@ -127,41 +127,39 @@
 !Flash: bootflash:   757307904    Dec 08 07:36:16 2017  nxos.7.0.3.I5.2.bin
 !Flash: bootflash:           0    Dec 11 08:46:43 2017  platform-sdk.cmd
 !Flash: bootflash:        4096    Oct 11 06:55:18 2017  scripts/
-!Flash: bootflash:        1024    Dec 11 08:45:00 2017  sprom_2_0_1
-!Flash: bootflash:        1024    Dec 11 08:45:00 2017  sprom_3_0_0
+!Flash: bootflash:        1024    Mar 20 06:38:55 2018  sprom_2_0_1
+!Flash: bootflash:        1024    Mar 20 06:38:55 2018  sprom_3_0_0
 !Flash: bootflash:        4096    Oct 11 06:55:26 2017  virt_strg_pool_bf_vdc_1/
 !Flash: bootflash:        4096    Oct 11 06:54:45 2017  virtual-instance/
 !Flash: bootflash:          59    Oct 11 06:54:34 2017  virtual-instance.conf
 !Flash: bootflash: Usage for bootflash://sup-local
-!Flash: bootflash:  1496 MB used
-!Flash: bootflash: 13046 MB free
+!Flash: bootflash:  1497 MB used
+!Flash: bootflash: 13045 MB free
 !Flash: bootflash: 14542 MB total
 !
-!Flash: debug:      262574    Mar 14 13:09:39 2018  bootvar_debug.log
-!Flash: debug:           6    Mar 14 13:09:39 2018  bootvar_debug.meta
+!Flash: debug:       31967    Mar 20 13:57:49 2018  bootvar_debug.log
+!Flash: debug:           5    Mar 20 13:57:49 2018  bootvar_debug.meta
 !Flash: debug: Usage for debug://sup-local
-!Flash: debug:      0 MB used
+!Flash: debug:       0 MB used
 !Flash: debug:     1 MB free
 !Flash: debug:     2 MB total
 !
 !Flash: logflash:        4096    Dec 11 08:39:37 2017  ISSU_debug_logs/
 !Flash: logflash:        4096    Oct 11 06:53:50 2017  core/
 !Flash: logflash:        4096    Oct 11 06:53:50 2017  debug/
-!Flash: logflash:      167936    Mar 14 22:16:36 2018  debug_logs/
+!Flash: logflash:      167936    Mar 20 23:52:34 2018  debug_logs/
 !Flash: logflash:        4096    Oct 11 06:53:50 2017  generic/
 !Flash: logflash:        4096                          log/
 !Flash: logflash:        4096    Oct 11 07:02:42 2017  vdc_1/
 !Flash: logflash: Usage for logflash://sup-local
-!Flash: logflash:  1496 MB used
-!Flash: logflash: 13046 MB free
+!Flash: logflash:  1497 MB used
+!Flash: logflash: 13045 MB free
 !Flash: logflash: 14542 MB total
 !
-!Flash: volatile:         100    Feb 01 10:02:40 2018  switchport-29041/
-!Flash: volatile:         100    Feb 01 10:21:11 2018  switchport-30270/
-!Flash: volatile:          60    Dec 11 08:46:12 2017  virtual-instance/
+!Flash: volatile:          60    Mar 20 06:40:02 2018  virtual-instance/
 !Flash: volatile: Usage for volatile://sup-local
-!Flash: volatile:       0 MB used
-!Flash: volatile:   599 MB free
+!Flash: volatile:           0 MB used
+!Flash: volatile:   600 MB free
 !Flash: volatile:   600 MB total
 !
 !Mod: Mod Ports             Module-Type                       Model          Status
@@ -507,6 +505,10 @@ vlan 225
   name gs_prod_10.30.225.0_24
 vlan 229
   name Deploy_10.30.229.0_24
+vlan 244
+  name gld_pro_10.30.244.0_24
+vlan 245
+  name ss_pro_10.30.245.0_24
 vrf context management
   ip route 0.0.0.0/0 192.168.103.1
 no system urpf disable
@@ -523,7 +525,8 @@ vpc domain 1
 interface port-channel100
   description A_rix3-03-p020/21-cnx (our eth1/47;eth1/47)
   switchport mode trunk
-  switchport trunk allowed vlan 135,139,141-143,176,218,223,225,229
+  switchport trunk allowed vlan 135,139,141-143,176,218,223,225,229,244-245
+  no snmp trap link-status
   storm-control broadcast level 5.00
   storm-control multicast level 5.00
   vpc 100
@@ -618,8 +621,9 @@ interface port-channel109
   vpc 109
 
 interface port-channel110
-  description B_rix3-kvm1-pp
+  description B_rix3-kube1-pp
   switchport mode trunk
+  switchport trunk native vlan 176
   switchport trunk allowed vlan 135,139,141,143,176
   no snmp trap link-status
   storm-control broadcast level 5.00
@@ -661,25 +665,23 @@ interface port-channel113
   vpc 113
 
 interface port-channel114
-  description B_rix3-kvm5-pp
+  description B_kube3-pp (our Eth1/14)
   switchport mode trunk
-  switchport trunk allowed vlan 135,139,141,176
+  switchport trunk allowed vlan 135,139,141,143,176
   spanning-tree port type edge trunk
   no snmp trap link-status
   storm-control broadcast level 5.00
   storm-control multicast level 5.00
-  lacp suspend-individual
   vpc 114
 
 interface port-channel115
-  description B_rix3-kvm6-pp
+  description B_rix3-kube3-pr (our Eth1/15)
   switchport mode trunk
-  switchport trunk allowed vlan 135,139,141,176
+  switchport trunk allowed vlan 9,139,176,201,225
   spanning-tree port type edge trunk
   no snmp trap link-status
   storm-control broadcast level 5.00
   storm-control multicast level 5.00
-  lacp suspend-individual
   vpc 115
 
 interface port-channel116
@@ -704,10 +706,77 @@ interface port-channel117
   storm-control multicast level 5.00
   vpc 117
 
+interface port-channel120
+  description A_rix3-pcoredb1(our eth1/20)
+  switchport access vlan 244
+  spanning-tree port type edge
+  no snmp trap link-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  vpc 120
+
+interface port-channel121
+  description A_rix3-evoad1 (our et1/21)
+  switchport access vlan 245
+  spanning-tree port type edge
+  no snmp trap link-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  vpc 121
+
+interface port-channel122
+  description B_rix3-kube4-pp (our Eth1/22)
+  switchport mode trunk
+  switchport trunk allowed vlan 135,139,141,143,176
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  vpc 122
+
+interface port-channel123
+  description B_rix3-kube4-pr (our Eth1/23)
+  switchport mode trunk
+  switchport trunk allowed vlan 9,139,176,201,225
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  vpc 123
+
+interface port-channel124
+  description B_rix3-kube2-pp (our Eth1/23)
+  switchport mode trunk
+  switchport trunk allowed vlan 135,139,141,143,176
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  vpc 124
+
+interface port-channel125
+  description B_rix3-kube2-pr (our Eth1/25)
+  switchport mode trunk
+  switchport trunk allowed vlan 9,139,176,201,225
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  vpc 125
+
+interface port-channel126
+  description B_rix3-kube1-pp (our Eth1/26)
+  switchport mode trunk
+  switchport trunk allowed vlan 135,139,141,143,176
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  vpc 126
+
+interface port-channel127
+  description B_rix3-kube1-pr (our Eth1/27)
+  switchport mode trunk
+  switchport trunk allowed vlan 9,139,176,201,225
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  vpc 127
+
 interface port-channel4095
   description A_rix3-03-p031-cnx (our Eth1/49-50) !!!VPC PEER LINK!!!
   switchport mode trunk
   spanning-tree port type network
+  no snmp trap link-status
   storm-control broadcast level 5.00
   storm-control multicast level 5.00
   vpc peer-link
@@ -715,6 +784,7 @@ interface port-channel4095
 interface Ethernet1/1
   description A_rix3-ppcoredb1 int1
   switchport access vlan 223
+  no snmp trap link-status
   storm-control broadcast level 5.00
   storm-control multicast level 5.00
   channel-group 101 mode active
@@ -722,6 +792,7 @@ interface Ethernet1/1
 interface Ethernet1/2
   description A_rix3-pprepdb1 int1
   switchport access vlan 223
+  no snmp trap link-status
   storm-control broadcast level 5.00
   storm-control multicast level 5.00
   channel-group 102 mode active
@@ -729,6 +800,7 @@ interface Ethernet1/2
 interface Ethernet1/3
   description A_rix3-ppcoredb2 int1
   switchport access vlan 223
+  no snmp trap link-status
   storm-control broadcast level 5.00
   storm-control multicast level 5.00
   channel-group 103 mode active
@@ -736,6 +808,7 @@ interface Ethernet1/3
 interface Ethernet1/4
   description A_rix3-pprepdb2 int1
   switchport access vlan 223
+  no snmp trap link-status
   storm-control broadcast level 5.00
   storm-control multicast level 5.00
   channel-group 104 mode active
@@ -745,6 +818,7 @@ interface Ethernet1/5
   switchport mode trunk
   switchport trunk native vlan 176
   switchport trunk allowed vlan 176,218
+  no snmp trap link-status
   storm-control broadcast level 5.00
   storm-control multicast level 5.00
   channel-group 105 mode active
@@ -754,6 +828,7 @@ interface Ethernet1/6
   switchport mode trunk
   switchport trunk native vlan 176
   switchport trunk allowed vlan 176,218
+  no snmp trap link-status
   storm-control broadcast level 5.00
   storm-control multicast level 5.00
   channel-group 106 mode active
@@ -763,6 +838,7 @@ interface Ethernet1/7
   switchport mode trunk
   switchport trunk native vlan 176
   switchport trunk allowed vlan 176,218
+  no snmp trap link-status
   storm-control broadcast level 5.00
   storm-control multicast level 5.00
   channel-group 107 mode active
@@ -771,6 +847,7 @@ interface Ethernet1/8
   description A_rix3-dwh-proxmox09
   switchport mode trunk
   switchport trunk allowed vlan 229
+  no snmp trap link-status
   storm-control broadcast level 5.00
   storm-control multicast level 5.00
   channel-group 108 mode active
@@ -779,14 +856,17 @@ interface Ethernet1/9
   description A_rix3-dwh-proxmox10
   switchport mode trunk
   switchport trunk allowed vlan 229
+  no snmp trap link-status
   storm-control broadcast level 5.00
   storm-control multicast level 5.00
   channel-group 109 mode active
 
 interface Ethernet1/10
-  description B_rix3-kvm1-pp int2
+  description B_rix3-kube1-pp int2
   switchport mode trunk
+  switchport trunk native vlan 176
   switchport trunk allowed vlan 135,139,141,143,176
+  no snmp trap link-status
   storm-control broadcast level 5.00
   storm-control multicast level 5.00
   channel-group 110 mode active
@@ -795,6 +875,7 @@ interface Ethernet1/11
   description B_rix3-kvm2-pp int2
   switchport mode trunk
   switchport trunk allowed vlan 135,139,141,143,176
+  no snmp trap link-status
   storm-control broadcast level 5.00
   storm-control multicast level 5.00
   channel-group 111 mode active
@@ -803,6 +884,7 @@ interface Ethernet1/12
   description B_rix3-kvm3-pp int2
   switchport mode trunk
   switchport trunk allowed vlan 135,139,141,143,176
+  no snmp trap link-status
   storm-control broadcast level 5.00
   storm-control multicast level 5.00
   channel-group 112 mode active
@@ -811,31 +893,33 @@ interface Ethernet1/13
   description B_rix3-kvm4-pp int2
   switchport mode trunk
   switchport trunk allowed vlan 135,139,141,143,176
+  no snmp trap link-status
   storm-control broadcast level 5.00
   storm-control multicast level 5.00
   channel-group 113 mode active
 
 interface Ethernet1/14
-  description B_rix3-kvm5-pp int2
+  description B_kube3-pp (in Po114)
   switchport mode trunk
-  switchport trunk allowed vlan 135,139,141,176
+  switchport trunk allowed vlan 135,139,141,143,176
+  no snmp trap link-status
   storm-control broadcast level 5.00
   storm-control multicast level 5.00
-  channel-group 114 mode active
 
 interface Ethernet1/15
-  description B_rix3-kvm6-pp int2
+  description B_rix3-kube3-pr (in Po115)
   switchport mode trunk
-  switchport trunk allowed vlan 135,139,141,176
+  switchport trunk allowed vlan 9,139,176,201,225
+  no snmp trap link-status
   storm-control broadcast level 5.00
   storm-control multicast level 5.00
-  channel-group 115 mode active
 
 interface Ethernet1/16
   description B_rix3-backup-storage1-pr (in Po116)
   switchport mode trunk
   switchport trunk native vlan 176
   switchport trunk allowed vlan 142,176
+  no snmp trap link-status
   storm-control broadcast level 5.00
   storm-control multicast level 5.00
   channel-group 116 mode active
@@ -845,107 +929,174 @@ interface Ethernet1/17
   switchport mode trunk
   switchport trunk native vlan 139
   switchport trunk allowed vlan 135,139,141,225
+  no snmp trap link-status
   storm-control broadcast level 5.00
   storm-control multicast level 5.00
   channel-group 117 mode active
 
 interface Ethernet1/18
   shutdown
+  no snmp trap link-status
 
 interface Ethernet1/19
   shutdown
+  no snmp trap link-status
 
 interface Ethernet1/20
-  shutdown
+  description A_rix3-pcoredb1(in Po120)
+  switchport access vlan 244
+  no snmp trap link-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  channel-group 120 mode active
 
 interface Ethernet1/21
-  shutdown
+  description A_rix3-evoad1 (in Po121)
+  switchport access vlan 245
+  no snmp trap link-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  channel-group 121 mode active
 
 interface Ethernet1/22
-  shutdown
+  description B_rix3-kube4-pp (in Po122)
+  switchport mode trunk
+  switchport trunk allowed vlan 135,139,141,143,176
+  no snmp trap link-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
 
 interface Ethernet1/23
-  shutdown
+  description B_rix3-kube4-pr (in Po123)
+  switchport mode trunk
+  switchport trunk allowed vlan 9,139,176,201,225
+  no snmp trap link-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
 
 interface Ethernet1/24
-  shutdown
+  description B_rix3-kube2-pp (in Po124)
+  switchport mode trunk
+  switchport trunk allowed vlan 135,139,141,143,176
+  no snmp trap link-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  channel-group 124 mode active
 
 interface Ethernet1/25
-  shutdown
+  description B_rix3-kube2-pr (in Po125)
+  switchport mode trunk
+  switchport trunk allowed vlan 9,139,176,201,225
+  no snmp trap link-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
 
 interface Ethernet1/26
-  shutdown
+  description B_rix3-kube1-pp (in Po126)
+  switchport mode trunk
+  switchport trunk allowed vlan 135,139,141,143,176
+  no snmp trap link-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
+  channel-group 126 mode active
 
 interface Ethernet1/27
-  shutdown
+  description B_rix3-kube1-pr (in Po127)
+  switchport mode trunk
+  switchport trunk allowed vlan 9,139,176,201,225
+  no snmp trap link-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
 
 interface Ethernet1/28
   shutdown
+  no snmp trap link-status
 
 interface Ethernet1/29
   shutdown
+  no snmp trap link-status
 
 interface Ethernet1/30
   shutdown
+  no snmp trap link-status
 
 interface Ethernet1/31
   shutdown
+  no snmp trap link-status
 
 interface Ethernet1/32
   shutdown
+  no snmp trap link-status
 
 interface Ethernet1/33
   shutdown
+  no snmp trap link-status
 
 interface Ethernet1/34
   shutdown
+  no snmp trap link-status
 
 interface Ethernet1/35
   shutdown
+  no snmp trap link-status
 
 interface Ethernet1/36
   shutdown
+  no snmp trap link-status
 
 interface Ethernet1/37
   shutdown
+  no snmp trap link-status
 
 interface Ethernet1/38
   shutdown
+  no snmp trap link-status
 
 interface Ethernet1/39
   shutdown
+  no snmp trap link-status
 
 interface Ethernet1/40
   shutdown
+  no snmp trap link-status
 
 interface Ethernet1/41
   shutdown
+  no snmp trap link-status
 
 interface Ethernet1/42
   shutdown
+  no snmp trap link-status
 
 interface Ethernet1/43
   shutdown
+  no snmp trap link-status
 
 interface Ethernet1/44
   shutdown
+  no snmp trap link-status
 
 interface Ethernet1/45
   shutdown
+  no snmp trap link-status
 
 interface Ethernet1/46
   shutdown
+  no snmp trap link-status
 
 interface Ethernet1/47
   shutdown
+  no snmp trap link-status
 
 interface Ethernet1/48
   shutdown
+  no snmp trap link-status
 
 interface Ethernet1/49
   description A_rix3-03-p031-cnx e1/49 (in Po4095) !!!VPC PEER LINK!!!
   switchport mode trunk
   speed 40000
+  no snmp trap link-status
   storm-control broadcast level 5.00
   storm-control multicast level 5.00
   channel-group 4095 mode active
@@ -955,6 +1106,7 @@ interface Ethernet1/50
   description A_rix3-03-p031-cnx e1/50 (in Po4095) !!!VPC PEER LINK!!!
   switchport mode trunk
   speed 40000
+  no snmp trap link-status
   storm-control broadcast level 5.00
   storm-control multicast level 5.00
   channel-group 4095 mode active
@@ -963,8 +1115,9 @@ interface Ethernet1/50
 interface Ethernet1/51/1
   description A_rix3-03-p020-cnx eth1/47 (in Po100)
   switchport mode trunk
-  switchport trunk allowed vlan 135,139,141-143,176,218,223,225,229
+  switchport trunk allowed vlan 135,139,141-143,176,218,223,225,229,244-245
   speed 10000
+  no snmp trap link-status
   storm-control broadcast level 5.00
   storm-control multicast level 5.00
   channel-group 100 mode active
@@ -972,37 +1125,46 @@ interface Ethernet1/51/1
 
 interface Ethernet1/51/2
   shutdown
+  no snmp trap link-status
 
 interface Ethernet1/51/3
+  no snmp trap link-status
   no shutdown
 
 interface Ethernet1/51/4
+  no snmp trap link-status
   no shutdown
 
 interface Ethernet1/52/1
   description A_rix3-03-p021-cnx eth1/47 (in Po100)
   switchport mode trunk
-  switchport trunk allowed vlan 135,139,141-143,176,218,223,225,229
+  switchport trunk allowed vlan 135,139,141-143,176,218,223,225,229,244-245
   speed 10000
+  no snmp trap link-status
   storm-control broadcast level 5.00
   storm-control multicast level 5.00
   channel-group 100 mode active
   no shutdown
 
 interface Ethernet1/52/2
+  no snmp trap link-status
   no shutdown
 
 interface Ethernet1/52/3
+  no snmp trap link-status
   no shutdown
 
 interface Ethernet1/52/4
+  no snmp trap link-status
   no shutdown
 
 interface Ethernet1/53
   shutdown
+  no snmp trap link-status
 
 interface Ethernet1/54
   shutdown
+  no snmp trap link-status
 
 interface mgmt0
   description B_rix3-03-p024-ios fa0/24

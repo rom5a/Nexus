@@ -100,7 +100,7 @@
 !Env:                                 (Watts )    (Watts )     (Watts )
 !Env: -------  -------------------  ----------  ----------  ----------  --------------
 !Env: 1        N9K-PAC-650W                0 W                     0 W     Shutdown
-!Env: 2        N9K-PAC-650W              156 W                   650 W     Ok
+!Env: 2        N9K-PAC-650W              154 W                   650 W     Ok
 !Env: Power Usage Summary:
 !Env: --------------------
 !Env: Power Supply redundancy mode (configured)                Non-Redundant(combined)
@@ -142,10 +142,10 @@
 !Flash: bootflash: 48494 MB free
 !Flash: bootflash: 51231 MB total
 !
-!Flash: debug:       80354    Mar 14 13:52:11 2018  bootvar_debug.log
-!Flash: debug:           5    Mar 14 13:52:11 2018  bootvar_debug.meta
+!Flash: debug:      145724    Mar 20 15:16:41 2018  bootvar_debug.log
+!Flash: debug:           6    Mar 20 15:16:41 2018  bootvar_debug.meta
 !Flash: debug: Usage for debug://sup-local
-!Flash: debug:       0 MB used
+!Flash: debug:      0 MB used
 !Flash: debug:     4 MB free
 !Flash: debug:     5 MB total
 !
@@ -153,20 +153,28 @@
 !Flash: logflash:        4096    Dec 28 11:14:05 2017  command/
 !Flash: logflash:        4096    Nov 16 08:37:11 2017  core/
 !Flash: logflash:        4096    Nov 16 08:37:11 2017  debug/
-!Flash: logflash:       12288    Mar 15 02:30:11 2018  debug_logs/
+!Flash: logflash:       12288    Mar 21 02:41:43 2018  debug_logs/
 !Flash: logflash:        4096    Nov 16 08:37:11 2017  generic/
 !Flash: logflash:        4096                          log/
 !Flash: logflash:       16384    Nov 16 08:37:06 2017  lost+found/
 !Flash: logflash:        4096    Dec 20 13:46:05 2017  vdc_1/
 !Flash: logflash: Usage for logflash://sup-local
-!Flash: logflash:   591 MB used
-!Flash: logflash:  7471 MB free
+!Flash: logflash:   597 MB used
+!Flash: logflash:  7466 MB free
 !Flash: logflash:  8063 MB total
 !
+!Flash: volatile:         100    Mar 15 06:58:25 2018  switchport-11231/
+!Flash: volatile:         100    Mar 15 06:58:29 2018  switchport-11276/
+!Flash: volatile:         100    Mar 15 07:01:07 2018  switchport-11463/
+!Flash: volatile:         100    Mar 15 07:01:11 2018  switchport-11507/
+!Flash: volatile:         100    Mar 15 07:01:15 2018  switchport-11551/
+!Flash: volatile:         100    Mar 15 07:01:19 2018  switchport-11595/
+!Flash: volatile:         100    Mar 15 07:01:23 2018  switchport-11639/
+!Flash: volatile:         100    Mar 15 07:01:27 2018  switchport-11681/
 !Flash: volatile:          40    Mar 08 12:06:49 2018  virtual-instance/
 !Flash: volatile: Usage for volatile://sup-local
-!Flash: volatile:           0 MB used
-!Flash: volatile:  2048 MB free
+!Flash: volatile:       0 MB used
+!Flash: volatile:  2047 MB free
 !Flash: volatile:  2048 MB total
 !
 !Mod: Mod Ports             Module-Type                       Model          Status
@@ -382,9 +390,381 @@ errdisable recovery cause security-violation
 errdisable recovery cause psecure-violation
 errdisable recovery cause vpc-peerlink
 errdisable recovery cause failed-port-state
+ip access-list cp-ip-sla-acl-custom
+  10 permit udp any any eq 50000 
+  20 permit udp any eq 50000 any 
+  30 permit udp any any eq 60000 
+  40 permit udp any eq 60000 any 
+ip access-list custom-copp-acl-auto-rp
+  10 permit ip any 224.0.1.39/32 
+  20 permit ip any 224.0.1.40/32 
+ip access-list custom-copp-acl-bgp
+  10 permit tcp any gt 1023 any eq bgp 
+  20 permit tcp any eq bgp any gt 1023 
+ipv6 access-list custom-copp-acl-bgp6
+  10 permit tcp any gt 1023 any eq bgp 
+  20 permit tcp any eq bgp any gt 1023 
+ip access-list custom-copp-acl-dhcp
+  10 permit udp any eq bootpc any 
+  20 permit udp any neq bootps any eq bootps 
+ip access-list custom-copp-acl-dhcp-relay-response
+  10 permit udp any eq bootps any 
+  20 permit udp any any eq bootpc 
+ipv6 access-list custom-copp-acl-dhcp6
+  10 permit udp any eq 546 any 
+  20 permit udp any any eq 547 
+ipv6 access-list custom-copp-acl-dhcp6-relay-response
+  10 permit udp any eq 547 any 
+  20 permit udp any any eq 546 
+ip access-list custom-copp-acl-eigrp
+  10 permit eigrp any any 
+ipv6 access-list custom-copp-acl-eigrp6
+  10 permit eigrp any any 
+ip access-list custom-copp-acl-ftp
+  10 permit tcp any any eq ftp-data 
+  20 permit tcp any any eq ftp 
+  30 permit tcp any eq ftp-data any 
+  40 permit tcp any eq ftp any 
+ip access-list custom-copp-acl-hsrp
+  10 permit udp any 224.0.0.0/24 eq 1985 
+ipv6 access-list custom-copp-acl-hsrp6
+  10 permit udp any ff02::66/128 eq 2029 
+ip access-list custom-copp-acl-http
+  10 permit tcp any eq www any 
+  20 permit tcp any any eq www 
+ip access-list custom-copp-acl-https
+  10 permit tcp any eq 443 any 
+  20 permit tcp any any eq 443 
+ip access-list custom-copp-acl-icmp
+  10 permit icmp any any echo 
+  20 permit icmp any any echo-reply 
+ipv6 access-list custom-copp-acl-icmp6
+  10 permit icmp any any echo-request 
+  20 permit icmp any any echo-reply 
+ip access-list custom-copp-acl-igmp
+  10 permit igmp any 224.0.0.0/3 
+mac access-list custom-copp-acl-mac-cdp-udld-vtp
+  10 permit any 0100.0ccc.cccc 0000.0000.0000 
+mac access-list custom-copp-acl-mac-cfsoe
+  10 permit any 0180.c200.000e 0000.0000.0000 0x8843 
+  20 permit any 0180.c200.000e 0000.0000.0000 
+mac access-list custom-copp-acl-mac-dot1x
+  10 permit any 0180.c200.0003 0000.0000.0000 0x888e 
+mac access-list custom-copp-acl-mac-fcoe
+  10 permit any any 0x8906 
+  20 permit any any 0x8914 
+mac access-list custom-copp-acl-mac-l2-tunnel
+  10 permit any any 0x8840 
+mac access-list custom-copp-acl-mac-l3-isis
+  10 permit any 0180.c200.0015 0000.0000.0000 
+  20 permit any 0180.c200.0014 0000.0000.0000 
+  30 permit any 0900.2b00.0005 0000.0000.0000 
+  40 permit any 0900.2b00.0004 0000.0000.0000 
+mac access-list custom-copp-acl-mac-lacp
+  10 permit any 0180.c200.0002 0000.0000.0000 0x8809 
+mac access-list custom-copp-acl-mac-lldp
+  10 permit any 0180.c200.000e 0000.0000.0000 0x88cc 
+mac access-list custom-copp-acl-mac-sdp-srp
+  10 permit any 0180.c200.000e 0000.0000.0000 0x3401 
+mac access-list custom-copp-acl-mac-stp
+  10 permit any 0100.0ccc.cccd 0000.0000.0000 
+  20 permit any 0180.c200.0000 0000.0000.0000 
+mac access-list custom-copp-acl-mac-undesirable
+  10 permit any any 
+ipv6 access-list custom-copp-acl-mld
+  10 permit icmp any any mld-query 
+  20 permit icmp any any mld-report 
+  30 permit icmp any any mld-reduction 
+  40 permit icmp any any mldv2 
+ip access-list custom-copp-acl-msdp
+  10 permit tcp any gt 1023 any eq 639 
+  20 permit tcp any eq 639 any gt 1023 
+ipv6 access-list custom-copp-acl-ndp
+  10 permit icmp any any router-solicitation 
+  20 permit icmp any any router-advertisement 
+  30 permit icmp any any nd-ns 
+  40 permit icmp any any nd-na 
+ip access-list custom-copp-acl-ntp
+  10 permit udp any any eq ntp 
+  20 permit udp any eq ntp any 
+ipv6 access-list custom-copp-acl-ntp6
+  10 permit udp any any eq ntp 
+  20 permit udp any eq ntp any 
+ip access-list custom-copp-acl-openflow
+  10 permit tcp any eq 6653 any 
+ip access-list custom-copp-acl-ospf
+  10 permit ospf any any 
+ipv6 access-list custom-copp-acl-ospf6
+  10 permit 89 any any 
+ip access-list custom-copp-acl-pim
+  10 permit pim any 224.0.0.0/24 
+  20 permit udp any any eq pim-auto-rp 
+  30 permit ip any 224.0.0.13/32 
+ip access-list custom-copp-acl-pim-mdt-join
+  10 permit udp any 224.0.0.13/32 
+ip access-list custom-copp-acl-pim-reg
+  10 permit pim any any 
+ipv6 access-list custom-copp-acl-pim6
+  10 permit pim any ff02::d/128 
+  20 permit udp any any eq pim-auto-rp 
+ipv6 access-list custom-copp-acl-pim6-reg
+  10 permit pim any any 
+ip access-list custom-copp-acl-ptp
+  10 permit udp any 224.0.1.129/32 eq 319 
+  20 permit udp any 224.0.1.129/32 eq 320 
+ip access-list custom-copp-acl-radius
+  10 permit udp any any eq 1812 
+  20 permit udp any any eq 1813 
+  30 permit udp any any eq 1645 
+  40 permit udp any any eq 1646 
+  50 permit udp any eq 1812 any 
+  60 permit udp any eq 1813 any 
+  70 permit udp any eq 1645 any 
+  80 permit udp any eq 1646 any 
+ipv6 access-list custom-copp-acl-radius6
+  10 permit udp any any eq 1812 
+  20 permit udp any any eq 1813 
+  30 permit udp any any eq 1645 
+  40 permit udp any any eq 1646 
+  50 permit udp any eq 1812 any 
+  60 permit udp any eq 1813 any 
+  70 permit udp any eq 1645 any 
+  80 permit udp any eq 1646 any 
+ip access-list custom-copp-acl-rip
+  10 permit udp any 224.0.0.0/24 eq rip 
+ipv6 access-list custom-copp-acl-rip6
+  10 permit udp any ff02::9/64 eq 521 
+ip access-list custom-copp-acl-sftp
+  10 permit tcp any any eq 115 
+  20 permit tcp any eq 115 any 
+ip access-list custom-copp-acl-snmp
+  10 permit udp any any eq snmp 
+  20 permit udp any any eq snmptrap 
+  30 permit tcp any any eq 161 
+  40 permit tcp any any eq 162 
+ipv6 access-list custom-copp-acl-snmp6
+  10 permit udp any any eq snmp 
+  20 permit udp any any eq snmptrap 
+  30 permit tcp any any eq 161 
+  40 permit tcp any any eq 162 
+ip access-list custom-copp-acl-ssh
+  10 permit tcp any any eq 22 
+  20 permit tcp any eq 22 any 
+ipv6 access-list custom-copp-acl-ssh6
+  10 permit tcp any any eq 22 
+  20 permit tcp any eq 22 any 
+ip access-list custom-copp-acl-tacacs
+  10 permit tcp any any eq tacacs 
+  20 permit tcp any eq tacacs any 
+ipv6 access-list custom-copp-acl-tacacs6
+  10 permit tcp any any eq tacacs 
+  20 permit tcp any eq tacacs any 
+ip access-list custom-copp-acl-telnet
+  10 permit tcp any any eq telnet 
+  20 permit tcp any any eq 107 
+  30 permit tcp any eq telnet any 
+  40 permit tcp any eq 107 any 
+ipv6 access-list custom-copp-acl-telnet6
+  10 permit tcp any any eq telnet 
+  20 permit tcp any any eq 107 
+  30 permit tcp any eq telnet any 
+  40 permit tcp any eq 107 any 
+ip access-list custom-copp-acl-tftp
+  10 permit udp any any eq tftp 
+  20 permit udp any any eq 1758 
+  30 permit udp any eq tftp any 
+  40 permit udp any eq 1758 any 
+ipv6 access-list custom-copp-acl-tftp6
+  10 permit udp any any eq tftp 
+  20 permit udp any any eq 1758 
+  30 permit udp any eq tftp any 
+  40 permit udp any eq 1758 any 
+ip access-list custom-copp-acl-traceroute
+  10 permit icmp any any ttl-exceeded 
+  20 permit icmp any any port-unreachable 
+  30 permit udp any any range 33434 33534 
+ip access-list custom-copp-acl-undesirable
+  10 permit udp any any eq 1434 
+ip access-list custom-copp-acl-vpc
+  10 permit udp any any eq 3200 
+ip access-list custom-copp-acl-vrrp
+  10 permit ip any 224.0.0.18/32 
+ipv6 access-list custom-copp-acl-vrrp6
+  10 permit ipv6 any ff02::12/128 
 system qos
   service-policy type network-qos jumbo
-copp profile strict
+class-map type control-plane match-any cp-ip-sla-custom
+  match access-group name cp-ip-sla-acl-custom
+class-map type control-plane match-any custom-copp-class-critical
+  match access-group name custom-copp-acl-bgp
+  match access-group name custom-copp-acl-rip
+  match access-group name custom-copp-acl-vpc
+  match access-group name custom-copp-acl-bgp6
+  match access-group name custom-copp-acl-ospf
+  match access-group name custom-copp-acl-rip6
+  match access-group name custom-copp-acl-eigrp
+  match access-group name custom-copp-acl-ospf6
+  match access-group name custom-copp-acl-eigrp6
+  match access-group name custom-copp-acl-auto-rp
+  match access-group name custom-copp-acl-mac-l3-isis
+class-map type control-plane match-any custom-copp-class-exception
+  match exception ip option
+  match exception ip icmp unreachable
+  match exception ipv6 option
+  match exception ipv6 icmp unreachable
+class-map type control-plane match-any custom-copp-class-exception-diag
+  match exception ttl-failure
+  match exception mtu-failure
+class-map type control-plane match-any custom-copp-class-fcoe
+  match access-group name custom-copp-acl-mac-fcoe
+class-map type control-plane match-any custom-copp-class-important
+  match access-group name custom-copp-acl-hsrp
+  match access-group name custom-copp-acl-vrrp
+  match access-group name custom-copp-acl-hsrp6
+  match access-group name custom-copp-acl-vrrp6
+  match access-group name custom-copp-acl-mac-lldp
+class-map type control-plane match-any custom-copp-class-l2-default
+  match access-group name custom-copp-acl-mac-undesirable
+class-map type control-plane match-any custom-copp-class-l2-unpoliced
+  match access-group name custom-copp-acl-mac-stp
+  match access-group name custom-copp-acl-mac-lacp
+  match access-group name custom-copp-acl-mac-cfsoe
+  match access-group name custom-copp-acl-mac-sdp-srp
+  match access-group name custom-copp-acl-mac-l2-tunnel
+  match access-group name custom-copp-acl-mac-cdp-udld-vtp
+class-map type control-plane match-any custom-copp-class-l3mc-data
+  match exception multicast rpf-failure
+  match exception multicast dest-miss
+class-map type control-plane match-any custom-copp-class-l3uc-data
+  match exception glean
+class-map type control-plane match-any custom-copp-class-management
+  match access-group name custom-copp-acl-ftp
+  match access-group name custom-copp-acl-ntp
+  match access-group name custom-copp-acl-ssh
+  match access-group name custom-copp-acl-http
+  match access-group name custom-copp-acl-ntp6
+  match access-group name custom-copp-acl-sftp
+  match access-group name custom-copp-acl-snmp
+  match access-group name custom-copp-acl-ssh6
+  match access-group name custom-copp-acl-tftp
+  match access-group name custom-copp-acl-https
+  match access-group name custom-copp-acl-snmp6
+  match access-group name custom-copp-acl-tftp6
+  match access-group name custom-copp-acl-radius
+  match access-group name custom-copp-acl-tacacs
+  match access-group name custom-copp-acl-telnet
+  match access-group name custom-copp-acl-radius6
+  match access-group name custom-copp-acl-tacacs6
+  match access-group name custom-copp-acl-telnet6
+class-map type control-plane match-any custom-copp-class-monitoring
+  match access-group name custom-copp-acl-icmp
+  match access-group name custom-copp-acl-icmp6
+  match access-group name custom-copp-acl-traceroute
+class-map type control-plane match-any custom-copp-class-multicast-host
+  match access-group name custom-copp-acl-mld
+class-map type control-plane match-any custom-copp-class-multicast-router
+  match access-group name custom-copp-acl-pim
+  match access-group name custom-copp-acl-msdp
+  match access-group name custom-copp-acl-pim6
+  match access-group name custom-copp-acl-pim-reg
+  match access-group name custom-copp-acl-pim6-reg
+  match access-group name custom-copp-acl-pim-mdt-join
+class-map type control-plane match-any custom-copp-class-nat-flow
+  match exception nat-flow
+class-map type control-plane match-any custom-copp-class-ndp
+  match access-group name custom-copp-acl-ndp
+class-map type control-plane match-any custom-copp-class-normal
+  match access-group name custom-copp-acl-mac-dot1x
+  match protocol arp
+class-map type control-plane match-any custom-copp-class-normal-dhcp
+  match access-group name custom-copp-acl-dhcp
+  match access-group name custom-copp-acl-dhcp6
+class-map type control-plane match-any custom-copp-class-normal-dhcp-relay-response
+  match access-group name custom-copp-acl-dhcp-relay-response
+  match access-group name custom-copp-acl-dhcp6-relay-response
+class-map type control-plane match-any custom-copp-class-normal-igmp
+  match access-group name custom-copp-acl-igmp
+class-map type control-plane match-any custom-copp-class-openflow
+  match access-group name custom-copp-acl-openflow
+class-map type control-plane match-any custom-copp-class-redirect
+  match access-group name custom-copp-acl-ptp
+class-map type control-plane match-any custom-copp-class-undesirable
+  match access-group name custom-copp-acl-undesirable
+  match exception multicast sg-rpf-failure
+policy-map type control-plane custom-copp-policy-strict 
+  class custom-copp-class-l3uc-data
+    set cos 1 
+    police cir 250 pps bc 32 packets conform transmit violate drop 
+  class custom-copp-class-critical
+    set cos 7 
+    police cir 19000 pps bc 128 packets conform transmit violate drop 
+  class custom-copp-class-important
+    set cos 6 
+    police cir 3000 pps bc 128 packets conform transmit violate drop 
+  class custom-copp-class-openflow
+    set cos 5 
+    police cir 2000 pps bc 32 packets conform transmit violate drop 
+  class custom-copp-class-multicast-router
+    set cos 6 
+    police cir 3000 pps bc 128 packets conform transmit violate drop 
+  class custom-copp-class-multicast-host
+    set cos 1 
+    police cir 2000 pps bc 128 packets conform transmit violate drop 
+  class custom-copp-class-l3mc-data
+    set cos 1 
+    police cir 3000 pps bc 32 packets conform transmit violate drop 
+  class custom-copp-class-normal
+    set cos 1 
+    police cir 1500 pps bc 32 packets conform transmit violate drop 
+  class custom-copp-class-ndp
+    set cos 6 
+    police cir 1500 pps bc 32 packets conform transmit violate drop 
+  class custom-copp-class-normal-dhcp
+    set cos 1 
+    police cir 300 pps bc 32 packets conform transmit violate drop 
+  class custom-copp-class-normal-dhcp-relay-response
+    set cos 1 
+    police cir 400 pps bc 64 packets conform transmit violate drop 
+  class custom-copp-class-normal-igmp
+    set cos 3 
+    police cir 6000 pps bc 64 packets conform transmit violate drop 
+  class custom-copp-class-redirect
+    set cos 1 
+    police cir 1500 pps bc 32 packets conform transmit violate drop 
+  class custom-copp-class-exception
+    set cos 1 
+    police cir 50 pps bc 32 packets conform transmit violate drop 
+  class custom-copp-class-exception-diag
+    set cos 1 
+    police cir 50 pps bc 32 packets conform transmit violate drop 
+  class custom-copp-class-management
+    set cos 2 
+    police cir 3000 pps bc 32 packets conform transmit violate drop 
+  class custom-copp-class-monitoring
+    set cos 1 
+    police cir 300 pps bc 128 packets conform transmit violate drop 
+  class custom-copp-class-l2-unpoliced
+    set cos 7 
+    police cir 20000 pps bc 8192 packets conform transmit violate drop 
+  class custom-copp-class-undesirable
+    set cos 0 
+    police cir 15 pps bc 32 packets conform transmit violate drop 
+  class custom-copp-class-fcoe
+    set cos 6 
+    police cir 1500 pps bc 128 packets conform transmit violate drop 
+  class custom-copp-class-nat-flow
+    set cos 7 
+    police cir 100 pps bc 64 packets conform transmit violate drop 
+  class custom-copp-class-l2-default
+    set cos 0 
+    police cir 50 pps bc 32 packets conform transmit violate drop 
+  class cp-ip-sla-custom
+    police cir 3000 pps bc 32 packets conform transmit violate drop 
+  class class-default
+    set cos 0 
+    police cir 50 pps bc 32 packets conform transmit violate drop 
+control-plane
+  service-policy input custom-copp-policy-strict 
 fex 101
   pinning max-links 1
   description "FEX0101"
@@ -431,8 +811,8 @@ rmon event 3 description ERROR(3) owner PMON@ERROR
 rmon event 4 description WARNING(4) owner PMON@WARNING
 rmon event 5 description INFORMATION(5) owner PMON@INFO
 snmp-server community 5uper5ecret group network-operator
-ntp server 10.30.9.210 use-vrf default
-ntp server 10.30.235.210 prefer use-vrf default
+ntp server 10.30.10.220 use-vrf management
+ntp server 10.30.10.221 use-vrf management
 aaa authentication login default group TacacsGroup local 
 aaa accounting default group TacacsGroup 
 aaa authentication login ascii-authentication 
@@ -515,61 +895,75 @@ interface port-channel125
   description A_tbs1-01-p203-ios
   switchport mode trunk
   switchport trunk allowed vlan 26
+  no buffer-boost
   speed 10000
+  no snmp trap link-status
   storm-control broadcast level 5.00
   storm-control multicast level 5.00
   vpc 125
 
 interface port-channel126
-  description A_tbs1-01-p204-ios
+  description R_tbs1-01-p204-ios
   switchport mode trunk
   switchport trunk allowed vlan 26
+  no buffer-boost
   speed 10000
+  no snmp trap link-status
   storm-control broadcast level 5.00
   storm-control multicast level 5.00
   vpc 126
 
 interface port-channel127
-  description A_tbs1-01-p205-ios
+  description R_tbs1-01-p205-ios
   switchport mode trunk
   switchport trunk allowed vlan 26
+  no buffer-boost
   speed 10000
+  no snmp trap link-status
   storm-control broadcast level 5.00
   storm-control multicast level 5.00
   vpc 127
 
 interface port-channel128
-  description A_tbs1-01-p206-ios
+  description R_tbs1-01-p206-ios
   switchport mode trunk
   switchport trunk allowed vlan 26
+  no buffer-boost
   speed 10000
+  no snmp trap link-status
   storm-control broadcast level 5.00
   storm-control multicast level 5.00
   vpc 128
 
 interface port-channel129
-  description A_tbs1-01-p207-ios
+  description R_tbs1-01-p207-ios
   switchport mode trunk
   switchport trunk allowed vlan 26
+  no buffer-boost
   speed 10000
+  no snmp trap link-status
   storm-control broadcast level 5.00
   storm-control multicast level 5.00
   vpc 129
 
 interface port-channel130
-  description A_tbs1-01-p208-ios
+  description R_tbs1-01-p208-ios
   switchport mode trunk
-  switchport trunk allowed vlan 26
+  switchport trunk allowed vlan 2
+  no buffer-boost
   speed 10000
+  no snmp trap link-status
   storm-control broadcast level 5.00
   storm-control multicast level 5.00
   vpc 130
 
 interface port-channel131
-  description A_tbs1-01-p209-ios
+  description R_tbs1-01-p209-ios
   switchport mode trunk
   switchport trunk allowed vlan 26
+  no buffer-boost
   speed 10000
+  no snmp trap link-status
   storm-control broadcast level 5.00
   storm-control multicast level 5.00
   vpc 131
@@ -578,67 +972,74 @@ interface port-channel1001
   description A_FEX101 (our Eth1/1; Eth1/2)
   switchport mode fex-fabric
   fex associate 101
+  no snmp trap link-status
 
 interface port-channel1002
   description A_FEX102 (our Eth1/3; Eth1/4)
   switchport mode fex-fabric
   fex associate 102
+  no snmp trap link-status
 
 interface port-channel1003
-  description A_FEX103 (our Eth1/5; Eth1/6)
+  description R_FEX103 (our Eth1/5; Eth1/6)
   switchport mode fex-fabric
   fex associate 103
+  no snmp trap link-status
 
 interface port-channel1004
-  description A_FEX104 (our Eth1/7; Eth1/8)
+  description R_FEX104 (our Eth1/7; Eth1/8)
   switchport mode fex-fabric
   fex associate 104
+  no snmp trap link-status
 
 interface port-channel1005
-  description A_FEX105 (our Eth1/9; Eth1/10)
+  description R_FEX105 (our Eth1/9; Eth1/10)
   switchport mode fex-fabric
   fex associate 105
+  no snmp trap link-status
 
 interface port-channel1006
-  description A_FEX106 (our Eth1/11; Eth1/12)
+  description R_FEX106 (our Eth1/11; Eth1/12)
   switchport mode fex-fabric
   fex associate 106
+  no snmp trap link-status
 
 interface port-channel1007
-  description A_FEX107 (our Eth1/13; Eth1/14)
+  description R_FEX107 (our Eth1/13; Eth1/14)
   switchport mode fex-fabric
   fex associate 107
+  no snmp trap link-status
 
 interface port-channel1008
   description A_FEX108 (our Eth1/15; Eth1/16)
   switchport mode fex-fabric
   fex associate 108
+  no snmp trap link-status
 
 interface port-channel1009
-  description A_FEX109 (our Eth1/17; Eth1/18)
+  description R_FEX109 (our Eth1/17; Eth1/18)
   switchport mode fex-fabric
   fex associate 109
+  no snmp trap link-status
 
 interface port-channel1010
-  description A_FEX110 (our Eth1/19; Eth1/20)
+  description R_FEX110 (our Eth1/19; Eth1/20)
   switchport mode fex-fabric
   fex associate 110
-
-interface port-channel1011
-  description A_FEX110 (our Eth1/21; Eth1/22)
-  switchport mode fex-fabric
-  fex associate 111
+  no snmp trap link-status
 
 interface port-channel3000
   description A_tbs1-fw-p001-asa-pri Po1 (our Eth1/45;Eth1/46;Eth1/47;Eth1/48)
   switchport mode trunk
   switchport trunk allowed vlan 2,5,17,20,22,24,26,36,76
+  no snmp trap link-status
   storm-control broadcast level 1.00
   storm-control multicast level 1.00
 
 interface port-channel4000
   description A_tbs1-wn-p002-cnx
   no switchport
+  no snmp trap link-status
   ip address 192.168.122.113/30
 
 interface port-channel4095
@@ -648,272 +1049,297 @@ interface port-channel4095
   spanning-tree port type network
   logging event port link-status
   logging event port trunk-status
+  no snmp trap link-status
   vpc peer-link
 
 interface Ethernet1/1
   description A_FEX101 (in Po1001)
   switchport mode fex-fabric
   fex associate 101
+  no snmp trap link-status
   channel-group 1001
 
 interface Ethernet1/2
   description A_FEX101 (in Po1001)
   switchport mode fex-fabric
   fex associate 101
+  no snmp trap link-status
   channel-group 1001
 
 interface Ethernet1/3
   description A_FEX102 (in Po1002)
   switchport mode fex-fabric
   fex associate 102
+  no snmp trap link-status
   channel-group 1002
 
 interface Ethernet1/4
   description A_FEX102 (in Po1002)
   switchport mode fex-fabric
   fex associate 102
+  no snmp trap link-status
   channel-group 1002
 
 interface Ethernet1/5
-  description A_FEX103 (in Po1003)
+  description R_FEX103 (in Po1003)
   switchport mode fex-fabric
   fex associate 103
+  no snmp trap link-status
   channel-group 1003
 
 interface Ethernet1/6
-  description A_FEX103 (in Po1003)
+  description R_FEX103 (in Po1003)
   switchport mode fex-fabric
   fex associate 103
+  no snmp trap link-status
   channel-group 1003
 
 interface Ethernet1/7
-  description A_FEX104 (in Po1004)
+  description R_FEX104 (in Po1004)
   switchport mode fex-fabric
   fex associate 104
+  no snmp trap link-status
   channel-group 1004
 
 interface Ethernet1/8
-  description A_FEX104 (in Po1004)
+  description R_FEX104 (in Po1004)
   switchport mode fex-fabric
   fex associate 104
+  no snmp trap link-status
   channel-group 1004
 
 interface Ethernet1/9
-  description A_FEX105 (in Po1005)
+  description R_FEX105 (in Po1005)
   switchport mode fex-fabric
   fex associate 105
+  no snmp trap link-status
   channel-group 1005
 
 interface Ethernet1/10
-  description A_FEX105 (in Po1005)
+  description R_FEX105 (in Po1005)
   switchport mode fex-fabric
   fex associate 105
+  no snmp trap link-status
   channel-group 1005
 
 interface Ethernet1/11
-  description A_FEX106 (in Po1006)
+  description R_FEX106 (in Po1006)
   switchport mode fex-fabric
   fex associate 106
+  no snmp trap link-status
   channel-group 1006
 
 interface Ethernet1/12
-  description A_FEX106 (in Po1006)
+  description R_FEX106 (in Po1006)
   switchport mode fex-fabric
   fex associate 106
+  no snmp trap link-status
   channel-group 1006
 
 interface Ethernet1/13
-  description A_FEX107 (in Po1007)
+  description R_FEX107 (in Po1007)
   switchport mode fex-fabric
   fex associate 107
+  no snmp trap link-status
   channel-group 1007
 
 interface Ethernet1/14
-  description A_FEX107 (in Po1007)
+  description R_FEX107 (in Po1007)
   switchport mode fex-fabric
   fex associate 107
+  no snmp trap link-status
   channel-group 1007
 
 interface Ethernet1/15
   description A_FEX108 (in Po1008)
   switchport mode fex-fabric
   fex associate 108
+  no snmp trap link-status
   channel-group 1008
 
 interface Ethernet1/16
   description A_FEX108 (in Po1008)
   switchport mode fex-fabric
   fex associate 108
+  no snmp trap link-status
   channel-group 1008
 
 interface Ethernet1/17
-  description A_FEX109 (in Po1009)
+  description R_FEX109 (in Po1009)
   switchport mode fex-fabric
   fex associate 109
+  no snmp trap link-status
   channel-group 1009
 
 interface Ethernet1/18
-  description A_FEX109 (in Po1009)
+  description R_FEX109 (in Po1009)
   switchport mode fex-fabric
   fex associate 109
+  no snmp trap link-status
   channel-group 1009
 
 interface Ethernet1/19
-  description A_FEX110 (in Po1010)
+  description R_FEX110 (in Po1010)
   switchport mode fex-fabric
   fex associate 110
+  no snmp trap link-status
   no logging event port trunk-status
   channel-group 1010
 
 interface Ethernet1/20
-  description A_FEX110 (in Po1010)
+  description R_FEX110 (in Po1010)
   switchport mode fex-fabric
   fex associate 110
+  no snmp trap link-status
   no logging event port trunk-status
   channel-group 1010
 
 interface Ethernet1/21
-  description A_FEX111 (in Po1011)
-  switchport mode fex-fabric
-  fex associate 111
-  channel-group 1011
+  description reserved for FEX
+  no snmp trap link-status
 
 interface Ethernet1/22
-  description A_FEX111 (in Po1011)
-  switchport mode fex-fabric
-  fex associate 111
-  channel-group 1011
+  description reserved for FEX
+  no snmp trap link-status
 
 interface Ethernet1/23
   description reserved for FEX
+  no snmp trap link-status
 
 interface Ethernet1/24
   description reserved for FEX
+  no snmp trap link-status
 
 interface Ethernet1/25
-  description A_tbs1-01-p010-ios_Switch1
+  description A_tbs1-01-p203-ios
   switchport mode trunk
   switchport trunk allowed vlan 26
+  no buffer-boost
   speed 10000
+  no snmp trap link-status
   storm-control broadcast level 5.00
   storm-control multicast level 5.00
   channel-group 125 mode active
 
 interface Ethernet1/26
-  description A_tbs1-01-p010-ios_Switch2
+  description R_tbs1-01-p204-ios
   switchport mode trunk
   switchport trunk allowed vlan 26
+  no buffer-boost
   speed 10000
+  no snmp trap link-status
   storm-control broadcast level 5.00
   storm-control multicast level 5.00
   channel-group 126 mode active
 
 interface Ethernet1/27
-  description A_tbs1-01-p011-ios_Switch1
+  description R_tbs1-01-p205-ios
   switchport mode trunk
   switchport trunk allowed vlan 26
+  no buffer-boost
   speed 10000
+  no snmp trap link-status
   storm-control broadcast level 5.00
   storm-control multicast level 5.00
   channel-group 127 mode active
 
 interface Ethernet1/28
-  description A_tbs1-01-p011-ios_Switch2
+  description R_tbs1-01-p206-ios
   switchport mode trunk
   switchport trunk allowed vlan 26
+  no buffer-boost
   speed 10000
+  no snmp trap link-status
   storm-control broadcast level 5.00
   storm-control multicast level 5.00
   channel-group 128 mode active
 
 interface Ethernet1/29
-  description A_tbs1-01-p012-ios_Switch1
+  description R_tbs1-01-p207-ios
   switchport mode trunk
   switchport trunk allowed vlan 26
+  no buffer-boost
   speed 10000
+  no snmp trap link-status
   storm-control broadcast level 5.00
   storm-control multicast level 5.00
   channel-group 129 mode active
 
 interface Ethernet1/30
-  description A_tbs1-01-p012-ios_Switch2
+  description R_tbs1-01-p208-ios
   switchport mode trunk
-  switchport trunk allowed vlan 26
+  switchport trunk allowed vlan 2
+  no buffer-boost
   speed 10000
+  no snmp trap link-status
   storm-control broadcast level 5.00
   storm-control multicast level 5.00
   channel-group 130 mode active
 
 interface Ethernet1/31
-  description A_tbs1-01-p013-ios_Switch1
+  description R_tbs1-01-p209-ios
   switchport mode trunk
   switchport trunk allowed vlan 26
+  no buffer-boost
   speed 10000
+  no snmp trap link-status
   storm-control broadcast level 5.00
   storm-control multicast level 5.00
   channel-group 131 mode active
 
 interface Ethernet1/32
-  description A_tbs1-01-p013-ios_Switch2
-  switchport mode trunk
-  switchport trunk allowed vlan 2
-  speed 10000
-  storm-control broadcast level 5.00
-  storm-control multicast level 5.00
+  no snmp trap link-status
 
 interface Ethernet1/33
-  description A_tbs1-01-p014-ios
-  switchport mode trunk
-  switchport trunk allowed vlan 2
-  speed 10000
-  storm-control broadcast level 5.00
-  storm-control multicast level 5.00
+  no snmp trap link-status
 
 interface Ethernet1/34
-  description A_tbs1-01-p015-ios
-  switchport mode trunk
-  switchport trunk allowed vlan 2
-  speed 10000
-  storm-control broadcast level 5.00
-  storm-control multicast level 5.00
+  no snmp trap link-status
 
 interface Ethernet1/35
-  description A_tbs1-01-p016-ios
+  no snmp trap link-status
 
 interface Ethernet1/36
+  no snmp trap link-status
 
 interface Ethernet1/37
-  no logging event port trunk-status
+  no snmp trap link-status
 
 interface Ethernet1/38
+  no snmp trap link-status
 
 interface Ethernet1/39
   description A_tbs1_wn-p003-cnx
   no switchport
+  no snmp trap link-status
   ip address 192.168.122.133/30
   no shutdown
 
 interface Ethernet1/40
   description A_tbs1-wn-p002-cnx Eth 1/40
   no switchport
+  no snmp trap link-status
   channel-group 4000 mode active
   no shutdown
 
 interface Ethernet1/41
   description A_tbs1-wn-p002-cnx Eth 1/41
   no switchport
+  no snmp trap link-status
   channel-group 4000 mode active
   no shutdown
 
 interface Ethernet1/42
   description A_tbs2-wn-p001-ios
   no switchport
+  no snmp trap link-status
   ip address 192.168.122.97/30
   no shutdown
 
 interface Ethernet1/43
   description A_tbs1-wn-t001-cnx Eth1/43
   no switchport
+  no snmp trap link-status
   ip address 192.168.122.105/30
   no shutdown
 
@@ -922,6 +1348,7 @@ interface Ethernet1/44
   no switchport
   speed 1000
   duplex full
+  no snmp trap link-status
   no negotiate auto
   ip address 192.168.121.186/30
   no shutdown
@@ -930,6 +1357,7 @@ interface Ethernet1/45
   description A_tbs1-fw-p001-asa-pri
   switchport mode trunk
   switchport trunk allowed vlan 2,5,17,20,22,24,26,36,76
+  no snmp trap link-status
   storm-control broadcast level 1.00
   storm-control multicast level 1.00
   channel-group 3000 mode active
@@ -938,6 +1366,7 @@ interface Ethernet1/46
   description A_tbs1-fw-p001-asa-pri
   switchport mode trunk
   switchport trunk allowed vlan 2,5,17,20,22,24,26,36,76
+  no snmp trap link-status
   storm-control broadcast level 1.00
   storm-control multicast level 1.00
   channel-group 3000 mode active
@@ -946,6 +1375,7 @@ interface Ethernet1/47
   description A_tbs1-fw-p001-asa-pri
   switchport mode trunk
   switchport trunk allowed vlan 2,5,17,20,22,24,26,36,76
+  no snmp trap link-status
   storm-control broadcast level 1.00
   storm-control multicast level 1.00
   channel-group 3000 mode active
@@ -954,135 +1384,194 @@ interface Ethernet1/48
   description A_tbs1-fw-p001-asa-pri
   switchport mode trunk
   switchport trunk allowed vlan 2,5,17,20,22,24,26,36,76
+  no snmp trap link-status
   storm-control broadcast level 1.00
   storm-control multicast level 1.00
   channel-group 3000 mode active
 
 interface Ethernet1/49
+  description A_tbs1-wn-p002-cnx PEER LINK!!!
   switchport mode trunk
   switchport trunk allowed vlan 2-2000
+  no snmp trap link-status
   logging event port trunk-status
   channel-group 4095 mode active
 
 interface Ethernet1/50
+  description A_tbs1-wn-p002-cnx PEER LINK!!!
   switchport mode trunk
   switchport trunk allowed vlan 2-2000
+  no snmp trap link-status
   logging event port trunk-status
   channel-group 4095 mode active
 
 interface Ethernet1/51
+  no snmp trap link-status
 
 interface Ethernet1/52
+  no snmp trap link-status
 
 interface Ethernet1/53
+  no snmp trap link-status
 
 interface Ethernet1/54
+  no snmp trap link-status
 
 interface mgmt0
   vrf member management
   ip address 10.15.0.201/24
 
 interface Ethernet101/1/1
+  no snmp trap link-status
 
 interface Ethernet101/1/2
+  no snmp trap link-status
 
 interface Ethernet101/1/3
+  no snmp trap link-status
 
 interface Ethernet101/1/4
+  no snmp trap link-status
 
 interface Ethernet101/1/5
+  no snmp trap link-status
 
 interface Ethernet101/1/6
+  no snmp trap link-status
 
 interface Ethernet101/1/7
+  no snmp trap link-status
 
 interface Ethernet101/1/8
+  no snmp trap link-status
 
 interface Ethernet101/1/9
+  no snmp trap link-status
 
 interface Ethernet101/1/10
+  no snmp trap link-status
 
 interface Ethernet101/1/11
+  no snmp trap link-status
 
 interface Ethernet101/1/12
+  no snmp trap link-status
 
 interface Ethernet101/1/13
+  no snmp trap link-status
 
 interface Ethernet101/1/14
+  no snmp trap link-status
 
 interface Ethernet101/1/15
+  no snmp trap link-status
 
 interface Ethernet101/1/16
+  no snmp trap link-status
 
 interface Ethernet101/1/17
+  no snmp trap link-status
 
 interface Ethernet101/1/18
+  no snmp trap link-status
 
 interface Ethernet101/1/19
+  no snmp trap link-status
 
 interface Ethernet101/1/20
+  no snmp trap link-status
 
 interface Ethernet101/1/21
+  no snmp trap link-status
 
 interface Ethernet101/1/22
+  no snmp trap link-status
 
 interface Ethernet101/1/23
+  no snmp trap link-status
 
 interface Ethernet101/1/24
+  no snmp trap link-status
 
 interface Ethernet101/1/25
   description tbs1-pkvm1
   switchport mode trunk
   switchport trunk allowed vlan 2,22,24,36,76
+  no snmp trap link-status
+  vpc orphan-port suspend
 
 interface Ethernet101/1/26
   description tbs1-pkvm2
   switchport mode trunk
   switchport trunk allowed vlan 2,22,24,36,76
+  no snmp trap link-status
+  vpc orphan-port suspend
 
 interface Ethernet101/1/27
+  no snmp trap link-status
 
 interface Ethernet101/1/28
+  no snmp trap link-status
 
 interface Ethernet101/1/29
+  no snmp trap link-status
 
 interface Ethernet101/1/30
+  no snmp trap link-status
 
 interface Ethernet101/1/31
+  no snmp trap link-status
 
 interface Ethernet101/1/32
+  no snmp trap link-status
 
 interface Ethernet101/1/33
+  no snmp trap link-status
 
 interface Ethernet101/1/34
+  no snmp trap link-status
 
 interface Ethernet101/1/35
+  no snmp trap link-status
 
 interface Ethernet101/1/36
+  no snmp trap link-status
 
 interface Ethernet101/1/37
+  no snmp trap link-status
 
 interface Ethernet101/1/38
+  no snmp trap link-status
 
 interface Ethernet101/1/39
+  no snmp trap link-status
 
 interface Ethernet101/1/40
+  no snmp trap link-status
 
 interface Ethernet101/1/41
+  no snmp trap link-status
 
 interface Ethernet101/1/42
+  no snmp trap link-status
 
 interface Ethernet101/1/43
+  no snmp trap link-status
 
 interface Ethernet101/1/44
+  no snmp trap link-status
 
 interface Ethernet101/1/45
+  no snmp trap link-status
 
 interface Ethernet101/1/46
+  no snmp trap link-status
 
 interface Ethernet101/1/47
+  no snmp trap link-status
 
 interface Ethernet101/1/48
+  no snmp trap link-status
 
 interface Ethernet102/1/1
   description Encoders

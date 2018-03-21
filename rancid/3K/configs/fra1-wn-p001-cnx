@@ -132,7 +132,7 @@
 !Env: -------  -------------------  ----------  ----------  ----------  --------------
 !Env: 1        N9K-PAC-3000W-B           285 W                  3000 W     Ok
 !Env: 2        N9K-PAC-3000W-B           278 W                  3000 W     Ok
-!Env: 3        N9K-PAC-3000W-B           278 W                  3000 W     Ok
+!Env: 3        N9K-PAC-3000W-B           274 W                  3000 W     Ok
 !Env: 4        N9K-PAC-3000W-B           306 W                  3000 W     Ok
 !Env: 5        ------------                0 W                     0 W     Absent
 !Env: 6        ------------                0 W                     0 W     Absent
@@ -142,20 +142,20 @@
 !Env: Module    Model                     Draw    Allocated    Status
 !Env:                                  (Watts )     (Watts )
 !Env: -------  -------------------  -----------  -----------  --------------
-!Env: 1        N9K-X9564PX             259.00 W     399.60 W    Powered-Up
-!Env: 2        N9K-X9564PX             235.00 W     399.60 W    Powered-Up
+!Env: 1        N9K-X9564PX             258.00 W     399.60 W    Powered-Up
+!Env: 2        N9K-X9564PX             234.00 W     399.60 W    Powered-Up
 !Env: Xb21     xbar                      N/A          0.00 W    Absent
 !Env: Xb22     N9K-C9508-FM            136.00 W     250.80 W    Powered-Up
 !Env: Xb23     N9K-C9508-FM            133.00 W     250.80 W    Powered-Up
 !Env: Xb24     N9K-C9508-FM            134.00 W     250.80 W    Powered-Up
 !Env: Xb25     xbar                      N/A          0.00 W    Absent
 !Env: Xb26     N9K-C9508-FM            132.00 W     250.80 W    Powered-Up
-!Env: 27       N9K-SUP-A                60.00 W      79.92 W    Powered-Up
+!Env: 27       N9K-SUP-A                61.00 W      79.92 W    Powered-Up
 !Env: 28       supervisor                N/A          0.00 W    Absent
 !Env: 29       N9K-SC-A                 14.00 W      25.20 W    Powered-Up
 !Env: 30       N9K-SC-A                 14.00 W      25.20 W    Powered-Up
-!Env: fan1     N9K-C9508-FAN            38.00 W     249.00 W    Powered-Up
-!Env: fan2     N9K-C9508-FAN            39.00 W     249.00 W    Powered-Up
+!Env: fan1     N9K-C9508-FAN            39.00 W     249.00 W    Powered-Up
+!Env: fan2     N9K-C9508-FAN            40.00 W     249.00 W    Powered-Up
 !Env: fan3     N9K-C9508-FAN            39.00 W     249.00 W    Powered-Up
 !Env: N/A - Per module power not available
 !Env: Power Usage Summary:
@@ -193,14 +193,18 @@
 !Flash: bootflash:   757307904    Sep 14 07:40:36 2017  nxos.7.0.3.I5.2.bin
 !Flash: bootflash:           0    Jun 21 16:22:19 2017  platform-sdk.cmd
 !Flash: bootflash:        4096    Jun 21 16:18:40 2017  scripts/
+!Flash: bootflash:    26320245    Mar 16 06:44:22 2018  tac_aclmgr_fra1-wn-p001-cnx.zip
+!Flash: bootflash:     1075888    Mar 16 06:47:30 2018  tac_copp_fra1-wn-p001-cnx.zip
+!Flash: bootflash:    40938601    Mar 16 06:47:20 2018  tac_ethpm_fra1-wn-p001-cnx.zip
+!Flash: bootflash:   109540702    Mar 16 06:35:43 2018  tac_pac_fra1-wn-p001-cnx.zip
 !Flash: bootflash:        4096    Jun 21 16:18:07 2017  virtual-instance/
 !Flash: bootflash: Usage for bootflash://sup-local
-!Flash: bootflash:  1627 MB used
-!Flash: bootflash: 19225 MB free
+!Flash: bootflash:  1797 MB used
+!Flash: bootflash: 19055 MB free
 !Flash: bootflash: 20852 MB total
 !
-!Flash: debug:     1048580    Mar 14 08:54:01 2018  bootvar_debug.log
-!Flash: debug:           6    Mar 14 08:54:01 2018  bootvar_debug.meta
+!Flash: debug:     1048580    Mar 20 13:34:12 2018  bootvar_debug.log
+!Flash: debug:           6    Mar 20 13:34:12 2018  bootvar_debug.meta
 !Flash: debug: Usage for debug://sup-local
 !Flash: debug:     1 MB used
 !Flash: debug:     3 MB free
@@ -209,13 +213,13 @@
 !Flash: logflash:        4096    Sep 14 08:25:37 2017  ISSU_debug_logs/
 !Flash: logflash:        4096    Jun 21 15:50:56 2017  core/
 !Flash: logflash:        4096    Jun 21 15:50:56 2017  debug/
-!Flash: logflash:      581632    Mar 15 00:47:12 2018  debug_logs/
+!Flash: logflash:      581632    Mar 21 01:59:14 2018  debug_logs/
 !Flash: logflash:        4096    Jun 21 15:50:56 2017  generic/
 !Flash: logflash:        4096                          log/
 !Flash: logflash:       16384    Jan 01 12:52:08 2011  lost+found/
-!Flash: logflash:        4096    Feb 22 14:50:47 2018  vdc_1/
+!Flash: logflash:        4096    Mar 16 06:06:46 2018  vdc_1/
 !Flash: logflash: Usage for logflash://sup-local
-!Flash: logflash:  1251 MB used
+!Flash: logflash:  1250 MB used
 !Flash: logflash: 19601 MB free
 !Flash: logflash: 20852 MB total
 !
@@ -408,6 +412,7 @@ vdc fra1-wn-p001-cnx id 1
   limit-resource m6route-mem minimum 8 maximum 8
 feature-set fex
 
+feature bash-shell
 feature scp-server
 feature sftp-server
 feature tacacs+
@@ -711,6 +716,8 @@ ip access-list acl_vlan902_out
 ip access-list cp-ip-sla-acl-custom
   10 permit udp any any eq 50000 
   20 permit udp any eq 50000 any 
+  30 permit udp any any eq 60000 
+  40 permit udp any eq 60000 any 
 ip access-list custom-cp-profile-copp-acl-auto-rp
   10 permit ip any 224.0.1.39/32 
   20 permit ip any 224.0.1.40/32 
@@ -1125,9 +1132,9 @@ aaa authentication login ascii-authentication
 tacacs-server directed-request 
 
 no ip igmp snooping
-vlan 1,3,5,9-11,13-14,17,34,36,48-49,76,256-257,900-902,999-1000,1016,3966-3967
-vlan 3
-  name ssf_10.8.3.0/24
+vlan 1,5,8-11,13-14,17,34,36,48-49,76,256-258,900-902,999-1000,1016,3966-3967
+vlan 8
+  name lb_10.8.8.0/24
 vlan 9
   name goc_10.8.9.0/24
 vlan 10
@@ -1152,6 +1159,8 @@ vlan 256
   name ssb
 vlan 257
   name ss
+vlan 258
+  name ssf_10.8.3.0/24
 vlan 999
   name P2P_asa_outside
 vlan 1000
@@ -1519,6 +1528,7 @@ interface port-channel110
   spanning-tree port type edge trunk
   logging event port link-status
   logging event port trunk-status
+  no snmp trap link-status
   storm-control broadcast level 5.00
   storm-control multicast level 5.00
   vpc 110
@@ -1531,6 +1541,7 @@ interface port-channel111
   spanning-tree port type edge trunk
   logging event port link-status
   logging event port trunk-status
+  no snmp trap link-status
   storm-control broadcast level 5.00
   storm-control multicast level 5.00
   vpc 111
@@ -1543,6 +1554,7 @@ interface port-channel112
   spanning-tree port type edge trunk
   logging event port link-status
   logging event port trunk-status
+  no snmp trap link-status
   storm-control broadcast level 5.00
   storm-control multicast level 5.00
   vpc 112
@@ -1555,6 +1567,7 @@ interface port-channel113
   spanning-tree port type edge trunk
   logging event port link-status
   logging event port trunk-status
+  no snmp trap link-status
   storm-control broadcast level 5.00
   storm-control multicast level 5.00
   vpc 113
@@ -1567,6 +1580,7 @@ interface port-channel114
   spanning-tree port type edge trunk
   logging event port link-status
   logging event port trunk-status
+  no snmp trap link-status
   storm-control broadcast level 5.00
   storm-control multicast level 5.00
   vpc 114
@@ -1579,6 +1593,7 @@ interface port-channel115
   spanning-tree port type edge trunk
   logging event port link-status
   logging event port trunk-status
+  no snmp trap link-status
   storm-control broadcast level 5.00
   storm-control multicast level 5.00
   vpc 115
@@ -1591,6 +1606,7 @@ interface port-channel116
   spanning-tree port type edge trunk
   logging event port link-status
   logging event port trunk-status
+  no snmp trap link-status
   storm-control broadcast level 5.00
   storm-control multicast level 5.00
   vpc 116
@@ -1603,6 +1619,7 @@ interface port-channel117
   spanning-tree port type edge trunk
   logging event port link-status
   logging event port trunk-status
+  no snmp trap link-status
   storm-control broadcast level 5.00
   storm-control multicast level 5.00
   vpc 117
@@ -1706,6 +1723,7 @@ interface port-channel125
   spanning-tree port type edge trunk
   logging event port link-status
   logging event port trunk-status
+  no snmp trap link-status
   storm-control broadcast level 5.00
   storm-control multicast level 5.00
   vpc 125
@@ -1718,6 +1736,7 @@ interface port-channel126
   spanning-tree port type edge trunk
   logging event port link-status
   logging event port trunk-status
+  no snmp trap link-status
   storm-control broadcast level 5.00
   storm-control multicast level 5.00
   vpc 126
@@ -1730,6 +1749,7 @@ interface port-channel127
   spanning-tree port type edge trunk
   logging event port link-status
   logging event port trunk-status
+  no snmp trap link-status
   storm-control broadcast level 5.00
   storm-control multicast level 5.00
   vpc 127
@@ -1768,6 +1788,7 @@ interface port-channel130
   spanning-tree port type edge trunk
   logging event port link-status
   logging event port trunk-status
+  no snmp trap link-status
   storm-control broadcast level 5.00
   storm-control multicast level 5.00
   vpc 130
@@ -1780,6 +1801,7 @@ interface port-channel131
   spanning-tree port type edge trunk
   logging event port link-status
   logging event port trunk-status
+  no snmp trap link-status
   storm-control broadcast level 5.00
   storm-control multicast level 5.00
   vpc 131
@@ -1792,6 +1814,7 @@ interface port-channel132
   spanning-tree port type edge trunk
   logging event port link-status
   logging event port trunk-status
+  no snmp trap link-status
   storm-control broadcast level 5.00
   storm-control multicast level 5.00
   vpc 132
@@ -1803,55 +1826,61 @@ interface port-channel133
   spanning-tree port type edge
   logging event port link-status
   logging event port trunk-status
+  no snmp trap link-status
   storm-control broadcast level 5.00
   storm-control multicast level 5.00
   vpc 133
 
 interface port-channel134
   description fra1-pkvm3-pr
+  no snmp trap link-status
 
 interface port-channel135
   description A_fra1-pkvm5-pr
   switchport
   switchport mode trunk
-  switchport trunk native vlan 76
-  switchport trunk allowed vlan 2,8-11,36,76,256
+  switchport trunk allowed vlan 2,8-11,36,76,256-257
+  no snmp trap link-status
   vpc 135
 
 interface port-channel136
   description A_fra1-pkvm6-pr
   switchport
   switchport mode trunk
-  switchport trunk native vlan 76
-  switchport trunk allowed vlan 2,8-11,36,76,256
+  switchport trunk allowed vlan 2,8-11,36,76,256-257
+  no snmp trap link-status
   vpc 136
 
 interface port-channel137
   description A_fra1-pkvm3-pr
   switchport
   switchport mode trunk
-  switchport trunk allowed vlan 36
+  switchport trunk allowed vlan 2,8-11,36,76,256-257
+  no snmp trap link-status
   vpc 137
 
 interface port-channel138
   description A_fra1-pkvm4-pr
   switchport
   switchport mode trunk
-  switchport trunk allowed vlan 2,8-11,36,76,256
+  switchport trunk allowed vlan 2,8-11,36,76,256-257
+  no snmp trap link-status
   vpc 138
 
 interface port-channel139
   description A_fra1-pkvm11-pr
   switchport
   switchport mode trunk
-  switchport trunk allowed vlan 2,8-11,36,76,256
+  switchport trunk allowed vlan 2,8-11,36,76,256-258
+  no snmp trap link-status
   vpc 139
 
 interface port-channel140
   description A_fra1-pkvm12-pr
   switchport
   switchport mode trunk
-  switchport trunk allowed vlan 2,8-11,36,76,256
+  switchport trunk allowed vlan 2,8-11,36,76,256-258
+  no snmp trap link-status
   vpc 140
 
 interface port-channel141
@@ -1861,6 +1890,7 @@ interface port-channel141
   switchport trunk native vlan 76
   switchport trunk allowed vlan 14,76
   logging event port link-status
+  no snmp trap link-status
   vpc 141
 
 interface port-channel142
@@ -1870,13 +1900,97 @@ interface port-channel142
   switchport trunk native vlan 76
   switchport trunk allowed vlan 14,76
   logging event port link-status
+  no snmp trap link-status
   vpc 142
+
+interface port-channel143
+  description A_fra1-kafka1-pr (our Eth101/1/6)
+  switchport
+  switchport mode trunk
+  switchport trunk native vlan 76
+  switchport trunk allowed vlan 14,76
+  no snmp trap link-status
+  vpc 143
+
+interface port-channel144
+  description A_fra1-kafka2-pr (our Eth101/1/13)
+  switchport
+  switchport mode trunk
+  switchport trunk native vlan 76
+  switchport trunk allowed vlan 14,76
+  no snmp trap link-status
+  vpc 144
+
+interface port-channel145
+  description A_fra1-syslog2-pr (our Eth101/1/16)
+  switchport
+  switchport mode trunk
+  switchport trunk native vlan 76
+  switchport trunk allowed vlan 76,258
+  no snmp trap link-status
+  vpc 145
+
+interface port-channel146
+  description A_fra1-syslog1-pr (our Eth101/1/9)
+  switchport
+  switchport mode trunk
+  switchport trunk native vlan 76
+  switchport trunk allowed vlan 76,258
+  no snmp trap link-status
+  vpc 146
+
+interface port-channel147
+  description NEWA_fra1-f5a-pr (our Eth1/36)
+  switchport
+  switchport mode trunk
+  switchport trunk allowed vlan 8
+  no snmp trap link-status
+  vpc 147
+
+interface port-channel148
+  description NEWA_fra1-f5b-pr (our Eth2/33)
+  switchport
+  switchport mode trunk
+  switchport trunk allowed vlan 8
+  no snmp trap link-status
+  vpc 148
+
+interface port-channel149
+  switchport
+  switchport mode trunk
+  switchport trunk native vlan 76
+  switchport trunk allowed vlan 76,256
+  no snmp trap link-status
+  vpc 149
+
+interface port-channel150
+  description A_fra1-prom1-pr (our Eth101/1/7)
+  switchport
+  switchport mode trunk
+  switchport trunk native vlan 76
+  switchport trunk allowed vlan 76,256
+  vpc 150
+
+interface port-channel151
+  description A_fra1-elk1-pr (our Eth101/1/8)
+  switchport
+  switchport mode trunk
+  switchport trunk allowed vlan 9-11,14,36,76,256-258,900
+  vpc 151
+
+interface port-channel152
+  description A_fra1-elk2-pr (our Eth101/1/15)
+  switchport
+  switchport mode trunk
+  switchport trunk allowed vlan 9-11,14,36,76,256-258,900
+  vpc 152
 
 interface port-channel1000
   description A_fra1-01-p015/016-cnx (our Eth1/49, 2/49)
   switchport
   switchport mode trunk
-  switchport trunk allowed vlan 3,9-11,14,17,36,76
+  switchport trunk allowed vlan 3,9-11,13-14,17,36,76,256-258
+  no snmp trap link-status
   storm-control broadcast level 5.00
   storm-control multicast level 5.00
   vpc 1000
@@ -1886,6 +2000,7 @@ interface port-channel1001
   switchport
   switchport mode fex-fabric
   fex associate 101
+  no snmp trap link-status
   storm-control broadcast level 5.00
   storm-control multicast level 5.00
 
@@ -1893,13 +2008,15 @@ interface port-channel3000
   description A_fra1-fw-p001-fpr-a
   switchport
   switchport mode trunk
-  switchport trunk allowed vlan 3,9-11,14,17,36,48-49,76,256-257,999-1000
+  switchport trunk allowed vlan 3,8-11,13-14,17,36,48-49,76,256-258,999-1000
   spanning-tree port type edge trunk
+  no snmp trap link-status
   storm-control broadcast level 5.00
   storm-control multicast level 5.00
 
 interface port-channel4000
   description A_fra1-wn-p002-cnx
+  no snmp trap link-status
   no ip redirects
   ip address 192.168.122.49/30
   ip ospf network point-to-point
@@ -1923,10 +2040,12 @@ interface port-channel4095
   spanning-tree port type network
   logging event port link-status
   logging event port trunk-status
+  no snmp trap link-status
   vpc peer-link
 
 interface Ethernet1/1
   description A_WAN rix1-wn-p211-ios Te1/6 - EVOL_FRA/RIX_WAVE-1124/1/L3
+  no snmp trap link-status
   vrf member core
   bfd interval 750 min_rx 750 multiplier 3
   ip address 192.168.121.98/30
@@ -1934,6 +2053,7 @@ interface Ethernet1/1
 
 interface Ethernet1/2
   description A_WAN mlt1-wn-p001-ios Te1/7 - EVOL_FRA/MAL_ETHL-1140/GTT
+  no snmp trap link-status
   vrf member core
   bfd interval 50 min_rx 50 multiplier 5
   ip address 192.168.121.82/30
@@ -1941,6 +2061,7 @@ interface Ethernet1/2
 
 interface Ethernet1/3
   description A_WAN buc1-00-p010-ios Gi1/0/39 - EVOL_FRA/BUC_ETHL-1141/GTT
+  no snmp trap link-status
   bandwidth 300000
   vrf member core
   ip address 192.168.121.18/30
@@ -1950,6 +2071,7 @@ interface Ethernet1/4
   description A_WAN hkg2-05-p003-cnx Eth1/51 - EVOL_FRA/HKG_ETHL-1123/TELS
   speed 1000
   duplex full
+  no snmp trap link-status
   bandwidth 500000
   vrf member core
   ip address 192.168.121.38/30
@@ -1957,6 +2079,7 @@ interface Ethernet1/4
 
 interface Ethernet1/5
   description A_WAN fraa-dxcon-fgctr0ne EVOL_FRA/FRA_WAVE-1127/1/L3
+  no snmp trap link-status
   logging event port link-status
   no ip redirects
   no shutdown
@@ -1977,6 +2100,7 @@ interface Ethernet1/5.101
 
 interface Ethernet1/6
   description A_WAN spa1-02-p010-hpc eth29 - EVOL_FRA/SPA_ETHL-1118/1/COLT - SPA
+  no snmp trap link-status
   bandwidth 100000
   vrf member core
   ip address 192.168.121.114/30
@@ -1986,6 +2110,7 @@ interface Ethernet1/7
   description A_WAN als1-wn-p066-ios Gi0/1 - EVOL_FRA/ERM_ETHL-1133/1/COLT
   speed 1000
   duplex full
+  no snmp trap link-status
   bandwidth 100000
   vrf member core
   ip address 192.168.121.6/30
@@ -1993,6 +2118,7 @@ interface Ethernet1/7
 
 interface Ethernet1/8
   description A_WAN mur1-02-p003-hpc eth37 - EVOL_FRA/MUR_ETHL-1132/COLT
+  no snmp trap link-status
   bandwidth 100000
   vrf member core
   ip address 192.168.121.94/30
@@ -2000,6 +2126,7 @@ interface Ethernet1/8
 
 interface Ethernet1/9
   description A_WAN lnd5-00-p010-ios Gi1/0/39 - EVOL_FRA/LON_ETHL-1137/COLT
+  no snmp trap link-status
   bandwidth 50000
   vrf member core
   ip address 192.168.121.66/30
@@ -2007,6 +2134,7 @@ interface Ethernet1/9
 
 interface Ethernet1/10
   description A_WAN bir1-wn-p001-ios G0/1 EVOL_FRA/BIR_ETHL-1236/GTT
+  no snmp trap link-status
   bandwidth 100000
   vrf member core
   ip address 192.168.121.50/30
@@ -2014,14 +2142,16 @@ interface Ethernet1/10
 
 interface Ethernet1/11
   description A_WAN kcg1-wn-p001-ios G0/1 EVOL_FRA/ALA_ETHL-1158/CITIC
+  no snmp trap link-status
   bandwidth 50000
   vrf member core
   ip address 192.168.121.138/30
   no shutdown
 
 interface Ethernet1/12
-  description R_WAN tbs1-wn-p001-ios Eth1/44 EVOL_FRA/TBS_ETHL-1231/GTT
+  description A_WAN tbs1-wn-p001-ios Eth1/44 EVOL_FRA/TBS_ETHL-1231/GTT
   speed 1000
+  no snmp trap link-status
   vrf member core
   ip address 192.168.121.185/30
   no shutdown
@@ -2029,20 +2159,25 @@ interface Ethernet1/12
 interface Ethernet1/13
   description R_WAN lnd7-wn-p001-ios Gi0/1
   speed 1000
+  no snmp trap link-status
   vrf member core
   ip address 192.168.122.1/30
 
 interface Ethernet1/14
+  no snmp trap link-status
 
 interface Ethernet1/15
+  no snmp trap link-status
 
 interface Ethernet1/16
+  no snmp trap link-status
 
 interface Ethernet1/17
   description A_fra1-wowza-h01
   switchport
   switchport mode trunk
   switchport trunk allowed vlan 902,1016
+  no snmp trap link-status
   storm-control broadcast level 5.00
   storm-control multicast level 5.00
   channel-group 103 mode active
@@ -2053,6 +2188,7 @@ interface Ethernet1/18
   switchport
   switchport mode trunk
   switchport trunk allowed vlan 901
+  no snmp trap link-status
   storm-control broadcast level 5.00
   storm-control multicast level 5.00
   channel-group 110 mode active
@@ -2063,6 +2199,7 @@ interface Ethernet1/19
   switchport
   switchport mode trunk
   switchport trunk allowed vlan 901
+  no snmp trap link-status
   storm-control broadcast level 5.00
   storm-control multicast level 5.00
   channel-group 107 mode active
@@ -2073,6 +2210,7 @@ interface Ethernet1/20
   switchport
   switchport mode trunk
   switchport trunk allowed vlan 1016
+  no snmp trap link-status
   storm-control broadcast level 5.00
   storm-control multicast level 5.00
   channel-group 101 mode active
@@ -2083,6 +2221,7 @@ interface Ethernet1/21
   switchport
   switchport mode trunk
   switchport trunk allowed vlan 902,1016
+  no snmp trap link-status
   storm-control broadcast level 5.00
   storm-control multicast level 5.00
   channel-group 104 mode active
@@ -2093,6 +2232,7 @@ interface Ethernet1/22
   switchport
   switchport mode trunk
   switchport trunk allowed vlan 902,1016
+  no snmp trap link-status
   storm-control broadcast level 5.00
   storm-control multicast level 5.00
   channel-group 106 mode active
@@ -2103,6 +2243,7 @@ interface Ethernet1/23
   switchport
   switchport mode trunk
   switchport trunk allowed vlan 901
+  no snmp trap link-status
   storm-control broadcast level 5.00
   storm-control multicast level 5.00
   channel-group 108 mode active
@@ -2113,6 +2254,7 @@ interface Ethernet1/24
   switchport
   switchport mode trunk
   switchport trunk allowed vlan 1016
+  no snmp trap link-status
   storm-control broadcast level 5.00
   storm-control multicast level 5.00
   channel-group 102 mode active
@@ -2123,6 +2265,7 @@ interface Ethernet1/25
   switchport
   switchport mode trunk
   switchport trunk allowed vlan 902,1016
+  no snmp trap link-status
   storm-control broadcast level 5.00
   storm-control multicast level 5.00
   channel-group 105 mode active
@@ -2133,6 +2276,7 @@ interface Ethernet1/26
   switchport
   switchport mode trunk
   switchport trunk allowed vlan 901
+  no snmp trap link-status
   storm-control broadcast level 5.00
   storm-control multicast level 5.00
   channel-group 109 mode active
@@ -2143,6 +2287,7 @@ interface Ethernet1/27
   switchport
   switchport mode trunk
   switchport trunk allowed vlan 901
+  no snmp trap link-status
   storm-control broadcast level 5.00
   storm-control multicast level 5.00
   channel-group 113 mode active
@@ -2153,6 +2298,7 @@ interface Ethernet1/28
   switchport
   switchport mode trunk
   switchport trunk allowed vlan 901
+  no snmp trap link-status
   storm-control broadcast level 5.00
   storm-control multicast level 5.00
   channel-group 114 mode active
@@ -2163,6 +2309,7 @@ interface Ethernet1/29
   switchport
   switchport mode trunk
   switchport trunk allowed vlan 1016
+  no snmp trap link-status
   storm-control broadcast level 5.00
   storm-control multicast level 5.00
   channel-group 115 mode active
@@ -2173,6 +2320,7 @@ interface Ethernet1/30
   switchport
   switchport mode trunk
   switchport trunk allowed vlan 901
+  no snmp trap link-status
   storm-control broadcast level 5.00
   storm-control multicast level 5.00
   channel-group 116 mode active
@@ -2183,6 +2331,7 @@ interface Ethernet1/31
   switchport
   switchport mode trunk
   switchport trunk allowed vlan 901
+  no snmp trap link-status
   storm-control broadcast level 5.00
   storm-control multicast level 5.00
   channel-group 117 mode active
@@ -2193,6 +2342,7 @@ interface Ethernet1/32
   switchport
   switchport mode trunk
   switchport trunk allowed vlan 901
+  no snmp trap link-status
   storm-control broadcast level 5.00
   storm-control multicast level 5.00
   channel-group 118 mode active
@@ -2204,6 +2354,7 @@ interface Ethernet1/33
   switchport mode trunk
   switchport trunk allowed vlan 36,76,256-257,900
   spanning-tree port type edge
+  no snmp trap link-status
   logging event port trunk-status
   storm-control broadcast level 5.00
   storm-control multicast level 5.00
@@ -2216,6 +2367,7 @@ interface Ethernet1/34
   switchport mode trunk
   switchport trunk allowed vlan 36,76,256-257,900
   spanning-tree port type edge
+  no snmp trap link-status
   logging event port trunk-status
   storm-control broadcast level 5.00
   storm-control multicast level 5.00
@@ -2223,21 +2375,32 @@ interface Ethernet1/34
   no shutdown
 
 interface Ethernet1/35
+  no snmp trap link-status
   no shutdown
 
 interface Ethernet1/36
-  description fra1-f5a-pr data1 rack04
+  description NEWA_fra1-f5a-pr data1 rack04 (in Po147)
+  switchport
+  switchport mode trunk
+  switchport trunk allowed vlan 8
+  no snmp trap link-status
+  channel-group 147 mode active
   no shutdown
 
 interface Ethernet1/37
+  no snmp trap link-status
 
 interface Ethernet1/38
+  no snmp trap link-status
 
 interface Ethernet1/39
+  no snmp trap link-status
 
 interface Ethernet1/40
+  no snmp trap link-status
 
 interface Ethernet1/41
+  no snmp trap link-status
   logging event port link-status
   no ip redirects
 
@@ -2246,11 +2409,13 @@ interface Ethernet1/42
   switchport mode trunk
   switchport trunk allowed vlan 1000,3966-3967
   spanning-tree port type edge trunk
+  no snmp trap link-status
   logging event port link-status
   logging event port trunk-status
 
 interface Ethernet1/43
   description A_fra1-ic-p002-ios Te0/1/2
+  no snmp trap link-status
   logging event port link-status
   no ip redirects
   ip address 192.168.122.34/30
@@ -2258,6 +2423,7 @@ interface Ethernet1/43
 
 interface Ethernet1/44
   description A_fra1-ic-p002-ios Te0/1/3
+  no snmp trap link-status
   logging event port link-status
   no ip redirects
   ip address 192.168.122.38/30
@@ -2265,12 +2431,14 @@ interface Ethernet1/44
 
 interface Ethernet1/45
   description A_fra1-wn-p003-ios Gi1/0/47
+  no snmp trap link-status
   logging event port link-status
   no ip redirects
   ip address 192.168.122.65/30
   no shutdown
 
 interface Ethernet1/46
+  no snmp trap link-status
 
 interface Ethernet1/47
   lacp rate fast
@@ -2278,6 +2446,7 @@ interface Ethernet1/47
   switchport mode trunk
   switchport trunk allowed vlan 36,49,76,256-257,999-1000
   spanning-tree port type edge trunk
+  no snmp trap link-status
   storm-control broadcast level 5.00
   storm-control multicast level 5.00
 
@@ -2286,8 +2455,9 @@ interface Ethernet1/48
   lacp rate fast
   switchport
   switchport mode trunk
-  switchport trunk allowed vlan 3,9-11,14,17,36,48-49,76,256-257,999-1000
+  switchport trunk allowed vlan 3,8-11,13-14,17,36,48-49,76,256-258,999-1000
   spanning-tree port type edge trunk
+  no snmp trap link-status
   storm-control broadcast level 5.00
   storm-control multicast level 5.00
   channel-group 3000 mode active
@@ -2297,7 +2467,8 @@ interface Ethernet1/49
   description A_fra1-01-p015-cnx Eth1/50 (in Po1000)
   switchport
   switchport mode trunk
-  switchport trunk allowed vlan 3,9-11,14,17,36,76
+  switchport trunk allowed vlan 3,9-11,13-14,17,36,76,256-258
+  no snmp trap link-status
   storm-control broadcast level 5.00
   storm-control multicast level 5.00
   channel-group 1000 mode active
@@ -2308,6 +2479,7 @@ interface Ethernet1/50
   switchport
   switchport mode fex-fabric
   fex associate 101
+  no snmp trap link-status
   storm-control broadcast level 5.00
   storm-control multicast level 5.00
   channel-group 1001
@@ -2316,6 +2488,7 @@ interface Ethernet1/50
 interface Ethernet1/51
   description A_fra1-wn-p002-cnx Eth1/51
   lacp rate fast
+  no snmp trap link-status
   channel-group 4000 mode active
   no shutdown
 
@@ -2325,46 +2498,64 @@ interface Ethernet1/52
   switchport
   switchport mode trunk
   switchport trunk allowed vlan 2-2000
+  no snmp trap link-status
   channel-group 4095 mode active
   no shutdown
 
 interface Ethernet2/1
+  no snmp trap link-status
 
 interface Ethernet2/2
+  no snmp trap link-status
 
 interface Ethernet2/3
+  no snmp trap link-status
 
 interface Ethernet2/4
+  no snmp trap link-status
 
 interface Ethernet2/5
+  no snmp trap link-status
 
 interface Ethernet2/6
+  no snmp trap link-status
 
 interface Ethernet2/7
+  no snmp trap link-status
 
 interface Ethernet2/8
+  no snmp trap link-status
 
 interface Ethernet2/9
+  no snmp trap link-status
 
 interface Ethernet2/10
+  no snmp trap link-status
 
 interface Ethernet2/11
+  no snmp trap link-status
 
 interface Ethernet2/12
+  no snmp trap link-status
 
 interface Ethernet2/13
+  no snmp trap link-status
 
 interface Ethernet2/14
+  no snmp trap link-status
 
 interface Ethernet2/15
+  no snmp trap link-status
 
 interface Ethernet2/16
+  no snmp trap link-status
 
 interface Ethernet2/17
   description fra1-ufb01
   switchport
   switchport mode trunk
   switchport trunk allowed vlan 901
+  no snmp trap link-status
   storm-control broadcast level 5.00
   storm-control multicast level 5.00
   channel-group 119 mode active
@@ -2375,6 +2566,7 @@ interface Ethernet2/18
   switchport
   switchport mode trunk
   switchport trunk allowed vlan 256
+  no snmp trap link-status
   storm-control broadcast level 5.00
   storm-control multicast level 5.00
   channel-group 120 mode active
@@ -2385,6 +2577,7 @@ interface Ethernet2/19
   switchport
   switchport mode trunk
   switchport trunk allowed vlan 901
+  no snmp trap link-status
   storm-control broadcast level 5.00
   storm-control multicast level 5.00
   channel-group 121 mode active
@@ -2395,6 +2588,7 @@ interface Ethernet2/20
   switchport
   switchport mode trunk
   switchport trunk allowed vlan 902,1016
+  no snmp trap link-status
   storm-control broadcast level 5.00
   storm-control multicast level 5.00
   channel-group 122 mode active
@@ -2405,6 +2599,7 @@ interface Ethernet2/21
   switchport
   switchport mode trunk
   switchport trunk allowed vlan 901
+  no snmp trap link-status
   storm-control broadcast level 5.00
   storm-control multicast level 5.00
   channel-group 123 mode active
@@ -2415,6 +2610,7 @@ interface Ethernet2/22
   switchport
   switchport mode trunk
   switchport trunk allowed vlan 901
+  no snmp trap link-status
   storm-control broadcast level 5.00
   storm-control multicast level 5.00
   channel-group 124 mode active
@@ -2425,6 +2621,7 @@ interface Ethernet2/23
   switchport
   switchport mode trunk
   switchport trunk allowed vlan 901
+  no snmp trap link-status
   storm-control broadcast level 5.00
   storm-control multicast level 5.00
   channel-group 125 mode active
@@ -2435,6 +2632,7 @@ interface Ethernet2/24
   switchport
   switchport mode trunk
   switchport trunk allowed vlan 901
+  no snmp trap link-status
   storm-control broadcast level 5.00
   storm-control multicast level 5.00
   channel-group 126 mode active
@@ -2445,18 +2643,21 @@ interface Ethernet2/25
   switchport
   switchport mode trunk
   switchport trunk allowed vlan 901
+  no snmp trap link-status
   storm-control broadcast level 5.00
   storm-control multicast level 5.00
   channel-group 127 mode active
   no shutdown
 
 interface Ethernet2/26
+  no snmp trap link-status
 
 interface Ethernet2/27
   description fra1-ufb03
   switchport
   switchport mode trunk
   switchport trunk allowed vlan 901
+  no snmp trap link-status
   storm-control broadcast level 5.00
   storm-control multicast level 5.00
   channel-group 128 mode active
@@ -2467,6 +2668,7 @@ interface Ethernet2/28
   switchport
   switchport mode trunk
   switchport trunk allowed vlan 256
+  no snmp trap link-status
   storm-control broadcast level 5.00
   storm-control multicast level 5.00
   channel-group 129 mode active
@@ -2477,6 +2679,7 @@ interface Ethernet2/29
   switchport
   switchport mode trunk
   switchport trunk allowed vlan 902,1016
+  no snmp trap link-status
   storm-control broadcast level 5.00
   storm-control multicast level 5.00
   channel-group 130 mode active
@@ -2487,6 +2690,7 @@ interface Ethernet2/30
   switchport
   switchport mode trunk
   switchport trunk allowed vlan 901
+  no snmp trap link-status
   storm-control broadcast level 5.00
   storm-control multicast level 5.00
   channel-group 131 mode active
@@ -2497,6 +2701,7 @@ interface Ethernet2/31
   switchport
   switchport mode trunk
   switchport trunk allowed vlan 901
+  no snmp trap link-status
   storm-control broadcast level 5.00
   storm-control multicast level 5.00
   channel-group 132 mode active
@@ -2506,35 +2711,51 @@ interface Ethernet2/32
   description fra1-qradar-c01
   switchport
   switchport access vlan 48
+  no snmp trap link-status
   logging event port trunk-status
   storm-control broadcast level 5.00
   storm-control multicast level 5.00
   channel-group 133 mode active
 
 interface Ethernet2/33
-  description fra1-f5b-pr data1 rack05
+  description NEWA_fra1-f5b-pr data1 rack05 (in Po148)
+  switchport
+  switchport mode trunk
+  switchport trunk allowed vlan 8
+  no snmp trap link-status
+  channel-group 148 mode active
   no shutdown
 
 interface Ethernet2/34
+  no snmp trap link-status
 
 interface Ethernet2/35
+  no snmp trap link-status
 
 interface Ethernet2/36
+  no snmp trap link-status
 
 interface Ethernet2/37
+  no snmp trap link-status
 
 interface Ethernet2/38
+  no snmp trap link-status
 
 interface Ethernet2/39
+  no snmp trap link-status
 
 interface Ethernet2/40
+  no snmp trap link-status
 
 interface Ethernet2/41
+  no snmp trap link-status
 
 interface Ethernet2/42
+  no snmp trap link-status
 
 interface Ethernet2/43
   description A_fra1-ic-p001-ios Te0/1/0 via Corero
+  no snmp trap link-status
   logging event port link-status
   no ip redirects
   ip address 192.168.122.18/30
@@ -2546,23 +2767,28 @@ interface Ethernet2/44
   switchport mode trunk
   switchport trunk allowed vlan 1000,3966-3967
   spanning-tree port type edge trunk
+  no snmp trap link-status
   logging event port link-status
   logging event port trunk-status
   no shutdown
 
 interface Ethernet2/45
+  no snmp trap link-status
 
 interface Ethernet2/46
+  no snmp trap link-status
 
 interface Ethernet2/47
+  no snmp trap link-status
 
 interface Ethernet2/48
   description A_fra1-fw-p129-asa/pri Et1/1
   lacp rate fast
   switchport
   switchport mode trunk
-  switchport trunk allowed vlan 3,9-11,14,17,36,48-49,76,256-257,999-1000
+  switchport trunk allowed vlan 3,8-11,13-14,17,36,48-49,76,256-258,999-1000
   spanning-tree port type edge trunk
+  no snmp trap link-status
   storm-control broadcast level 5.00
   storm-control multicast level 5.00
   channel-group 3000 mode active
@@ -2572,7 +2798,8 @@ interface Ethernet2/49
   description A_fra1-01-p016-cnx Eth1/50 (in Po1000)
   switchport
   switchport mode trunk
-  switchport trunk allowed vlan 3,9-11,14,17,36,76
+  switchport trunk allowed vlan 3,9-11,13-14,17,36,76,256-258
+  no snmp trap link-status
   storm-control broadcast level 5.00
   storm-control multicast level 5.00
   channel-group 1000 mode active
@@ -2583,6 +2810,7 @@ interface Ethernet2/50
   switchport
   switchport mode fex-fabric
   fex associate 101
+  no snmp trap link-status
   storm-control broadcast level 5.00
   storm-control multicast level 5.00
   channel-group 1001
@@ -2591,6 +2819,7 @@ interface Ethernet2/50
 interface Ethernet2/51
   description A_fra1-wn-p002-cnx eth1/49
   lacp rate fast
+  no snmp trap link-status
   channel-group 4000 mode active
   no shutdown
 
@@ -2600,6 +2829,7 @@ interface Ethernet2/52
   switchport
   switchport mode trunk
   switchport trunk allowed vlan 2-2000
+  no snmp trap link-status
   logging event port trunk-status
   channel-group 4095 mode active
   no shutdown
@@ -2620,28 +2850,32 @@ interface loopback1
 interface Ethernet101/1/1
   description A_fra1-pkvm3-pr
   switchport mode trunk
-  switchport trunk allowed vlan 36
+  switchport trunk allowed vlan 2,8-11,36,76,256-257
+  no snmp trap link-status
   channel-group 137 mode active
   no shutdown
 
 interface Ethernet101/1/2
   description A_fra1-pkvm4-pr
   switchport mode trunk
-  switchport trunk allowed vlan 2,8-11,36,76,256
+  switchport trunk allowed vlan 2,8-11,36,76,256-257
+  no snmp trap link-status
   channel-group 138 mode active
   no shutdown
 
 interface Ethernet101/1/3
   description A_fra1-pkvm11-pr
   switchport mode trunk
-  switchport trunk allowed vlan 2,8-11,36,76,256
+  switchport trunk allowed vlan 2,8-11,36,76,256-258
+  no snmp trap link-status
   channel-group 139 mode active
   no shutdown
 
 interface Ethernet101/1/4
   description A_fra1-pkvm12-pr
   switchport mode trunk
-  switchport trunk allowed vlan 2,8-11,36,76,256
+  switchport trunk allowed vlan 2,8-11,36,76,256-258
+  no snmp trap link-status
   channel-group 140 mode active
   no shutdown
 
@@ -2650,47 +2884,58 @@ interface Ethernet101/1/5
   switchport mode trunk
   switchport trunk native vlan 76
   switchport trunk allowed vlan 14,76
+  no snmp trap link-status
   channel-group 141 mode active
   no shutdown
 
 interface Ethernet101/1/6
-  description A_fra1-kafka1-pr
+  description A_fra1-kafka1-pr (in Po143)
   switchport mode trunk
   switchport trunk native vlan 76
   switchport trunk allowed vlan 14,76
+  no snmp trap link-status
+  channel-group 143 mode active
   no shutdown
 
 interface Ethernet101/1/7
-  description A_fra1-prom1-pr
+  description A_fra1-prom1-pr (in Po150)
   switchport mode trunk
-  switchport trunk allowed vlan none
+  switchport trunk native vlan 76
+  switchport trunk allowed vlan 76,256
+  no snmp trap link-status
+  channel-group 150 mode active
   no shutdown
 
 interface Ethernet101/1/8
   description A_fra1-elk1-pr
   switchport mode trunk
-  switchport trunk allowed vlan none
+  switchport trunk allowed vlan 9-11,14,36,76,256-258,900
+  no snmp trap link-status
+  channel-group 151 mode active
   no shutdown
 
 interface Ethernet101/1/9
-  description A_fra1-syslog1-pr
+  description A_fra1-syslog1-pr (in Po146)
   switchport mode trunk
-  switchport trunk allowed vlan none
+  switchport trunk native vlan 76
+  switchport trunk allowed vlan 76,258
+  no snmp trap link-status
+  channel-group 146 mode active
   no shutdown
 
 interface Ethernet101/1/10
   description A_fra1-pkvm5-pr
   switchport mode trunk
-  switchport trunk native vlan 76
-  switchport trunk allowed vlan 2,8-11,36,76,256
+  switchport trunk allowed vlan 2,8-11,36,76,256-257
+  no snmp trap link-status
   channel-group 135 mode active
   no shutdown
 
 interface Ethernet101/1/11
   description A_fra1-pkvm6-pr
   switchport mode trunk
-  switchport trunk native vlan 76
-  switchport trunk allowed vlan 2,8-11,36,76,256
+  switchport trunk allowed vlan 2,8-11,36,76,256-257
+  no snmp trap link-status
   channel-group 136 mode active
   no shutdown
 
@@ -2699,162 +2944,204 @@ interface Ethernet101/1/12
   switchport mode trunk
   switchport trunk native vlan 76
   switchport trunk allowed vlan 14,76
+  no snmp trap link-status
   channel-group 142 mode active
   no shutdown
 
 interface Ethernet101/1/13
-  description A_fra1-kafka2-pr
+  description A_fra1-kafka2-pr (in Po144)
   switchport mode trunk
   switchport trunk native vlan 76
   switchport trunk allowed vlan 14,76
+  no snmp trap link-status
+  channel-group 144 mode active
   no shutdown
 
 interface Ethernet101/1/14
   description A_fra1-prom2-pr
   switchport mode trunk
-  switchport trunk allowed vlan none
+  switchport trunk native vlan 76
+  switchport trunk allowed vlan 76,256
+  no snmp trap link-status
+  channel-group 149 mode active
   no shutdown
 
 interface Ethernet101/1/15
   description A_fra1-elk2-pr
   switchport mode trunk
-  switchport trunk allowed vlan none
+  switchport trunk allowed vlan 9-11,14,36,76,256-258,900
+  no snmp trap link-status
+  channel-group 152 mode active
   no shutdown
 
 interface Ethernet101/1/16
-  description A_fra1-syslog2-pr
+  description A_fra1-syslog2-pr (in Po145)
   switchport mode trunk
   switchport trunk native vlan 76
-  switchport trunk allowed vlan 3,76
+  switchport trunk allowed vlan 76,258
+  no snmp trap link-status
+  channel-group 145 mode active
   no shutdown
 
 interface Ethernet101/1/17
   switchport mode trunk
   switchport trunk allowed vlan none
+  no snmp trap link-status
 
 interface Ethernet101/1/18
   switchport mode trunk
   switchport trunk allowed vlan none
+  no snmp trap link-status
 
 interface Ethernet101/1/19
   switchport mode trunk
   switchport trunk allowed vlan none
+  no snmp trap link-status
 
 interface Ethernet101/1/20
   switchport mode trunk
   switchport trunk allowed vlan none
+  no snmp trap link-status
 
 interface Ethernet101/1/21
   switchport mode trunk
   switchport trunk allowed vlan none
+  no snmp trap link-status
 
 interface Ethernet101/1/22
   switchport mode trunk
   switchport trunk allowed vlan none
+  no snmp trap link-status
 
 interface Ethernet101/1/23
   switchport mode trunk
   switchport trunk allowed vlan none
+  no snmp trap link-status
 
 interface Ethernet101/1/24
   switchport mode trunk
   switchport trunk allowed vlan none
+  no snmp trap link-status
 
 interface Ethernet101/1/25
   switchport mode trunk
   switchport trunk allowed vlan none
+  no snmp trap link-status
 
 interface Ethernet101/1/26
   switchport mode trunk
   switchport trunk allowed vlan none
+  no snmp trap link-status
 
 interface Ethernet101/1/27
   switchport mode trunk
   switchport trunk allowed vlan none
+  no snmp trap link-status
 
 interface Ethernet101/1/28
   switchport mode trunk
   switchport trunk allowed vlan none
+  no snmp trap link-status
 
 interface Ethernet101/1/29
   switchport mode trunk
   switchport trunk allowed vlan none
+  no snmp trap link-status
 
 interface Ethernet101/1/30
   switchport mode trunk
   switchport trunk allowed vlan none
+  no snmp trap link-status
 
 interface Ethernet101/1/31
   switchport mode trunk
   switchport trunk allowed vlan none
+  no snmp trap link-status
 
 interface Ethernet101/1/32
   switchport mode trunk
   switchport trunk allowed vlan none
+  no snmp trap link-status
 
 interface Ethernet101/1/33
   switchport mode trunk
   switchport trunk allowed vlan none
+  no snmp trap link-status
 
 interface Ethernet101/1/34
   switchport mode trunk
   switchport trunk allowed vlan none
+  no snmp trap link-status
 
 interface Ethernet101/1/35
   switchport mode trunk
   switchport trunk allowed vlan none
+  no snmp trap link-status
 
 interface Ethernet101/1/36
   switchport mode trunk
   switchport trunk allowed vlan none
+  no snmp trap link-status
 
 interface Ethernet101/1/37
   switchport mode trunk
   switchport trunk allowed vlan none
+  no snmp trap link-status
 
 interface Ethernet101/1/38
   switchport mode trunk
   switchport trunk allowed vlan none
+  no snmp trap link-status
 
 interface Ethernet101/1/39
   switchport mode trunk
   switchport trunk allowed vlan none
+  no snmp trap link-status
 
 interface Ethernet101/1/40
   switchport mode trunk
   switchport trunk allowed vlan none
+  no snmp trap link-status
 
 interface Ethernet101/1/41
   switchport mode trunk
   switchport trunk allowed vlan none
+  no snmp trap link-status
 
 interface Ethernet101/1/42
   switchport mode trunk
   switchport trunk allowed vlan none
+  no snmp trap link-status
 
 interface Ethernet101/1/43
   switchport mode trunk
   switchport trunk allowed vlan none
+  no snmp trap link-status
 
 interface Ethernet101/1/44
   switchport mode trunk
   switchport trunk allowed vlan none
+  no snmp trap link-status
 
 interface Ethernet101/1/45
   switchport mode trunk
   switchport trunk allowed vlan none
+  no snmp trap link-status
 
 interface Ethernet101/1/46
   switchport mode trunk
   switchport trunk allowed vlan none
+  no snmp trap link-status
 
 interface Ethernet101/1/47
   switchport mode trunk
   switchport trunk allowed vlan none
+  no snmp trap link-status
 
 interface Ethernet101/1/48
   switchport mode trunk
   switchport trunk allowed vlan none
+  no snmp trap link-status
 line console
 line vty
   access-class 15 in
@@ -3098,7 +3385,7 @@ ip sla 10
     frequency 10
 ip sla schedule 10 life forever start-time after 00:00:01
 ip sla 20
-  udp-jitter 192.168.121.37 50000 source-ip 192.168.121.38 num-packets 20 interval 100
+  udp-jitter 192.168.121.37 50000 source-ip 192.168.121.38 control disable num-packets 20 interval 100
     request-data-size 1432
     vrf core
     tag IP_SLA_hkg2_-_(EVOL_FRA/HKG_ETHL-1123/TELS)_long-distance_
@@ -3107,7 +3394,7 @@ ip sla 20
     frequency 10
 ip sla schedule 20 life forever start-time after 00:00:02
 ip sla 30
-  udp-jitter 192.168.121.5 50000 source-ip 192.168.121.6 num-packets 20 interval 100
+  udp-jitter 192.168.121.5 50000 source-ip 192.168.121.6 control disable num-packets 20 interval 100
     request-data-size 1432
     vrf core
     tag IP_SLA_als1_-_(EVOL_FRA/ERM_ETHL-1133/1/COLT)
@@ -3116,7 +3403,7 @@ ip sla 30
     frequency 10
 ip sla schedule 30 life forever start-time after 00:00:03
 ip sla 40
-  udp-jitter 192.168.121.17 50000 source-ip 192.168.121.18 num-packets 20 interval 100
+  udp-jitter 192.168.121.17 50000 source-ip 192.168.121.18 control disable num-packets 20 interval 100
     request-data-size 1432
     vrf core
     tag IP_SLA_buc1_-_(EVOL_FRA/BUC_ETHL-1141/GTT)
@@ -3125,7 +3412,7 @@ ip sla 40
     frequency 10
 ip sla schedule 40 life forever start-time after 00:00:04
 ip sla 50
-  udp-jitter 192.168.121.65 50000 source-ip 192.168.121.66 num-packets 20 interval 100
+  udp-jitter 192.168.121.65 50000 source-ip 192.168.121.66 control disable num-packets 20 interval 100
     request-data-size 1432
     vrf core
     tag IP_SLA_lnd5_-_(EVOL_FRA/LON_ETHL-1137/COLT)
@@ -3143,7 +3430,7 @@ ip sla 60
     frequency 10
 ip sla schedule 60 life forever start-time after 00:00:06
 ip sla 70
-  udp-jitter 192.168.121.113 50000 source-ip 192.168.121.114 num-packets 20 interval 100
+  udp-jitter 192.168.121.113 50000 source-ip 192.168.121.114 control disable num-packets 20 interval 100
     request-data-size 1432
     vrf core
     tag IP_SLA_spa1_-_(EVOL_FRA/SPA_ETHL-1118/1/COLT)
@@ -3161,7 +3448,7 @@ ip sla 80
     frequency 10
 ip sla schedule 80 life forever start-time after 00:00:08
 ip sla 90
-  udp-jitter 192.168.121.49 50000 source-ip 192.168.121.50 num-packets 20 interval 100
+  udp-jitter 192.168.121.49 50000 source-ip 192.168.121.50 control disable num-packets 20 interval 100
     request-data-size 1432
     vrf core
     tag IP_SLA_bir1_-_(EVOL_FRA/BIR_ETHL-1236/GTT)
@@ -3179,7 +3466,7 @@ ip sla 100
     frequency 10
 ip sla schedule 100 life forever start-time after 00:00:10
 ip sla 110
-  udp-jitter 192.168.121.137 50000 source-ip 192.168.121.138 num-packets 20 interval 100
+  udp-jitter 192.168.121.137 50000 source-ip 192.168.121.138 control disable num-packets 20 interval 100
     request-data-size 1432
     vrf core
     tag IP_SLA_kcg1_-_(EVOL_FRA/ALA_ETHL-1158/CITIC)_long-distance_
@@ -3187,6 +3474,13 @@ ip sla 110
     timeout 1000
     frequency 10
 ip sla schedule 110 life forever start-time after 00:00:11
+ip sla 120
+  udp-jitter 192.168.121.186 60000 source-ip 192.168.121.185 num-packets 20 interval 100
+    request-data-size 1432
+    vrf core
+    tag IP_SLA_tbs1_-_(EVOL_FRA/TBS_ETHL-1231/GTT)
+    frequency 10
+ip sla schedule 120 life forever start-time after 00:00:12
 
 
 

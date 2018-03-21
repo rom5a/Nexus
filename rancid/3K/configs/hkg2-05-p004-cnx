@@ -127,8 +127,8 @@
 !Flash: bootflash:   419 MB free
 !Flash: bootflash:  1534 MB total
 !
-!Flash: debug:      131529    Mar 14 03:16:15 2018  bootvar_debug.log
-!Flash: debug:           6    Mar 14 03:16:15 2018  bootvar_debug.meta
+!Flash: debug:      135346    Mar 20 03:18:18 2018  bootvar_debug.log
+!Flash: debug:           6    Mar 20 03:18:18 2018  bootvar_debug.meta
 !Flash: debug: Usage for debug://sup-local
 !Flash: debug:      0 MB used
 !Flash: debug:     1 MB free
@@ -511,6 +511,7 @@ interface port-channel3
   switchport trunk allowed vlan 5,10-13,99,888,999
   spanning-tree port type network
   speed 10000
+  no snmp trap link-status
   storm-control broadcast level 5.00
   storm-control multicast level 5.00
   vpc peer-link
@@ -657,6 +658,7 @@ interface Ethernet1/1
   switchport trunk allowed vlan 11
   spanning-tree port type edge trunk
   spanning-tree guard root
+  no snmp trap link-status
   storm-control broadcast level 5.00
   storm-control multicast level 5.00
   channel-group 101 mode active
@@ -679,6 +681,7 @@ interface Ethernet1/3
   switchport trunk allowed vlan 11
   spanning-tree port type edge trunk
   spanning-tree guard root
+  no snmp trap link-status
   storm-control broadcast level 5.00
   storm-control multicast level 5.00
   channel-group 102 mode active
@@ -701,6 +704,7 @@ interface Ethernet1/5
   switchport trunk allowed vlan 11
   spanning-tree port type edge trunk
   spanning-tree guard root
+  no snmp trap link-status
   storm-control broadcast level 5.00
   storm-control multicast level 5.00
   channel-group 103 mode active
@@ -723,6 +727,7 @@ interface Ethernet1/7
   switchport trunk allowed vlan 11
   spanning-tree port type edge trunk
   spanning-tree guard root
+  no snmp trap link-status
   storm-control broadcast level 5.00
   storm-control multicast level 5.00
   channel-group 104 mode active
@@ -745,6 +750,7 @@ interface Ethernet1/9
   switchport trunk allowed vlan 11
   spanning-tree port type edge trunk
   spanning-tree guard root
+  no snmp trap link-status
   storm-control broadcast level 5.00
   storm-control multicast level 5.00
   channel-group 105 mode active
@@ -767,6 +773,7 @@ interface Ethernet1/11
   switchport trunk allowed vlan 11
   spanning-tree port type edge trunk
   spanning-tree guard root
+  no snmp trap link-status
   storm-control broadcast level 5.00
   storm-control multicast level 5.00
   channel-group 106 mode active
@@ -789,6 +796,7 @@ interface Ethernet1/13
   switchport trunk allowed vlan 11
   spanning-tree port type edge trunk
   spanning-tree guard root
+  no snmp trap link-status
   storm-control broadcast level 5.00
   storm-control multicast level 5.00
   channel-group 113 mode active
@@ -815,6 +823,7 @@ interface Ethernet1/16
   switchport trunk allowed vlan 5,99
   spanning-tree port type edge trunk
   spanning-tree guard root
+  no snmp trap link-status
   storm-control broadcast level 5.00
   storm-control multicast level 5.00
   channel-group 111 mode active
@@ -825,6 +834,7 @@ interface Ethernet1/17
   switchport trunk allowed vlan 5
   spanning-tree port type edge trunk
   spanning-tree guard root
+  no snmp trap link-status
   storm-control broadcast level 5.00
   storm-control multicast level 5.00
   channel-group 112 mode active
@@ -1005,6 +1015,7 @@ interface Ethernet1/39
   switchport mode trunk
   switchport trunk allowed vlan 999
   spanning-tree port type edge trunk
+  no snmp trap link-status
   storm-control broadcast level 5.00
   storm-control multicast level 5.00
   channel-group 11 mode active
@@ -1014,6 +1025,7 @@ interface Ethernet1/40
   switchport mode trunk
   switchport trunk allowed vlan 999
   spanning-tree port type edge trunk
+  no snmp trap link-status
   storm-control broadcast level 5.00
   storm-control multicast level 5.00
   channel-group 12 mode active
@@ -1040,6 +1052,7 @@ interface Ethernet1/43
   switchport mode trunk
   switchport trunk allowed vlan 5,999
   spanning-tree port type edge trunk
+  no snmp trap link-status
   storm-control broadcast level 5.00
   storm-control multicast level 5.00
   channel-group 1 mode active
@@ -1049,6 +1062,7 @@ interface Ethernet1/44
   switchport mode trunk
   switchport trunk allowed vlan 5,999
   spanning-tree port type edge trunk
+  no snmp trap link-status
   storm-control broadcast level 5.00
   storm-control multicast level 5.00
   channel-group 2 mode active
@@ -1058,6 +1072,7 @@ interface Ethernet1/45
   switchport mode trunk
   switchport trunk allowed vlan 10-13,888
   spanning-tree port type edge trunk
+  no snmp trap link-status
   storm-control broadcast level 5.00
   storm-control multicast level 5.00
   channel-group 4 mode active
@@ -1067,6 +1082,7 @@ interface Ethernet1/46
   switchport mode trunk
   switchport trunk allowed vlan 10-13,888
   spanning-tree port type edge trunk
+  no snmp trap link-status
   storm-control broadcast level 5.00
   storm-control multicast level 5.00
   channel-group 5 mode active
@@ -1093,6 +1109,7 @@ interface Ethernet1/49
   description PO3-To-NX
   switchport mode trunk
   switchport trunk allowed vlan 5,10-13,99,888,999
+  no snmp trap link-status
   storm-control broadcast level 5.00
   storm-control multicast level 5.00
   channel-group 3 mode active
@@ -1101,15 +1118,18 @@ interface Ethernet1/50
   description PO3-To-NX
   switchport mode trunk
   switchport trunk allowed vlan 5,10-13,99,888,999
+  no snmp trap link-status
   storm-control broadcast level 5.00
   storm-control multicast level 5.00
   channel-group 3 mode active
 
 interface Ethernet1/51
   shutdown
+  no snmp trap link-status
 
 interface Ethernet1/52
   shutdown
+  no snmp trap link-status
 
 interface mgmt0
   vrf member management

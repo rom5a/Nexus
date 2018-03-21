@@ -8,7 +8,7 @@
 !
 !Memory: bootflash: 7512 MB
 !
-!Software: BIOS: version  [last: 2.1.5]
+!Software: BIOS: version 2.1.7
 !Software: Power Sequencer Firmware: 
 !Software: Module 1: v4.0
 !Software: Module 1: v4.0
@@ -16,14 +16,16 @@
 !Software: Microcontroller Firmware: version v0.0.0.15
 !Software: QSFP Microcontroller Firmware: 
 !Software: Module 1: v2.0.0.0
+!Software: SFP Microcontroller Firmware: 
+!Software: Module 1: v1.3.0.0
 !Software: CXP Microcontroller Firmware: 
-!Software: kickstart: version 7.2(0)N1(1)
-!Software: system: version 7.2(0)N1(1)
-!Software: BIOS compile time: [last: 12/03/2015]
-!Software: kickstart image file is: bootflash:///n6000-uk9-kickstart.7.2.0.N1.1.bin
-!Software: kickstart compile time: 6/8/2015 0:00:00 [06/08/2015 10:36:48]
-!Software: system image file is: bootflash:///n6000-uk9.7.2.0.N1.1.bin
-!Software: system compile time: 6/8/2015 0:00:00 [06/08/2015 10:37:40]
+!Software: kickstart: version 7.1(4)N1(1)
+!Software: system: version 7.1(4)N1(1)
+!Software: BIOS compile time: 06/16/2016
+!Software: kickstart image file is: bootflash:///n6000-uk9-kickstart.7.1.4.N1.1.bin
+!Software: kickstart compile time: 9/2/2016 10:00:00 [09/02/2016 20:17:17]
+!Software: system image file is: bootflash:///n6000-uk9.7.1.4.N1.1.bin
+!Software: system compile time: 9/2/2016 10:00:00 [09/02/2016 20:18:08]
 !
 !
 !
@@ -161,7 +163,8 @@
 !Env: Module   Sensor     MajorThresh   MinorThres   Status
 !Env:                     (Celsius)     (Celsius)
 !Env: -----------------------------------------------------------------
-!Env: 1        Outlet     65            55           ok
+!Env: 1        Fan-Side   110           100          ok
+!Env: 1        Port-Side  110           100          ok
 !Env: 1        Bigsur-0   125           110          ok
 !Env: 1        Bigsur-1   125           110          ok
 !Env: 1        Bigsur-2   125           110          ok
@@ -169,7 +172,8 @@
 !Env: 1        Bigsur-4   125           110          ok
 !Env: 1        Bigsur-5   125           110          ok
 !Env: 1        Bigsur-6   125           110          ok
-!Env: 1        Pacifica   125           110          ok
+!Env: 1        Pacifica   110           100          ok
+!Env: 1        Control    70            60           ok
 !
 !Env: Power Supply:
 !Env: Voltage: 12 Volts
@@ -211,13 +215,16 @@
 !Flash: bootflash:       80326    Aug 11 05:01:15 2016  ftp
 !Flash: bootflash:       80326    Aug 10 13:59:28 2016  fwm_err_s200.log
 !Flash: bootflash:         733    Jan 01 00:08:56 2001  license_FOC2008R1NF_6_1.lic
+!Flash: bootflash:        4096    Mar 20 06:24:11 2018  lost+found/
 !Flash: bootflash:    37973504    Jun 03 12:19:01 2016  n6000-uk9-kickstart.7.1.0.N1.1b.bin
 !Flash: bootflash:    34811392    Feb 12 07:13:53 2018  n6000-uk9-kickstart.7.1.4.N1.1.bin
 !Flash: bootflash:    38023168    Feb 05 22:12:39 2001  n6000-uk9-kickstart.7.2.0.N1.1.bin
 !Flash: bootflash:   310154966    Jun 03 12:20:19 2016  n6000-uk9.7.1.0.N1.1b.bin
 !Flash: bootflash:   327996218    Feb 12 07:12:54 2018  n6000-uk9.7.1.4.N1.1.bin
 !Flash: bootflash:   325055218    Feb 05 22:15:30 2001  n6000-uk9.7.2.0.N1.1.bin
+!Flash: bootflash:     8388608    Mar 19 09:33:21 2018  nc72-bios-v217.bin
 !Flash: bootflash:      116615    Feb 14 09:52:25 2018  null
+!Flash: bootflash:     2860466    Mar 19 09:34:09 2018  nuova-or-dplug-mzg.7.2.0.N1.1.bin
 !Flash: bootflash:        5671    Aug 10 13:57:42 2016  plat_fwm_mac_hist_s200.log
 !Flash: bootflash:        4096    Jun 03 10:50:17 2016  scripts/
 !Flash: bootflash:      116644    Feb 14 10:06:35 2018  startup-config
@@ -230,8 +237,8 @@
 !Flash: bootflash:        4096    Jan 01 00:02:15 2001  virtual-instance-stby-sync/
 !Flash: bootflash:         131    May 12 11:55:29 2016  wrimem.txt
 !Flash: bootflash: Usage for bootflash://sup-local
-!Flash: bootflash:  1465 MB used
-!Flash: bootflash:  5550 MB free
+!Flash: bootflash:  1476 MB used
+!Flash: bootflash:  5539 MB free
 !Flash: bootflash:  7016 MB total
 !
 !Flash: debug: Usage for debug://sup-local
@@ -239,7 +246,7 @@
 !Flash: debug:    20 MB free
 !Flash: debug:    20 MB total
 !
-!Flash: volatile:        7297    Feb 26 19:51:03 2018  event_archive_1
+!Flash: volatile:         428    Mar 20 09:04:58 2018  event_archive_1
 !Flash: volatile: Usage for volatile://sup-local
 !Flash: volatile:        0 MB used
 !Flash: volatile:   149 MB free
@@ -252,8 +259,8 @@
 !Mod: 
 !Mod: Mod  Sw              Hw      World-Wide-Name(s) (WWN)
 !Mod: ---  --------------  ------  ---------------------------------------------------
-!Mod: 1    7.2(0)N1(1)     1.0     --
-!Mod: 2    7.2(0)N1(1)     1.0     --
+!Mod: 1    7.1(4)N1(1)     1.0     --
+!Mod: 2    7.1(4)N1(1)     1.0     --
 !Mod: 
 !Mod: Mod  MAC-Address(es)                         Serial-Num
 !Mod: ---  --------------------------------------  ----------
@@ -541,21 +548,18 @@
 !VID: V06
 !SN: DCA213050YV
 !
-!DEBUG: EEM_POLICY_DIR Daemon:
-!DEBUG:  Error debugging is on
 !DEBUG: Debug level is set to Minor(1) 
 !DEBUG:  default for new sessions logging level: 3
 !
 !CORES: VDC  Module  Instance  Process-name     PID       Date(Year-Month-Day Time)
 !CORES: ---  ------  --------  ---------------  --------  -------------------------
-!CORES: 1    1       1         snmpd            3799      2018-01-10 09:41:44
 !
 !PROC_LOGS: Process          PID     Normal-exit  Stack  Core   Log-create-time
 !PROC_LOGS: ---------------  ------  -----------  -----  -----  ---------------
 !PROC_LOGS:   1 installer        32055             N      N      N Tue Feb 20 06:20:26 2018
 !PROC_LOGS:   1 installer        32148             N      N      N Tue Feb 20 06:29:25 2018
 !PROC_LOGS:   1 installer        8185              N      N      N Fri Jun  3 11:45:56 2016
-!PROC_LOGS:   1 snmpd            3799              N      Y      Y Wed Jan 10 09:41:32 2018
+!PROC_LOGS:   1 snmpd            3799              N      N      N Wed Jan 10 09:41:32 2018
 !
 !FEX: FEX Mod Ports Card Type                          Model              Status
 !FEX: --- --- ----- ---------------------------------- ------------------ -----------
@@ -573,18 +577,18 @@
 !FEX: 114 1   48    Fabric Extender 48x10GE Base T + 6x40GE N2K-C2348TQ-10GE   present
 !FEX: FEX Mod Sw              Hw      World-Wide-Name(s) (WWN)
 !FEX: --- --- --------------  ------  -----------------------------------------------
-!FEX: 101 1   7.2(0)N1(1)     2.5     --
-!FEX: 102 1   7.2(0)N1(1)     2.5     --
-!FEX: 103 1   7.2(0)N1(1)     2.5     --
-!FEX: 104 1   7.2(0)N1(1)     2.1     --
-!FEX: 105 1   7.2(0)N1(1)     2.5     --
-!FEX: 106 1   7.2(0)N1(1)     2.5     --
-!FEX: 107 1   7.2(0)N1(1)     2.5     --
-!FEX: 108 1   7.2(0)N1(1)     2.5     --
-!FEX: 109 1   7.2(0)N1(1)     2.5     --
-!FEX: 111 1   7.2(0)N1(1)     2.5     --
-!FEX: 112 1   7.2(0)N1(1)     2.5     --
-!FEX: 114 1   7.2(0)N1(1)     1.2     --
+!FEX: 101 1   7.1(4)N1(1)     2.5     --
+!FEX: 102 1   7.1(4)N1(1)     2.5     --
+!FEX: 103 1   7.1(4)N1(1)     2.5     --
+!FEX: 104 1   7.1(4)N1(1)     2.1     --
+!FEX: 105 1   7.1(4)N1(1)     2.5     --
+!FEX: 106 1   7.1(4)N1(1)     2.5     --
+!FEX: 107 1   7.1(4)N1(1)     2.5     --
+!FEX: 108 1   7.1(4)N1(1)     2.5     --
+!FEX: 109 1   7.1(4)N1(1)     2.5     --
+!FEX: 111 1   7.1(4)N1(1)     2.5     --
+!FEX: 112 1   7.1(4)N1(1)     2.5     --
+!FEX: 114 1   7.1(4)N1(1)     1.2     --
 !FEX: FEX Mod  MAC-Address(es)                         Serial-Num
 !FEX: --- ---  --------------------------------------  ----------
 !FEX: 101 1    188b.4598.f100 to 188b.4598.f12f        FOX2005G0GZ
@@ -618,7 +622,7 @@
 !
 
 
-version 7.2(0)N1(1)
+version 7.1(4)N1(1)
 install feature-set fabricpath
 feature-set fabricpath
 hostname rix1-02-p200-cnx
@@ -721,7 +725,6 @@ snmp-server user evogaming network-admin auth md5 0x4ebbbd2270486d393f7ed9d081f3
 snmp-server host 192.168.103.100 traps version 3 priv evogaming
 snmp-server host 192.168.103.100 use-vrf management
 snmp-server community 5uper5ecret group network-operator
-snmp-server community 5uper5ecret use-ipv4acl 66
 ntp distribute
 ntp server 10.30.9.210 prefer use-vrf management
 ntp server 10.30.235.210 prefer use-vrf management
@@ -852,23 +855,6 @@ interface port-channel3
   storm-control multicast level 5.00
   vpc peer-link
 
-interface port-channel101
-  switchport access vlan 31
-  switchport trunk native vlan 31
-  spanning-tree port type edge
-  no snmp trap link-status
-  storm-control broadcast level 5.00
-  storm-control multicast level 5.00
-  vpc 101
-
-interface port-channel102
-  switchport access vlan 31
-  spanning-tree port type edge
-  no snmp trap link-status
-  storm-control broadcast level 5.00
-  storm-control multicast level 5.00
-  vpc 102
-
 interface port-channel103
   description A_PROD_C1_F5 (our Eth101/1/8, 101/1/9)
   switchport mode trunk
@@ -888,14 +874,6 @@ interface port-channel104
   storm-control broadcast level 5.00
   storm-control multicast level 5.00
   vpc 104
-
-interface port-channel105
-  switchport access vlan 31
-  spanning-tree port type edge
-  no snmp trap link-status
-  storm-control broadcast level 5.00
-  storm-control multicast level 5.00
-  vpc 105
 
 interface port-channel106
   description A_rix1-pkvm1 (our 104/1/10)
@@ -998,7 +976,6 @@ interface port-channel117
   description A_RIX1-01-S202-c2960 Po1 (our TG1/17 and peer)
   switchport mode trunk
   switchport trunk allowed vlan 39,62,66
-  spanning-tree port type edge trunk
   speed 10000
   no snmp trap link-status
   storm-control broadcast level 5.00
@@ -1009,7 +986,6 @@ interface port-channel118
   description A_RIX1-01-S203-c2960 Po1 (our TG1/18 and peer)
   switchport mode trunk
   switchport trunk allowed vlan 39,62,66
-  spanning-tree port type edge trunk
   speed 10000
   no snmp trap link-status
   storm-control broadcast level 5.00
@@ -1083,7 +1059,6 @@ interface port-channel126
   description A_RIX1-01-S204-c2960 Po1 (our e1/26 and peer)
   switchport mode trunk
   switchport trunk allowed vlan 39,66
-  spanning-tree port type edge trunk
   speed 10000
   no snmp trap link-status
   storm-control broadcast level 5.00
@@ -1668,6 +1643,7 @@ interface Ethernet2/6
 
 interface mgmt0
   description A_rix1-wn-p003-ios Gi1/0/6
+  no snmp trap link-status
   vrf member management
   ip address 10.30.0.200/25
 
@@ -2958,55 +2934,55 @@ interface Ethernet103/1/48
   vpc orphan-port suspend
 
 interface Ethernet104/1/1
+  shutdown
   switchport access vlan 31
   switchport trunk native vlan 31
   storm-control broadcast level 5.00
   storm-control multicast level 5.00
-  channel-group 101 mode active
 
 interface Ethernet104/1/2
+  shutdown
   switchport access vlan 31
   switchport trunk native vlan 31
   storm-control broadcast level 5.00
   storm-control multicast level 5.00
-  channel-group 101 mode active
 
 interface Ethernet104/1/3
+  shutdown
   switchport access vlan 31
   switchport trunk native vlan 31
   storm-control broadcast level 5.00
   storm-control multicast level 5.00
-  channel-group 101 mode active
 
 interface Ethernet104/1/4
+  shutdown
   switchport access vlan 31
   storm-control broadcast level 5.00
   storm-control multicast level 5.00
-  channel-group 102 mode active
 
 interface Ethernet104/1/5
+  shutdown
   switchport access vlan 31
   storm-control broadcast level 5.00
   storm-control multicast level 5.00
-  channel-group 102 mode active
 
 interface Ethernet104/1/6
+  shutdown
   switchport access vlan 31
   storm-control broadcast level 5.00
   storm-control multicast level 5.00
-  channel-group 102 mode active
 
 interface Ethernet104/1/7
+  shutdown
   switchport access vlan 31
   storm-control broadcast level 5.00
   storm-control multicast level 5.00
-  channel-group 105 mode active
 
 interface Ethernet104/1/8
+  shutdown
   switchport access vlan 31
   storm-control broadcast level 5.00
   storm-control multicast level 5.00
-  channel-group 105 mode active
 
 interface Ethernet104/1/9
   description MSA iSCSI B
