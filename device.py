@@ -252,7 +252,7 @@ class DeviceValidator:
             log_result = []
             port_configs = self.ethernet_ports[ethernet_port]
 
-            if (self.model_series == "5" and "shutdown" in port_configs) or len(port_configs) == 0 or \
+            if (self.model_series == "5" or "3" and "shutdown" in port_configs) or (self.model_series == "9" and "no shutdown" not in port_configs) or \
                     filter(ip_address_pattern.match, port_configs):
                 continue
 
@@ -325,7 +325,7 @@ class DeviceValidator:
     def validate_console_configuration(self):
         self.logger.info("\tConsole config validation:")
         for console_config in CONSOLE_CONFIG:
-            if console_config in self.console_config:
+            if console_config not in self.console_config:
                 self.logger.info("\t\t" + console_config)
                 self.absent_config_lines.append(console_config)
         self.logger.info("")
