@@ -133,7 +133,7 @@
 !Env: 1        N9K-PAC-3000W-B           285 W                  3000 W     Ok
 !Env: 2        N9K-PAC-3000W-B           278 W                  3000 W     Ok
 !Env: 3        N9K-PAC-3000W-B           274 W                  3000 W     Ok
-!Env: 4        N9K-PAC-3000W-B           306 W                  3000 W     Ok
+!Env: 4        N9K-PAC-3000W-B           302 W                  3000 W     Ok
 !Env: 5        ------------                0 W                     0 W     Absent
 !Env: 6        ------------                0 W                     0 W     Absent
 !Env: 7        ------------                0 W                     0 W     Absent
@@ -143,14 +143,14 @@
 !Env:                                  (Watts )     (Watts )
 !Env: -------  -------------------  -----------  -----------  --------------
 !Env: 1        N9K-X9564PX             258.00 W     399.60 W    Powered-Up
-!Env: 2        N9K-X9564PX             234.00 W     399.60 W    Powered-Up
+!Env: 2        N9K-X9564PX             235.00 W     399.60 W    Powered-Up
 !Env: Xb21     xbar                      N/A          0.00 W    Absent
-!Env: Xb22     N9K-C9508-FM            136.00 W     250.80 W    Powered-Up
+!Env: Xb22     N9K-C9508-FM            137.00 W     250.80 W    Powered-Up
 !Env: Xb23     N9K-C9508-FM            133.00 W     250.80 W    Powered-Up
 !Env: Xb24     N9K-C9508-FM            134.00 W     250.80 W    Powered-Up
 !Env: Xb25     xbar                      N/A          0.00 W    Absent
 !Env: Xb26     N9K-C9508-FM            132.00 W     250.80 W    Powered-Up
-!Env: 27       N9K-SUP-A                61.00 W      79.92 W    Powered-Up
+!Env: 27       N9K-SUP-A                64.00 W      79.92 W    Powered-Up
 !Env: 28       supervisor                N/A          0.00 W    Absent
 !Env: 29       N9K-SC-A                 14.00 W      25.20 W    Powered-Up
 !Env: 30       N9K-SC-A                 14.00 W      25.20 W    Powered-Up
@@ -203,8 +203,8 @@
 !Flash: bootflash: 19055 MB free
 !Flash: bootflash: 20852 MB total
 !
-!Flash: debug:     1048580    Mar 20 13:34:12 2018  bootvar_debug.log
-!Flash: debug:           6    Mar 20 13:34:12 2018  bootvar_debug.meta
+!Flash: debug:     1048580    Mar 21 15:19:04 2018  bootvar_debug.log
+!Flash: debug:           6    Mar 21 15:19:04 2018  bootvar_debug.meta
 !Flash: debug: Usage for debug://sup-local
 !Flash: debug:     1 MB used
 !Flash: debug:     3 MB free
@@ -213,13 +213,13 @@
 !Flash: logflash:        4096    Sep 14 08:25:37 2017  ISSU_debug_logs/
 !Flash: logflash:        4096    Jun 21 15:50:56 2017  core/
 !Flash: logflash:        4096    Jun 21 15:50:56 2017  debug/
-!Flash: logflash:      581632    Mar 21 01:59:14 2018  debug_logs/
+!Flash: logflash:      581632    Mar 22 00:11:20 2018  debug_logs/
 !Flash: logflash:        4096    Jun 21 15:50:56 2017  generic/
 !Flash: logflash:        4096                          log/
 !Flash: logflash:       16384    Jan 01 12:52:08 2011  lost+found/
 !Flash: logflash:        4096    Mar 16 06:06:46 2018  vdc_1/
 !Flash: logflash: Usage for logflash://sup-local
-!Flash: logflash:  1250 MB used
+!Flash: logflash:  1251 MB used
 !Flash: logflash: 19601 MB free
 !Flash: logflash: 20852 MB total
 !
@@ -535,6 +535,7 @@ ip access-list acl_vlan1016_in
   1033 permit tcp any gt 1023 10.128.0.0/16 eq 1935 
   1043 permit tcp any 10.3.11.16/32 
   1053 permit tcp any 10.3.11.15/32 
+  1063 permit ip 10.8.16.13/32 192.168.121.194/32 
 ip access-list acl_vlan900_out
   statistics per-entry
   10 remark common rules
@@ -1299,6 +1300,7 @@ vrf context core
   ip route 10.6.177.0/24 192.168.122.81
   ip route 10.8.0.0/16 192.168.122.81
   ip route 185.103.30.0/24 192.168.122.81
+  ip route 192.168.121.194/32 192.168.122.54
 vrf context management
   ip route 0.0.0.0/0 10.8.0.1
 port-channel load-balance src-dst ip-l4port-vlan 
@@ -1945,6 +1947,8 @@ interface port-channel147
   switchport mode trunk
   switchport trunk allowed vlan 8
   no snmp trap link-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
   vpc 147
 
 interface port-channel148
@@ -1953,9 +1957,12 @@ interface port-channel148
   switchport mode trunk
   switchport trunk allowed vlan 8
   no snmp trap link-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
   vpc 148
 
 interface port-channel149
+  description A_fra1-prom2-pr (our Eth101/1/14)
   switchport
   switchport mode trunk
   switchport trunk native vlan 76
@@ -1969,6 +1976,7 @@ interface port-channel150
   switchport mode trunk
   switchport trunk native vlan 76
   switchport trunk allowed vlan 76,256
+  no snmp trap link-status
   vpc 150
 
 interface port-channel151
@@ -1976,6 +1984,7 @@ interface port-channel151
   switchport
   switchport mode trunk
   switchport trunk allowed vlan 9-11,14,36,76,256-258,900
+  no snmp trap link-status
   vpc 151
 
 interface port-channel152
@@ -1983,6 +1992,7 @@ interface port-channel152
   switchport
   switchport mode trunk
   switchport trunk allowed vlan 9-11,14,36,76,256-258,900
+  no snmp trap link-status
   vpc 152
 
 interface port-channel1000
@@ -2376,7 +2386,6 @@ interface Ethernet1/34
 
 interface Ethernet1/35
   no snmp trap link-status
-  no shutdown
 
 interface Ethernet1/36
   description NEWA_fra1-f5a-pr data1 rack04 (in Po147)
@@ -2384,6 +2393,8 @@ interface Ethernet1/36
   switchport mode trunk
   switchport trunk allowed vlan 8
   no snmp trap link-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
   channel-group 147 mode active
   no shutdown
 
@@ -2723,6 +2734,8 @@ interface Ethernet2/33
   switchport mode trunk
   switchport trunk allowed vlan 8
   no snmp trap link-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
   channel-group 148 mode active
   no shutdown
 
@@ -3143,6 +3156,7 @@ interface Ethernet101/1/48
   switchport trunk allowed vlan none
   no snmp trap link-status
 line console
+  exec-timeout 15
 line vty
   access-class 15 in
 boot nxos bootflash:/nxos.7.0.3.I5.2.bin sup-1
@@ -3474,13 +3488,9 @@ ip sla 110
     timeout 1000
     frequency 10
 ip sla schedule 110 life forever start-time after 00:00:11
-ip sla 120
-  udp-jitter 192.168.121.186 60000 source-ip 192.168.121.185 num-packets 20 interval 100
-    request-data-size 1432
-    vrf core
-    tag IP_SLA_tbs1_-_(EVOL_FRA/TBS_ETHL-1231/GTT)
-    frequency 10
-ip sla schedule 120 life forever start-time after 00:00:12
+logging server 10.8.48.122 5 use-vrf management
+logging source-interface mgmt0
+logging level syslog 6
 
 
 

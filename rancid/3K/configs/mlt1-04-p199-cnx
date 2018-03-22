@@ -106,7 +106,7 @@
 !Env:                                 (Watts )    (Watts )     (Watts )
 !Env: -------  -------------------  ----------  ----------  ----------  --------------
 !Env: 1        N9K-PAC-650W               78 W                   650 W     Ok
-!Env: 2        N9K-PAC-650W               75 W                   650 W     Ok
+!Env: 2        N9K-PAC-650W               74 W                   650 W     Ok
 !Env: Power Usage Summary:
 !Env: --------------------
 !Env: Power Supply redundancy mode (configured)                Non-Redundant(combined)
@@ -148,8 +148,8 @@
 !Flash: bootflash: 50265 MB free
 !Flash: bootflash: 51231 MB total
 !
-!Flash: debug:      191241    Mar 20 03:15:31 2018  bootvar_debug.log
-!Flash: debug:           6    Mar 20 03:15:31 2018  bootvar_debug.meta
+!Flash: debug:      191697    Mar 21 03:20:12 2018  bootvar_debug.log
+!Flash: debug:           6    Mar 21 03:20:12 2018  bootvar_debug.meta
 !Flash: debug: Usage for debug://sup-local
 !Flash: debug:      0 MB used
 !Flash: debug:     4 MB free
@@ -157,14 +157,14 @@
 !
 !Flash: logflash:        4096    Mar 21 17:49:15 2017  core/
 !Flash: logflash:        4096    Mar 21 17:49:15 2017  debug/
-!Flash: logflash:        4096    Mar 21 02:18:51 2018  debug_logs/
+!Flash: logflash:        4096    Mar 22 03:04:20 2018  debug_logs/
 !Flash: logflash:        4096    Mar 21 17:49:15 2017  generic/
 !Flash: logflash:        4096                          log/
 !Flash: logflash:       16384    Mar 21 17:49:11 2017  lost+found/
 !Flash: logflash:        4096    Feb 25 03:23:21 2018  vdc_1/
 !Flash: logflash: Usage for logflash://sup-local
 !Flash: logflash:   570 MB used
-!Flash: logflash:  7493 MB free
+!Flash: logflash:  7492 MB free
 !Flash: logflash:  8063 MB total
 !
 !Flash: volatile:          40    Aug 23 06:08:41 2017  virtual-instance/

@@ -191,11 +191,11 @@ class DeviceValidator:
                 self.logger.info("\t\t" + server_config)
                 self.absent_config_lines.append(server_config)
 
-        if matching:
-            self.logger.info("\tRedundant SYSLOG config")
-            for redundant_line in matching:
-                self.redundant_config_lines.append("SYSLOG: " + str(redundant_line))
-                self.logger.info("\t\t" + str(redundant_line))
+        # if matching:
+        #     self.logger.info("\tIncorrect SYSLOG config")
+        #     for redundant_line in matching:
+        #         self.redundant_config_lines.append("SYSLOG: " + str(redundant_line))
+        #         self.logger.info("\t\t" + str(redundant_line))
 
         self.logger.info("")
 
@@ -214,7 +214,7 @@ class DeviceValidator:
 
             if matching:
                 self.logger.info("")
-                self.logger.info("\tRedundant users:")
+                self.logger.info("\tIncorrent users:")
                 for user in matching:
                     self.redundant_config_lines.append("Username should not be here: " + str(user))
                     self.logger.info("\t\t" + str(user))
@@ -252,8 +252,10 @@ class DeviceValidator:
             log_result = []
             port_configs = self.ethernet_ports[ethernet_port]
 
-            if (self.model_series == "5" or "3" and "shutdown" in port_configs) or (self.model_series == "9" and "no shutdown" not in port_configs) or \
-                    filter(ip_address_pattern.match, port_configs):
+            if (self.model_series == "5" or "3" and "shutdown" \
+                    in port_configs) or (self.model_series == "9" and \
+                        "no shutdown" not in port_configs) or \
+                            filter(ip_address_pattern.match, port_configs):
                 continue
 
             log_result.append('\t\t' + ethernet_port)

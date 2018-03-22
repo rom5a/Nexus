@@ -607,18 +607,18 @@
 !FEX:   FEX         FEX           FEX              FEX              Fex       
 !FEX: Number    Description      State            Model            Serial     
 !FEX: ------------------------------------------------------------------------
-!FEX: 101  2nd floor MSR C1                Online   N2K-C2248TP-E-1GE   FOX2005G0GZ
-!FEX: 102  1st floor DLR-PC                Online   N2K-C2248TP-E-1GE   FOX2006GATC
-!FEX: 103  1st floor ENC                Online   N2K-C2248TP-E-1GE   FOX2021GC86
-!FEX: 104  2nd floor MSR P2                Online   N2K-C2248TP-E-1GE   FOX1945GKLV
-!FEX: 105   2nd floor E6                Online   N2K-C2248TP-E-1GE   FOX2026G68V
-!FEX: 106   2nd floor E3                Online   N2K-C2248TP-E-1GE   FOX2027G6JH
-!FEX: 107   2nd floor E1                Online   N2K-C2248TP-E-1GE   FOX2020G9JE
-!FEX: 108  2nd floor E10                Online   N2K-C2248TP-E-1GE   FOX2027G6J4
-!FEX: 109  WH 3rd floor E1                Online   N2K-C2248TP-E-1GE   FOX2026G68C
-!FEX: 111  WH 3rd floor C2                Online   N2K-C2248TP-E-1GE   FOX2018G8S8
-!FEX: 112  WH 3rd floor C3                Online   N2K-C2248TP-E-1GE   FOX2021GC8G
-!FEX: 114  2nd floor MSR P2                Online    N2K-C2348TQ-10GE   FOC2137R0Q0
+!FEX: 101  2nd_floor_MSR_C1                Online   N2K-C2248TP-E-1GE   FOX2005G0GZ
+!FEX: 102  1st_floor_DLR-PC_E1                Online   N2K-C2248TP-E-1GE   FOX2006GATC
+!FEX: 103  1st_floor_ENC_E1                Online   N2K-C2248TP-E-1GE   FOX2021GC86
+!FEX: 104  2nd_floor_MSR_P2                Online   N2K-C2248TP-E-1GE   FOX1945GKLV
+!FEX: 105  2nd_floor_MSR_E6                Online   N2K-C2248TP-E-1GE   FOX2026G68V
+!FEX: 106  2nd_floor_MSR_E3                Online   N2K-C2248TP-E-1GE   FOX2027G6JH
+!FEX: 107  2nd_floor_MSR_E1                Online   N2K-C2248TP-E-1GE   FOX2020G9JE
+!FEX: 108  2nd_floor_MSR_E10                Online   N2K-C2248TP-E-1GE   FOX2027G6J4
+!FEX: 109  3rd_floor_WH_E1                Online   N2K-C2248TP-E-1GE   FOX2026G68C
+!FEX: 111  3rd_floor_WH_C2                Online   N2K-C2248TP-E-1GE   FOX2018G8S8
+!FEX: 112  3rd_floor_WH_C3                Online   N2K-C2248TP-E-1GE   FOX2021GC8G
+!FEX: 114  2nd_floor_MSR_P2                Online    N2K-C2348TQ-10GE   FOC2137R0Q0
 !
 
 
@@ -683,40 +683,40 @@ system qos
   service-policy type network-qos jumbo
 fex 101
   pinning max-links 1
-  description "2nd floor MSR C1"
+  description "2nd_floor_MSR_C1"
 fex 102
   pinning max-links 1
-  description "1st floor DLR-PC"
+  description "1st_floor_DLR-PC_E1"
 fex 103
   pinning max-links 1
-  description "1st floor ENC"
+  description "1st_floor_ENC_E1"
 fex 104
   pinning max-links 1
-  description "2nd floor MSR P2"
+  description "2nd_floor_MSR_P2"
 fex 105
   pinning max-links 1
-  description "2nd floor E6"
+  description "2nd_floor_MSR_E6"
 fex 106
   pinning max-links 1
-  description "2nd floor E3"
+  description "2nd_floor_MSR_E3"
 fex 107
   pinning max-links 1
-  description "2nd floor E1"
+  description "2nd_floor_MSR_E1"
 fex 108
   pinning max-links 1
-  description "2nd floor E10"
+  description "2nd_floor_MSR_E10"
 fex 109
   pinning max-links 1
-  description "WH 3rd floor E1"
+  description "3rd_floor_WH_E1"
 fex 111
   pinning max-links 1
-  description "WH 3rd floor C2"
+  description "3rd_floor_WH_C2"
 fex 112
   pinning max-links 1
-  description "WH 3rd floor C3"
+  description "3rd_floor_WH_C3"
 fex 114
   pinning max-links 1
-  description "2nd floor MSR P2"
+  description "2nd_floor_MSR_P2"
 snmp-server contact EVO_Infra_NOC
 snmp-server location RIX1_AL2P4 (MSR)
 snmp-server globalEnforcePriv
@@ -881,6 +881,8 @@ interface port-channel106
   switchport trunk allowed vlan 36,38,76,256,261,263
   spanning-tree port type edge trunk
   no snmp trap link-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
   vpc 106
 
 interface port-channel107
@@ -1069,6 +1071,7 @@ interface port-channel132
   description A_rix1-03-p177-ios Po1 (our TG1/32; vpc)
   switchport mode trunk
   switchport trunk allowed vlan 39,44,66,140
+  no snmp trap link-status
   storm-control broadcast level 5.00
   storm-control multicast level 5.00
   vpc 132
@@ -1078,6 +1081,7 @@ interface port-channel138
   switchport mode trunk
   switchport trunk allowed vlan 39,44,66
   speed 1000
+  no snmp trap link-status
   storm-control broadcast level 5.00
   storm-control multicast level 5.00
   vpc 138
@@ -1087,6 +1091,7 @@ interface port-channel139
   switchport mode trunk
   switchport trunk allowed vlan 44,62
   speed 10000
+  no snmp trap link-status
   storm-control broadcast level 5.00
   storm-control multicast level 5.00
   vpc 139
@@ -1096,6 +1101,7 @@ interface port-channel140
   switchport mode trunk
   switchport trunk allowed vlan 44,62
   speed 10000
+  no snmp trap link-status
   storm-control broadcast level 5.00
   storm-control multicast level 5.00
   vpc 140
@@ -1105,6 +1111,7 @@ interface port-channel146
   switchport mode trunk
   switchport trunk allowed vlan 44
   speed 10000
+  no snmp trap link-status
   storm-control broadcast level 5.00
   storm-control multicast level 5.00
   vpc 146
@@ -2998,6 +3005,8 @@ interface Ethernet104/1/10
   switchport mode trunk
   switchport trunk allowed vlan 36,38,76,256,261,263
   spanning-tree port type edge trunk
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
   channel-group 106 mode active
 
 interface Ethernet104/1/11

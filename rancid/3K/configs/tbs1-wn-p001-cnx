@@ -100,7 +100,7 @@
 !Env:                                 (Watts )    (Watts )     (Watts )
 !Env: -------  -------------------  ----------  ----------  ----------  --------------
 !Env: 1        N9K-PAC-650W                0 W                     0 W     Shutdown
-!Env: 2        N9K-PAC-650W              154 W                   650 W     Ok
+!Env: 2        N9K-PAC-650W              153 W                   650 W     Ok
 !Env: Power Usage Summary:
 !Env: --------------------
 !Env: Power Supply redundancy mode (configured)                Non-Redundant(combined)
@@ -142,8 +142,8 @@
 !Flash: bootflash: 48494 MB free
 !Flash: bootflash: 51231 MB total
 !
-!Flash: debug:      145724    Mar 20 15:16:41 2018  bootvar_debug.log
-!Flash: debug:           6    Mar 20 15:16:41 2018  bootvar_debug.meta
+!Flash: debug:      160750    Mar 21 15:17:45 2018  bootvar_debug.log
+!Flash: debug:           6    Mar 21 15:17:45 2018  bootvar_debug.meta
 !Flash: debug: Usage for debug://sup-local
 !Flash: debug:      0 MB used
 !Flash: debug:     4 MB free
@@ -153,14 +153,14 @@
 !Flash: logflash:        4096    Dec 28 11:14:05 2017  command/
 !Flash: logflash:        4096    Nov 16 08:37:11 2017  core/
 !Flash: logflash:        4096    Nov 16 08:37:11 2017  debug/
-!Flash: logflash:       12288    Mar 21 02:41:43 2018  debug_logs/
+!Flash: logflash:       12288    Mar 22 00:52:43 2018  debug_logs/
 !Flash: logflash:        4096    Nov 16 08:37:11 2017  generic/
 !Flash: logflash:        4096                          log/
 !Flash: logflash:       16384    Nov 16 08:37:06 2017  lost+found/
 !Flash: logflash:        4096    Dec 20 13:46:05 2017  vdc_1/
 !Flash: logflash: Usage for logflash://sup-local
-!Flash: logflash:   597 MB used
-!Flash: logflash:  7466 MB free
+!Flash: logflash:   592 MB used
+!Flash: logflash:  7470 MB free
 !Flash: logflash:  8063 MB total
 !
 !Flash: volatile:         100    Mar 15 06:58:25 2018  switchport-11231/
@@ -328,9 +328,9 @@
 !FEX:   FEX         FEX           FEX                       FEX               
 !FEX: Number    Description      State            Model            Serial     
 !FEX: ------------------------------------------------------------------------
-!FEX: 101        FEX0101                Online   N2K-C2248TP-E-1GE   FOX2144P8QH
-!FEX: 102        FEX0102                Online   N2K-C2248TP-E-1GE   FOX2144PBG2
-!FEX: 108        FEX0108                Online   N2K-C2248TP-E-1GE   FOX2144PBG0
+!FEX: 101  1th_floor_MSR_P1                Online   N2K-C2248TP-E-1GE   FOX2144P8QH
+!FEX: 102  1th_floor_MSR_E1                Online   N2K-C2248TP-E-1GE   FOX2144PBG2
+!FEX: 108  1th_floor_MSR_S1                Online   N2K-C2248TP-E-1GE   FOX2144PBG0
 !
 
 
@@ -767,42 +767,39 @@ control-plane
   service-policy input custom-copp-policy-strict 
 fex 101
   pinning max-links 1
-  description "FEX0101"
+  description "1th_floor_MSR_P1"
 fex 102
   pinning max-links 1
-  description "FEX0102"
+  description "1th_floor_MSR_E1"
 fex 103
   pinning max-links 1
-  description "FEX0103"
+  description "1th_floor_MSR_E2"
 fex 104
   pinning max-links 1
-  description "FEX0104"
+  description "1th_floor_MSR_E3"
 fex 105
   pinning max-links 1
-  description "FEX0105"
+  description "1th_floor_MSR_E4"
 fex 106
   pinning max-links 1
-  description "FEX0106"
+  description "1th_floor_MSR_E5"
 fex 107
   pinning max-links 1
-  description "FEX0107"
+  description "1th_floor_MSR_E6"
 fex 108
   pinning max-links 1
-  description "FEX0108"
+  description "1th_floor_MSR_S1"
 fex 109
   pinning max-links 1
-  description "FEX0109"
+  description "1th_floor_MSR_S2"
 fex 110
   pinning max-links 1
-  description "FEX0110"
-fex 111
-  pinning max-links 1
-  description "FEX0111"
+  description "1th_floor_MSR_S3"
 bfd slow-timer 2000
 bfd ipv4 slow-timer 2000
 bfd ipv6 slow-timer 2000
 snmp-server contact EVO_Infra_NOC
-snmp-server location description
+snmp-server location Georgia, Tbilisi, Mekanizatsia 1, MSR
 snmp-server user admin network-admin auth md5 0x4ebbbd2270486d393f7ed9d081f3d35b priv 0x4ebbbd2270486d393f7ed9d081f3d35b localizedkey
 snmp-server user evogaming network-admin auth md5 0x4ebbbd2270486d393f7ed9d081f3d35b priv 0x4ebbbd2270486d393f7ed9d081f3d35b localizedkey
 rmon event 1 description FATAL(1) owner PMON@FATAL
@@ -1029,7 +1026,7 @@ interface port-channel1010
   no snmp trap link-status
 
 interface port-channel3000
-  description A_tbs1-fw-p001-asa-pri Po1 (our Eth1/45;Eth1/46;Eth1/47;Eth1/48)
+  description A_tbs1-fw-p211-asa-pri Po1 (our Eth1/45;Eth1/46;Eth1/47;Eth1/48)
   switchport mode trunk
   switchport trunk allowed vlan 2,5,17,20,22,24,26,36,76
   no snmp trap link-status
@@ -1354,7 +1351,7 @@ interface Ethernet1/44
   no shutdown
 
 interface Ethernet1/45
-  description A_tbs1-fw-p001-asa-pri
+  description A_tbs1-fw-p211-asa-pri
   switchport mode trunk
   switchport trunk allowed vlan 2,5,17,20,22,24,26,36,76
   no snmp trap link-status
@@ -1363,7 +1360,7 @@ interface Ethernet1/45
   channel-group 3000 mode active
 
 interface Ethernet1/46
-  description A_tbs1-fw-p001-asa-pri
+  description A_tbs1-fw-p211-asa-pri
   switchport mode trunk
   switchport trunk allowed vlan 2,5,17,20,22,24,26,36,76
   no snmp trap link-status
@@ -1372,7 +1369,7 @@ interface Ethernet1/46
   channel-group 3000 mode active
 
 interface Ethernet1/47
-  description A_tbs1-fw-p001-asa-pri
+  description A_tbs1-fw-p211-asa-pri
   switchport mode trunk
   switchport trunk allowed vlan 2,5,17,20,22,24,26,36,76
   no snmp trap link-status
@@ -1381,7 +1378,7 @@ interface Ethernet1/47
   channel-group 3000 mode active
 
 interface Ethernet1/48
-  description A_tbs1-fw-p001-asa-pri
+  description A_tbs1-fw-p211-asa-pri
   switchport mode trunk
   switchport trunk allowed vlan 2,5,17,20,22,24,26,36,76
   no snmp trap link-status
@@ -2307,7 +2304,9 @@ router bgp 65015
   neighbor 192.168.122.134
     inherit peer TP_MGMT
     description tbs1-wn-p003-ios
-logging server 10.1.13.122
+logging server 10.8.48.122 6 use-vrf management
+logging source-interface mgmt0
+logging level syslog 6
 
 
 

@@ -130,9 +130,9 @@
 !Env: Supply    Model                   Output      Input      Capacity    Status
 !Env:                                 (Watts )    (Watts )     (Watts )
 !Env: -------  -------------------  ----------  ----------  ----------  --------------
-!Env: 1        N9K-PAC-3000W-B           274 W                  3000 W     Ok
+!Env: 1        N9K-PAC-3000W-B           278 W                  3000 W     Ok
 !Env: 2        N9K-PAC-3000W-B           285 W                  3000 W     Ok
-!Env: 3        N9K-PAC-3000W-B           299 W                  3000 W     Ok
+!Env: 3        N9K-PAC-3000W-B           302 W                  3000 W     Ok
 !Env: 4        N9K-PAC-3000W-B           285 W                  3000 W     Ok
 !Env: 5        ------------                0 W                     0 W     Absent
 !Env: 6        ------------                0 W                     0 W     Absent
@@ -155,7 +155,7 @@
 !Env: 29       N9K-SC-A                 14.00 W      25.20 W    Powered-Up
 !Env: 30       N9K-SC-A                 14.00 W      25.20 W    Powered-Up
 !Env: fan1     N9K-C9508-FAN            40.00 W     249.00 W    Powered-Up
-!Env: fan2     N9K-C9508-FAN            38.00 W     249.00 W    Powered-Up
+!Env: fan2     N9K-C9508-FAN            37.00 W     249.00 W    Powered-Up
 !Env: fan3     N9K-C9508-FAN            38.00 W     249.00 W    Powered-Up
 !Env: N/A - Per module power not available
 !Env: Power Usage Summary:
@@ -204,8 +204,8 @@
 !Flash: bootflash: 49596 MB free
 !Flash: bootflash: 51231 MB total
 !
-!Flash: debug:      730811    Mar 20 16:35:04 2018  bootvar_debug.log
-!Flash: debug:           6    Mar 20 16:35:04 2018  bootvar_debug.meta
+!Flash: debug:      751455    Mar 21 15:29:31 2018  bootvar_debug.log
+!Flash: debug:           6    Mar 21 15:29:31 2018  bootvar_debug.meta
 !Flash: debug: Usage for debug://sup-local
 !Flash: debug:      0 MB used
 !Flash: debug:     4 MB free
@@ -214,7 +214,7 @@
 !Flash: logflash:        4096    Mar 28 02:38:40 2011  ISSU_debug_logs/
 !Flash: logflash:        4096    Jan 02 11:02:29 2011  core/
 !Flash: logflash:        4096    Jan 02 11:02:29 2011  debug/
-!Flash: logflash:      585728    Mar 21 00:48:55 2018  debug_logs/
+!Flash: logflash:      585728    Mar 22 02:15:52 2018  debug_logs/
 !Flash: logflash:        4096    Jan 02 11:02:29 2011  generic/
 !Flash: logflash:        4096                          log/
 !Flash: logflash:       16384    Jan 02 10:48:38 2011  lost+found/
@@ -528,6 +528,7 @@ ip access-list acl_vlan1016_in
   1033 permit tcp any gt 1023 10.128.0.0/16 eq 1935 
   1043 permit tcp any 10.3.11.16/32 
   1053 permit tcp any 10.3.11.15/32 
+  1063 permit ip 10.8.16.13/32 192.168.121.194/32 
 ip access-list acl_vlan900_out
   statistics per-entry
   10 remark common rules
@@ -1924,6 +1925,7 @@ interface port-channel148
   vpc 148
 
 interface port-channel149
+  description A_fra1-prom2-pr (our Eth101/1/14)
   switchport
   switchport mode trunk
   switchport trunk native vlan 76
@@ -1937,6 +1939,7 @@ interface port-channel150
   switchport mode trunk
   switchport trunk native vlan 76
   switchport trunk allowed vlan 76,256
+  no snmp trap link-status
   vpc 150
 
 interface port-channel151
@@ -1944,6 +1947,7 @@ interface port-channel151
   switchport
   switchport mode trunk
   switchport trunk allowed vlan 9-11,14,36,76,256-258,900
+  no snmp trap link-status
   vpc 151
 
 interface port-channel152
@@ -1951,6 +1955,7 @@ interface port-channel152
   switchport
   switchport mode trunk
   switchport trunk allowed vlan 9-11,14,36,76,256-258,900
+  no snmp trap link-status
   vpc 152
 
 interface port-channel1000
@@ -3446,6 +3451,9 @@ ip sla 120
     timeout 500
     frequency 10
 ip sla schedule 120 life forever start-time now
+logging server 10.8.48.122 5 use-vrf management
+logging source-interface mgmt0
+logging level syslog 6
 
 
 

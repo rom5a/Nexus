@@ -138,8 +138,8 @@
 !Flash: bootflash: 13038 MB free
 !Flash: bootflash: 14542 MB total
 !
-!Flash: debug:      217073    Mar 20 13:40:10 2018  bootvar_debug.log
-!Flash: debug:           6    Mar 20 13:40:10 2018  bootvar_debug.meta
+!Flash: debug:      222375    Mar 21 09:35:59 2018  bootvar_debug.log
+!Flash: debug:           6    Mar 21 09:35:59 2018  bootvar_debug.meta
 !Flash: debug: Usage for debug://sup-local
 !Flash: debug:      0 MB used
 !Flash: debug:     1 MB free
@@ -148,7 +148,7 @@
 !Flash: logflash:        4096    Mar 07 18:59:30 2018  ISSU_debug_logs/
 !Flash: logflash:        4096    Feb 10 00:13:11 2018  core/
 !Flash: logflash:        4096    Feb 10 00:13:11 2018  debug/
-!Flash: logflash:       16384    Mar 20 20:36:01 2018  debug_logs/
+!Flash: logflash:       16384    Mar 22 00:50:11 2018  debug_logs/
 !Flash: logflash:        4096    Feb 10 00:13:11 2018  generic/
 !Flash: logflash:        4096                          log/
 !Flash: logflash:        4096    Mar 07 12:47:56 2018  vdc_1/
@@ -538,6 +538,8 @@ interface port-channel101
   switchport mode trunk
   switchport trunk allowed vlan 2,8-11,36,76,256-257
   no snmp trap link-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
   vpc 101
 
 interface port-channel102
@@ -545,6 +547,8 @@ interface port-channel102
   switchport mode trunk
   switchport trunk allowed vlan 2,8-11,36,76,256-257
   no snmp trap link-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
   vpc 102
 
 interface port-channel103
@@ -554,6 +558,8 @@ interface port-channel103
   switchport trunk native vlan 76
   switchport trunk allowed vlan 76
   no snmp trap link-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
   vpc 103
 
 interface port-channel104
@@ -563,6 +569,8 @@ interface port-channel104
   switchport trunk native vlan 76
   switchport trunk allowed vlan 76
   no snmp trap link-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
   vpc 104
 
 interface port-channel105
@@ -572,6 +580,8 @@ interface port-channel105
   switchport trunk native vlan 76
   switchport trunk allowed vlan 76
   no snmp trap link-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
   vpc 105
 
 interface port-channel106
@@ -579,12 +589,16 @@ interface port-channel106
   switchport mode trunk
   switchport trunk allowed vlan 9-11,14,36,76,256-258,900
   no snmp trap link-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
   vpc 106
 
 interface port-channel107
   description A_fra1-repsql1-pr
   switchport access vlan 13
   no snmp trap link-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
   vpc 107
 
 interface port-channel108
@@ -594,6 +608,8 @@ interface port-channel108
   switchport trunk native vlan 76
   switchport trunk allowed vlan 76
   no snmp trap link-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
   vpc 108
 
 interface port-channel109
@@ -603,6 +619,8 @@ interface port-channel109
   switchport trunk native vlan 76
   switchport trunk allowed vlan 76
   no snmp trap link-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
   vpc 109
 
 interface port-channel110
@@ -612,6 +630,8 @@ interface port-channel110
   switchport trunk native vlan 76
   switchport trunk allowed vlan 76
   no snmp trap link-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
   vpc 110
 
 interface port-channel111
@@ -621,6 +641,8 @@ interface port-channel111
   switchport trunk native vlan 76
   switchport trunk allowed vlan 76
   no snmp trap link-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
   vpc 111
 
 interface port-channel112
@@ -628,6 +650,8 @@ interface port-channel112
   switchport mode trunk
   switchport trunk allowed vlan 2,8-11,36,76,256-257
   no snmp trap link-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
   vpc 112
 
 interface port-channel113
@@ -635,12 +659,16 @@ interface port-channel113
   switchport mode trunk
   switchport trunk allowed vlan 2,8-11,36,76,256-257
   no snmp trap link-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
   vpc 113
 
 interface port-channel114
   description A_fra1-repsql2-pr
   switchport access vlan 13
   no snmp trap link-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
   vpc 114
 
 interface port-channel115
@@ -650,6 +678,8 @@ interface port-channel115
   switchport trunk native vlan 76
   switchport trunk allowed vlan 76
   no snmp trap link-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
   vpc 115
 
 interface port-channel116
@@ -659,6 +689,8 @@ interface port-channel116
   switchport trunk native vlan 76
   switchport trunk allowed vlan 76
   no snmp trap link-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
   vpc 116
 
 interface port-channel117
@@ -668,6 +700,8 @@ interface port-channel117
   switchport trunk native vlan 76
   switchport trunk allowed vlan 76
   no snmp trap link-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
   vpc 117
 
 interface port-channel118
@@ -677,6 +711,8 @@ interface port-channel118
   switchport trunk native vlan 76
   switchport trunk allowed vlan 76
   no snmp trap link-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
   vpc 118
 
 interface port-channel119
@@ -686,6 +722,8 @@ interface port-channel119
   switchport trunk native vlan 76
   switchport trunk allowed vlan 76
   no snmp trap link-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
   vpc 119
 
 interface port-channel120
@@ -695,6 +733,8 @@ interface port-channel120
   switchport trunk allowed vlan 14,76
   logging event port link-status
   no snmp trap link-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
   vpc 120
 
 interface port-channel121
@@ -703,13 +743,18 @@ interface port-channel121
   switchport trunk native vlan 76
   switchport trunk allowed vlan 14,76
   no snmp trap link-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
   vpc 121
 
 interface port-channel122
+  description A_fra1-prom3-pr (our Eth1/5)
   switchport mode trunk
   switchport trunk native vlan 76
   switchport trunk allowed vlan 76,256
   no snmp trap link-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
   vpc 122
 
 interface port-channel123
@@ -717,6 +762,8 @@ interface port-channel123
   switchport mode trunk
   switchport trunk allowed vlan 9-11,14,36,76,256-258,900
   no snmp trap link-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
   vpc 123
 
 interface port-channel1000
@@ -742,6 +789,8 @@ interface Ethernet1/1
   switchport mode trunk
   switchport trunk allowed vlan 2,8-11,36,76,256-257
   no snmp trap link-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
   channel-group 101 mode active
 
 interface Ethernet1/2
@@ -749,6 +798,8 @@ interface Ethernet1/2
   switchport mode trunk
   switchport trunk allowed vlan 2,8-11,36,76,256-257
   no snmp trap link-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
   channel-group 102 mode active
 
 interface Ethernet1/3
@@ -757,6 +808,8 @@ interface Ethernet1/3
   switchport trunk native vlan 76
   switchport trunk allowed vlan 14,76
   no snmp trap link-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
   channel-group 120 mode active
 
 interface Ethernet1/4
@@ -765,6 +818,8 @@ interface Ethernet1/4
   switchport trunk native vlan 76
   switchport trunk allowed vlan 14,76
   no snmp trap link-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
   channel-group 121 mode active
 
 interface Ethernet1/5
@@ -773,6 +828,8 @@ interface Ethernet1/5
   switchport trunk native vlan 76
   switchport trunk allowed vlan 76,256
   no snmp trap link-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
   channel-group 122 mode active
 
 interface Ethernet1/6
@@ -780,12 +837,16 @@ interface Ethernet1/6
   switchport mode trunk
   switchport trunk allowed vlan 9-11,14,36,76,256-258,900
   no snmp trap link-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
   channel-group 123 mode active
 
 interface Ethernet1/7
   description A_fra1-repsql1-pr
   switchport access vlan 13
   no snmp trap link-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
   channel-group 107 mode active
 
 interface Ethernet1/8
@@ -795,6 +856,8 @@ interface Ethernet1/8
   switchport trunk native vlan 76
   switchport trunk allowed vlan 76
   no snmp trap link-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
   channel-group 108 mode active
 
 interface Ethernet1/9
@@ -804,6 +867,8 @@ interface Ethernet1/9
   switchport trunk native vlan 76
   switchport trunk allowed vlan 76
   no snmp trap link-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
   channel-group 109 mode active
 
 interface Ethernet1/10
@@ -813,6 +878,8 @@ interface Ethernet1/10
   switchport trunk native vlan 76
   switchport trunk allowed vlan 76
   no snmp trap link-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
   channel-group 110 mode active
 
 interface Ethernet1/11
@@ -822,6 +889,8 @@ interface Ethernet1/11
   switchport trunk native vlan 76
   switchport trunk allowed vlan 76
   no snmp trap link-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
   channel-group 111 mode active
 
 interface Ethernet1/12
@@ -829,6 +898,8 @@ interface Ethernet1/12
   switchport mode trunk
   switchport trunk allowed vlan 2,8-11,36,76,256-257
   no snmp trap link-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
   channel-group 112 mode active
 
 interface Ethernet1/13
@@ -836,12 +907,16 @@ interface Ethernet1/13
   switchport mode trunk
   switchport trunk allowed vlan 2,8-11,36,76,256-257
   no snmp trap link-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
   channel-group 113 mode active
 
 interface Ethernet1/14
   description A_fra1-repsql2-pr
   switchport access vlan 13
   no snmp trap link-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
   channel-group 114 mode active
 
 interface Ethernet1/15
@@ -851,6 +926,8 @@ interface Ethernet1/15
   switchport trunk native vlan 76
   switchport trunk allowed vlan 76
   no snmp trap link-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
   channel-group 115 mode active
 
 interface Ethernet1/16
@@ -860,6 +937,8 @@ interface Ethernet1/16
   switchport trunk native vlan 76
   switchport trunk allowed vlan 76
   no snmp trap link-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
   channel-group 116 mode active
 
 interface Ethernet1/17
@@ -869,6 +948,8 @@ interface Ethernet1/17
   switchport trunk native vlan 76
   switchport trunk allowed vlan 76
   no snmp trap link-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
   channel-group 117 mode active
 
 interface Ethernet1/18
@@ -878,6 +959,8 @@ interface Ethernet1/18
   switchport trunk native vlan 76
   switchport trunk allowed vlan 76
   no snmp trap link-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
   channel-group 118 mode active
 
 interface Ethernet1/19
@@ -887,6 +970,8 @@ interface Ethernet1/19
   switchport trunk native vlan 76
   switchport trunk allowed vlan 76
   no snmp trap link-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
   channel-group 119 mode active
 
 interface Ethernet1/20

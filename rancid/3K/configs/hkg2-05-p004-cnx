@@ -110,13 +110,13 @@
 !Flash: bootflash:    37853184    Feb 19 12:33:39 2016  n3000-uk9-kickstart.6.0.2.U6.3a.bin
 !Flash: bootflash:   216049041    Dec 28 07:15:37 2015  n3000-uk9.6.0.2.U3.7.bin
 !Flash: bootflash:   206762702    Feb 19 12:34:40 2016  n3000-uk9.6.0.2.U6.3a.bin
-!Flash: bootflash:       21637    Sep 23 06:06:29 2016  null
+!Flash: bootflash:       25292    Feb 09 14:08:23 2018  null
 !Flash: bootflash:   578927616    Feb 19 12:36:29 2016  nxos.7.0.3.I3.1.bin
 !Flash: bootflash:        1024    Apr 28 05:22:45 2016  sprom_2_0_1
 !Flash: bootflash:        1024    Apr 28 05:22:45 2016  sprom_3_0_0
 !Flash: bootflash:        1024    Feb 19 12:43:05 2016  sprom_cstruct_2_0_0
 !Flash: bootflash:        1024    Feb 19 12:43:38 2016  sprom_cstruct_3_0_0
-!Flash: bootflash:       25292    Feb 09 14:08:23 2018  startup-config
+!Flash: bootflash:       27488    Mar 21 09:56:41 2018  startup-config
 !Flash: bootflash:        4096    Jan 29 07:18:13 2010  vdc_2/
 !Flash: bootflash:        4096    Jan 29 07:18:13 2010  vdc_3/
 !Flash: bootflash:        4096    Jan 29 07:18:13 2010  vdc_4/
@@ -127,8 +127,8 @@
 !Flash: bootflash:   419 MB free
 !Flash: bootflash:  1534 MB total
 !
-!Flash: debug:      135346    Mar 20 03:18:18 2018  bootvar_debug.log
-!Flash: debug:           6    Mar 20 03:18:18 2018  bootvar_debug.meta
+!Flash: debug:      143206    Mar 21 13:47:41 2018  bootvar_debug.log
+!Flash: debug:           6    Mar 21 13:47:41 2018  bootvar_debug.meta
 !Flash: debug: Usage for debug://sup-local
 !Flash: debug:      0 MB used
 !Flash: debug:     1 MB free
@@ -645,6 +645,7 @@ interface port-channel112
   vpc 112
 
 interface port-channel113
+  description A_evohkkvm01 (our Eth1/13)
   switchport mode trunk
   switchport trunk allowed vlan 11
   no snmp trap link-status
@@ -1126,10 +1127,14 @@ interface Ethernet1/50
 interface Ethernet1/51
   shutdown
   no snmp trap link-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
 
 interface Ethernet1/52
   shutdown
   no snmp trap link-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
 
 interface mgmt0
   vrf member management
@@ -1142,7 +1147,7 @@ line console
 line vty
 boot nxos bootflash:/nxos.7.0.3.I3.1.bin 
 ip route 0.0.0.0/0 10.3.8.1
-logging server 10.1.13.122 5 use-vrf management
+logging server 10.8.48.122 5 use-vrf management
 
 
 

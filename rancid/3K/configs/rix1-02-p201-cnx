@@ -637,19 +637,19 @@
 !FEX:   FEX         FEX           FEX              FEX              Fex       
 !FEX: Number    Description      State            Model            Serial     
 !FEX: ------------------------------------------------------------------------
-!FEX: 101  2nd floor MSR C2                Online   N2K-C2248TP-E-1GE   FOX2005G0GY
-!FEX: 102  1st floor DLR-PC                Online   N2K-C2248TP-E-1GE   FOX2005G0JU
-!FEX: 103  1st floor ENC                Online   N2K-C2248TP-E-1GE   FOX1945GKMV
-!FEX: 104  2nd floor MSR P4                Online   N2K-C2248TP-E-1GE   FOX1945G2QD
-!FEX: 105   2nd floor E4                Online   N2K-C2248TP-E-1GE   FOX2027G7BD
-!FEX: 106   2nd floor E2                Online   N2K-C2248TP-E-1GE   FOX2027GC8C
-!FEX: 107   2nd floor E7                Online   N2K-C2248TP-E-1GE   FOX2027GC84
-!FEX: 108   2nd floor E9                Online   N2K-C2248TP-E-1GE   FOX2027GC2B
-!FEX: 109  WH 3rd floor E2                Online   N2K-C2248TP-E-1GE   FOX2026G6AE
-!FEX: 110  5th floor Immersive                Online   N2K-C2248TP-E-1GE   FOX2027GC6X
-!FEX: 111  WH 3rd floor C2                Online   N2K-C2248TP-E-1GE   FOX2036GA5F
-!FEX: 112  WH 3rd floor C3                Online   N2K-C2248TP-E-1GE   FOX2033G501
-!FEX: 114  2nd floor MSR P2                Online    N2K-C2348TQ-10GE   FOC2137R0PQ
+!FEX: 101  2nd_floor_MSR_C2                Online   N2K-C2248TP-E-1GE   FOX2005G0GY
+!FEX: 102  1st_floor_DLR-PC_E3                Online   N2K-C2248TP-E-1GE   FOX2005G0JU
+!FEX: 103  1st_floor_ENC_E3                Online   N2K-C2248TP-E-1GE   FOX1945GKMV
+!FEX: 104  2nd_floor_MSR_P4                Online   N2K-C2248TP-E-1GE   FOX1945G2QD
+!FEX: 105  2nd_floor_MSR_E4                Online   N2K-C2248TP-E-1GE   FOX2027G7BD
+!FEX: 106  2nd_floor_MSR_E2                Online   N2K-C2248TP-E-1GE   FOX2027GC8C
+!FEX: 107  2nd_floor_MSR_E7                Online   N2K-C2248TP-E-1GE   FOX2027GC84
+!FEX: 108  2nd_floor_MSR_E9                Online   N2K-C2248TP-E-1GE   FOX2027GC2B
+!FEX: 109  3rd_floor_WH_E2                Online   N2K-C2248TP-E-1GE   FOX2026G6AE
+!FEX: 110  5th_floor_Immersive                Online   N2K-C2248TP-E-1GE   FOX2027GC6X
+!FEX: 111  3rd_floor_WH_C2                Online   N2K-C2248TP-E-1GE   FOX2036GA5F
+!FEX: 112  3rd_floor_WH_C3                Online   N2K-C2248TP-E-1GE   FOX2033G501
+!FEX: 114  2nd_floor_MSR_P1                Online    N2K-C2348TQ-10GE   FOC2137R0PQ
 !
 
 
@@ -711,43 +711,43 @@ system qos
   service-policy type network-qos jumbo
 fex 101
   pinning max-links 1
-  description "2nd floor MSR C2"
+  description "2nd_floor_MSR_C2"
 fex 102
   pinning max-links 1
-  description "1st floor DLR-PC"
+  description "1st_floor_DLR-PC_E3"
 fex 103
   pinning max-links 1
-  description "1st floor ENC"
+  description "1st_floor_ENC_E3"
 fex 104
   pinning max-links 1
-  description "2nd floor MSR P4"
+  description "2nd_floor_MSR_P4"
 fex 105
   pinning max-links 1
-  description "2nd floor E4"
+  description "2nd_floor_MSR_E4"
 fex 106
   pinning max-links 1
-  description "2nd floor E2"
+  description "2nd_floor_MSR_E2"
 fex 107
   pinning max-links 1
-  description "2nd floor E7"
+  description "2nd_floor_MSR_E7"
 fex 108
   pinning max-links 1
-  description "2nd floor E9"
+  description "2nd_floor_MSR_E9"
 fex 109
   pinning max-links 1
-  description "WH 3rd floor E2"
+  description "3rd_floor_WH_E2"
 fex 110
   pinning max-links 1
-  description "5th floor Immersive"
+  description "5th_floor_Immersive"
 fex 111
   pinning max-links 1
-  description "WH 3rd floor C2"
+  description "3rd_floor_WH_C2"
 fex 112
   pinning max-links 1
-  description "WH 3rd floor C3"
+  description "3rd_floor_WH_C3"
 fex 114
   pinning max-links 1
-  description "2nd floor MSR P2"
+  description "2nd_floor_MSR_P1"
 snmp-server contact EVO_Infra_NOC
 snmp-server location RIX1_AL2P5 (MSR)
 snmp-server user admin network-admin auth md5 0x4ebbbd2270486d393f7ed9d081f3d35b priv 0x4ebbbd2270486d393f7ed9d081f3d35b localizedkey
@@ -887,6 +887,9 @@ interface port-channel103
   switchport mode trunk
   switchport trunk allowed vlan 37-38
   spanning-tree port type edge trunk
+  no snmp trap link-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
   vpc 103
 
 interface port-channel104
@@ -894,6 +897,9 @@ interface port-channel104
   switchport mode trunk
   switchport trunk allowed vlan 37-38
   spanning-tree port type edge trunk
+  no snmp trap link-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
   vpc 104
 
 interface port-channel106
@@ -1053,6 +1059,9 @@ interface port-channel122
   switchport mode trunk
   switchport trunk allowed vlan 2-4094
   speed 10000
+  no snmp trap link-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
   vpc 122
 
 interface port-channel123
@@ -1060,6 +1069,9 @@ interface port-channel123
   switchport mode trunk
   switchport trunk allowed vlan 2-4094
   speed 10000
+  no snmp trap link-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
   vpc 123
 
 interface port-channel124
@@ -1086,6 +1098,7 @@ interface port-channel132
   description A_rix1-03-p177-ios Po1 (our TG1/32; vpc)
   switchport mode trunk
   switchport trunk allowed vlan 39,44,66,140
+  no snmp trap link-status
   storm-control broadcast level 5.00
   storm-control multicast level 5.00
   vpc 132
@@ -1095,6 +1108,7 @@ interface port-channel138
   switchport mode trunk
   switchport trunk allowed vlan 39,44,66
   speed 1000
+  no snmp trap link-status
   storm-control broadcast level 5.00
   storm-control multicast level 5.00
   vpc 138
@@ -1104,6 +1118,7 @@ interface port-channel139
   switchport mode trunk
   switchport trunk allowed vlan 44,62
   speed 10000
+  no snmp trap link-status
   storm-control broadcast level 5.00
   storm-control multicast level 5.00
   vpc 139
@@ -1113,6 +1128,7 @@ interface port-channel140
   switchport mode trunk
   switchport trunk allowed vlan 44,62
   speed 10000
+  no snmp trap link-status
   storm-control broadcast level 5.00
   storm-control multicast level 5.00
   vpc 140
@@ -1122,6 +1138,7 @@ interface port-channel146
   switchport mode trunk
   switchport trunk allowed vlan 44
   speed 10000
+  no snmp trap link-status
   storm-control broadcast level 5.00
   storm-control multicast level 5.00
   vpc 146
@@ -1130,6 +1147,9 @@ interface port-channel148
   description A_RIX1-C1-RTR-h5800 (our e1/48 vpc)
   switchport mode trunk
   switchport trunk allowed vlan 39,76,140
+  no snmp trap link-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
   vpc 148
 
 interface port-channel151
@@ -1434,12 +1454,16 @@ interface Ethernet1/22
   description A_rix1-wn-p212-ios Te1/1
   switchport mode trunk
   switchport trunk allowed vlan 2-4094
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
   channel-group 122 mode active
 
 interface Ethernet1/23
   description A_rix1-wn-p211-ios Te1/2
   switchport mode trunk
   switchport trunk allowed vlan 2-4094
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
   channel-group 123 mode active
 
 interface Ethernet1/24
@@ -1622,6 +1646,8 @@ interface Ethernet1/48
   description A_rix1-wn-t001-h3c Te1/1/2
   switchport mode trunk
   switchport trunk allowed vlan 39,76,140
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
   channel-group 148 mode active
 
 interface Ethernet2/1
@@ -1739,6 +1765,8 @@ interface Ethernet101/1/8
   switchport mode trunk
   switchport trunk allowed vlan 37-38
   spanning-tree port type edge trunk
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
   channel-group 103 mode active
 
 interface Ethernet101/1/9
@@ -1746,6 +1774,8 @@ interface Ethernet101/1/9
   switchport mode trunk
   switchport trunk allowed vlan 37-38
   spanning-tree port type edge trunk
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
   channel-group 103 mode active
 
 interface Ethernet101/1/10
@@ -1753,6 +1783,8 @@ interface Ethernet101/1/10
   switchport mode trunk
   switchport trunk allowed vlan 37-38
   spanning-tree port type edge trunk
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
   channel-group 104 mode active
 
 interface Ethernet101/1/11
@@ -1760,6 +1792,8 @@ interface Ethernet101/1/11
   switchport mode trunk
   switchport trunk allowed vlan 37-38
   spanning-tree port type edge trunk
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
   channel-group 104 mode active
 
 interface Ethernet101/1/12

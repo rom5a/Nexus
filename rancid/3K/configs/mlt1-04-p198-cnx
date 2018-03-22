@@ -105,8 +105,8 @@
 !Env: Supply    Model                   Output      Input      Capacity    Status
 !Env:                                 (Watts )    (Watts )     (Watts )
 !Env: -------  -------------------  ----------  ----------  ----------  --------------
-!Env: 1        N9K-PAC-650W               71 W                   650 W     Ok
-!Env: 2        N9K-PAC-650W               76 W                   650 W     Ok
+!Env: 1        N9K-PAC-650W               75 W                   650 W     Ok
+!Env: 2        N9K-PAC-650W               75 W                   650 W     Ok
 !Env: Power Usage Summary:
 !Env: --------------------
 !Env: Power Supply redundancy mode (configured)                Non-Redundant(combined)
@@ -148,8 +148,8 @@
 !Flash: bootflash: 50266 MB free
 !Flash: bootflash: 51231 MB total
 !
-!Flash: debug:      248655    Mar 20 14:01:00 2018  bootvar_debug.log
-!Flash: debug:           6    Mar 20 14:01:00 2018  bootvar_debug.meta
+!Flash: debug:      250479    Mar 21 14:30:52 2018  bootvar_debug.log
+!Flash: debug:           6    Mar 21 14:30:52 2018  bootvar_debug.meta
 !Flash: debug: Usage for debug://sup-local
 !Flash: debug:      0 MB used
 !Flash: debug:     4 MB free
@@ -157,13 +157,13 @@
 !
 !Flash: logflash:        4096    Mar 21 18:38:03 2017  core/
 !Flash: logflash:        4096    Mar 21 18:38:03 2017  debug/
-!Flash: logflash:        4096    Mar 20 20:17:33 2018  debug_logs/
+!Flash: logflash:        4096    Mar 21 20:59:29 2018  debug_logs/
 !Flash: logflash:        4096    Mar 21 18:38:03 2017  generic/
 !Flash: logflash:        4096                          log/
 !Flash: logflash:       16384    Mar 21 18:38:00 2017  lost+found/
 !Flash: logflash:        4096    Aug 21 03:17:00 2017  vdc_1/
 !Flash: logflash: Usage for logflash://sup-local
-!Flash: logflash:   570 MB used
+!Flash: logflash:   571 MB used
 !Flash: logflash:  7492 MB free
 !Flash: logflash:  8063 MB total
 !
@@ -825,38 +825,56 @@ interface Ethernet1/10
 interface Ethernet1/11
   shutdown
   no snmp trap link-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
 
 interface Ethernet1/12
   shutdown
   no snmp trap link-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
 
 interface Ethernet1/13
   shutdown
   no snmp trap link-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
 
 interface Ethernet1/14
   shutdown
   no snmp trap link-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
 
 interface Ethernet1/15
   shutdown
   no snmp trap link-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
 
 interface Ethernet1/16
   shutdown
   no snmp trap link-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
 
 interface Ethernet1/17
   shutdown
   no snmp trap link-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
 
 interface Ethernet1/18
   shutdown
   no snmp trap link-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
 
 interface Ethernet1/19
   shutdown
   no snmp trap link-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
 
 interface Ethernet1/20
   description A_mlt1-04-p001-ios
@@ -932,62 +950,92 @@ interface Ethernet1/26
 interface Ethernet1/27
   shutdown
   no snmp trap link-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
 
 interface Ethernet1/28
   shutdown
   no snmp trap link-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
 
 interface Ethernet1/29
   shutdown
   no snmp trap link-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
 
 interface Ethernet1/30
   shutdown
   no snmp trap link-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
 
 interface Ethernet1/31
   shutdown
   no snmp trap link-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
 
 interface Ethernet1/32
   shutdown
   no snmp trap link-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
 
 interface Ethernet1/33
   shutdown
   no snmp trap link-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
 
 interface Ethernet1/34
   shutdown
   no snmp trap link-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
 
 interface Ethernet1/35
   shutdown
   no snmp trap link-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
 
 interface Ethernet1/36
   shutdown
   no snmp trap link-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
 
 interface Ethernet1/37
   shutdown
   no snmp trap link-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
 
 interface Ethernet1/38
   shutdown
   no snmp trap link-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
 
 interface Ethernet1/39
   shutdown
   no snmp trap link-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
 
 interface Ethernet1/40
   shutdown
   no snmp trap link-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
 
 interface Ethernet1/41
   shutdown
   no snmp trap link-status
+  storm-control broadcast level 5.00
+  storm-control multicast level 5.00
 
 interface Ethernet1/42
   description A_mlt1-fw-t254-asa/pri Gi0/0

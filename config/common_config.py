@@ -1,62 +1,62 @@
-COMMON_CONFIG = [
-    'ip domain-name evolutiongaming.com',
-    'feature scp-server',
-    'feature tacacs+',
-    'cfs eth distribute',
-    'feature lacp',
-    'feature vpc',
-    'feature lldp',
-    'no password strength-check',
-    'logging event link-status default',
-    'logging event trunk-status default',
-    'service unsupported-transceiver',
-    'errdisable recovery cause link-flap',
-    'errdisable recovery cause udld',
-    'errdisable recovery cause bpduguard',
-    'errdisable recovery cause loopback',
-    'errdisable recovery cause psecure-violation',
-    'errdisable recovery cause pause-rate-limit',
-    'errdisable recovery cause miscabling',
-    'port-channel load-balance ethernet source-dest-port',
-    'no ip igmp snooping',
-    'snmp-server contact EVO_Infra_NOC',
-    'snmp-server user admin network-admin auth md5 0x4ebbbd2270486d393f7ed9d081f3d35b priv 0x4ebbbd2270486d393f7ed9d081f3d35b localizedkey',
-    'snmp-server user evogaming network-admin auth md5 0x4ebbbd2270486d393f7ed9d081f3d35b priv 0x4ebbbd2270486d393f7ed9d081f3d35b localizedkey',
-    'snmp-server community 5uper5ecret group network-operator',
-    'ntp distribute',
-    'ntp commit',
-    'aaa authentication login default group TacacsGroup local',
-    'aaa accounting default group TacacsGroup',
-    'aaa authentication login ascii-authentication',
-    'tacacs-server directed-request',
-    'spanning-tree port type edge bpduguard default',
-    'spanning-tree vlan 1-3967 priority 8192',
-    'spanning-tree pseudo-information',
-    'clock timezone GMT 0 0',
-    'policy-map type network-qos jumbo',
-    'system qos',
-]
+# COMMON_CONFIG = [
+#     'ip domain-name evolutiongaming.com',
+#     'feature scp-server',
+#     'feature tacacs+',
+#     'cfs eth distribute',
+#     'feature lacp',
+#     'feature vpc',
+#     'feature lldp',
+#     'no password strength-check',
+#     'logging event link-status default',
+#     'logging event trunk-status default',
+#     'service unsupported-transceiver',
+#     'errdisable recovery cause link-flap',
+#     'errdisable recovery cause udld',
+#     'errdisable recovery cause bpduguard',
+#     'errdisable recovery cause loopback',
+#     'errdisable recovery cause psecure-violation',
+#     'errdisable recovery cause pause-rate-limit',
+#     'errdisable recovery cause miscabling',
+#     'port-channel load-balance ethernet source-dest-port',
+#     'no ip igmp snooping',
+#     'snmp-server contact EVO_Infra_NOC',
+#     'snmp-server user admin network-admin auth md5 0x4ebbbd2270486d393f7ed9d081f3d35b priv 0x4ebbbd2270486d393f7ed9d081f3d35b localizedkey',
+#     'snmp-server user evogaming network-admin auth md5 0x4ebbbd2270486d393f7ed9d081f3d35b priv 0x4ebbbd2270486d393f7ed9d081f3d35b localizedkey',
+#     'snmp-server community 5uper5ecret group network-operator',
+#     'ntp distribute',
+#     'ntp commit',
+#     'aaa authentication login default group TacacsGroup local',
+#     'aaa accounting default group TacacsGroup',
+#     'aaa authentication login ascii-authentication',
+#     'tacacs-server directed-request',
+#     'spanning-tree port type edge bpduguard default',
+#     'spanning-tree vlan 1-3967 priority 8192',
+#     'spanning-tree pseudo-information',
+#     'clock timezone GMT 0 0',
+#     'policy-map type network-qos jumbo',
+#     'system qos',
+# ]
 
 LOCAL_USERS = [
-    'username admin password 5 $1$axjLk2q3$eZj.8dWWChj3bR0YEemND1  role network-admin',
-    'username evogaming password 5 $1$FN/4pmVr$.KyzWEyIt21kEr9Kgm5BC.  role network-admin',
+    'username admin password 5',
+    'username evogaming password 5',
 ]
 
 VRF_NTP = [
- #   'ntp server 10.30.235.210 prefer use-vrf management',
-  #  'ntp server 10.30.9.210 prefer use-vrf management',
+   'ntp server 10.30.10.220 use-vrf management',
+   'ntp server 10.30.10.221 use-vrf management',
 ]
 
 CONSOLE_CONFIG = [
     "exec-timeout 15"
 ]
 
-ETHERNET_COMMON_CONFIG = [
-    'storm-control broadcast level 5.00',
-    'storm-control multicast level 5.00',
-    'no snmp trap link-status',
-    'vpc orphan-port suspend',
-]
+# ETHERNET_COMMON_CONFIG = [
+#     'storm-control broadcast level 5.00',
+#     'storm-control multicast level 5.00',
+#     'no snmp trap link-status',
+#     'vpc orphan-port suspend',
+# ]
 
 GROUP_SERVICE_CONFIG = [
     "server 10.30.32.4",
@@ -66,7 +66,7 @@ GROUP_SERVICE_CONFIG = [
 
 JUMBO_CONFIG = [
     "class type network-qos class-default",
-    "mtu 9100"
+    "mtu 9216"
 ]
 
 QOS_CONFIG = [
