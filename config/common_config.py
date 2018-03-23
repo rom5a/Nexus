@@ -1,7 +1,7 @@
 # COMMON_CONFIG = [
-#     'ip domain-name evolutiongaming.com',
-#     'feature scp-server',
-#     'feature tacacs+',
+#     'ip domain-name evolutiongaming.com', ADDED
+#     'feature scp-server', ADDED
+#     'feature tacacs+', ADDDED
 #     'cfs eth distribute',
 #     'feature lacp',
 #     'feature vpc',
