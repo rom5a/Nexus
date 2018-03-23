@@ -106,7 +106,7 @@
 !Env:                                 (Watts )    (Watts )     (Watts )
 !Env: -------  -------------------  ----------  ----------  ----------  --------------
 !Env: 1        N9K-PAC-650W               75 W                   650 W     Ok
-!Env: 2        N9K-PAC-650W               75 W                   650 W     Ok
+!Env: 2        N9K-PAC-650W               77 W                   650 W     Ok
 !Env: Power Usage Summary:
 !Env: --------------------
 !Env: Power Supply redundancy mode (configured)                Non-Redundant(combined)
@@ -148,8 +148,8 @@
 !Flash: bootflash: 50266 MB free
 !Flash: bootflash: 51231 MB total
 !
-!Flash: debug:      250479    Mar 21 14:30:52 2018  bootvar_debug.log
-!Flash: debug:           6    Mar 21 14:30:52 2018  bootvar_debug.meta
+!Flash: debug:      269423    Mar 22 13:12:59 2018  bootvar_debug.log
+!Flash: debug:           6    Mar 22 13:12:59 2018  bootvar_debug.meta
 !Flash: debug: Usage for debug://sup-local
 !Flash: debug:      0 MB used
 !Flash: debug:     4 MB free
@@ -157,14 +157,14 @@
 !
 !Flash: logflash:        4096    Mar 21 18:38:03 2017  core/
 !Flash: logflash:        4096    Mar 21 18:38:03 2017  debug/
-!Flash: logflash:        4096    Mar 21 20:59:29 2018  debug_logs/
+!Flash: logflash:        4096    Mar 22 20:34:11 2018  debug_logs/
 !Flash: logflash:        4096    Mar 21 18:38:03 2017  generic/
 !Flash: logflash:        4096                          log/
 !Flash: logflash:       16384    Mar 21 18:38:00 2017  lost+found/
 !Flash: logflash:        4096    Aug 21 03:17:00 2017  vdc_1/
 !Flash: logflash: Usage for logflash://sup-local
 !Flash: logflash:   571 MB used
-!Flash: logflash:  7492 MB free
+!Flash: logflash:  7491 MB free
 !Flash: logflash:  8063 MB total
 !
 !Flash: volatile:          40    Aug 23 06:06:49 2017  virtual-instance/
@@ -478,8 +478,8 @@ snmp-server community 5uper5ecret group network-operator
 snmp-server community 5uper5ecret use-ipv4acl 66
 snmp-server community spiceinvn0c group network-operator
 snmp-server community spiceinvn0c use-ipv4acl 66
-ntp server 10.30.9.210 use-vrf default
-ntp server 10.30.235.210 use-vrf default
+ntp server 10.30.10.220 use-vrf management
+ntp server 10.30.10.221 use-vrf management
 aaa authentication login default group TacacsGroup 
 aaa accounting default group TacacsGroup 
 aaa authentication login ascii-authentication 
@@ -551,7 +551,6 @@ vlan 1026
 vrf context PEER_KEEPALIVE
 vrf context management
   ip route 0.0.0.0/0 10.40.0.1
-  ip route 0.0.0.0/0 10.40.11.1
 vpc domain 1
   role priority 10
   peer-keepalive destination 192.168.254.2 source 192.168.254.1 vrf PEER_KEEPALIVE
@@ -2748,9 +2747,6 @@ line console
   exec-timeout 15
 line vty
 boot nxos bootflash:/nxos.7.0.3.I5.2.bin 
-logging server 10.40.36.7
+logging server 10.40.36.7 6 use-vrf management
 logging source-interface mgmt0
-logging timestamp milliseconds
-
-
-
+logging timestamp milliseconds 

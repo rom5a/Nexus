@@ -137,17 +137,17 @@
 !Flash: bootflash: 13045 MB free
 !Flash: bootflash: 14542 MB total
 !
-!Flash: debug:       86239    Mar 21 15:06:37 2018  bootvar_debug.log
-!Flash: debug:           5    Mar 21 15:06:37 2018  bootvar_debug.meta
+!Flash: debug:       98953    Mar 22 13:26:27 2018  bootvar_debug.log
+!Flash: debug:           5    Mar 22 13:26:27 2018  bootvar_debug.meta
 !Flash: debug: Usage for debug://sup-local
-!Flash: debug:       0 MB used
+!Flash: debug:      0 MB used
 !Flash: debug:     1 MB free
 !Flash: debug:     2 MB total
 !
 !Flash: logflash:        4096    Dec 11 08:39:37 2017  ISSU_debug_logs/
 !Flash: logflash:        4096    Oct 11 06:53:50 2017  core/
 !Flash: logflash:        4096    Oct 11 06:53:50 2017  debug/
-!Flash: logflash:      167936    Mar 22 01:05:13 2018  debug_logs/
+!Flash: logflash:      167936    Mar 23 00:25:35 2018  debug_logs/
 !Flash: logflash:        4096    Oct 11 06:53:50 2017  generic/
 !Flash: logflash:        4096                          log/
 !Flash: logflash:        4096    Oct 11 07:02:42 2017  vdc_1/
@@ -481,8 +481,8 @@ snmp-server community 5uper5ecret group network-operator
 snmp-server community 5uper5ecret use-ipv4acl 66
 snmp-server community spiceinvn0c group network-operator
 snmp-server community spiceinvn0c use-ipv4acl 66
-ntp server 10.4.2.220 use-vrf management
-ntp server 10.4.2.221 use-vrf management
+ntp server 10.30.10.220 use-vrf management
+ntp server 10.30.10.221 use-vrf management
 aaa authentication login default group TacacsGroup 
 aaa accounting default group TacacsGroup 
 aaa authentication login ascii-authentication 
@@ -1077,14 +1077,17 @@ interface Ethernet1/51/1
   no shutdown
 
 interface Ethernet1/51/2
+  description breakout port
   shutdown
   no snmp trap link-status
 
 interface Ethernet1/51/3
+  description breakout port
   no snmp trap link-status
   no shutdown
 
 interface Ethernet1/51/4
+  description breakout port
   no snmp trap link-status
   no shutdown
 
@@ -1100,14 +1103,17 @@ interface Ethernet1/52/1
   no shutdown
 
 interface Ethernet1/52/2
+  description breakout port
   no snmp trap link-status
   no shutdown
 
 interface Ethernet1/52/3
+  description breakout port
   no snmp trap link-status
   no shutdown
 
 interface Ethernet1/52/4
+  description breakout port
   no snmp trap link-status
   no shutdown
 

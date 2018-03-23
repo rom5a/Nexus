@@ -2,8 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6db994e1-d27a-4ac8-9757-4d0ac669bb8e" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rancid/3K/configs/rix1-02-p198-cnx" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rancid/3K/configs/rix1-02-p199-cnx" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rancid/3K/configs/rix3-03-t020-cnx" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rancid/3K/configs/rix3-03-t021-cnx" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/rancid/3K/configs/mlt1-04-p199-cnx" afterPath="$PROJECT_DIR$/rancid/3K/configs/mlt1-04-p199-cn" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/common_config.py" afterPath="$PROJECT_DIR$/config/common_config.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config_template/fra1-3-config.ini" afterPath="$PROJECT_DIR$/config_template/fra1-3-config.ini" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config_template/fra1-9-config.ini" afterPath="$PROJECT_DIR$/config_template/fra1-9-config.ini" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config_template/hkg2-3-config.ini" afterPath="$PROJECT_DIR$/config_template/hkg2-3-config.ini" />
@@ -14,6 +18,19 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config_template/tbs1-9-config.ini" afterPath="$PROJECT_DIR$/config_template/tbs1-9-config.ini" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config_template/van1-9-config.ini" afterPath="$PROJECT_DIR$/config_template/van1-9-config.ini" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config_template/van2-9-config.ini" afterPath="$PROJECT_DIR$/config_template/van2-9-config.ini" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rancid/3K/configs/fra1-01-p015-cnx" afterPath="$PROJECT_DIR$/rancid/3K/configs/fra1-01-p015-cnx" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rancid/3K/configs/fra1-01-p016-cnx" afterPath="$PROJECT_DIR$/rancid/3K/configs/fra1-01-p016-cnx" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rancid/3K/configs/fra1-wn-p001-cnx" afterPath="$PROJECT_DIR$/rancid/3K/configs/fra1-wn-p001-cnx" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rancid/3K/configs/fra1-wn-p002-cnx" afterPath="$PROJECT_DIR$/rancid/3K/configs/fra1-wn-p002-cnx" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rancid/3K/configs/hkg2-05-p003-cnx" afterPath="$PROJECT_DIR$/rancid/3K/configs/hkg2-05-p003-cnx" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rancid/3K/configs/hkg2-05-p004-cnx" afterPath="$PROJECT_DIR$/rancid/3K/configs/hkg2-05-p004-cnx" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rancid/3K/configs/mlt1-04-p198-cnx" afterPath="$PROJECT_DIR$/rancid/3K/configs/mlt1-04-p198-cnx" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rancid/3K/configs/rix1-02-p200-cnx" afterPath="$PROJECT_DIR$/rancid/3K/configs/rix1-02-p200-cnx" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rancid/3K/configs/rix1-02-p201-cnx" afterPath="$PROJECT_DIR$/rancid/3K/configs/rix1-02-p201-cnx" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rancid/3K/configs/rix3-03-p030-cnx" afterPath="$PROJECT_DIR$/rancid/3K/configs/rix3-03-p030-cnx" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rancid/3K/configs/rix3-03-p031-cnx" afterPath="$PROJECT_DIR$/rancid/3K/configs/rix3-03-p031-cnx" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rancid/3K/configs/tbs1-wn-p001-cnx" afterPath="$PROJECT_DIR$/rancid/3K/configs/tbs1-wn-p001-cnx" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rancid/3K/configs/tbs1-wn-p002-cnx" afterPath="$PROJECT_DIR$/rancid/3K/configs/tbs1-wn-p002-cnx" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -27,48 +44,8 @@
       <file leaf-file-name="fra1-9-config.ini" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/config_template/fra1-9-config.ini">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="135">
-              <caret line="9" column="139" lean-forward="false" selection-start-line="9" selection-start-column="139" selection-end-line="9" selection-end-column="139" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="common_config.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/config/common_config.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="390">
-              <caret line="26" column="7" lean-forward="true" selection-start-line="26" selection-start-column="7" selection-end-line="26" selection-end-column="17" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="fra1-3-config.ini" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/config_template/fra1-3-config.ini">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="120">
-              <caret line="8" column="0" lean-forward="false" selection-start-line="8" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="rix3-3-config.ini" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/config_template/rix3-3-config.ini">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="105">
-              <caret line="7" column="0" lean-forward="true" selection-start-line="7" selection-start-column="0" selection-end-line="8" selection-end-column="87" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="tbs1-9-config.ini" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/config_template/tbs1-9-config.ini">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="105">
-              <caret line="7" column="126" lean-forward="false" selection-start-line="7" selection-start-column="126" selection-end-line="7" selection-end-column="126" />
+            <state relative-caret-position="375">
+              <caret line="25" column="48" lean-forward="false" selection-start-line="25" selection-start-column="48" selection-end-line="25" selection-end-column="48" />
               <folding />
             </state>
           </provider>
@@ -77,8 +54,48 @@
       <file leaf-file-name="hkg2-3-config.ini" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/config_template/hkg2-3-config.ini">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="120">
-              <caret line="8" column="105" lean-forward="false" selection-start-line="8" selection-start-column="105" selection-end-line="8" selection-end-column="105" />
+            <state relative-caret-position="345">
+              <caret line="23" column="48" lean-forward="false" selection-start-line="23" selection-start-column="48" selection-end-line="23" selection-end-column="48" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="rix3-3-config.ini" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/config_template/rix3-3-config.ini">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="345">
+              <caret line="23" column="48" lean-forward="false" selection-start-line="23" selection-start-column="48" selection-end-line="23" selection-end-column="48" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="tbs1-9-config.ini" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/config_template/tbs1-9-config.ini">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="345">
+              <caret line="23" column="48" lean-forward="false" selection-start-line="23" selection-start-column="48" selection-end-line="23" selection-end-column="48" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="van1-9-config.ini" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/config_template/van1-9-config.ini">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="345">
+              <caret line="23" column="48" lean-forward="false" selection-start-line="23" selection-start-column="48" selection-end-line="23" selection-end-column="48" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="van2-9-config.ini" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/config_template/van2-9-config.ini">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="345">
+              <caret line="23" column="48" lean-forward="false" selection-start-line="23" selection-start-column="48" selection-end-line="23" selection-end-column="48" />
               <folding />
             </state>
           </provider>
@@ -87,27 +104,18 @@
       <file leaf-file-name="rix3-5-config.ini" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/config_template/rix3-5-config.ini">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="135">
-              <caret line="9" column="0" lean-forward="false" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
+            <state relative-caret-position="330">
+              <caret line="22" column="48" lean-forward="false" selection-start-line="22" selection-start-column="48" selection-end-line="22" selection-end-column="48" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="chk_cfg.log" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/chk_cfg.log">
-          <provider selected="true" editor-type-id="LogFileEditorProvider">
-            <state relative-caret-position="574">
-              <caret line="305" column="39" lean-forward="true" selection-start-line="305" selection-start-column="33" selection-end-line="305" selection-end-column="39" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="mlt1-9-config.ini" pinned="false" current-in-tab="true">
+      <file leaf-file-name="mlt1-9-config.ini" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/config_template/mlt1-9-config.ini">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="165">
-              <caret line="11" column="0" lean-forward="true" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+            <state relative-caret-position="360">
+              <caret line="24" column="48" lean-forward="false" selection-start-line="24" selection-start-column="48" selection-end-line="24" selection-end-column="48" />
               <folding />
             </state>
           </provider>
@@ -116,8 +124,18 @@
       <file leaf-file-name="rix1-5-config.ini" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/config_template/rix1-5-config.ini">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="105">
-              <caret line="7" column="121" lean-forward="false" selection-start-line="7" selection-start-column="121" selection-end-line="7" selection-end-column="121" />
+            <state relative-caret-position="360">
+              <caret line="24" column="47" lean-forward="true" selection-start-line="24" selection-start-column="47" selection-end-line="24" selection-end-column="47" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="fra1-3-config.ini" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/config_template/fra1-3-config.ini">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="165">
+              <caret line="11" column="13" lean-forward="true" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
               <folding />
             </state>
           </provider>
@@ -134,26 +152,14 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>logging</find>
-      <find>logging server 10.30.230.90</find>
-      <find>logging server 1</find>
-      <find>10.30.230.90</find>
-      <find>Incorren</find>
-      <find>ncorrent</find>
-      <find>logging server 10.8.48.122</find>
-      <find>logging server 10.8.48.122 5 use-vrf management</find>
-      <find>sys</find>
-      <find>Incorrect SYSLOG config</find>
       <find>server</find>
       <find>NTP server config missing:</find>
       <find>NTP config validation:</find>
       <find>ntp</find>
       <find>NTP</find>
       <find>Incorrent users:</find>
-      <find>Mandatory config lines missed:</find>
       <find>fra1-wn</find>
       <find>noo</find>
-      <find>Mandatory config lines missed:</find>
       <find>fra1-wn-p001-cnx</find>
       <find>QOS config validation:</find>
       <find>no ip ig</find>
@@ -161,9 +167,21 @@
       <find>Mandator</find>
       <find>man</find>
       <find>rix1-02-p</find>
-      <find>Mandatory config</find>
       <find>rix3</find>
+      <find>rix1</find>
+      <find>Mandatory config lines missed:</find>
+      <find>Mandatory config</find>
+      <find>Mandatory co</find>
+      <find>Mandatory confi</find>
+      <find>mlt1</find>
+      <find>Mandatory con</find>
+      <find>Mandatory config lines missed:</find>
+      <find>rix1-02</find>
+      <find>rix1-02-p200</find>
       <find>fra1</find>
+      <find>tbs1-wn-p001-cnx</find>
+      <find>errdisable recovery cause pause-rate-limit</find>
+      <find>errdisable recovery cause miscabling</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -191,24 +209,25 @@
         <option value="$PROJECT_DIR$/cnx_chkconf.py" />
         <option value="$PROJECT_DIR$/rancid/3K/configs/rix3-03-p030-cnx" />
         <option value="$PROJECT_DIR$/device.py" />
+        <option value="$PROJECT_DIR$/config_template/rix1-5-config.ini" />
+        <option value="$PROJECT_DIR$/config/common_config.py" />
+        <option value="$PROJECT_DIR$/config_template/fra1-9-config.ini" />
+        <option value="$PROJECT_DIR$/config_template/fra1-3-config.ini" />
         <option value="$PROJECT_DIR$/config_template/tbs1-9-config.ini" />
+        <option value="$PROJECT_DIR$/config_template/rix3-5-config.ini" />
+        <option value="$PROJECT_DIR$/config_template/hkg2-3-config.ini" />
+        <option value="$PROJECT_DIR$/config_template/mlt1-9-config.ini" />
+        <option value="$PROJECT_DIR$/config_template/rix3-3-config.ini" />
         <option value="$PROJECT_DIR$/config_template/van1-9-config.ini" />
         <option value="$PROJECT_DIR$/config_template/van2-9-config.ini" />
-        <option value="$PROJECT_DIR$/config/common_config.py" />
-        <option value="$PROJECT_DIR$/config_template/fra1-3-config.ini" />
-        <option value="$PROJECT_DIR$/config_template/fra1-9-config.ini" />
-        <option value="$PROJECT_DIR$/config_template/hkg2-3-config.ini" />
-        <option value="$PROJECT_DIR$/config_template/rix1-5-config.ini" />
-        <option value="$PROJECT_DIR$/config_template/rix3-3-config.ini" />
-        <option value="$PROJECT_DIR$/config_template/rix3-5-config.ini" />
-        <option value="$PROJECT_DIR$/config_template/mlt1-9-config.ini" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="y" value="165" />
-    <option name="width" value="1920" />
-    <option name="height" value="1008" />
+  <component name="ProjectFrameBounds">
+    <option name="x" value="189" />
+    <option name="y" value="84" />
+    <option name="width" value="1196" />
+    <option name="height" value="956" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
@@ -285,14 +304,14 @@
     <property name="settings.editor.selected.configurable" value="vcs.Git" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/config_template" />
+      <recent name="$PROJECT_DIR$" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/rancid/3K/configs" />
       <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/rancid" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/config_template" />
-      <recent name="$PROJECT_DIR$" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -497,19 +516,34 @@
       <option name="project" value="LOCAL" />
       <updated>1521797726231</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="shutdown command on 9K and 3K&#10;desctption&#10;vpc">
+      <created>1521798836048</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1521798836048</updated>
+    </task>
+    <task id="LOCAL-00021" summary="shutdown command on 9K and 3K&#10;desctption&#10;vpc">
+      <created>1521799693296</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1521799693296</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="8" y="23" width="1920" height="1008" extended-state="6" />
+    <frame x="189" y="84" width="1196" height="956" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17838125" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.29029462" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2881356" sideWeight="0.5028612" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32781458" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32742155" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32905984" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20920044" sideWeight="0.49713877" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22183508" sideWeight="0.49713877" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24892704" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -520,7 +554,6 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32781458" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
@@ -701,13 +734,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/chkcfg.ini" />
-    <entry file="file://$PROJECT_DIR$/__init__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/rancid/3K/configs/rix3-03-p031-cnx">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-11627">
@@ -726,20 +752,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="336">
           <caret line="2309" column="6" lean-forward="false" selection-start-line="2309" selection-start-column="0" selection-end-line="2309" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/rancid/3K/configs/fra1-wn-p001-cnx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="177">
-          <caret line="401" column="10" lean-forward="true" selection-start-line="401" selection-start-column="8" selection-end-line="401" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/rancid/3K/configs/rix1-02-p201-cnx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="291">
-          <caret line="6832" column="27" lean-forward="false" selection-start-line="6832" selection-start-column="0" selection-end-line="6832" selection-end-column="27" />
         </state>
       </provider>
     </entry>
@@ -789,23 +801,27 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/cnx_chkconf.py">
+    <entry file="file://$PROJECT_DIR$/rancid/3K/configs/rix1-02-p201-cnx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="383">
-          <caret line="29" column="47" lean-forward="true" selection-start-line="29" selection-start-column="47" selection-end-line="29" selection-end-column="47" />
-          <folding>
-            <element signature="e#42#51#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="291">
+          <caret line="6832" column="0" lean-forward="true" selection-start-line="6832" selection-start-column="0" selection-end-line="6832" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/device.py">
+    <entry file="file://$PROJECT_DIR$/config/common_config.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="245">
-          <caret line="216" column="52" lean-forward="false" selection-start-line="216" selection-start-column="36" selection-end-line="216" selection-end-column="52" />
-          <folding>
-            <element signature="e#18#32#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="-78">
+          <caret line="34" column="31" lean-forward="false" selection-start-line="34" selection-start-column="31" selection-end-line="34" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/rancid/3K/configs/fra1-wn-p001-cnx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="177">
+          <caret line="401" column="10" lean-forward="true" selection-start-line="401" selection-start-column="8" selection-end-line="401" selection-end-column="12" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -817,97 +833,117 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/config_template/van1-9-config.ini">
+    <entry file="file://$PROJECT_DIR$/device.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" column="126" lean-forward="false" selection-start-line="7" selection-start-column="126" selection-end-line="7" selection-end-column="126" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/config_template/van2-9-config.ini">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" column="126" lean-forward="false" selection-start-line="7" selection-start-column="126" selection-end-line="7" selection-end-column="126" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/config/common_config.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="390">
-          <caret line="26" column="7" lean-forward="true" selection-start-line="26" selection-start-column="7" selection-end-line="26" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/config_template/tbs1-9-config.ini">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" column="126" lean-forward="false" selection-start-line="7" selection-start-column="126" selection-end-line="7" selection-end-column="126" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/config_template/rix3-3-config.ini">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" column="0" lean-forward="true" selection-start-line="7" selection-start-column="0" selection-end-line="8" selection-end-column="87" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/config_template/rix3-5-config.ini">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="9" column="0" lean-forward="false" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/config_template/rix1-5-config.ini">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" column="121" lean-forward="false" selection-start-line="7" selection-start-column="121" selection-end-line="7" selection-end-column="121" />
-          <folding />
+        <state relative-caret-position="15">
+          <caret line="155" column="34" lean-forward="false" selection-start-line="155" selection-start-column="31" selection-end-line="155" selection-end-column="34" />
+          <folding>
+            <element signature="e#18#32#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/chk_cfg.log">
       <provider selected="true" editor-type-id="LogFileEditorProvider">
-        <state relative-caret-position="574">
-          <caret line="305" column="39" lean-forward="true" selection-start-line="305" selection-start-column="33" selection-end-line="305" selection-end-column="39" />
+        <state relative-caret-position="204">
+          <caret line="813" column="68" lean-forward="false" selection-start-line="813" selection-start-column="32" selection-end-line="813" selection-end-column="68" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cnx_chkconf.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="383">
+          <caret line="29" column="47" lean-forward="false" selection-start-line="29" selection-start-column="47" selection-end-line="29" selection-end-column="47" />
+          <folding>
+            <element signature="e#42#51#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/config_template/fra1-3-config.ini">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="8" column="0" lean-forward="false" selection-start-line="8" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+        <state relative-caret-position="165">
+          <caret line="11" column="13" lean-forward="true" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/config_template/fra1-9-config.ini">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="9" column="139" lean-forward="false" selection-start-line="9" selection-start-column="139" selection-end-line="9" selection-end-column="139" />
+        <state relative-caret-position="375">
+          <caret line="25" column="48" lean-forward="false" selection-start-line="25" selection-start-column="48" selection-end-line="25" selection-end-column="48" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/config_template/hkg2-3-config.ini">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="8" column="105" lean-forward="false" selection-start-line="8" selection-start-column="105" selection-end-line="8" selection-end-column="105" />
+        <state relative-caret-position="345">
+          <caret line="23" column="48" lean-forward="false" selection-start-line="23" selection-start-column="48" selection-end-line="23" selection-end-column="48" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/config_template/mlt1-9-config.ini">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="11" column="0" lean-forward="true" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+        <state relative-caret-position="360">
+          <caret line="24" column="48" lean-forward="false" selection-start-line="24" selection-start-column="48" selection-end-line="24" selection-end-column="48" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config_template/rix1-5-config.ini">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="24" column="47" lean-forward="true" selection-start-line="24" selection-start-column="47" selection-end-line="24" selection-end-column="47" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config_template/rix3-3-config.ini">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="345">
+          <caret line="23" column="48" lean-forward="false" selection-start-line="23" selection-start-column="48" selection-end-line="23" selection-end-column="48" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config_template/rix3-5-config.ini">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="22" column="48" lean-forward="false" selection-start-line="22" selection-start-column="48" selection-end-line="22" selection-end-column="48" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config_template/tbs1-9-config.ini">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="345">
+          <caret line="23" column="48" lean-forward="false" selection-start-line="23" selection-start-column="48" selection-end-line="23" selection-end-column="48" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config_template/van1-9-config.ini">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="345">
+          <caret line="23" column="48" lean-forward="false" selection-start-line="23" selection-start-column="48" selection-end-line="23" selection-end-column="48" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config_template/van2-9-config.ini">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="345">
+          <caret line="23" column="48" lean-forward="false" selection-start-line="23" selection-start-column="48" selection-end-line="23" selection-end-column="48" />
           <folding />
         </state>
       </provider>

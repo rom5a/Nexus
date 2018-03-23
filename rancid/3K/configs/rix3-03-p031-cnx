@@ -135,11 +135,11 @@
 !Flash: bootflash:          59    Oct 11 07:34:18 2017  virtual-instance.conf
 !Flash: bootflash: Usage for bootflash://sup-local
 !Flash: bootflash:  1499 MB used
-!Flash: bootflash: 13042 MB free
+!Flash: bootflash: 13043 MB free
 !Flash: bootflash: 14542 MB total
 !
-!Flash: debug:      421340    Mar 21 15:08:20 2018  bootvar_debug.log
-!Flash: debug:           6    Mar 21 15:08:20 2018  bootvar_debug.meta
+!Flash: debug:      435878    Mar 22 13:27:41 2018  bootvar_debug.log
+!Flash: debug:           6    Mar 22 13:27:41 2018  bootvar_debug.meta
 !Flash: debug: Usage for debug://sup-local
 !Flash: debug:      0 MB used
 !Flash: debug:     1 MB free
@@ -148,13 +148,13 @@
 !Flash: logflash:        4096    Dec 11 08:59:32 2017  ISSU_debug_logs/
 !Flash: logflash:        4096    Oct 11 07:33:34 2017  core/
 !Flash: logflash:        4096    Oct 11 07:33:34 2017  debug/
-!Flash: logflash:      172032    Mar 22 00:39:57 2018  debug_logs/
+!Flash: logflash:      172032    Mar 22 21:40:17 2018  debug_logs/
 !Flash: logflash:        4096    Oct 11 07:33:34 2017  generic/
 !Flash: logflash:        4096                          log/
 !Flash: logflash:        4096    Oct 11 07:43:14 2017  vdc_1/
 !Flash: logflash: Usage for logflash://sup-local
 !Flash: logflash:  1499 MB used
-!Flash: logflash: 13042 MB free
+!Flash: logflash: 13043 MB free
 !Flash: logflash: 14542 MB total
 !
 !Flash: volatile:         100    Mar 21 08:34:19 2018  switchport-15192/
@@ -484,8 +484,8 @@ snmp-server community 5uper5ecret group network-operator
 snmp-server community 5uper5ecret use-ipv4acl 66
 snmp-server community spiceinvn0c group network-operator
 snmp-server community spiceinvn0c use-ipv4acl 66
-ntp server 10.4.2.220 use-vrf management
-ntp server 10.4.2.221 use-vrf management
+ntp server 10.30.10.220 use-vrf management
+ntp server 10.30.10.221 use-vrf management
 aaa authentication login default group TacacsGroup 
 aaa accounting default group TacacsGroup 
 aaa authentication login ascii-authentication 
@@ -1159,6 +1159,7 @@ interface Ethernet1/51/1
   no shutdown
 
 interface Ethernet1/51/2
+  description breakout ports
   spanning-tree port type edge
   no snmp trap link-status
   storm-control broadcast level 5.00
@@ -1167,6 +1168,7 @@ interface Ethernet1/51/2
   no shutdown
 
 interface Ethernet1/51/3
+  description breakout ports
   spanning-tree port type edge
   no snmp trap link-status
   storm-control broadcast level 5.00
@@ -1175,6 +1177,7 @@ interface Ethernet1/51/3
   no shutdown
 
 interface Ethernet1/51/4
+  description breakout ports
   spanning-tree port type edge
   no snmp trap link-status
   storm-control broadcast level 5.00
@@ -1194,14 +1197,17 @@ interface Ethernet1/52/1
   no shutdown
 
 interface Ethernet1/52/2
+  description breakout ports
   no snmp trap link-status
   no shutdown
 
 interface Ethernet1/52/3
+  description breakout ports
   no snmp trap link-status
   no shutdown
 
 interface Ethernet1/52/4
+  description breakout ports
   no snmp trap link-status
   no shutdown
 

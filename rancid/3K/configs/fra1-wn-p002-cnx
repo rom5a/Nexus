@@ -131,7 +131,7 @@
 !Env:                                 (Watts )    (Watts )     (Watts )
 !Env: -------  -------------------  ----------  ----------  ----------  --------------
 !Env: 1        N9K-PAC-3000W-B           278 W                  3000 W     Ok
-!Env: 2        N9K-PAC-3000W-B           285 W                  3000 W     Ok
+!Env: 2        N9K-PAC-3000W-B           281 W                  3000 W     Ok
 !Env: 3        N9K-PAC-3000W-B           302 W                  3000 W     Ok
 !Env: 4        N9K-PAC-3000W-B           285 W                  3000 W     Ok
 !Env: 5        ------------                0 W                     0 W     Absent
@@ -143,14 +143,14 @@
 !Env:                                  (Watts )     (Watts )
 !Env: -------  -------------------  -----------  -----------  --------------
 !Env: 1        N9K-X9564PX             257.00 W     399.60 W    Powered-Up
-!Env: 2        N9K-X9564PX             245.00 W     399.60 W    Powered-Up
+!Env: 2        N9K-X9564PX             246.00 W     399.60 W    Powered-Up
 !Env: Xb21     xbar                      N/A          0.00 W    Absent
 !Env: Xb22     N9K-C9508-FM            140.00 W     250.80 W    Powered-Up
 !Env: Xb23     N9K-C9508-FM            126.00 W     250.80 W    Powered-Up
 !Env: Xb24     N9K-C9508-FM            133.00 W     250.80 W    Powered-Up
 !Env: Xb25     xbar                      N/A          0.00 W    Absent
 !Env: Xb26     N9K-C9508-FM            128.00 W     250.80 W    Powered-Up
-!Env: 27       N9K-SUP-A                61.00 W      79.92 W    Powered-Up
+!Env: 27       N9K-SUP-A                62.00 W      79.92 W    Powered-Up
 !Env: 28       supervisor                N/A          0.00 W    Absent
 !Env: 29       N9K-SC-A                 14.00 W      25.20 W    Powered-Up
 !Env: 30       N9K-SC-A                 14.00 W      25.20 W    Powered-Up
@@ -204,8 +204,8 @@
 !Flash: bootflash: 49596 MB free
 !Flash: bootflash: 51231 MB total
 !
-!Flash: debug:      751455    Mar 21 15:29:31 2018  bootvar_debug.log
-!Flash: debug:           6    Mar 21 15:29:31 2018  bootvar_debug.meta
+!Flash: debug:      772617    Mar 22 14:04:48 2018  bootvar_debug.log
+!Flash: debug:           6    Mar 22 14:04:48 2018  bootvar_debug.meta
 !Flash: debug: Usage for debug://sup-local
 !Flash: debug:      0 MB used
 !Flash: debug:     4 MB free
@@ -214,14 +214,14 @@
 !Flash: logflash:        4096    Mar 28 02:38:40 2011  ISSU_debug_logs/
 !Flash: logflash:        4096    Jan 02 11:02:29 2011  core/
 !Flash: logflash:        4096    Jan 02 11:02:29 2011  debug/
-!Flash: logflash:      585728    Mar 22 02:15:52 2018  debug_logs/
+!Flash: logflash:      585728    Mar 23 00:12:26 2018  debug_logs/
 !Flash: logflash:        4096    Jan 02 11:02:29 2011  generic/
 !Flash: logflash:        4096                          log/
 !Flash: logflash:       16384    Jan 02 10:48:38 2011  lost+found/
 !Flash: logflash:        4096    Mar 16 10:37:44 2018  vdc_1/
 !Flash: logflash: Usage for logflash://sup-local
 !Flash: logflash:   572 MB used
-!Flash: logflash:  7490 MB free
+!Flash: logflash:  7491 MB free
 !Flash: logflash:  8063 MB total
 !
 !Flash: volatile:         100    Mar 06 06:34:52 2018  switchport-24384/
@@ -1808,7 +1808,7 @@ interface port-channel135
   description A_fra1-pkvm5-pr
   switchport
   switchport mode trunk
-  switchport trunk allowed vlan 2,8-11,36,76,256-257
+  switchport trunk allowed vlan 2,8-11,14,36,76,256-257
   no snmp trap link-status
   vpc 135
 
@@ -1816,7 +1816,7 @@ interface port-channel136
   description A_fra1-pkvm6-pr
   switchport
   switchport mode trunk
-  switchport trunk allowed vlan 2,8-11,36,76,256-257
+  switchport trunk allowed vlan 2,8-11,14,36,76,256-257
   no snmp trap link-status
   vpc 136
 
@@ -1824,7 +1824,7 @@ interface port-channel137
   description A_fra1-pkvm3-pr
   switchport
   switchport mode trunk
-  switchport trunk allowed vlan 2,8-11,36,76,256-257
+  switchport trunk allowed vlan 2,8-11,14,36,76,256-257
   no snmp trap link-status
   vpc 137
 
@@ -1832,7 +1832,7 @@ interface port-channel138
   description A_fra1-pkvm4-pr
   switchport
   switchport mode trunk
-  switchport trunk allowed vlan 2,8-11,36,76,256-257
+  switchport trunk allowed vlan 2,8-11,14,36,76,256-257
   no snmp trap link-status
   vpc 138
 
@@ -1840,7 +1840,7 @@ interface port-channel139
   description A_fra1-pkvm11-pr
   switchport
   switchport mode trunk
-  switchport trunk allowed vlan 2,8-11,36,76,256-258
+  switchport trunk allowed vlan 2,8-11,14,36,76,256-258
   no snmp trap link-status
   vpc 139
 
@@ -1848,7 +1848,7 @@ interface port-channel140
   description A_fra1-pkvm12-pr
   switchport
   switchport mode trunk
-  switchport trunk allowed vlan 2,8-11,36,76,256-258
+  switchport trunk allowed vlan 2,8-11,14,36,76,256-258
   no snmp trap link-status
   vpc 140
 
@@ -1895,7 +1895,7 @@ interface port-channel145
   switchport
   switchport mode trunk
   switchport trunk native vlan 76
-  switchport trunk allowed vlan 76,258
+  switchport trunk allowed vlan 76,256
   no snmp trap link-status
   vpc 145
 
@@ -1904,7 +1904,7 @@ interface port-channel146
   switchport
   switchport mode trunk
   switchport trunk native vlan 76
-  switchport trunk allowed vlan 76,258
+  switchport trunk allowed vlan 76,256
   no snmp trap link-status
   vpc 146
 
@@ -2834,7 +2834,7 @@ interface loopback1
 interface Ethernet101/1/1
   description A_fra1-pkvm3-pr
   switchport mode trunk
-  switchport trunk allowed vlan 2,8-11,36,76,256-257
+  switchport trunk allowed vlan 2,8-11,14,36,76,256-257
   no snmp trap link-status
   channel-group 137 mode active
   no shutdown
@@ -2842,7 +2842,7 @@ interface Ethernet101/1/1
 interface Ethernet101/1/2
   description A_fra1-pkvm4-pr
   switchport mode trunk
-  switchport trunk allowed vlan 2,8-11,36,76,256-257
+  switchport trunk allowed vlan 2,8-11,14,36,76,256-257
   no snmp trap link-status
   channel-group 138 mode active
   no shutdown
@@ -2850,7 +2850,7 @@ interface Ethernet101/1/2
 interface Ethernet101/1/3
   description A_fra1-pkvm11-pr
   switchport mode trunk
-  switchport trunk allowed vlan 2,8-11,36,76,256-258
+  switchport trunk allowed vlan 2,8-11,14,36,76,256-258
   no snmp trap link-status
   channel-group 139 mode active
   no shutdown
@@ -2858,7 +2858,7 @@ interface Ethernet101/1/3
 interface Ethernet101/1/4
   description A_fra1-pkvm12-pr
   switchport mode trunk
-  switchport trunk allowed vlan 2,8-11,36,76,256-258
+  switchport trunk allowed vlan 2,8-11,14,36,76,256-258
   no snmp trap link-status
   channel-group 140 mode active
   no shutdown
@@ -2902,7 +2902,7 @@ interface Ethernet101/1/9
   description A_fra1-syslog1-pr (in Po146)
   switchport mode trunk
   switchport trunk native vlan 76
-  switchport trunk allowed vlan 76,258
+  switchport trunk allowed vlan 76,256
   no snmp trap link-status
   channel-group 146 mode active
   no shutdown
@@ -2910,7 +2910,7 @@ interface Ethernet101/1/9
 interface Ethernet101/1/10
   description A_fra1-pkvm5-pr
   switchport mode trunk
-  switchport trunk allowed vlan 2,8-11,36,76,256-257
+  switchport trunk allowed vlan 2,8-11,14,36,76,256-257
   no snmp trap link-status
   channel-group 135 mode active
   no shutdown
@@ -2918,7 +2918,7 @@ interface Ethernet101/1/10
 interface Ethernet101/1/11
   description A_fra1-pkvm6-pr
   switchport mode trunk
-  switchport trunk allowed vlan 2,8-11,36,76,256-257
+  switchport trunk allowed vlan 2,8-11,14,36,76,256-257
   no snmp trap link-status
   channel-group 136 mode active
   no shutdown
@@ -2962,7 +2962,7 @@ interface Ethernet101/1/16
   description A_fra1-syslog2-pr (in Po145)
   switchport mode trunk
   switchport trunk native vlan 76
-  switchport trunk allowed vlan 76,258
+  switchport trunk allowed vlan 76,256
   no snmp trap link-status
   channel-group 145 mode active
   no shutdown

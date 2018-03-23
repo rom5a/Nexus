@@ -134,8 +134,8 @@
 !Flash: bootflash:   222 MB free
 !Flash: bootflash:  1534 MB total
 !
-!Flash: debug:      196570    Mar 21 15:35:05 2018  bootvar_debug.log
-!Flash: debug:           6    Mar 21 15:35:05 2018  bootvar_debug.meta
+!Flash: debug:      200765    Mar 22 13:04:35 2018  bootvar_debug.log
+!Flash: debug:           6    Mar 22 13:04:35 2018  bootvar_debug.meta
 !Flash: debug: Usage for debug://sup-local
 !Flash: debug:      0 MB used
 !Flash: debug:     1 MB free
@@ -450,8 +450,8 @@ rmon event 4 log trap public description WARNING(4) owner PMON@WARNING
 rmon event 5 log trap public description INFORMATION(5) owner PMON@INFO
 snmp-server community 5uper5ecret group network-operator
 snmp-server community 5uper5ecret use-acl 66
-ntp server 10.30.9.210 use-vrf management
-ntp server 10.30.235.210 use-vrf management
+ntp server 10.30.10.220 use-vrf management
+ntp server 10.30.10.221 use-vrf management
 aaa authentication login default group TacacsGroup 
 aaa authentication login console local 
 aaa accounting default group TacacsGroup 

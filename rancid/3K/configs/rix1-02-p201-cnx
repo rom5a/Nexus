@@ -6864,7 +6864,7 @@ monitor erspan origin ip-address 192.168.101.223 global
 fabricpath switch-id 201
 mac address-table notification mac-move
 logging logfile messages 6
-logging server 10.30.230.90 7 use-vrf management
+logging server 10.30.230.90 6 use-vrf management
 logging module 6
 logging timestamp milliseconds
 logging level syslog 6

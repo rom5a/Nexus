@@ -142,8 +142,8 @@
 !Flash: bootflash: 48494 MB free
 !Flash: bootflash: 51231 MB total
 !
-!Flash: debug:      160750    Mar 21 15:17:45 2018  bootvar_debug.log
-!Flash: debug:           6    Mar 21 15:17:45 2018  bootvar_debug.meta
+!Flash: debug:      166377    Mar 22 13:45:09 2018  bootvar_debug.log
+!Flash: debug:           6    Mar 22 13:45:09 2018  bootvar_debug.meta
 !Flash: debug: Usage for debug://sup-local
 !Flash: debug:      0 MB used
 !Flash: debug:     4 MB free
@@ -153,7 +153,7 @@
 !Flash: logflash:        4096    Dec 28 11:14:05 2017  command/
 !Flash: logflash:        4096    Nov 16 08:37:11 2017  core/
 !Flash: logflash:        4096    Nov 16 08:37:11 2017  debug/
-!Flash: logflash:       12288    Mar 22 00:52:43 2018  debug_logs/
+!Flash: logflash:       12288    Mar 23 01:04:44 2018  debug_logs/
 !Flash: logflash:        4096    Nov 16 08:37:11 2017  generic/
 !Flash: logflash:        4096                          log/
 !Flash: logflash:       16384    Nov 16 08:37:06 2017  lost+found/
@@ -850,6 +850,7 @@ ip prefix-list PL_MGT_TBS1 seq 20 permit 10.15.8.0/24
 ip prefix-list PL_MGT_TBS1 seq 30 permit 10.15.6.0/24 
 ip prefix-list PL_MGT_TBS1 seq 40 permit 192.168.83.6/32 
 ip prefix-list direct seq 10 permit 192.168.0.0/16 le 32 
+ip prefix-list pl_from_office seq 5 permit 10.68.0.0/16 
 ip prefix-list pl_to_fra1 seq 5 permit 10.15.0.0/17 
 ip prefix-list pl_to_fra1 seq 10 permit 10.15.128.0/17 
 ip prefix-list pl_to_fra1 seq 15 permit 192.168.94.168/29 
@@ -857,6 +858,8 @@ ip prefix-list pl_to_fra1 seq 20 permit 192.168.94.176/29
 ip prefix-list pl_to_fra1 seq 25 permit 192.168.122.96/30 
 ip prefix-list pl_to_fra1 seq 30 permit 192.168.122.104/30 
 ip prefix-list pl_to_fra1 seq 40 permit 192.168.83.6/32 
+ip prefix-list pl_to_office seq 5 permit 10.15.0.0/17 
+ip prefix-list pl_to_office seq 10 permit 10.15.128.0/17 
 route-map NOOUT deny 10
 route-map RM_MGT_in permit 10
   match ip address prefix-list PL_MGT_TBS1 
@@ -864,6 +867,10 @@ route-map redistribute-direct permit 10
   match ip address prefix-list direct 
 route-map rm_fra1_out permit 10
   match ip address prefix-list pl_to_fra1 
+route-map rm_office_in permit 10
+  match ip address prefix-list pl_from_office 
+route-map rm_office_out permit 10
+  match ip address prefix-list pl_to_office 
 vrf context management
   ip route 0.0.0.0/0 10.15.0.1
 vpc domain 1
@@ -2281,6 +2288,8 @@ router bgp 65015
     timers 3 10
     address-family ipv4 unicast
       send-community
+      route-map rm_office_in in
+      route-map rm_office_out out
   template peer TP_iBGP
     bfd
     remote-as 65015
