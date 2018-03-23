@@ -24,7 +24,7 @@
 #     'snmp-server user evogaming network-admin auth md5 0x4ebbbd2270486d393f7ed9d081f3d35b priv 0x4ebbbd2270486d393f7ed9d081f3d35b localizedkey',
 #     'snmp-server community 5uper5ecret group network-operator',
 #     'ntp distribute',
-#     'ntp commit',
+#     'ntp commit', Na 5K esst nad 9/3K netu
 #     'aaa authentication login default group TacacsGroup local',
 #     'aaa accounting default group TacacsGroup',
 #     'aaa authentication login ascii-authentication',
