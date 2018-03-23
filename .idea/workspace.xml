@@ -24,32 +24,31 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="device.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/device.py">
+      <file leaf-file-name="fra1-9-config.ini" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/config_template/fra1-9-config.ini">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="245">
-              <caret line="216" column="52" lean-forward="false" selection-start-line="216" selection-start-column="36" selection-end-line="216" selection-end-column="52" />
-              <folding>
-                <element signature="e#18#32#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="135">
+              <caret line="9" column="139" lean-forward="false" selection-start-line="9" selection-start-column="139" selection-end-line="9" selection-end-column="139" />
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="chk_cfg.log" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/chk_cfg.log">
-          <provider selected="true" editor-type-id="LogFileEditorProvider">
-            <state relative-caret-position="545">
-              <caret line="600" column="44" lean-forward="false" selection-start-line="600" selection-start-column="28" selection-end-line="600" selection-end-column="44" />
+      <file leaf-file-name="common_config.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/config/common_config.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="390">
+              <caret line="26" column="7" lean-forward="true" selection-start-line="26" selection-start-column="7" selection-end-line="26" selection-end-column="17" />
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="hkg2-3-config.ini" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/config_template/hkg2-3-config.ini">
+      <file leaf-file-name="fra1-3-config.ini" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/config_template/fra1-3-config.ini">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="120">
-              <caret line="8" column="104" lean-forward="false" selection-start-line="8" selection-start-column="104" selection-end-line="8" selection-end-column="104" />
+              <caret line="8" column="0" lean-forward="false" selection-start-line="8" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -59,7 +58,7 @@
         <entry file="file://$PROJECT_DIR$/config_template/rix3-3-config.ini">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="105">
-              <caret line="7" column="165" lean-forward="false" selection-start-line="7" selection-start-column="165" selection-end-line="7" selection-end-column="165" />
+              <caret line="7" column="0" lean-forward="true" selection-start-line="7" selection-start-column="0" selection-end-line="8" selection-end-column="87" />
               <folding />
             </state>
           </provider>
@@ -69,40 +68,18 @@
         <entry file="file://$PROJECT_DIR$/config_template/tbs1-9-config.ini">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="105">
-              <caret line="7" column="184" lean-forward="false" selection-start-line="7" selection-start-column="184" selection-end-line="7" selection-end-column="184" />
+              <caret line="7" column="126" lean-forward="false" selection-start-line="7" selection-start-column="126" selection-end-line="7" selection-end-column="126" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="van1-9-config.ini" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/config_template/van1-9-config.ini">
+      <file leaf-file-name="hkg2-3-config.ini" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/config_template/hkg2-3-config.ini">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="105">
-              <caret line="7" column="184" lean-forward="false" selection-start-line="7" selection-start-column="184" selection-end-line="7" selection-end-column="184" />
+            <state relative-caret-position="120">
+              <caret line="8" column="105" lean-forward="false" selection-start-line="8" selection-start-column="105" selection-end-line="8" selection-end-column="105" />
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="van2-9-config.ini" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/config_template/van2-9-config.ini">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="105">
-              <caret line="7" column="184" lean-forward="false" selection-start-line="7" selection-start-column="184" selection-end-line="7" selection-end-column="184" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="cnx_chkconf.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/cnx_chkconf.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="383">
-              <caret line="29" column="47" lean-forward="true" selection-start-line="29" selection-start-column="47" selection-end-line="29" selection-end-column="47" />
-              <folding>
-                <element signature="e#42#51#0" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -110,8 +87,27 @@
       <file leaf-file-name="rix3-5-config.ini" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/config_template/rix3-5-config.ini">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="105">
-              <caret line="7" column="180" lean-forward="false" selection-start-line="7" selection-start-column="180" selection-end-line="7" selection-end-column="180" />
+            <state relative-caret-position="135">
+              <caret line="9" column="0" lean-forward="false" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="chk_cfg.log" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/chk_cfg.log">
+          <provider selected="true" editor-type-id="LogFileEditorProvider">
+            <state relative-caret-position="574">
+              <caret line="305" column="39" lean-forward="true" selection-start-line="305" selection-start-column="33" selection-end-line="305" selection-end-column="39" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="mlt1-9-config.ini" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/config_template/mlt1-9-config.ini">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="165">
+              <caret line="11" column="0" lean-forward="true" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -121,7 +117,7 @@
         <entry file="file://$PROJECT_DIR$/config_template/rix1-5-config.ini">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="105">
-              <caret line="7" column="29" lean-forward="false" selection-start-line="7" selection-start-column="29" selection-end-line="7" selection-end-column="29" />
+              <caret line="7" column="121" lean-forward="false" selection-start-line="7" selection-start-column="121" selection-end-line="7" selection-end-column="121" />
               <folding />
             </state>
           </provider>
@@ -138,8 +134,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>SYSLOG configuration:</find>
-      <find>loggin</find>
       <find>logging</find>
       <find>logging server 10.30.230.90</find>
       <find>logging server 1</find>
@@ -168,6 +162,8 @@
       <find>man</find>
       <find>rix1-02-p</find>
       <find>Mandatory config</find>
+      <find>rix3</find>
+      <find>fra1</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -195,21 +191,21 @@
         <option value="$PROJECT_DIR$/cnx_chkconf.py" />
         <option value="$PROJECT_DIR$/rancid/3K/configs/rix3-03-p030-cnx" />
         <option value="$PROJECT_DIR$/device.py" />
-        <option value="$PROJECT_DIR$/config/common_config.py" />
-        <option value="$PROJECT_DIR$/config_template/fra1-3-config.ini" />
-        <option value="$PROJECT_DIR$/config_template/fra1-9-config.ini" />
-        <option value="$PROJECT_DIR$/config_template/mlt1-9-config.ini" />
-        <option value="$PROJECT_DIR$/config_template/rix3-3-config.ini" />
-        <option value="$PROJECT_DIR$/config_template/rix3-5-config.ini" />
         <option value="$PROJECT_DIR$/config_template/tbs1-9-config.ini" />
         <option value="$PROJECT_DIR$/config_template/van1-9-config.ini" />
         <option value="$PROJECT_DIR$/config_template/van2-9-config.ini" />
-        <option value="$PROJECT_DIR$/config_template/rix1-5-config.ini" />
+        <option value="$PROJECT_DIR$/config/common_config.py" />
+        <option value="$PROJECT_DIR$/config_template/fra1-3-config.ini" />
+        <option value="$PROJECT_DIR$/config_template/fra1-9-config.ini" />
         <option value="$PROJECT_DIR$/config_template/hkg2-3-config.ini" />
+        <option value="$PROJECT_DIR$/config_template/rix1-5-config.ini" />
+        <option value="$PROJECT_DIR$/config_template/rix3-3-config.ini" />
+        <option value="$PROJECT_DIR$/config_template/rix3-5-config.ini" />
+        <option value="$PROJECT_DIR$/config_template/mlt1-9-config.ini" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="y" value="165" />
     <option name="width" value="1920" />
     <option name="height" value="1008" />
@@ -494,11 +490,19 @@
       <option name="project" value="LOCAL" />
       <updated>1521797400671</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="shutdown command on 9K and 3K&#10;desctption&#10;vpc">
+      <created>1521797726231</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1521797726231</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="165" width="1920" height="1008" extended-state="0" />
+    <frame x="8" y="23" width="1920" height="1008" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17838125" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -785,86 +789,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/rancid/3K/configs/fra1-01-p015-cnx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/config/common_config.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="5" column="17" lean-forward="true" selection-start-line="5" selection-start-column="7" selection-end-line="5" selection-end-column="19" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/config_template/fra1-3-config.ini">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="9" column="78" lean-forward="true" selection-start-line="9" selection-start-column="78" selection-end-line="9" selection-end-column="93" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/config_template/fra1-9-config.ini">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="9" column="112" lean-forward="false" selection-start-line="9" selection-start-column="112" selection-end-line="9" selection-end-column="112" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/config_template/mlt1-9-config.ini">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="8" column="185" lean-forward="false" selection-start-line="8" selection-start-column="185" selection-end-line="8" selection-end-column="185" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/config_template/rix3-3-config.ini">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" column="165" lean-forward="false" selection-start-line="7" selection-start-column="165" selection-end-line="7" selection-end-column="165" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/config_template/rix3-5-config.ini">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" column="180" lean-forward="false" selection-start-line="7" selection-start-column="180" selection-end-line="7" selection-end-column="180" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/config_template/tbs1-9-config.ini">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" column="184" lean-forward="false" selection-start-line="7" selection-start-column="184" selection-end-line="7" selection-end-column="184" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/config_template/van1-9-config.ini">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" column="184" lean-forward="false" selection-start-line="7" selection-start-column="184" selection-end-line="7" selection-end-column="184" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/config_template/van2-9-config.ini">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" column="184" lean-forward="false" selection-start-line="7" selection-start-column="184" selection-end-line="7" selection-end-column="184" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/cnx_chkconf.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="383">
@@ -885,25 +809,105 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/rancid/3K/configs/fra1-01-p015-cnx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config_template/van1-9-config.ini">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="7" column="126" lean-forward="false" selection-start-line="7" selection-start-column="126" selection-end-line="7" selection-end-column="126" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config_template/van2-9-config.ini">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="7" column="126" lean-forward="false" selection-start-line="7" selection-start-column="126" selection-end-line="7" selection-end-column="126" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/common_config.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="390">
+          <caret line="26" column="7" lean-forward="true" selection-start-line="26" selection-start-column="7" selection-end-line="26" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config_template/tbs1-9-config.ini">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="7" column="126" lean-forward="false" selection-start-line="7" selection-start-column="126" selection-end-line="7" selection-end-column="126" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config_template/rix3-3-config.ini">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="7" column="0" lean-forward="true" selection-start-line="7" selection-start-column="0" selection-end-line="8" selection-end-column="87" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config_template/rix3-5-config.ini">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="9" column="0" lean-forward="false" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/config_template/rix1-5-config.ini">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="105">
-          <caret line="7" column="29" lean-forward="false" selection-start-line="7" selection-start-column="29" selection-end-line="7" selection-end-column="29" />
+          <caret line="7" column="121" lean-forward="false" selection-start-line="7" selection-start-column="121" selection-end-line="7" selection-end-column="121" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/chk_cfg.log">
       <provider selected="true" editor-type-id="LogFileEditorProvider">
-        <state relative-caret-position="545">
-          <caret line="600" column="44" lean-forward="false" selection-start-line="600" selection-start-column="28" selection-end-line="600" selection-end-column="44" />
+        <state relative-caret-position="574">
+          <caret line="305" column="39" lean-forward="true" selection-start-line="305" selection-start-column="33" selection-end-line="305" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config_template/fra1-3-config.ini">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="8" column="0" lean-forward="false" selection-start-line="8" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config_template/fra1-9-config.ini">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="9" column="139" lean-forward="false" selection-start-line="9" selection-start-column="139" selection-end-line="9" selection-end-column="139" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/config_template/hkg2-3-config.ini">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
-          <caret line="8" column="104" lean-forward="false" selection-start-line="8" selection-start-column="104" selection-end-line="8" selection-end-column="104" />
+          <caret line="8" column="105" lean-forward="false" selection-start-line="8" selection-start-column="105" selection-end-line="8" selection-end-column="105" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config_template/mlt1-9-config.ini">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="11" column="0" lean-forward="true" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
           <folding />
         </state>
       </provider>

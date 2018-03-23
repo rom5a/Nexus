@@ -1,10 +1,10 @@
 # COMMON_CONFIG = [
-#     'ip domain-name evolutiongaming.com', ADDED
-#     'feature scp-server', ADDED
-#     'feature tacacs+', ADDDED
+#     'ip domain-name evolutiongaming.com', ADDED Na vsex
+#     'feature scp-server', ADDED Na vsex
+#     'feature tacacs+', ADDDED Na vsex
 #     'cfs eth distribute',
-#     'feature lacp',
-#     'feature vpc',
+#     'feature lacp', ADDED Na vsex
+#     'feature vpc', ADDED Na vsex
 #     'feature lldp',
 #     'no password strength-check',
 #     'logging event link-status default',
@@ -18,7 +18,7 @@
 #     'errdisable recovery cause pause-rate-limit',
 #     'errdisable recovery cause miscabling',
 #     'port-channel load-balance ethernet source-dest-port',
-#     'no ip igmp snooping',
+#     'no ip igmp snooping', Na vsex
 #     'snmp-server contact EVO_Infra_NOC',
 #     'snmp-server user admin network-admin auth md5 0x4ebbbd2270486d393f7ed9d081f3d35b priv 0x4ebbbd2270486d393f7ed9d081f3d35b localizedkey',
 #     'snmp-server user evogaming network-admin auth md5 0x4ebbbd2270486d393f7ed9d081f3d35b priv 0x4ebbbd2270486d393f7ed9d081f3d35b localizedkey',
