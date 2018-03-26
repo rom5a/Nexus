@@ -100,7 +100,7 @@
 !Env:                                 (Watts )    (Watts )     (Watts )
 !Env: -------  -------------------  ----------  ----------  ----------  --------------
 !Env: 1        N9K-PAC-650W                0 W                     0 W     Shutdown
-!Env: 2        N9K-PAC-650W              153 W                   650 W     Ok
+!Env: 2        N9K-PAC-650W              154 W                   650 W     Ok
 !Env: Power Usage Summary:
 !Env: --------------------
 !Env: Power Supply redundancy mode (configured)                Non-Redundant(combined)
@@ -142,8 +142,8 @@
 !Flash: bootflash: 48494 MB free
 !Flash: bootflash: 51231 MB total
 !
-!Flash: debug:      166377    Mar 22 13:45:09 2018  bootvar_debug.log
-!Flash: debug:           6    Mar 22 13:45:09 2018  bootvar_debug.meta
+!Flash: debug:      178285    Mar 25 03:42:51 2018  bootvar_debug.log
+!Flash: debug:           6    Mar 25 03:42:51 2018  bootvar_debug.meta
 !Flash: debug: Usage for debug://sup-local
 !Flash: debug:      0 MB used
 !Flash: debug:     4 MB free
@@ -153,14 +153,14 @@
 !Flash: logflash:        4096    Dec 28 11:14:05 2017  command/
 !Flash: logflash:        4096    Nov 16 08:37:11 2017  core/
 !Flash: logflash:        4096    Nov 16 08:37:11 2017  debug/
-!Flash: logflash:       12288    Mar 23 01:04:44 2018  debug_logs/
+!Flash: logflash:       12288    Mar 26 03:41:45 2018  debug_logs/
 !Flash: logflash:        4096    Nov 16 08:37:11 2017  generic/
 !Flash: logflash:        4096                          log/
 !Flash: logflash:       16384    Nov 16 08:37:06 2017  lost+found/
 !Flash: logflash:        4096    Dec 20 13:46:05 2017  vdc_1/
 !Flash: logflash: Usage for logflash://sup-local
 !Flash: logflash:   592 MB used
-!Flash: logflash:  7470 MB free
+!Flash: logflash:  7471 MB free
 !Flash: logflash:  8063 MB total
 !
 !Flash: volatile:         100    Mar 15 06:58:25 2018  switchport-11231/
@@ -395,6 +395,8 @@ ip access-list cp-ip-sla-acl-custom
   20 permit udp any eq 50000 any 
   30 permit udp any any eq 60000 
   40 permit udp any eq 60000 any 
+  50 permit udp any any eq 1967 
+  60 permit udp any eq 1967 any 
 ip access-list custom-copp-acl-auto-rp
   10 permit ip any 224.0.1.39/32 
   20 permit ip any 224.0.1.40/32 

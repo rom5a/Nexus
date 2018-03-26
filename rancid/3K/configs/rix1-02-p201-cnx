@@ -663,6 +663,7 @@ feature scp-server
 feature sftp-server
 feature tacacs+
 cfs eth distribute
+feature udld
 feature interface-vlan
 feature lacp
 feature vpc

@@ -148,7 +148,7 @@
 !Flash: bootflash:   325055218    Oct 03 06:22:40 2016  n6000-uk9.7.2.0.N1.1.bin
 !Flash: bootflash:       50941    Mar 16 20:02:14 2018  null
 !Flash: bootflash:        4096    Jan 01 00:06:22 2001  scripts/
-!Flash: bootflash:       51006    Mar 21 11:04:12 2018  startup-config
+!Flash: bootflash:       51182    Mar 23 12:52:57 2018  startup-config
 !Flash: bootflash:        4096    Jan 01 00:02:03 2001  vdc_2/
 !Flash: bootflash:        4096    Jan 01 00:02:03 2001  vdc_3/
 !Flash: bootflash:        4096    Jan 01 00:02:03 2001  vdc_4/
@@ -326,6 +326,7 @@ feature scp-server
 feature sftp-server
 feature tacacs+
 cfs eth distribute
+feature udld
 feature lacp
 feature vpc
 feature lldp
@@ -397,6 +398,7 @@ aaa accounting default group TacacsGroup
 aaa authentication login ascii-authentication
 tacacs-server directed-request
 
+no ip igmp snooping
 vlan 1
 vlan 9
   name goc_prod
@@ -427,6 +429,12 @@ vlan 142
   mode fabricpath
 vlan 143
   name ssb_netgroup_pre_10.30.143.0/24
+  mode fabricpath
+vlan 161
+  name kc_pre1_10.30.161.0/24
+  mode fabricpath
+vlan 162
+  name kc_live1_10.30.162.0/24
   mode fabricpath
 vlan 175
   name lb-dev
@@ -542,6 +550,7 @@ vlan 888
 vlan 891
   name tacacs
   mode fabricpath
+
 spanning-tree port type edge bpduguard default
 spanning-tree vlan 1-3967 priority 8192
 spanning-tree pseudo-information
@@ -974,7 +983,7 @@ interface port-channel153
 interface port-channel1000
   description A_rix3-03-p030/1-cnx Eth1/51/1 (our Eth1/25;Eth1/47)
   switchport mode trunk
-  switchport trunk allowed vlan 9,135,139,141-143,176,201,218,223,225,229,244-245
+  switchport trunk allowed vlan 9,135,139,141-143,161-162,176,201,218,223,225,229,244-245
   no snmp trap link-status
   storm-control broadcast level 5.00
   storm-control multicast level 5.00
@@ -1254,7 +1263,7 @@ interface Ethernet1/24
 interface Ethernet1/25
   description A_rix3-03-p031-cnx Eth1/51/1 (our Po1000)
   switchport mode trunk
-  switchport trunk allowed vlan 9,135,139,141-143,176,201,218,223,225,229,244-245
+  switchport trunk allowed vlan 9,135,139,141-143,161-162,176,201,218,223,225,229,244-245
   no snmp trap link-status
   storm-control broadcast level 5.00
   storm-control multicast level 5.00
@@ -1450,7 +1459,7 @@ interface Ethernet1/46
 interface Ethernet1/47
   description A_rix3-03-p030-cnx Eth1/51/1 (our Po1000)
   switchport mode trunk
-  switchport trunk allowed vlan 9,135,139,141-143,176,201,218,223,225,229,244-245
+  switchport trunk allowed vlan 9,135,139,141-143,161-162,176,201,218,223,225,229,244-245
   no snmp trap link-status
   storm-control broadcast level 5.00
   storm-control multicast level 5.00

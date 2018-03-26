@@ -493,6 +493,7 @@ feature scp-server
 feature sftp-server
 feature tacacs+
 cfs eth distribute
+feature udld
 feature interface-vlan
 feature lacp
 feature vpc
@@ -2325,8 +2326,8 @@ interface Ethernet103/1/36
   vpc orphan-port suspend
 
 interface Ethernet103/1/37
-  description DealerPC
-  switchport access vlan 51
+  description Audio
+  switchport access vlan 39
   spanning-tree port type edge
   no snmp trap link-status
   storm-control broadcast level 5.00
@@ -2334,7 +2335,7 @@ interface Ethernet103/1/37
   vpc orphan-port suspend
 
 interface Ethernet103/1/38
-  description DealerPC
+  description Audio
   switchport access vlan 39
   spanning-tree port type edge
   no snmp trap link-status
@@ -2370,8 +2371,8 @@ interface Ethernet103/1/41
   vpc orphan-port suspend
 
 interface Ethernet103/1/42
-  description DealerPC
-  switchport access vlan 51
+  description Audio
+  switchport access vlan 39
   spanning-tree port type edge
   no snmp trap link-status
   storm-control broadcast level 5.00
@@ -4604,6 +4605,4 @@ logging logfile messages 6
 logging server 10.30.230.90 7 use-vrf management
 logging timestamp milliseconds
 logging level syslog 6
-
-
 

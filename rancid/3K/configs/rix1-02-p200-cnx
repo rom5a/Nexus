@@ -632,6 +632,7 @@ feature scp-server
 feature sftp-server
 feature tacacs+
 cfs eth distribute
+feature udld
 feature interface-vlan
 feature lacp
 feature vpc
@@ -6401,3 +6402,6 @@ logging logfile messages 6
 logging server 10.30.230.90 6 use-vrf management
 logging timestamp milliseconds
 logging level syslog 6
+
+
+

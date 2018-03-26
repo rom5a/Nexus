@@ -67,6 +67,13 @@
 !Env: Chassis         N2K-C2248-FAN        --         ok
 !Env: PS-1            N2200-PAC-400W       --         no power source
 !Env: PS-2            N2200-PAC-400W       --         ok
+!Env: Fan Fex : 102:
+!Env: ------------------------------------------------------
+!Env: Fan             Model                Hw         Status
+!Env: ------------------------------------------------------
+!Env: Chassis         N2K-C2248-FAN        --         ok
+!Env: PS-1            N2200-PAC-400W       --         no power source
+!Env: PS-2            N2200-PAC-400W       --         ok
 !Env: Fan Fex : 108:
 !Env: ------------------------------------------------------
 !Env: Fan             Model                Hw         Status
@@ -93,7 +100,7 @@
 !Env:                                 (Watts )    (Watts )     (Watts )
 !Env: -------  -------------------  ----------  ----------  ----------  --------------
 !Env: 1        N9K-PAC-650W                0 W                     0 W     Shutdown
-!Env: 2        N9K-PAC-650W              147 W                   650 W     Ok
+!Env: 2        N9K-PAC-650W              148 W                   650 W     Ok
 !Env: Power Usage Summary:
 !Env: --------------------
 !Env: Power Supply redundancy mode (configured)                Non-Redundant(combined)
@@ -134,8 +141,8 @@
 !Flash: bootflash: 48494 MB free
 !Flash: bootflash: 51231 MB total
 !
-!Flash: debug:      106679    Mar 22 12:24:42 2018  bootvar_debug.log
-!Flash: debug:           6    Mar 22 12:24:42 2018  bootvar_debug.meta
+!Flash: debug:      112898    Mar 25 03:42:51 2018  bootvar_debug.log
+!Flash: debug:           6    Mar 25 03:42:51 2018  bootvar_debug.meta
 !Flash: debug: Usage for debug://sup-local
 !Flash: debug:      0 MB used
 !Flash: debug:     4 MB free
@@ -145,7 +152,7 @@
 !Flash: logflash:        4096    Dec 21 10:45:21 2017  command/
 !Flash: logflash:        4096    Nov 16 08:07:56 2017  core/
 !Flash: logflash:        4096    Nov 16 08:07:56 2017  debug/
-!Flash: logflash:       12288    Mar 23 03:01:35 2018  debug_logs/
+!Flash: logflash:       12288    Mar 26 03:37:36 2018  debug_logs/
 !Flash: logflash:        4096    Nov 16 08:07:56 2017  generic/
 !Flash: logflash:        4096                          log/
 !Flash: logflash:       16384    Nov 16 08:07:52 2017  lost+found/
@@ -228,6 +235,26 @@
 !PID: N2200-PAC-400W
 !VID: V06
 !SN: DCA213653W4
+!NAME: "FEX 102 CHASSIS",       DESCR: "N2K-C2248TP-E-1GE  CHASSIS"
+!PID: N2K-C2248TP-E-1GE
+!VID: V03
+!SN: FOX2144PBEA
+!NAME: "FEX 102 Module 1",      DESCR: "Fabric Extender Module: 48x1GE, 4x10GE Supervisor"
+!PID: N2K-C2248TP-E-1GE
+!VID: V03
+!SN: FOC214339AB
+!NAME: "FEX 102 Fan 1",         DESCR: "Fabric Extender Fan module"
+!PID: N2K-C2248-FAN
+!VID: N/A
+!SN: N/A
+!NAME: "FEX 102 Power Supply 1", DESCR: "Fabric Extender AC power supply"
+!PID: N2200-PAC-400W
+!VID: V06
+!SN: DCA2136547W
+!NAME: "FEX 102 Power Supply 2", DESCR: "Fabric Extender AC power supply"
+!PID: N2200-PAC-400W
+!VID: V06
+!SN: DCA2126504A
 !NAME: "FEX 108 CHASSIS",       DESCR: "N2K-C2248TP-E-1GE  CHASSIS"
 !PID: N2K-C2248TP-E-1GE
 !VID: V03
@@ -273,6 +300,15 @@
 !FEX: 101  1   50f7.2263.5b70 to 50f7.2263.5b9f        FOX2144PBG4
 !FEX: FEX Mod Ports Card Type                          Model              Status.
 !FEX: --- --- ----- ---------------------------------- ------------------ -----------
+!FEX: 102  1  48    Fabric Extender 48x1G + 4x10G Mo   N2K-C2248TP-E-1GE  ok
+!FEX: FEX Mod Sw              Hw      World-Wide-Name(s) (WWN)
+!FEX: --- --- --------------  ------  -----------------------------------------------
+!FEX: 102  1  7.0(3)I4(7)     2.5     --                                                 
+!FEX: FEX Mod  MAC-Address(es)                         Serial-Num
+!FEX: --- ---  --------------------------------------  ----------
+!FEX: 102  1   7486.0b6e.90a0 to 7486.0b6e.90cf        FOX2144PBEA
+!FEX: FEX Mod Ports Card Type                          Model              Status.
+!FEX: --- --- ----- ---------------------------------- ------------------ -----------
 !FEX: 108  1  48    Fabric Extender 48x1G + 4x10G Mo   N2K-C2248TP-E-1GE  ok
 !FEX: FEX Mod Sw              Hw      World-Wide-Name(s) (WWN)
 !FEX: --- --- --------------  ------  -----------------------------------------------
@@ -285,6 +321,7 @@
 !FEX: Number    Description      State            Model            Serial     
 !FEX: ------------------------------------------------------------------------
 !FEX: 101  1th_floor_MSR_P1                Online   N2K-C2248TP-E-1GE   FOX2144PBG4
+!FEX: 102  1th_floor_MSR_E1                Online   N2K-C2248TP-E-1GE   FOX2144PBEA
 !FEX: 108  1th_floor_MSR_S1                Online   N2K-C2248TP-E-1GE   FOX2141PK1J
 !
 
@@ -350,6 +387,8 @@ ip access-list cp-ip-sla-acl-custom
   20 permit udp any eq 50000 any 
   30 permit udp any any eq 60000 
   40 permit udp any eq 60000 any 
+  50 permit udp any any eq 1967 
+  60 permit udp any eq 1967 any 
 ip access-list custom-copp-acl-auto-rp
   10 permit ip any 224.0.1.39/32 
   20 permit ip any 224.0.1.40/32 
@@ -1513,6 +1552,102 @@ interface Ethernet101/1/47
 
 interface Ethernet101/1/48
   no snmp trap link-status
+
+interface Ethernet102/1/1
+
+interface Ethernet102/1/2
+
+interface Ethernet102/1/3
+
+interface Ethernet102/1/4
+
+interface Ethernet102/1/5
+
+interface Ethernet102/1/6
+
+interface Ethernet102/1/7
+
+interface Ethernet102/1/8
+
+interface Ethernet102/1/9
+
+interface Ethernet102/1/10
+
+interface Ethernet102/1/11
+
+interface Ethernet102/1/12
+
+interface Ethernet102/1/13
+
+interface Ethernet102/1/14
+
+interface Ethernet102/1/15
+
+interface Ethernet102/1/16
+
+interface Ethernet102/1/17
+
+interface Ethernet102/1/18
+
+interface Ethernet102/1/19
+
+interface Ethernet102/1/20
+
+interface Ethernet102/1/21
+
+interface Ethernet102/1/22
+
+interface Ethernet102/1/23
+
+interface Ethernet102/1/24
+
+interface Ethernet102/1/25
+
+interface Ethernet102/1/26
+
+interface Ethernet102/1/27
+
+interface Ethernet102/1/28
+
+interface Ethernet102/1/29
+
+interface Ethernet102/1/30
+
+interface Ethernet102/1/31
+
+interface Ethernet102/1/32
+
+interface Ethernet102/1/33
+
+interface Ethernet102/1/34
+
+interface Ethernet102/1/35
+
+interface Ethernet102/1/36
+
+interface Ethernet102/1/37
+
+interface Ethernet102/1/38
+
+interface Ethernet102/1/39
+
+interface Ethernet102/1/40
+
+interface Ethernet102/1/41
+
+interface Ethernet102/1/42
+
+interface Ethernet102/1/43
+
+interface Ethernet102/1/44
+
+interface Ethernet102/1/45
+
+interface Ethernet102/1/46
+
+interface Ethernet102/1/47
+
+interface Ethernet102/1/48
 
 interface Ethernet108/1/1
   description DPCs
