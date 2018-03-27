@@ -134,8 +134,8 @@
 !Flash: bootflash:   222 MB free
 !Flash: bootflash:  1534 MB total
 !
-!Flash: debug:      203826    Mar 25 03:22:04 2018  bootvar_debug.log
-!Flash: debug:           6    Mar 25 03:22:04 2018  bootvar_debug.meta
+!Flash: debug:      211308    Mar 26 09:33:03 2018  bootvar_debug.log
+!Flash: debug:           6    Mar 26 09:33:03 2018  bootvar_debug.meta
 !Flash: debug: Usage for debug://sup-local
 !Flash: debug:      0 MB used
 !Flash: debug:     1 MB free
@@ -1000,7 +1000,7 @@ interface Ethernet1/38
   vpc orphan-port suspend
 
 interface Ethernet1/39
-  description A_HKG2-IC-RT5-C1001 G0/2
+  description A_hkg2-ic-p005-ios Gi0/0/2
   switchport mode trunk
   switchport trunk allowed vlan 999
   spanning-tree port type edge trunk
@@ -1010,7 +1010,7 @@ interface Ethernet1/39
   channel-group 11 mode active
 
 interface Ethernet1/40
-  description A_HKG2-IC-RT6-C1001 G0/2
+  description A_hkg2-ic-p006-ios Gi0/0/2
   switchport mode trunk
   switchport trunk allowed vlan 999
   spanning-tree port type edge trunk
@@ -1020,7 +1020,7 @@ interface Ethernet1/40
   channel-group 12 mode active
 
 interface Ethernet1/41
-  description A_HKG2-05-S004-C3000 VPC keepalive
+  description A_hkg2-05-p004-cnx VPC keepalive
   switchport access vlan 900
   spanning-tree port type edge
   no snmp trap link-status
@@ -1028,7 +1028,7 @@ interface Ethernet1/41
   storm-control multicast level 5.00
 
 interface Ethernet1/42
-  description HKG2-IC-RT5-C1001 Mgmt
+  description hkg2-ic-p005-ios Gi0
   switchport access vlan 888
   spanning-tree port type edge
   no snmp trap link-status
@@ -1037,7 +1037,7 @@ interface Ethernet1/42
   vpc orphan-port suspend
 
 interface Ethernet1/43
-  description A_HKG2-PRO-FW-C5525 PRI Gi0/0
+  description A_hkg2-fw-p249-asa-pri Gi0/0
   switchport mode trunk
   switchport trunk allowed vlan 5,999
   spanning-tree port type edge trunk
@@ -1047,7 +1047,7 @@ interface Ethernet1/43
   channel-group 1 mode active
 
 interface Ethernet1/44
-  description A_HKG2-PRO-FW-C5525 SEC Gi0/0
+  description A_hkg2-fw-p250-asa-sec Gi0/0
   switchport mode trunk
   switchport trunk allowed vlan 5,999
   spanning-tree port type edge trunk
@@ -1057,7 +1057,7 @@ interface Ethernet1/44
   channel-group 2 mode active
 
 interface Ethernet1/45
-  description A_HKG2-PRO-FW-C5525 PRI Gi0/2
+  description A_hkg2-fw-p250-asa-sec Gi0/2
   switchport mode trunk
   switchport trunk allowed vlan 10-13,888
   spanning-tree port type edge trunk
@@ -1067,7 +1067,7 @@ interface Ethernet1/45
   channel-group 4 mode active
 
 interface Ethernet1/46
-  description A_HKG2-PRO-FW-C5525 SEC Gi0/2
+  description A_hkg2-fw-p249-asa-pri Gi0/2
   switchport mode trunk
   switchport trunk allowed vlan 10-13,888
   spanning-tree port type edge trunk
@@ -1095,7 +1095,7 @@ interface Ethernet1/48
   vpc orphan-port suspend
 
 interface Ethernet1/49
-  description PO3-To-NX
+  description A_hkg2-05-p004-cnx Et1/49
   switchport mode trunk
   switchport trunk allowed vlan 5,10-13,99,888,999
   no snmp trap link-status
@@ -1104,7 +1104,7 @@ interface Ethernet1/49
   channel-group 3 mode active
 
 interface Ethernet1/50
-  description PO3-To-NX
+  description A_hkg2-05-p004-cnx Et1/50
   switchport mode trunk
   switchport trunk allowed vlan 5,10-13,99,888,999
   no snmp trap link-status

@@ -138,8 +138,8 @@
 !Flash: bootflash: 13039 MB free
 !Flash: bootflash: 14542 MB total
 !
-!Flash: debug:      239479    Mar 25 03:20:10 2018  bootvar_debug.log
-!Flash: debug:           6    Mar 25 03:20:10 2018  bootvar_debug.meta
+!Flash: debug:      243127    Mar 26 09:26:40 2018  bootvar_debug.log
+!Flash: debug:           6    Mar 26 09:26:40 2018  bootvar_debug.meta
 !Flash: debug: Usage for debug://sup-local
 !Flash: debug:      0 MB used
 !Flash: debug:     1 MB free
@@ -148,7 +148,7 @@
 !Flash: logflash:        4096    Mar 07 18:59:30 2018  ISSU_debug_logs/
 !Flash: logflash:        4096    Feb 10 00:13:11 2018  core/
 !Flash: logflash:        4096    Feb 10 00:13:11 2018  debug/
-!Flash: logflash:       16384    Mar 26 00:38:15 2018  debug_logs/
+!Flash: logflash:       16384    Mar 27 01:50:54 2018  debug_logs/
 !Flash: logflash:        4096    Feb 10 00:13:11 2018  generic/
 !Flash: logflash:        4096                          log/
 !Flash: logflash:        4096    Mar 07 12:47:56 2018  vdc_1/
@@ -1280,4 +1280,6 @@ line vty
 boot nxos bootflash:/nxos.7.0.3.I5.2.bin 
 logging source-interface mgmt0
 logging timestamp milliseconds
+
+
 

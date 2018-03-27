@@ -100,7 +100,7 @@
 !Env:                                 (Watts )    (Watts )     (Watts )
 !Env: -------  -------------------  ----------  ----------  ----------  --------------
 !Env: 1        N9K-PAC-650W                0 W                     0 W     Shutdown
-!Env: 2        N9K-PAC-650W              154 W                   650 W     Ok
+!Env: 2        N9K-PAC-650W              155 W                   650 W     Ok
 !Env: Power Usage Summary:
 !Env: --------------------
 !Env: Power Supply redundancy mode (configured)                Non-Redundant(combined)
@@ -142,8 +142,8 @@
 !Flash: bootflash: 48494 MB free
 !Flash: bootflash: 51231 MB total
 !
-!Flash: debug:      178285    Mar 25 03:42:51 2018  bootvar_debug.log
-!Flash: debug:           6    Mar 25 03:42:51 2018  bootvar_debug.meta
+!Flash: debug:      186686    Mar 26 10:12:52 2018  bootvar_debug.log
+!Flash: debug:           6    Mar 26 10:12:52 2018  bootvar_debug.meta
 !Flash: debug: Usage for debug://sup-local
 !Flash: debug:      0 MB used
 !Flash: debug:     4 MB free
@@ -153,14 +153,14 @@
 !Flash: logflash:        4096    Dec 28 11:14:05 2017  command/
 !Flash: logflash:        4096    Nov 16 08:37:11 2017  core/
 !Flash: logflash:        4096    Nov 16 08:37:11 2017  debug/
-!Flash: logflash:       12288    Mar 26 03:41:45 2018  debug_logs/
+!Flash: logflash:       12288    Mar 27 01:52:45 2018  debug_logs/
 !Flash: logflash:        4096    Nov 16 08:37:11 2017  generic/
 !Flash: logflash:        4096                          log/
 !Flash: logflash:       16384    Nov 16 08:37:06 2017  lost+found/
 !Flash: logflash:        4096    Dec 20 13:46:05 2017  vdc_1/
 !Flash: logflash: Usage for logflash://sup-local
-!Flash: logflash:   592 MB used
-!Flash: logflash:  7471 MB free
+!Flash: logflash:   597 MB used
+!Flash: logflash:  7465 MB free
 !Flash: logflash:  8063 MB total
 !
 !Flash: volatile:         100    Mar 15 06:58:25 2018  switchport-11231/
@@ -818,7 +818,7 @@ aaa authentication login ascii-authentication
 tacacs-server directed-request 
 
 no ip igmp snooping
-vlan 1-2,5,17,20,22,24,26,36,76,100,256
+vlan 1-2,5,17,20,22,24,26,36,76,256
 ip sla responder
 vlan 2
   name prod-services_10.15.2.0_24
@@ -838,8 +838,6 @@ vlan 36
   name mgmt-srv_10.15.36.0_24
 vlan 76
   name deploy_10.15.76.0_24
-vlan 100
-  name mcr_10.15.100.0_24
 vlan 256
   name ssb_10.15.1.0_24
 
@@ -1455,22 +1453,46 @@ interface Ethernet101/1/9
   no snmp trap link-status
 
 interface Ethernet101/1/10
+  description Voip mcr
+  switchport access vlan 2
+  spanning-tree port type edge
   no snmp trap link-status
+  vpc orphan-port suspend
 
 interface Ethernet101/1/11
+  description Voip mcr
+  switchport access vlan 2
+  spanning-tree port type edge
   no snmp trap link-status
+  vpc orphan-port suspend
 
 interface Ethernet101/1/12
+  description Voip mcr
+  switchport access vlan 2
+  spanning-tree port type edge
   no snmp trap link-status
+  vpc orphan-port suspend
 
 interface Ethernet101/1/13
+  description Voip mcr
+  switchport access vlan 2
+  spanning-tree port type edge
   no snmp trap link-status
+  vpc orphan-port suspend
 
 interface Ethernet101/1/14
+  description Voip mcr
+  switchport access vlan 2
+  spanning-tree port type edge
   no snmp trap link-status
+  vpc orphan-port suspend
 
 interface Ethernet101/1/15
+  description Voip mcr
+  switchport access vlan 2
+  spanning-tree port type edge
   no snmp trap link-status
+  vpc orphan-port suspend
 
 interface Ethernet101/1/16
   no snmp trap link-status

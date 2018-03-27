@@ -131,8 +131,8 @@
 !Env:                                 (Watts )    (Watts )     (Watts )
 !Env: -------  -------------------  ----------  ----------  ----------  --------------
 !Env: 1        N9K-PAC-3000W-B           274 W                  3000 W     Ok
-!Env: 2        N9K-PAC-3000W-B           285 W                  3000 W     Ok
-!Env: 3        N9K-PAC-3000W-B           302 W                  3000 W     Ok
+!Env: 2        N9K-PAC-3000W-B           281 W                  3000 W     Ok
+!Env: 3        N9K-PAC-3000W-B           299 W                  3000 W     Ok
 !Env: 4        N9K-PAC-3000W-B           285 W                  3000 W     Ok
 !Env: 5        ------------                0 W                     0 W     Absent
 !Env: 6        ------------                0 W                     0 W     Absent
@@ -142,15 +142,15 @@
 !Env: Module    Model                     Draw    Allocated    Status
 !Env:                                  (Watts )     (Watts )
 !Env: -------  -------------------  -----------  -----------  --------------
-!Env: 1        N9K-X9564PX             257.00 W     399.60 W    Powered-Up
-!Env: 2        N9K-X9564PX             246.00 W     399.60 W    Powered-Up
+!Env: 1        N9K-X9564PX             256.00 W     399.60 W    Powered-Up
+!Env: 2        N9K-X9564PX             245.00 W     399.60 W    Powered-Up
 !Env: Xb21     xbar                      N/A          0.00 W    Absent
 !Env: Xb22     N9K-C9508-FM            140.00 W     250.80 W    Powered-Up
 !Env: Xb23     N9K-C9508-FM            126.00 W     250.80 W    Powered-Up
 !Env: Xb24     N9K-C9508-FM            133.00 W     250.80 W    Powered-Up
 !Env: Xb25     xbar                      N/A          0.00 W    Absent
 !Env: Xb26     N9K-C9508-FM            128.00 W     250.80 W    Powered-Up
-!Env: 27       N9K-SUP-A                62.00 W      79.92 W    Powered-Up
+!Env: 27       N9K-SUP-A                63.00 W      79.92 W    Powered-Up
 !Env: 28       supervisor                N/A          0.00 W    Absent
 !Env: 29       N9K-SC-A                 14.00 W      25.20 W    Powered-Up
 !Env: 30       N9K-SC-A                 14.00 W      25.20 W    Powered-Up
@@ -204,8 +204,8 @@
 !Flash: bootflash: 49596 MB free
 !Flash: bootflash: 51231 MB total
 !
-!Flash: debug:      789675    Mar 25 03:20:27 2018  bootvar_debug.log
-!Flash: debug:           6    Mar 25 03:20:27 2018  bootvar_debug.meta
+!Flash: debug:      801987    Mar 26 19:29:38 2018  bootvar_debug.log
+!Flash: debug:           6    Mar 26 19:29:38 2018  bootvar_debug.meta
 !Flash: debug: Usage for debug://sup-local
 !Flash: debug:      0 MB used
 !Flash: debug:     4 MB free
@@ -214,7 +214,7 @@
 !Flash: logflash:        4096    Mar 28 02:38:40 2011  ISSU_debug_logs/
 !Flash: logflash:        4096    Jan 02 11:02:29 2011  core/
 !Flash: logflash:        4096    Jan 02 11:02:29 2011  debug/
-!Flash: logflash:      585728    Mar 26 01:09:39 2018  debug_logs/
+!Flash: logflash:      585728    Mar 27 03:01:27 2018  debug_logs/
 !Flash: logflash:        4096    Jan 02 11:02:29 2011  generic/
 !Flash: logflash:        4096                          log/
 !Flash: logflash:       16384    Jan 02 10:48:38 2011  lost+found/
@@ -3349,10 +3349,8 @@ router bgp 65001
         route-map rm_spa1_wn1_in_out out
         prefix-list pl_evo_spa1 in
     neighbor 192.168.121.194
-      bfd
       remote-as 65015
       description tbs1-wn-p002-cnx
-      shutdown
       address-family ipv4 unicast
         route-map rm_tbs1_wn1_in_out in
         route-map rm_tbs1_wn1_in_out out
@@ -3465,4 +3463,3 @@ ip sla schedule 120 life forever start-time now
 logging server 10.8.48.122 5 use-vrf management
 logging source-interface mgmt0
 logging level syslog 6
-

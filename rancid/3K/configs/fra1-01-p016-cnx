@@ -134,12 +134,12 @@
 !Flash: bootflash:        4096    Feb 10 00:14:18 2018  virtual-instance/
 !Flash: bootflash:          59    Feb 10 00:14:09 2018  virtual-instance.conf
 !Flash: bootflash: Usage for bootflash://sup-local
-!Flash: bootflash:  1502 MB used
-!Flash: bootflash: 12000 MB free
+!Flash: bootflash:  1503 MB used
+!Flash: bootflash: 11999 MB free
 !Flash: bootflash: 13503 MB total
 !
-!Flash: debug:      213048    Mar 25 03:20:10 2018  bootvar_debug.log
-!Flash: debug:           6    Mar 25 03:20:10 2018  bootvar_debug.meta
+!Flash: debug:      234310    Mar 26 09:47:08 2018  bootvar_debug.log
+!Flash: debug:           6    Mar 26 09:47:08 2018  bootvar_debug.meta
 !Flash: debug: Usage for debug://sup-local
 !Flash: debug:      0 MB used
 !Flash: debug:     1 MB free
@@ -148,13 +148,13 @@
 !Flash: logflash:        4096    Mar 07 20:19:15 2018  ISSU_debug_logs/
 !Flash: logflash:        4096    Feb 10 00:13:34 2018  core/
 !Flash: logflash:        4096    Feb 10 00:13:34 2018  debug/
-!Flash: logflash:       20480    Mar 26 01:41:50 2018  debug_logs/
+!Flash: logflash:       20480    Mar 27 01:39:38 2018  debug_logs/
 !Flash: logflash:        4096    Feb 10 00:13:34 2018  generic/
 !Flash: logflash:        4096                          log/
 !Flash: logflash:        4096    Mar 07 12:20:14 2018  vdc_1/
 !Flash: logflash: Usage for logflash://sup-local
-!Flash: logflash:  1502 MB used
-!Flash: logflash: 12000 MB free
+!Flash: logflash:  1503 MB used
+!Flash: logflash: 11999 MB free
 !Flash: logflash: 13503 MB total
 !
 !Flash: volatile:         100    Mar 09 11:47:26 2018  switchport-1016/
@@ -606,6 +606,7 @@ interface port-channel106
 interface port-channel107
   description A_fra1-repsql1-pr
   switchport access vlan 13
+  spanning-tree port type edge
   no snmp trap link-status
   storm-control broadcast level 5.00
   storm-control multicast level 5.00
@@ -676,6 +677,7 @@ interface port-channel113
 interface port-channel114
   description A_fra1-repsql2-pr
   switchport access vlan 13
+  spanning-tree port type edge
   no snmp trap link-status
   storm-control broadcast level 5.00
   storm-control multicast level 5.00
@@ -855,6 +857,7 @@ interface Ethernet1/6
 interface Ethernet1/7
   description A_fra1-repsql1-pr
   switchport access vlan 13
+  spanning-tree port type edge
   no snmp trap link-status
   storm-control broadcast level 5.00
   storm-control multicast level 5.00
@@ -865,9 +868,11 @@ interface Ethernet1/8
   switchport access vlan 76
   switchport trunk native vlan 76
   switchport trunk allowed vlan 76
+  spanning-tree port type edge
   no snmp trap link-status
   storm-control broadcast level 5.00
   storm-control multicast level 5.00
+  vpc orphan-port suspend
 
 interface Ethernet1/9
   description A_fra1-hdpd3-pr
@@ -894,6 +899,7 @@ interface Ethernet1/11
   no snmp trap link-status
   storm-control broadcast level 5.00
   storm-control multicast level 5.00
+  vpc orphan-port suspend
 
 interface Ethernet1/12
   description A_fra1-pkvm9-pr
@@ -916,6 +922,7 @@ interface Ethernet1/13
 interface Ethernet1/14
   description A_fra1-repsql2-pr
   switchport access vlan 13
+  spanning-tree port type edge
   no snmp trap link-status
   storm-control broadcast level 5.00
   storm-control multicast level 5.00
@@ -1221,16 +1228,16 @@ interface Ethernet1/50
   no shutdown
 
 interface Ethernet1/51
+  shutdown
   no snmp trap link-status
   storm-control broadcast level 5.00
   storm-control multicast level 5.00
-  no shutdown
 
 interface Ethernet1/52
+  shutdown
   no snmp trap link-status
   storm-control broadcast level 5.00
   storm-control multicast level 5.00
-  no shutdown
 
 interface Ethernet1/53
   description A_fra1-01-p015-cnx et1/53 (in Po4095) PEER LINK 

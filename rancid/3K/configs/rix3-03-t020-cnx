@@ -351,6 +351,7 @@ aaa group server tacacs+ TacacsGroup
 crypto key param rsa label HKG2-05-sw3-c3000 modulus 512
 logging event link-status default
 logging event trunk-status default
+service unsupported-transceiver
 errdisable recovery cause link-flap
 errdisable recovery cause udld
 errdisable recovery cause bpduguard
@@ -435,6 +436,12 @@ vlan 161
   mode fabricpath
 vlan 162
   name kc_live1_10.30.162.0/24
+  mode fabricpath
+vlan 172
+  name ks_pre1_10.30.172.0/24
+  mode fabricpath
+vlan 173
+  name ks_live1_10.30.173.0/24
   mode fabricpath
 vlan 175
   name lb-dev
@@ -983,7 +990,7 @@ interface port-channel153
 interface port-channel1000
   description A_rix3-03-p030/1-cnx Eth1/51/1 (our Eth1/25;Eth1/47)
   switchport mode trunk
-  switchport trunk allowed vlan 9,135,139,141-143,161-162,176,201,218,223,225,229,244-245
+  switchport trunk allowed vlan 9,135,139,141-143,161-162,172-173,176,201,218,223,225,229,244-245
   no snmp trap link-status
   storm-control broadcast level 5.00
   storm-control multicast level 5.00
@@ -1263,7 +1270,7 @@ interface Ethernet1/24
 interface Ethernet1/25
   description A_rix3-03-p031-cnx Eth1/51/1 (our Po1000)
   switchport mode trunk
-  switchport trunk allowed vlan 9,135,139,141-143,161-162,176,201,218,223,225,229,244-245
+  switchport trunk allowed vlan 9,135,139,141-143,161-162,172-173,176,201,218,223,225,229,244-245
   no snmp trap link-status
   storm-control broadcast level 5.00
   storm-control multicast level 5.00
@@ -1459,7 +1466,7 @@ interface Ethernet1/46
 interface Ethernet1/47
   description A_rix3-03-p030-cnx Eth1/51/1 (our Po1000)
   switchport mode trunk
-  switchport trunk allowed vlan 9,135,139,141-143,161-162,176,201,218,223,225,229,244-245
+  switchport trunk allowed vlan 9,135,139,141-143,161-162,172-173,176,201,218,223,225,229,244-245
   no snmp trap link-status
   storm-control broadcast level 5.00
   storm-control multicast level 5.00
@@ -2313,5 +2320,3 @@ logging timestamp milliseconds
 
 switch-profile NX
   sync-peers destination 192.168.103.21
-
-
