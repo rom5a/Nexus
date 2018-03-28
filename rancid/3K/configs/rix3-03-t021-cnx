@@ -424,9 +424,6 @@ vlan 141
 vlan 142
   name backup_prodops_10.30.142.0/24
   mode fabricpath
-vlan 143
-  name ssb_netgroup_pre_10.30.143.0/24
-  mode fabricpath
 vlan 161
   name kc_pre1_10.30.161.0/24
   mode fabricpath

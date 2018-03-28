@@ -1972,6 +1972,7 @@ interface Ethernet101/1/35
 
 interface Ethernet101/1/36
   description B_rix1-dect02
+  shutdown
   switchport access vlan 66
   spanning-tree port type edge
   no snmp trap link-status
@@ -5471,8 +5472,8 @@ interface Ethernet111/1/10
   vpc orphan-port suspend
 
 interface Ethernet111/1/11
-  description DPC
-  switchport access vlan 51
+  description D3P11-13
+  switchport access vlan 66
   spanning-tree port type edge
   no snmp trap link-status
   storm-control broadcast level 5.00

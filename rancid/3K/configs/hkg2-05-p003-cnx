@@ -134,8 +134,8 @@
 !Flash: bootflash:   222 MB free
 !Flash: bootflash:  1534 MB total
 !
-!Flash: debug:      211308    Mar 26 09:33:03 2018  bootvar_debug.log
-!Flash: debug:           6    Mar 26 09:33:03 2018  bootvar_debug.meta
+!Flash: debug:      213991    Mar 27 10:19:48 2018  bootvar_debug.log
+!Flash: debug:           6    Mar 27 10:19:48 2018  bootvar_debug.meta
 !Flash: debug: Usage for debug://sup-local
 !Flash: debug:      0 MB used
 !Flash: debug:     1 MB free
@@ -458,7 +458,6 @@ aaa accounting default group TacacsGroup
 aaa authentication login ascii-authentication 
 tacacs-server directed-request 
 
-no ip igmp snooping
 vlan 1,5,10-13
 vlan 99
   name ETHL-1123_192.168.121.36/30
@@ -467,7 +466,6 @@ vlan 900
   name vpc-keepalive
 vlan 999
   name Internet
-
 spanning-tree vlan 1-999 priority 24576
 vrf context management
   ip route 0.0.0.0/0 10.3.254.1

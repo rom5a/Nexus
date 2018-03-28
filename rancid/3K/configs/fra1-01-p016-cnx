@@ -135,11 +135,11 @@
 !Flash: bootflash:          59    Feb 10 00:14:09 2018  virtual-instance.conf
 !Flash: bootflash: Usage for bootflash://sup-local
 !Flash: bootflash:  1503 MB used
-!Flash: bootflash: 11999 MB free
+!Flash: bootflash: 12000 MB free
 !Flash: bootflash: 13503 MB total
 !
-!Flash: debug:      234310    Mar 26 09:47:08 2018  bootvar_debug.log
-!Flash: debug:           6    Mar 26 09:47:08 2018  bootvar_debug.meta
+!Flash: debug:      241722    Mar 27 10:03:03 2018  bootvar_debug.log
+!Flash: debug:           6    Mar 27 10:03:03 2018  bootvar_debug.meta
 !Flash: debug: Usage for debug://sup-local
 !Flash: debug:      0 MB used
 !Flash: debug:     1 MB free
@@ -148,13 +148,13 @@
 !Flash: logflash:        4096    Mar 07 20:19:15 2018  ISSU_debug_logs/
 !Flash: logflash:        4096    Feb 10 00:13:34 2018  core/
 !Flash: logflash:        4096    Feb 10 00:13:34 2018  debug/
-!Flash: logflash:       20480    Mar 27 01:39:38 2018  debug_logs/
+!Flash: logflash:       20480    Mar 27 23:55:11 2018  debug_logs/
 !Flash: logflash:        4096    Feb 10 00:13:34 2018  generic/
 !Flash: logflash:        4096                          log/
 !Flash: logflash:        4096    Mar 07 12:20:14 2018  vdc_1/
 !Flash: logflash: Usage for logflash://sup-local
 !Flash: logflash:  1503 MB used
-!Flash: logflash: 11999 MB free
+!Flash: logflash: 12000 MB free
 !Flash: logflash: 13503 MB total
 !
 !Flash: volatile:         100    Mar 09 11:47:26 2018  switchport-1016/
@@ -504,7 +504,6 @@ aaa accounting default group TacacsGroup
 aaa authentication login ascii-authentication 
 tacacs-server directed-request 
 
-no ip igmp snooping
 vlan 1
 vlan 9
   name goc_10.8.9.0/24
@@ -528,7 +527,6 @@ vlan 257
   name ss
 vlan 258
   name ssf_10.8.3.0/24
-
 vrf context management
   ip route 0.0.0.0/0 10.8.0.1
 no system urpf disable

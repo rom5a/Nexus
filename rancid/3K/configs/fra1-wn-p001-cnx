@@ -131,9 +131,9 @@
 !Env:                                 (Watts )    (Watts )     (Watts )
 !Env: -------  -------------------  ----------  ----------  ----------  --------------
 !Env: 1        N9K-PAC-3000W-B           285 W                  3000 W     Ok
-!Env: 2        N9K-PAC-3000W-B           281 W                  3000 W     Ok
-!Env: 3        N9K-PAC-3000W-B           274 W                  3000 W     Ok
-!Env: 4        N9K-PAC-3000W-B           306 W                  3000 W     Ok
+!Env: 2        N9K-PAC-3000W-B           278 W                  3000 W     Ok
+!Env: 3        N9K-PAC-3000W-B           278 W                  3000 W     Ok
+!Env: 4        N9K-PAC-3000W-B           302 W                  3000 W     Ok
 !Env: 5        ------------                0 W                     0 W     Absent
 !Env: 6        ------------                0 W                     0 W     Absent
 !Env: 7        ------------                0 W                     0 W     Absent
@@ -150,13 +150,13 @@
 !Env: Xb24     N9K-C9508-FM            134.00 W     250.80 W    Powered-Up
 !Env: Xb25     xbar                      N/A          0.00 W    Absent
 !Env: Xb26     N9K-C9508-FM            132.00 W     250.80 W    Powered-Up
-!Env: 27       N9K-SUP-A                65.00 W      79.92 W    Powered-Up
+!Env: 27       N9K-SUP-A                63.00 W      79.92 W    Powered-Up
 !Env: 28       supervisor                N/A          0.00 W    Absent
 !Env: 29       N9K-SC-A                 14.00 W      25.20 W    Powered-Up
 !Env: 30       N9K-SC-A                 14.00 W      25.20 W    Powered-Up
-!Env: fan1     N9K-C9508-FAN            39.00 W     249.00 W    Powered-Up
+!Env: fan1     N9K-C9508-FAN            38.00 W     249.00 W    Powered-Up
 !Env: fan2     N9K-C9508-FAN            40.00 W     249.00 W    Powered-Up
-!Env: fan3     N9K-C9508-FAN            40.00 W     249.00 W    Powered-Up
+!Env: fan3     N9K-C9508-FAN            39.00 W     249.00 W    Powered-Up
 !Env: N/A - Per module power not available
 !Env: Power Usage Summary:
 !Env: --------------------
@@ -204,8 +204,8 @@
 !Flash: bootflash: 19041 MB free
 !Flash: bootflash: 20852 MB total
 !
-!Flash: debug:     1048580    Mar 26 09:42:46 2018  bootvar_debug.log
-!Flash: debug:           6    Mar 26 09:42:46 2018  bootvar_debug.meta
+!Flash: debug:     1048580    Mar 27 12:23:41 2018  bootvar_debug.log
+!Flash: debug:           6    Mar 27 12:23:41 2018  bootvar_debug.meta
 !Flash: debug: Usage for debug://sup-local
 !Flash: debug:     1 MB used
 !Flash: debug:     3 MB free
@@ -214,7 +214,7 @@
 !Flash: logflash:        4096    Sep 14 08:25:37 2017  ISSU_debug_logs/
 !Flash: logflash:        4096    Jun 21 15:50:56 2017  core/
 !Flash: logflash:        4096    Jun 21 15:50:56 2017  debug/
-!Flash: logflash:      581632    Mar 27 02:34:02 2018  debug_logs/
+!Flash: logflash:      581632    Mar 28 01:35:56 2018  debug_logs/
 !Flash: logflash:        4096    Jun 21 15:50:56 2017  generic/
 !Flash: logflash:        4096                          log/
 !Flash: logflash:       16384    Jan 01 12:52:08 2011  lost+found/

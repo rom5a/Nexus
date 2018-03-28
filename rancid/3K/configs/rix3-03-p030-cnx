@@ -134,11 +134,11 @@
 !Flash: bootflash:          59    Oct 11 06:54:34 2017  virtual-instance.conf
 !Flash: bootflash: Usage for bootflash://sup-local
 !Flash: bootflash:  1496 MB used
-!Flash: bootflash: 13045 MB free
+!Flash: bootflash: 13046 MB free
 !Flash: bootflash: 14542 MB total
 !
-!Flash: debug:      168049    Mar 26 10:36:09 2018  bootvar_debug.log
-!Flash: debug:           6    Mar 26 10:36:09 2018  bootvar_debug.meta
+!Flash: debug:      181675    Mar 27 13:54:45 2018  bootvar_debug.log
+!Flash: debug:           6    Mar 27 13:54:45 2018  bootvar_debug.meta
 !Flash: debug: Usage for debug://sup-local
 !Flash: debug:      0 MB used
 !Flash: debug:     1 MB free
@@ -147,15 +147,16 @@
 !Flash: logflash:        4096    Dec 11 08:39:37 2017  ISSU_debug_logs/
 !Flash: logflash:        4096    Oct 11 06:53:50 2017  core/
 !Flash: logflash:        4096    Oct 11 06:53:50 2017  debug/
-!Flash: logflash:      167936    Mar 27 02:04:53 2018  debug_logs/
+!Flash: logflash:      167936    Mar 28 02:26:49 2018  debug_logs/
 !Flash: logflash:        4096    Oct 11 06:53:50 2017  generic/
 !Flash: logflash:        4096                          log/
 !Flash: logflash:        4096    Oct 11 07:02:42 2017  vdc_1/
 !Flash: logflash: Usage for logflash://sup-local
 !Flash: logflash:  1496 MB used
-!Flash: logflash: 13045 MB free
+!Flash: logflash: 13046 MB free
 !Flash: logflash: 14542 MB total
 !
+!Flash: volatile:         100    Mar 27 13:07:40 2018  switchport-12684/
 !Flash: volatile:         100    Mar 21 08:39:35 2018  switchport-15368/
 !Flash: volatile:         100    Mar 21 08:39:41 2018  switchport-15428/
 !Flash: volatile:         100    Mar 21 08:39:48 2018  switchport-15521/
@@ -506,8 +507,6 @@ vlan 141
   name goc_netgroup_pre_10.30.141.0/24
 vlan 142
   name backup_prodops_10.30.142.0/24
-vlan 143
-  name ssb_netgroup_pre_10.30.143.0/24
 vlan 161
   name kc_pre1_10.30.161.0/24
 vlan 162
@@ -768,7 +767,7 @@ interface port-channel4095
   vpc peer-link
 
 interface Ethernet1/1
-  description A_rix3-ppcoredb1 int1
+  description A_rix3-ppcoredb1 int2
   switchport access vlan 223
   spanning-tree port type edge
   no snmp trap link-status

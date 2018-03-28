@@ -690,6 +690,7 @@ aaa group server tacacs+ TacacsGroup
 crypto key param rsa label RIX1-02-SW201-C5672 modulus 512
 logging event link-status default
 logging event trunk-status default
+service unsupported-transceiver
 errdisable recovery cause link-flap
 errdisable recovery cause udld
 errdisable recovery cause bpduguard

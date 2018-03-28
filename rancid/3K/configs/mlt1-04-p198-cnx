@@ -105,8 +105,8 @@
 !Env: Supply    Model                   Output      Input      Capacity    Status
 !Env:                                 (Watts )    (Watts )     (Watts )
 !Env: -------  -------------------  ----------  ----------  ----------  --------------
-!Env: 1        N9K-PAC-650W               74 W                   650 W     Ok
-!Env: 2        N9K-PAC-650W               74 W                   650 W     Ok
+!Env: 1        N9K-PAC-650W               71 W                   650 W     Ok
+!Env: 2        N9K-PAC-650W               76 W                   650 W     Ok
 !Env: Power Usage Summary:
 !Env: --------------------
 !Env: Power Supply redundancy mode (configured)                Non-Redundant(combined)
@@ -148,8 +148,8 @@
 !Flash: bootflash: 50266 MB free
 !Flash: bootflash: 51231 MB total
 !
-!Flash: debug:      284139    Mar 26 09:58:52 2018  bootvar_debug.log
-!Flash: debug:           6    Mar 26 09:58:52 2018  bootvar_debug.meta
+!Flash: debug:      288533    Mar 27 10:21:43 2018  bootvar_debug.log
+!Flash: debug:           6    Mar 27 10:21:43 2018  bootvar_debug.meta
 !Flash: debug: Usage for debug://sup-local
 !Flash: debug:      0 MB used
 !Flash: debug:     4 MB free
@@ -157,14 +157,14 @@
 !
 !Flash: logflash:        4096    Mar 21 18:38:03 2017  core/
 !Flash: logflash:        4096    Mar 21 18:38:03 2017  debug/
-!Flash: logflash:        4096    Mar 27 00:10:38 2018  debug_logs/
+!Flash: logflash:        4096    Mar 28 00:38:06 2018  debug_logs/
 !Flash: logflash:        4096    Mar 21 18:38:03 2017  generic/
 !Flash: logflash:        4096                          log/
 !Flash: logflash:       16384    Mar 21 18:38:00 2017  lost+found/
 !Flash: logflash:        4096    Aug 21 03:17:00 2017  vdc_1/
 !Flash: logflash: Usage for logflash://sup-local
 !Flash: logflash:   571 MB used
-!Flash: logflash:  7492 MB free
+!Flash: logflash:  7491 MB free
 !Flash: logflash:  8063 MB total
 !
 !Flash: volatile:          40    Aug 23 06:06:49 2017  virtual-instance/
@@ -485,7 +485,6 @@ aaa accounting default group TacacsGroup
 aaa authentication login ascii-authentication 
 tacacs-server directed-request 
 
-no ip igmp snooping
 vlan 1-2,5,8,10-12,19-27,29-32,34,36,40,76,81,93,99,256,998-999,1026
 vlan 2
   name prod-services_10.40.2.0/24

@@ -154,8 +154,9 @@ class DeviceValidator:
         self.logger.info("Validation result for " + str(self.file_name))
         self.validate_mandatory_lines()
         self.validate_syslog_configuration()
+        self.validate_ntp_configuration()
         self.validate_local_users()
-        self.validate_ntp_server()
+        #self.validate_ntp_server()
         self.validate_ethernet()
         self.validate_channel_ports()
         self.validate_console_configuration()
@@ -224,22 +225,45 @@ class DeviceValidator:
 
         self.logger.info("")
 
-    def validate_ntp_server(self):
-        self.logger.info("\tNTP config validation:")
+    ###Start
+    def validate_ntp_configuration(self):
+        self.logger.info("\tNTP configuration: ")
         matching = [config_line for config_line in self.config_lines if "ntp server " in config_line]
         if matching:
-            self.logger.info("\tNTP server config missing:")
-            for ntp_server in VRF_NTP:
-                if ntp_server not in matching:
-                    self.absent_config_lines.append(ntp_server)
-                    self.logger.info("\t\t" + str(ntp_server))
-                else:
-                    matching.remove(ntp_server)
-        else:
             self.absent_config_lines.append("NTP server not set")
             self.logger.info("\t\tNTP server not set")
 
+        server_configs = eval(self.config.get("Main", "ntp_server_config"))
+        for server_config in server_configs:
+            if server_config not in matching:
+                self.logger.info("\t\t" + server_config)
+                self.absent_config_lines.append(server_config)
+
+        # if matching:
+        #     self.logger.info("\tIncorrect SYSLOG config")
+        #     for redundant_line in matching:
+        #         self.redundant_config_lines.append("SYSLOG: " + str(redundant_line))
+        #         self.logger.info("\t\t" + str(redundant_line))
+
         self.logger.info("")
+    ###Finish
+
+    # def validate_ntp_server(self):
+    #     self.logger.info("\tNTP config validation:")
+    #     matching = [config_line for config_line in self.config_lines if "ntp server " in config_line]
+    #     if matching:
+    #         self.logger.info("\tNTP server config missing:")
+    #         for ntp_server in VRF_NTP:
+    #             if ntp_server not in matching:
+    #                 self.absent_config_lines.append(ntp_server)
+    #                 self.logger.info("\t\t" + str(ntp_server))
+    #             else:
+    #                 matching.remove(ntp_server)
+    #     else:
+    #         self.absent_config_lines.append("NTP server not set")
+    #         self.logger.info("\t\tNTP server not set")
+    #
+    #     self.logger.info("")
 
     def validate_ethernet(self):
         self.logger.info("\tEthernet config validation:")

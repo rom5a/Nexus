@@ -84,8 +84,8 @@
 !Env: Supply    Model                   Output      Input      Capacity    Status
 !Env:                                 (Watts )    (Watts )     (Watts )
 !Env: -------  -------------------  ----------  ----------  ----------  --------------
-!Env: 1        N9K-PAC-650W               75 W                   650 W     Ok
-!Env: 2        N9K-PAC-650W               71 W                   650 W     Ok
+!Env: 1        N9K-PAC-650W               73 W                   650 W     Ok
+!Env: 2        N9K-PAC-650W               70 W                   650 W     Ok
 !Env: Power Usage Summary:
 !Env: --------------------
 !Env: Power Supply redundancy mode (configured)                Non-Redundant(combined)
@@ -120,8 +120,8 @@
 !Flash: bootflash: 50269 MB free
 !Flash: bootflash: 51231 MB total
 !
-!Flash: debug:      116333    Mar 26 03:45:36 2018  bootvar_debug.log
-!Flash: debug:           6    Mar 26 03:45:36 2018  bootvar_debug.meta
+!Flash: debug:      125121    Mar 27 10:26:40 2018  bootvar_debug.log
+!Flash: debug:           6    Mar 27 10:26:40 2018  bootvar_debug.meta
 !Flash: debug: Usage for debug://sup-local
 !Flash: debug:      0 MB used
 !Flash: debug:     4 MB free
@@ -129,14 +129,14 @@
 !
 !Flash: logflash:        4096    Jun 23 22:55:17 2017  core/
 !Flash: logflash:        4096    Jun 23 22:55:17 2017  debug/
-!Flash: logflash:        4096    Mar 27 03:05:04 2018  debug_logs/
+!Flash: logflash:        4096    Mar 28 03:07:04 2018  debug_logs/
 !Flash: logflash:        4096    Jun 23 22:55:17 2017  generic/
 !Flash: logflash:        4096                          log/
 !Flash: logflash:       16384    Jun 23 22:55:14 2017  lost+found/
 !Flash: logflash:        4096    Mar 17 05:55:38 2018  vdc_1/
 !Flash: logflash: Usage for logflash://sup-local
-!Flash: logflash:   622 MB used
-!Flash: logflash:  7441 MB free
+!Flash: logflash:   623 MB used
+!Flash: logflash:  7440 MB free
 !Flash: logflash:  8063 MB total
 !
 !Flash: volatile:          40    Jan 21 20:01:09 2018  virtual-instance/
@@ -1427,6 +1427,3 @@ boot nxos bootflash:/nxos.7.0.3.I5.2.bin
 logging server 10.4.48.112 7 use-vrf management
 logging source-interface mgmt0
 logging timestamp milliseconds
-
-
-

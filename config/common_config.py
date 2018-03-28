@@ -42,10 +42,10 @@ LOCAL_USERS = [
     'username evogaming password 5',
 ]
 
-VRF_NTP = [
-   'ntp server 10.30.10.220 use-vrf management',
-   'ntp server 10.30.10.221 use-vrf management',
-]
+# VRF_NTP = [
+#    'ntp server 10.30.10.220 use-vrf management',
+#    'ntp server 10.30.10.221 use-vrf management',
+# ]
 
 CONSOLE_CONFIG = [
     "exec-timeout 15"

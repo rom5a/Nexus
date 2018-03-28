@@ -91,7 +91,7 @@
 !Env: Supply    Model                   Output      Input      Capacity    Status
 !Env:                                 (Watts )    (Watts )     (Watts )
 !Env: -------  -------------------  ----------  ----------  ----------  --------------
-!Env: 1        N9K-PAC-650W               69 W                   650 W     Ok
+!Env: 1        N9K-PAC-650W               70 W                   650 W     Ok
 !Env: 2        N9K-PAC-650W               72 W                   650 W     Ok
 !Env: Power Usage Summary:
 !Env: --------------------
@@ -127,8 +127,8 @@
 !Flash: bootflash: 50269 MB free
 !Flash: bootflash: 51231 MB total
 !
-!Flash: debug:      352451    Mar 26 03:44:15 2018  bootvar_debug.log
-!Flash: debug:           6    Mar 26 03:44:15 2018  bootvar_debug.meta
+!Flash: debug:      365633    Mar 27 10:27:41 2018  bootvar_debug.log
+!Flash: debug:           6    Mar 27 10:27:41 2018  bootvar_debug.meta
 !Flash: debug: Usage for debug://sup-local
 !Flash: debug:      0 MB used
 !Flash: debug:     4 MB free
@@ -136,7 +136,7 @@
 !
 !Flash: logflash:        4096    Jun 24 00:44:05 2017  core/
 !Flash: logflash:        4096    Jun 24 00:44:05 2017  debug/
-!Flash: logflash:        4096    Mar 27 00:59:16 2018  debug_logs/
+!Flash: logflash:        4096    Mar 28 00:10:47 2018  debug_logs/
 !Flash: logflash:        4096    Jun 24 00:44:05 2017  generic/
 !Flash: logflash:        4096                          log/
 !Flash: logflash:       16384    Jun 24 00:44:02 2017  lost+found/

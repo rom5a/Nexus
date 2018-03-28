@@ -100,7 +100,7 @@
 !Env:                                 (Watts )    (Watts )     (Watts )
 !Env: -------  -------------------  ----------  ----------  ----------  --------------
 !Env: 1        N9K-PAC-650W                0 W                     0 W     Shutdown
-!Env: 2        N9K-PAC-650W              155 W                   650 W     Ok
+!Env: 2        N9K-PAC-650W              153 W                   650 W     Ok
 !Env: Power Usage Summary:
 !Env: --------------------
 !Env: Power Supply redundancy mode (configured)                Non-Redundant(combined)
@@ -142,8 +142,8 @@
 !Flash: bootflash: 48494 MB free
 !Flash: bootflash: 51231 MB total
 !
-!Flash: debug:      186686    Mar 26 10:12:52 2018  bootvar_debug.log
-!Flash: debug:           6    Mar 26 10:12:52 2018  bootvar_debug.meta
+!Flash: debug:      194495    Mar 27 09:54:51 2018  bootvar_debug.log
+!Flash: debug:           6    Mar 27 09:54:51 2018  bootvar_debug.meta
 !Flash: debug: Usage for debug://sup-local
 !Flash: debug:      0 MB used
 !Flash: debug:     4 MB free
@@ -153,7 +153,7 @@
 !Flash: logflash:        4096    Dec 28 11:14:05 2017  command/
 !Flash: logflash:        4096    Nov 16 08:37:11 2017  core/
 !Flash: logflash:        4096    Nov 16 08:37:11 2017  debug/
-!Flash: logflash:       12288    Mar 27 01:52:45 2018  debug_logs/
+!Flash: logflash:       12288    Mar 28 00:03:46 2018  debug_logs/
 !Flash: logflash:        4096    Nov 16 08:37:11 2017  generic/
 !Flash: logflash:        4096                          log/
 !Flash: logflash:       16384    Nov 16 08:37:06 2017  lost+found/
@@ -817,7 +817,6 @@ aaa accounting default group TacacsGroup
 aaa authentication login ascii-authentication 
 tacacs-server directed-request 
 
-no ip igmp snooping
 vlan 1-2,5,17,20,22,24,26,36,76,256
 ip sla responder
 vlan 2
@@ -2272,6 +2271,7 @@ interface Ethernet108/1/48
   spanning-tree port type edge
   no snmp trap link-status
   vpc orphan-port suspend
+clock timezone GMT 0 0
 line console
   exec-timeout 15
 line vty
