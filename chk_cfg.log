@@ -1,896 +1,896 @@
-2018-03-28 10:45:57,399  Validation result for fra1-wn-p002-cnx
-2018-03-28 10:45:57,400  	Mandatory config lines missed: 
-2018-03-28 10:45:57,401  
-2018-03-28 10:45:57,401  	SYSLOG configuration: 
-2018-03-28 10:45:57,407  
-2018-03-28 10:45:57,407  	NTP configuration: 
-2018-03-28 10:45:57,407  		NTP server not set
-2018-03-28 10:45:57,407  
-2018-03-28 10:45:57,408  	Users validation:
-2018-03-28 10:45:57,414  	User missing:
-2018-03-28 10:45:57,414  		username admin password 5
-2018-03-28 10:45:57,414  		username evogaming password 5
-2018-03-28 10:45:57,414  
-2018-03-28 10:45:57,414  	Incorrent users:
-2018-03-28 10:45:57,414  		username admin password 5 $5$SQy/tmIj$42hkukNe4ROx4Hs88YzMfOZjdR4r31IZ9l7zwbeElnC  role network-admin
-2018-03-28 10:45:57,414  		username admin role network-operator
-2018-03-28 10:45:57,414  		username evogaming password 5 $5$FLcMhC4I$CLGR7q1xQYCrbLSYvYAC.xXjRu.cweX/Eldzu3wL5T.  role network-admin
-2018-03-28 10:45:57,414  		username wan01tMonitor password 5 $5$6DpGqjNm$mHA2Oiscoo571Iobq9mBAUuIC40E40ZC3Tz41xsnec8  role network-operator
-2018-03-28 10:45:57,414  
-2018-03-28 10:45:57,414  	Ethernet config validation:
-2018-03-28 10:45:57,415  		Ethernet2/32
-2018-03-28 10:45:57,415  			spanning-tree port type edge
-2018-03-28 10:45:57,416  		Ethernet2/44
-2018-03-28 10:45:57,416  			vpc orphan-port suspend
-2018-03-28 10:45:57,416  		Ethernet1/5
-2018-03-28 10:45:57,416  			vpc orphan-port suspend
-2018-03-28 10:45:57,417  
-2018-03-28 10:45:57,417  	Channel ports config validation:
-2018-03-28 10:45:57,417  		port-channel4000.1000
-2018-03-28 10:45:57,418  			no snmp trap link-status
-2018-03-28 10:45:57,418  
-2018-03-28 10:45:57,418  	Console config validation:
-2018-03-28 10:45:57,418  
-2018-03-28 10:45:57,418  	Tacacs config validation:
-2018-03-28 10:45:57,418  		server 10.30.32.4
-2018-03-28 10:45:57,418  
-2018-03-28 10:45:57,418  	Jumbo config validation:
-2018-03-28 10:45:57,418  
-2018-03-28 10:45:57,418  	QOS config validation:
-2018-03-28 10:45:57,418  
-2018-03-28 10:45:57,418  	Fex config validation:
-2018-03-28 10:45:57,419  
-2018-03-28 10:45:57,419  	Missed config lines: 8
-2018-03-28 10:45:57,439  Validation result for fra1-wn-p001-cnx
-2018-03-28 10:45:57,439  	Mandatory config lines missed: 
-2018-03-28 10:45:57,439  
-2018-03-28 10:45:57,439  	SYSLOG configuration: 
-2018-03-28 10:45:57,443  
-2018-03-28 10:45:57,444  	NTP configuration: 
-2018-03-28 10:45:57,444  		NTP server not set
-2018-03-28 10:45:57,444  
-2018-03-28 10:45:57,444  	Users validation:
-2018-03-28 10:45:57,448  	User missing:
-2018-03-28 10:45:57,448  		username admin password 5
-2018-03-28 10:45:57,448  		username evogaming password 5
-2018-03-28 10:45:57,448  
-2018-03-28 10:45:57,448  	Incorrent users:
-2018-03-28 10:45:57,448  		username admin password 5 $5$SQy/tmIj$42hkukNe4ROx4Hs88YzMfOZjdR4r31IZ9l7zwbeElnC  role network-admin
-2018-03-28 10:45:57,448  		username admin role network-operator
-2018-03-28 10:45:57,448  		username evogaming password 5 $5$FLcMhC4I$CLGR7q1xQYCrbLSYvYAC.xXjRu.cweX/Eldzu3wL5T.  role network-admin
-2018-03-28 10:45:57,448  		username wan01tMonitor password 5 $5$SU7rbV0j$WxQbuRDLLO2GRqgffSXk9mUQ8YKwkEy0hxASOGwQSL1  role network-operator
-2018-03-28 10:45:57,449  
-2018-03-28 10:45:57,449  	Ethernet config validation:
-2018-03-28 10:45:57,449  		Ethernet2/44
-2018-03-28 10:45:57,449  			vpc orphan-port suspend
-2018-03-28 10:45:57,450  		Ethernet1/5
-2018-03-28 10:45:57,450  			vpc orphan-port suspend
-2018-03-28 10:45:57,451  
-2018-03-28 10:45:57,451  	Channel ports config validation:
-2018-03-28 10:45:57,451  		port-channel4000.1000
-2018-03-28 10:45:57,451  			no snmp trap link-status
-2018-03-28 10:45:57,452  
-2018-03-28 10:45:57,452  	Console config validation:
-2018-03-28 10:45:57,452  
-2018-03-28 10:45:57,452  	Tacacs config validation:
-2018-03-28 10:45:57,452  		server 10.30.32.4
-2018-03-28 10:45:57,453  
-2018-03-28 10:45:57,453  	Jumbo config validation:
-2018-03-28 10:45:57,453  
-2018-03-28 10:45:57,453  	QOS config validation:
-2018-03-28 10:45:57,453  
-2018-03-28 10:45:57,453  	Fex config validation:
-2018-03-28 10:45:57,453  
-2018-03-28 10:45:57,453  	Missed config lines: 7
-2018-03-28 10:45:57,467  Validation result for tbs1-wn-p002-cnx
-2018-03-28 10:45:57,467  	Mandatory config lines missed: 
-2018-03-28 10:45:57,468  
-2018-03-28 10:45:57,468  	SYSLOG configuration: 
-2018-03-28 10:45:57,470  
-2018-03-28 10:45:57,471  	NTP configuration: 
-2018-03-28 10:45:57,471  		NTP server not set
-2018-03-28 10:45:57,471  
-2018-03-28 10:45:57,471  	Users validation:
-2018-03-28 10:45:57,474  	User missing:
-2018-03-28 10:45:57,474  		username admin password 5
-2018-03-28 10:45:57,474  		username evogaming password 5
-2018-03-28 10:45:57,474  
-2018-03-28 10:45:57,474  	Incorrent users:
-2018-03-28 10:45:57,474  		username admin password 5 $5$HDJOCB$Whvp7ro4iT5reliA4AcHm5WaO/Ez5EFS.G4RKpkAF4.  role network-admin
-2018-03-28 10:45:57,474  		username evogaming password 5 $5$COFFAO$KIsY1oFfdeD1u2vnPfQYktDjktH7gw6EwO2dJyfAIn6  role network-admin
-2018-03-28 10:45:57,474  
-2018-03-28 10:45:57,474  	Ethernet config validation:
-2018-03-28 10:45:57,474  
-2018-03-28 10:45:57,474  	Channel ports config validation:
-2018-03-28 10:45:57,474  
-2018-03-28 10:45:57,475  	Console config validation:
-2018-03-28 10:45:57,475  
-2018-03-28 10:45:57,475  	Tacacs config validation:
-2018-03-28 10:45:57,475  		server 10.30.32.4
-2018-03-28 10:45:57,475  
-2018-03-28 10:45:57,475  	Jumbo config validation:
-2018-03-28 10:45:57,475  
-2018-03-28 10:45:57,475  	QOS config validation:
-2018-03-28 10:45:57,475  
-2018-03-28 10:45:57,475  	Fex config validation:
-2018-03-28 10:45:57,475  
-2018-03-28 10:45:57,475  	Missed config lines: 4
-2018-03-28 10:45:57,488  Validation result for tbs1-wn-p001-cnx
-2018-03-28 10:45:57,488  	Mandatory config lines missed: 
-2018-03-28 10:45:57,489  
-2018-03-28 10:45:57,489  	SYSLOG configuration: 
-2018-03-28 10:45:57,492  
-2018-03-28 10:45:57,492  	NTP configuration: 
-2018-03-28 10:45:57,492  		NTP server not set
-2018-03-28 10:45:57,492  
-2018-03-28 10:45:57,492  	Users validation:
-2018-03-28 10:45:57,495  	User missing:
-2018-03-28 10:45:57,495  		username admin password 5
-2018-03-28 10:45:57,495  		username evogaming password 5
-2018-03-28 10:45:57,495  
-2018-03-28 10:45:57,495  	Incorrent users:
-2018-03-28 10:45:57,495  		username admin password 5 $5$PKLFOK$AnALiWXBIqPwtCn9SFGCJ8/Le8D0J7FX0vXR84ZA7ZD  role network-admin
-2018-03-28 10:45:57,495  		username evogaming password 5 $5$FOEFPB$7LltEvn3t3tzwDgEP4oP6Phz2B8P10dh9KUgN4zaKU6  role network-admin
-2018-03-28 10:45:57,495  
-2018-03-28 10:45:57,495  	Ethernet config validation:
-2018-03-28 10:45:57,495  
-2018-03-28 10:45:57,495  	Channel ports config validation:
-2018-03-28 10:45:57,496  
-2018-03-28 10:45:57,496  	Console config validation:
-2018-03-28 10:45:57,496  
-2018-03-28 10:45:57,496  	Tacacs config validation:
-2018-03-28 10:45:57,496  		server 10.30.32.4
-2018-03-28 10:45:57,496  
-2018-03-28 10:45:57,496  	Jumbo config validation:
-2018-03-28 10:45:57,496  
-2018-03-28 10:45:57,496  	QOS config validation:
-2018-03-28 10:45:57,496  
-2018-03-28 10:45:57,496  	Fex config validation:
-2018-03-28 10:45:57,496  
-2018-03-28 10:45:57,496  	Missed config lines: 4
-2018-03-28 10:45:57,507  Validation result for rix3-03-t021-cnx
-2018-03-28 10:45:57,508  	Mandatory config lines missed: 
-2018-03-28 10:45:57,508  
-2018-03-28 10:45:57,508  	SYSLOG configuration: 
-2018-03-28 10:45:57,511  
-2018-03-28 10:45:57,511  	NTP configuration: 
-2018-03-28 10:45:57,511  		NTP server not set
-2018-03-28 10:45:57,511  
-2018-03-28 10:45:57,511  	Users validation:
-2018-03-28 10:45:57,514  	User missing:
-2018-03-28 10:45:57,514  		username admin password 5
-2018-03-28 10:45:57,514  		username evogaming password 5
-2018-03-28 10:45:57,514  
-2018-03-28 10:45:57,515  	Incorrent users:
-2018-03-28 10:45:57,515  		username admin password 5 $1$tRBNy9Ie$v4FEJ1OhRqb96bujqwNNP/  role network-admin
-2018-03-28 10:45:57,515  		username evogaming password 5 !  role network-admin
-2018-03-28 10:45:57,515  
-2018-03-28 10:45:57,515  	Ethernet config validation:
-2018-03-28 10:45:57,515  
-2018-03-28 10:45:57,515  	Channel ports config validation:
-2018-03-28 10:45:57,515  		port-channel153
-2018-03-28 10:45:57,515  			spanning-tree port type edge
-2018-03-28 10:45:57,516  		port-channel13
-2018-03-28 10:45:57,516  			spanning-tree port type edge
-2018-03-28 10:45:57,516  		port-channel11
-2018-03-28 10:45:57,516  			spanning-tree port type edge
-2018-03-28 10:45:57,516  
-2018-03-28 10:45:57,516  	Console config validation:
-2018-03-28 10:45:57,516  
-2018-03-28 10:45:57,516  	Tacacs config validation:
-2018-03-28 10:45:57,516  
-2018-03-28 10:45:57,516  	Jumbo config validation:
-2018-03-28 10:45:57,516  
-2018-03-28 10:45:57,517  	QOS config validation:
-2018-03-28 10:45:57,517  		service-policy type network-qos jumbo
-2018-03-28 10:45:57,517  
-2018-03-28 10:45:57,517  	Fex config validation:
-2018-03-28 10:45:57,517  
-2018-03-28 10:45:57,517  	Missed config lines: 7
-2018-03-28 10:45:57,528  Validation result for rix3-03-t020-cnx
-2018-03-28 10:45:57,528  	Mandatory config lines missed: 
-2018-03-28 10:45:57,528  
-2018-03-28 10:45:57,528  	SYSLOG configuration: 
-2018-03-28 10:45:57,531  
-2018-03-28 10:45:57,531  	NTP configuration: 
-2018-03-28 10:45:57,531  		NTP server not set
-2018-03-28 10:45:57,531  
-2018-03-28 10:45:57,531  	Users validation:
-2018-03-28 10:45:57,534  	User missing:
-2018-03-28 10:45:57,534  		username admin password 5
-2018-03-28 10:45:57,534  		username evogaming password 5
-2018-03-28 10:45:57,534  
-2018-03-28 10:45:57,534  	Incorrent users:
-2018-03-28 10:45:57,534  		username admin password 5 $1$IS5TkEyj$e4uM8OJ4cPFdEmrnJF8vP1  role network-admin
-2018-03-28 10:45:57,535  		username evogaming password 5 $1$FN/4pmVr$.KyzWEyIt21kEr9Kgm5BC.  role network-admin
-2018-03-28 10:45:57,535  
-2018-03-28 10:45:57,535  	Ethernet config validation:
-2018-03-28 10:45:57,535  
-2018-03-28 10:45:57,535  	Channel ports config validation:
-2018-03-28 10:45:57,535  		port-channel153
-2018-03-28 10:45:57,535  			spanning-tree port type edge
-2018-03-28 10:45:57,536  		port-channel13
-2018-03-28 10:45:57,536  			spanning-tree port type edge
-2018-03-28 10:45:57,536  		port-channel11
-2018-03-28 10:45:57,536  			spanning-tree port type edge
-2018-03-28 10:45:57,536  
-2018-03-28 10:45:57,536  	Console config validation:
-2018-03-28 10:45:57,536  
-2018-03-28 10:45:57,536  	Tacacs config validation:
-2018-03-28 10:45:57,536  
-2018-03-28 10:45:57,536  	Jumbo config validation:
-2018-03-28 10:45:57,536  
-2018-03-28 10:45:57,536  	QOS config validation:
-2018-03-28 10:45:57,536  		service-policy type network-qos jumbo
-2018-03-28 10:45:57,537  
-2018-03-28 10:45:57,537  	Fex config validation:
-2018-03-28 10:45:57,537  
-2018-03-28 10:45:57,537  	Missed config lines: 7
-2018-03-28 10:45:57,546  Validation result for van1-02-p199-cnx
-2018-03-28 10:45:57,546  	Mandatory config lines missed: 
-2018-03-28 10:45:57,547  		policy-map type network-qos jumbo
-2018-03-28 10:45:57,547  		system qos
-2018-03-28 10:45:57,547  
-2018-03-28 10:45:57,547  	SYSLOG configuration: 
-2018-03-28 10:45:57,549  
-2018-03-28 10:45:57,549  	NTP configuration: 
-2018-03-28 10:45:57,549  		NTP server not set
-2018-03-28 10:45:57,550  
-2018-03-28 10:45:57,550  	Users validation:
-2018-03-28 10:45:57,552  	User missing:
-2018-03-28 10:45:57,552  		username admin password 5
-2018-03-28 10:45:57,552  		username evogaming password 5
-2018-03-28 10:45:57,552  
-2018-03-28 10:45:57,552  	Incorrent users:
-2018-03-28 10:45:57,552  		username admin password 5 $5$SQy/tmIj$42hkukNe4ROx4Hs88YzMfOZjdR4r31IZ9l7zwbeElnC  role network-admin
-2018-03-28 10:45:57,552  		username admin role network-operator
-2018-03-28 10:45:57,552  		username evogaming password 5 $5$FLcMhC4I$CLGR7q1xQYCrbLSYvYAC.xXjRu.cweX/Eldzu3wL5T.  role network-operator
-2018-03-28 10:45:57,552  		username evogaming role network-admin
-2018-03-28 10:45:57,552  
-2018-03-28 10:45:57,552  	Ethernet config validation:
-2018-03-28 10:45:57,552  
-2018-03-28 10:45:57,553  	Channel ports config validation:
-2018-03-28 10:45:57,553  
-2018-03-28 10:45:57,553  	Console config validation:
-2018-03-28 10:45:57,553  
-2018-03-28 10:45:57,553  	Tacacs config validation:
-2018-03-28 10:45:57,553  		server 10.30.32.4
-2018-03-28 10:45:57,553  
-2018-03-28 10:45:57,553  	Jumbo config validation:
-2018-03-28 10:45:57,553  		class type network-qos class-default
-2018-03-28 10:45:57,553  		mtu 9216
-2018-03-28 10:45:57,553  
-2018-03-28 10:45:57,554  	QOS config validation:
-2018-03-28 10:45:57,554  		service-policy type network-qos jumbo
-2018-03-28 10:45:57,554  
-2018-03-28 10:45:57,554  	Fex config validation:
-2018-03-28 10:45:57,554  
-2018-03-28 10:45:57,554  	Missed config lines: 9
-2018-03-28 10:45:57,562  Validation result for van1-02-p198-cnx
-2018-03-28 10:45:57,562  	Mandatory config lines missed: 
-2018-03-28 10:45:57,563  		policy-map type network-qos jumbo
-2018-03-28 10:45:57,563  		system qos
-2018-03-28 10:45:57,563  
-2018-03-28 10:45:57,563  	SYSLOG configuration: 
-2018-03-28 10:45:57,565  
-2018-03-28 10:45:57,565  	NTP configuration: 
-2018-03-28 10:45:57,565  		NTP server not set
-2018-03-28 10:45:57,565  
-2018-03-28 10:45:57,565  	Users validation:
-2018-03-28 10:45:57,568  	User missing:
-2018-03-28 10:45:57,568  		username admin password 5
-2018-03-28 10:45:57,568  		username evogaming password 5
-2018-03-28 10:45:57,568  
-2018-03-28 10:45:57,568  	Incorrent users:
-2018-03-28 10:45:57,568  		username admin password 5 $5$SQy/tmIj$42hkukNe4ROx4Hs88YzMfOZjdR4r31IZ9l7zwbeElnC  role network-admin
-2018-03-28 10:45:57,568  		username admin role network-operator
-2018-03-28 10:45:57,568  		username evogaming password 5 $5$FLcMhC4I$CLGR7q1xQYCrbLSYvYAC.xXjRu.cweX/Eldzu3wL5T.  role network-admin
-2018-03-28 10:45:57,568  
-2018-03-28 10:45:57,568  	Ethernet config validation:
-2018-03-28 10:45:57,568  
-2018-03-28 10:45:57,568  	Channel ports config validation:
-2018-03-28 10:45:57,569  
-2018-03-28 10:45:57,569  	Console config validation:
-2018-03-28 10:45:57,569  
-2018-03-28 10:45:57,569  	Tacacs config validation:
-2018-03-28 10:45:57,569  		server 10.30.32.4
-2018-03-28 10:45:57,569  
-2018-03-28 10:45:57,569  	Jumbo config validation:
-2018-03-28 10:45:57,569  		class type network-qos class-default
-2018-03-28 10:45:57,569  		mtu 9216
-2018-03-28 10:45:57,569  
-2018-03-28 10:45:57,569  	QOS config validation:
-2018-03-28 10:45:57,569  		service-policy type network-qos jumbo
-2018-03-28 10:45:57,569  
-2018-03-28 10:45:57,569  	Fex config validation:
-2018-03-28 10:45:57,569  
-2018-03-28 10:45:57,569  	Missed config lines: 9
-2018-03-28 10:45:57,582  Validation result for mlt1-04-p198-cnx
-2018-03-28 10:45:57,582  	Mandatory config lines missed: 
-2018-03-28 10:45:57,582  		policy-map type network-qos jumbo
-2018-03-28 10:45:57,582  		system qos
-2018-03-28 10:45:57,582  
-2018-03-28 10:45:57,582  	SYSLOG configuration: 
-2018-03-28 10:45:57,586  
-2018-03-28 10:45:57,586  	NTP configuration: 
-2018-03-28 10:45:57,586  		NTP server not set
-2018-03-28 10:45:57,586  
-2018-03-28 10:45:57,586  	Users validation:
-2018-03-28 10:45:57,590  	User missing:
-2018-03-28 10:45:57,590  		username admin password 5
-2018-03-28 10:45:57,590  		username evogaming password 5
-2018-03-28 10:45:57,590  
-2018-03-28 10:45:57,590  	Incorrent users:
-2018-03-28 10:45:57,590  		username admin password 5 $5$SQy/tmIj$42hkukNe4ROx4Hs88YzMfOZjdR4r31IZ9l7zwbeElnC  role network-admin
-2018-03-28 10:45:57,590  		username admin role network-operator
-2018-03-28 10:45:57,590  		username evogaming password 5 $5$FLcMhC4I$CLGR7q1xQYCrbLSYvYAC.xXjRu.cweX/Eldzu3wL5T.  role network-admin
-2018-03-28 10:45:57,590  
-2018-03-28 10:45:57,590  	Ethernet config validation:
-2018-03-28 10:45:57,590  
-2018-03-28 10:45:57,590  	Channel ports config validation:
-2018-03-28 10:45:57,591  
-2018-03-28 10:45:57,591  	Console config validation:
-2018-03-28 10:45:57,591  
-2018-03-28 10:45:57,591  	Tacacs config validation:
-2018-03-28 10:45:57,591  		server 10.30.32.4
-2018-03-28 10:45:57,591  
-2018-03-28 10:45:57,591  	Jumbo config validation:
-2018-03-28 10:45:57,591  		class type network-qos class-default
-2018-03-28 10:45:57,591  		mtu 9216
-2018-03-28 10:45:57,591  
-2018-03-28 10:45:57,591  	QOS config validation:
-2018-03-28 10:45:57,591  		service-policy type network-qos jumbo
-2018-03-28 10:45:57,591  
-2018-03-28 10:45:57,591  	Fex config validation:
-2018-03-28 10:45:57,591  
-2018-03-28 10:45:57,591  	Missed config lines: 9
-2018-03-28 10:45:57,599  Validation result for van2-12-p198-cnx
-2018-03-28 10:45:57,599  	Mandatory config lines missed: 
-2018-03-28 10:45:57,599  		policy-map type network-qos jumbo
-2018-03-28 10:45:57,599  		system qos
-2018-03-28 10:45:57,599  
-2018-03-28 10:45:57,599  	SYSLOG configuration: 
-2018-03-28 10:45:57,601  
-2018-03-28 10:45:57,601  	NTP configuration: 
-2018-03-28 10:45:57,601  		NTP server not set
-2018-03-28 10:45:57,601  
-2018-03-28 10:45:57,602  	Users validation:
-2018-03-28 10:45:57,603  	User missing:
-2018-03-28 10:45:57,603  		username admin password 5
-2018-03-28 10:45:57,603  		username evogaming password 5
-2018-03-28 10:45:57,603  
-2018-03-28 10:45:57,603  	Incorrent users:
-2018-03-28 10:45:57,604  		username admin password 5 $5$LEHJHA$XqZLwxIzIW8ly7rzlepmQ7iY3aiUVCGx8DoZq6VhKG0  role network-admin
-2018-03-28 10:45:57,604  		username admin role network-operator
-2018-03-28 10:45:57,604  		username evogaming password 5 $5$AMFMDL$4wBlxnehaYxTxsWYwoXE..UJgkWygLvcx0DNbmJJlI0  role network-admin
-2018-03-28 10:45:57,604  
-2018-03-28 10:45:57,604  	Ethernet config validation:
-2018-03-28 10:45:57,604  
-2018-03-28 10:45:57,604  	Channel ports config validation:
-2018-03-28 10:45:57,604  
-2018-03-28 10:45:57,604  	Console config validation:
-2018-03-28 10:45:57,604  
-2018-03-28 10:45:57,604  	Tacacs config validation:
-2018-03-28 10:45:57,604  		server 10.30.32.4
-2018-03-28 10:45:57,604  
-2018-03-28 10:45:57,604  	Jumbo config validation:
-2018-03-28 10:45:57,604  		class type network-qos class-default
-2018-03-28 10:45:57,605  		mtu 9216
-2018-03-28 10:45:57,605  
-2018-03-28 10:45:57,605  	QOS config validation:
-2018-03-28 10:45:57,605  		service-policy type network-qos jumbo
-2018-03-28 10:45:57,605  
-2018-03-28 10:45:57,605  	Fex config validation:
-2018-03-28 10:45:57,605  
-2018-03-28 10:45:57,605  	Missed config lines: 9
-2018-03-28 10:45:57,611  Validation result for van2-12-p199-cnx
-2018-03-28 10:45:57,611  	Mandatory config lines missed: 
-2018-03-28 10:45:57,612  		policy-map type network-qos jumbo
-2018-03-28 10:45:57,612  		system qos
-2018-03-28 10:45:57,612  
-2018-03-28 10:45:57,612  	SYSLOG configuration: 
-2018-03-28 10:45:57,614  
-2018-03-28 10:45:57,614  	NTP configuration: 
-2018-03-28 10:45:57,614  		NTP server not set
-2018-03-28 10:45:57,614  		ntp server 10.4.2.221 use-vrf management
-2018-03-28 10:45:57,614  
-2018-03-28 10:45:57,614  	Users validation:
-2018-03-28 10:45:57,616  	User missing:
-2018-03-28 10:45:57,616  		username admin password 5
-2018-03-28 10:45:57,616  		username evogaming password 5
-2018-03-28 10:45:57,616  
-2018-03-28 10:45:57,616  	Incorrent users:
-2018-03-28 10:45:57,616  		username admin password 5 $5$GFGNMG$04eEvo1vP8UXTOBzbmWri9sAO6n7Q.f/5Uv6/isFmZ8  role network-admin
-2018-03-28 10:45:57,616  		username admin role network-operator
-2018-03-28 10:45:57,616  		username evogaming password 5 $5$NIFCDC$CatELZQ2VhsZqQt5C8iWuRI1ZFAyifUZ6uJffzDVC9A  role network-admin
-2018-03-28 10:45:57,616  
-2018-03-28 10:45:57,616  	Ethernet config validation:
-2018-03-28 10:45:57,617  
-2018-03-28 10:45:57,617  	Channel ports config validation:
-2018-03-28 10:45:57,617  
-2018-03-28 10:45:57,617  	Console config validation:
-2018-03-28 10:45:57,617  
-2018-03-28 10:45:57,617  	Tacacs config validation:
-2018-03-28 10:45:57,617  		server 10.30.32.4
-2018-03-28 10:45:57,617  
-2018-03-28 10:45:57,617  	Jumbo config validation:
-2018-03-28 10:45:57,617  		class type network-qos class-default
-2018-03-28 10:45:57,617  		mtu 9216
-2018-03-28 10:45:57,617  
-2018-03-28 10:45:57,617  	QOS config validation:
-2018-03-28 10:45:57,617  		service-policy type network-qos jumbo
-2018-03-28 10:45:57,617  
-2018-03-28 10:45:57,617  	Fex config validation:
-2018-03-28 10:45:57,617  
-2018-03-28 10:45:57,618  	Missed config lines: 10
-2018-03-28 10:45:57,629  Validation result for mlt1-04-p199-cnx
-2018-03-28 10:45:57,629  	Mandatory config lines missed: 
-2018-03-28 10:45:57,629  		policy-map type network-qos jumbo
-2018-03-28 10:45:57,629  		system qos
-2018-03-28 10:45:57,629  
-2018-03-28 10:45:57,629  	SYSLOG configuration: 
-2018-03-28 10:45:57,633  
-2018-03-28 10:45:57,633  	NTP configuration: 
-2018-03-28 10:45:57,633  		NTP server not set
-2018-03-28 10:45:57,633  
-2018-03-28 10:45:57,633  	Users validation:
-2018-03-28 10:45:57,638  	User missing:
-2018-03-28 10:45:57,638  		username admin password 5
-2018-03-28 10:45:57,638  		username evogaming password 5
-2018-03-28 10:45:57,638  
-2018-03-28 10:45:57,638  	Incorrent users:
-2018-03-28 10:45:57,638  		username admin password 5 $5$zh60RehQ$IOyYx79hSfuuJauuYOq8X/4V9iNIRHqdPa7tvTVSb2D  role network-admin
-2018-03-28 10:45:57,638  		username evogaming password 5 $5$L/A5Uisp$z5Do3xgqUMbWkNcS4H/.mq5M5ArUmzobdy2HIXR4pl3  role network-admin
-2018-03-28 10:45:57,638  
-2018-03-28 10:45:57,638  	Ethernet config validation:
-2018-03-28 10:45:57,639  
-2018-03-28 10:45:57,639  	Channel ports config validation:
-2018-03-28 10:45:57,639  
-2018-03-28 10:45:57,639  	Console config validation:
-2018-03-28 10:45:57,639  
-2018-03-28 10:45:57,639  	Tacacs config validation:
-2018-03-28 10:45:57,639  		server 10.30.32.4
-2018-03-28 10:45:57,640  
-2018-03-28 10:45:57,640  	Jumbo config validation:
-2018-03-28 10:45:57,640  		class type network-qos class-default
-2018-03-28 10:45:57,640  		mtu 9216
-2018-03-28 10:45:57,640  
-2018-03-28 10:45:57,640  	QOS config validation:
-2018-03-28 10:45:57,640  		service-policy type network-qos jumbo
-2018-03-28 10:45:57,640  
-2018-03-28 10:45:57,640  	Fex config validation:
-2018-03-28 10:45:57,640  
-2018-03-28 10:45:57,640  	Missed config lines: 9
-2018-03-28 10:45:57,659  Validation result for rix1-02-p198-cnx
-2018-03-28 10:45:57,659  	Mandatory config lines missed: 
-2018-03-28 10:45:57,659  
-2018-03-28 10:45:57,660  	SYSLOG configuration: 
-2018-03-28 10:45:57,665  
-2018-03-28 10:45:57,665  	NTP configuration: 
-2018-03-28 10:45:57,665  		NTP server not set
-2018-03-28 10:45:57,665  
-2018-03-28 10:45:57,665  	Users validation:
-2018-03-28 10:45:57,671  	User missing:
-2018-03-28 10:45:57,671  		username admin password 5
-2018-03-28 10:45:57,671  		username evogaming password 5
-2018-03-28 10:45:57,671  
-2018-03-28 10:45:57,672  	Incorrent users:
-2018-03-28 10:45:57,672  		username admin password 5 $1$axjLk2q3$eZj.8dWWChj3bR0YEemND1  role network-admin
-2018-03-28 10:45:57,672  		username evogaming password 5 $1$FN/4pmVr$.KyzWEyIt21kEr9Kgm5BC.  role network-operator
-2018-03-28 10:45:57,672  		username evogaming role network-admin
-2018-03-28 10:45:57,672  
-2018-03-28 10:45:57,672  	Ethernet config validation:
-2018-03-28 10:45:57,672  
-2018-03-28 10:45:57,672  	Channel ports config validation:
-2018-03-28 10:45:57,673  
-2018-03-28 10:45:57,673  	Console config validation:
-2018-03-28 10:45:57,673  
-2018-03-28 10:45:57,673  	Tacacs config validation:
-2018-03-28 10:45:57,673  
-2018-03-28 10:45:57,673  	Jumbo config validation:
-2018-03-28 10:45:57,673  
-2018-03-28 10:45:57,673  	QOS config validation:
-2018-03-28 10:45:57,673  		service-policy type network-qos jumbo
-2018-03-28 10:45:57,673  
-2018-03-28 10:45:57,673  	Fex config validation:
-2018-03-28 10:45:57,673  
-2018-03-28 10:45:57,674  	Missed config lines: 4
-2018-03-28 10:45:57,691  Validation result for rix1-02-p199-cnx
-2018-03-28 10:45:57,691  	Mandatory config lines missed: 
-2018-03-28 10:45:57,692  
-2018-03-28 10:45:57,692  	SYSLOG configuration: 
-2018-03-28 10:45:57,697  
-2018-03-28 10:45:57,698  	NTP configuration: 
-2018-03-28 10:45:57,698  		NTP server not set
-2018-03-28 10:45:57,698  
-2018-03-28 10:45:57,698  	Users validation:
-2018-03-28 10:45:57,703  	User missing:
-2018-03-28 10:45:57,703  		username admin password 5
-2018-03-28 10:45:57,704  		username evogaming password 5
-2018-03-28 10:45:57,704  
-2018-03-28 10:45:57,704  	Incorrent users:
-2018-03-28 10:45:57,704  		username admin password 5 $1$axjLk2q3$eZj.8dWWChj3bR0YEemND1  role network-admin
-2018-03-28 10:45:57,704  		username evogaming password 5 $1$FN/4pmVr$.KyzWEyIt21kEr9Kgm5BC.  role network-operator
-2018-03-28 10:45:57,704  		username evogaming role network-admin
-2018-03-28 10:45:57,704  
-2018-03-28 10:45:57,704  	Ethernet config validation:
-2018-03-28 10:45:57,704  
-2018-03-28 10:45:57,704  	Channel ports config validation:
-2018-03-28 10:45:57,705  
-2018-03-28 10:45:57,705  	Console config validation:
-2018-03-28 10:45:57,705  
-2018-03-28 10:45:57,705  	Tacacs config validation:
-2018-03-28 10:45:57,705  
-2018-03-28 10:45:57,705  	Jumbo config validation:
-2018-03-28 10:45:57,705  
-2018-03-28 10:45:57,705  	QOS config validation:
-2018-03-28 10:45:57,705  		service-policy type network-qos jumbo
-2018-03-28 10:45:57,705  
-2018-03-28 10:45:57,705  	Fex config validation:
-2018-03-28 10:45:57,705  
-2018-03-28 10:45:57,705  	Missed config lines: 4
-2018-03-28 10:45:57,712  Validation result for hkg2-05-p004-cnx
-2018-03-28 10:45:57,712  	Mandatory config lines missed: 
-2018-03-28 10:45:57,712  
-2018-03-28 10:45:57,712  	SYSLOG configuration: 
-2018-03-28 10:45:57,714  		logging server 10.30.230.90 6 use-vrf management
-2018-03-28 10:45:57,714  
-2018-03-28 10:45:57,714  	NTP configuration: 
-2018-03-28 10:45:57,714  		NTP server not set
-2018-03-28 10:45:57,714  
-2018-03-28 10:45:57,714  	Users validation:
-2018-03-28 10:45:57,716  	User missing:
-2018-03-28 10:45:57,716  		username admin password 5
-2018-03-28 10:45:57,716  		username evogaming password 5
-2018-03-28 10:45:57,716  
-2018-03-28 10:45:57,716  	Incorrent users:
-2018-03-28 10:45:57,716  		username admin password 5 $1$axjLk2q3$eZj.8dWWChj3bR0YEemND1  role network-admin
-2018-03-28 10:45:57,716  		username evogaming password 5 $1$FN/4pmVr$.KyzWEyIt21kEr9Kgm5BC.  role network-admin
-2018-03-28 10:45:57,716  
-2018-03-28 10:45:57,717  	Ethernet config validation:
-2018-03-28 10:45:57,717  		Ethernet1/41
-2018-03-28 10:45:57,717  			vpc orphan-port suspend
-2018-03-28 10:45:57,717  
-2018-03-28 10:45:57,717  	Channel ports config validation:
-2018-03-28 10:45:57,718  
-2018-03-28 10:45:57,718  	Console config validation:
-2018-03-28 10:45:57,718  
-2018-03-28 10:45:57,718  	Tacacs config validation:
-2018-03-28 10:45:57,718  		server 10.30.32.4
-2018-03-28 10:45:57,718  
-2018-03-28 10:45:57,718  	Jumbo config validation:
-2018-03-28 10:45:57,718  
-2018-03-28 10:45:57,718  	QOS config validation:
-2018-03-28 10:45:57,718  		service-policy type network-qos jumbo
-2018-03-28 10:45:57,718  
-2018-03-28 10:45:57,718  	Fex config validation:
-2018-03-28 10:45:57,718  
-2018-03-28 10:45:57,718  	Missed config lines: 7
-2018-03-28 10:45:57,726  Validation result for rix3-03-p031-cnx
-2018-03-28 10:45:57,726  	Mandatory config lines missed: 
-2018-03-28 10:45:57,726  		policy-map type network-qos jumbo
-2018-03-28 10:45:57,726  		system qos
-2018-03-28 10:45:57,726  
-2018-03-28 10:45:57,726  	SYSLOG configuration: 
-2018-03-28 10:45:57,728  
-2018-03-28 10:45:57,728  	NTP configuration: 
-2018-03-28 10:45:57,728  		NTP server not set
-2018-03-28 10:45:57,728  
-2018-03-28 10:45:57,728  	Users validation:
-2018-03-28 10:45:57,730  	User missing:
-2018-03-28 10:45:57,730  		username admin password 5
-2018-03-28 10:45:57,730  		username evogaming password 5
-2018-03-28 10:45:57,730  
-2018-03-28 10:45:57,730  	Incorrent users:
-2018-03-28 10:45:57,730  		username admin password 5 $5$SQy/tmIj$42hkukNe4ROx4Hs88YzMfOZjdR4r31IZ9l7zwbeElnC  role network-admin
-2018-03-28 10:45:57,730  		username admin role network-operator
-2018-03-28 10:45:57,730  		username evogaming password 5 $5$FLcMhC4I$CLGR7q1xQYCrbLSYvYAC.xXjRu.cweX/Eldzu3wL5T.  role network-admin
-2018-03-28 10:45:57,730  		username evogaming role network-operator
-2018-03-28 10:45:57,730  
-2018-03-28 10:45:57,730  	Ethernet config validation:
-2018-03-28 10:45:57,730  		Ethernet1/52/3
-2018-03-28 10:45:57,730  			vpc orphan-port suspend
-2018-03-28 10:45:57,731  		Ethernet1/52/2
-2018-03-28 10:45:57,731  			vpc orphan-port suspend
-2018-03-28 10:45:57,731  		Ethernet1/52/4
-2018-03-28 10:45:57,731  			vpc orphan-port suspend
-2018-03-28 10:45:57,731  		Ethernet1/21
-2018-03-28 10:45:57,731  			spanning-tree port type edge
-2018-03-28 10:45:57,731  		Ethernet1/20
-2018-03-28 10:45:57,731  			spanning-tree port type edge
-2018-03-28 10:45:57,731  
-2018-03-28 10:45:57,731  	Channel ports config validation:
-2018-03-28 10:45:57,731  
-2018-03-28 10:45:57,732  	Console config validation:
-2018-03-28 10:45:57,732  
-2018-03-28 10:45:57,732  	Tacacs config validation:
-2018-03-28 10:45:57,732  		server 10.30.32.4
-2018-03-28 10:45:57,732  
-2018-03-28 10:45:57,732  	Jumbo config validation:
-2018-03-28 10:45:57,732  		class type network-qos class-default
-2018-03-28 10:45:57,732  		mtu 9216
-2018-03-28 10:45:57,732  
-2018-03-28 10:45:57,732  	QOS config validation:
-2018-03-28 10:45:57,732  		service-policy type network-qos jumbo
-2018-03-28 10:45:57,732  
-2018-03-28 10:45:57,732  	Fex config validation:
-2018-03-28 10:45:57,732  
-2018-03-28 10:45:57,732  	Missed config lines: 14
-2018-03-28 10:45:57,740  Validation result for rix3-03-p030-cnx
-2018-03-28 10:45:57,740  	Mandatory config lines missed: 
-2018-03-28 10:45:57,740  		policy-map type network-qos jumbo
-2018-03-28 10:45:57,740  		system qos
-2018-03-28 10:45:57,740  
-2018-03-28 10:45:57,740  	SYSLOG configuration: 
-2018-03-28 10:45:57,742  
-2018-03-28 10:45:57,742  	NTP configuration: 
-2018-03-28 10:45:57,742  		NTP server not set
-2018-03-28 10:45:57,742  
-2018-03-28 10:45:57,742  	Users validation:
-2018-03-28 10:45:57,743  	User missing:
-2018-03-28 10:45:57,743  		username admin password 5
-2018-03-28 10:45:57,744  		username evogaming password 5
-2018-03-28 10:45:57,744  
-2018-03-28 10:45:57,744  	Incorrent users:
-2018-03-28 10:45:57,744  		username admin password 5 $5$SQy/tmIj$42hkukNe4ROx4Hs88YzMfOZjdR4r31IZ9l7zwbeElnC  role network-admin
-2018-03-28 10:45:57,744  		username admin role network-operator
-2018-03-28 10:45:57,744  		username evogaming password 5 $5$FLcMhC4I$CLGR7q1xQYCrbLSYvYAC.xXjRu.cweX/Eldzu3wL5T.  role network-admin
-2018-03-28 10:45:57,744  		username evogaming role network-operator
-2018-03-28 10:45:57,744  
-2018-03-28 10:45:57,744  	Ethernet config validation:
-2018-03-28 10:45:57,744  		Ethernet1/51/3
-2018-03-28 10:45:57,744  			vpc orphan-port suspend
-2018-03-28 10:45:57,744  		Ethernet1/51/4
-2018-03-28 10:45:57,744  			vpc orphan-port suspend
-2018-03-28 10:45:57,744  		Ethernet1/52/3
-2018-03-28 10:45:57,744  			vpc orphan-port suspend
-2018-03-28 10:45:57,745  		Ethernet1/52/2
-2018-03-28 10:45:57,745  			vpc orphan-port suspend
-2018-03-28 10:45:57,745  		Ethernet1/52/4
-2018-03-28 10:45:57,745  			vpc orphan-port suspend
-2018-03-28 10:45:57,745  		Ethernet1/21
-2018-03-28 10:45:57,745  			spanning-tree port type edge
-2018-03-28 10:45:57,745  		Ethernet1/20
-2018-03-28 10:45:57,745  			spanning-tree port type edge
-2018-03-28 10:45:57,745  
-2018-03-28 10:45:57,745  	Channel ports config validation:
-2018-03-28 10:45:57,745  
-2018-03-28 10:45:57,746  	Console config validation:
-2018-03-28 10:45:57,746  
-2018-03-28 10:45:57,746  	Tacacs config validation:
-2018-03-28 10:45:57,746  		server 10.30.32.4
-2018-03-28 10:45:57,746  
-2018-03-28 10:45:57,746  	Jumbo config validation:
-2018-03-28 10:45:57,746  		class type network-qos class-default
-2018-03-28 10:45:57,746  		mtu 9216
-2018-03-28 10:45:57,746  
-2018-03-28 10:45:57,746  	QOS config validation:
-2018-03-28 10:45:57,746  		service-policy type network-qos jumbo
-2018-03-28 10:45:57,746  
-2018-03-28 10:45:57,746  	Fex config validation:
-2018-03-28 10:45:57,746  
-2018-03-28 10:45:57,746  	Missed config lines: 16
-2018-03-28 10:45:57,755  Validation result for fra1-01-p016-cnx
-2018-03-28 10:45:57,755  	Mandatory config lines missed: 
-2018-03-28 10:45:57,755  		policy-map type network-qos jumbo
-2018-03-28 10:45:57,755  		system qos
-2018-03-28 10:45:57,756  
-2018-03-28 10:45:57,756  	SYSLOG configuration: 
-2018-03-28 10:45:57,757  		SYSLOG server not set
-2018-03-28 10:45:57,758  		logging server 10.8.48.122 5 use-vrf management
-2018-03-28 10:45:57,758  
-2018-03-28 10:45:57,758  	NTP configuration: 
-2018-03-28 10:45:57,758  		NTP server not set
-2018-03-28 10:45:57,758  
-2018-03-28 10:45:57,758  	Users validation:
-2018-03-28 10:45:57,760  	User missing:
-2018-03-28 10:45:57,760  		username admin password 5
-2018-03-28 10:45:57,760  		username evogaming password 5
-2018-03-28 10:45:57,760  
-2018-03-28 10:45:57,760  	Incorrent users:
-2018-03-28 10:45:57,760  		username admin password 5 $5$SQy/tmIj$42hkukNe4ROx4Hs88YzMfOZjdR4r31IZ9l7zwbeElnC  role network-admin
-2018-03-28 10:45:57,761  		username admin role network-operator
-2018-03-28 10:45:57,761  		username evogaming password 5 $5$FLcMhC4I$CLGR7q1xQYCrbLSYvYAC.xXjRu.cweX/Eldzu3wL5T.  role network-admin
-2018-03-28 10:45:57,761  		username evogaming role network-operator
-2018-03-28 10:45:57,761  
-2018-03-28 10:45:57,761  	Ethernet config validation:
-2018-03-28 10:45:57,761  		Ethernet1/9
-2018-03-28 10:45:57,761  			vpc orphan-port suspend
-2018-03-28 10:45:57,761  			spanning-tree port type edge
-2018-03-28 10:45:57,761  		Ethernet1/10
-2018-03-28 10:45:57,761  			vpc orphan-port suspend
-2018-03-28 10:45:57,761  			spanning-tree port type edge
-2018-03-28 10:45:57,762  		Ethernet1/16
-2018-03-28 10:45:57,762  			vpc orphan-port suspend
-2018-03-28 10:45:57,762  			spanning-tree port type edge
-2018-03-28 10:45:57,762  		Ethernet1/17
-2018-03-28 10:45:57,762  			vpc orphan-port suspend
-2018-03-28 10:45:57,762  			spanning-tree port type edge
-2018-03-28 10:45:57,762  		Ethernet1/15
-2018-03-28 10:45:57,762  			vpc orphan-port suspend
-2018-03-28 10:45:57,762  			spanning-tree port type edge
-2018-03-28 10:45:57,762  		Ethernet1/18
-2018-03-28 10:45:57,762  			vpc orphan-port suspend
-2018-03-28 10:45:57,762  			spanning-tree port type edge
-2018-03-28 10:45:57,762  		Ethernet1/19
-2018-03-28 10:45:57,762  			vpc orphan-port suspend
-2018-03-28 10:45:57,762  			spanning-tree port type edge
-2018-03-28 10:45:57,762  
-2018-03-28 10:45:57,763  	Channel ports config validation:
-2018-03-28 10:45:57,763  
-2018-03-28 10:45:57,763  	Console config validation:
-2018-03-28 10:45:57,763  
-2018-03-28 10:45:57,763  	Tacacs config validation:
-2018-03-28 10:45:57,763  		server 10.30.32.4
-2018-03-28 10:45:57,763  
-2018-03-28 10:45:57,763  	Jumbo config validation:
-2018-03-28 10:45:57,763  		class type network-qos class-default
-2018-03-28 10:45:57,763  		mtu 9216
-2018-03-28 10:45:57,763  
-2018-03-28 10:45:57,763  	QOS config validation:
-2018-03-28 10:45:57,763  		service-policy type network-qos jumbo
-2018-03-28 10:45:57,763  
-2018-03-28 10:45:57,763  	Fex config validation:
-2018-03-28 10:45:57,763  
-2018-03-28 10:45:57,763  	Missed config lines: 25
-2018-03-28 10:45:57,788  Validation result for rix1-02-p200-cnx
-2018-03-28 10:45:57,788  	Mandatory config lines missed: 
-2018-03-28 10:45:57,788  
-2018-03-28 10:45:57,788  	SYSLOG configuration: 
-2018-03-28 10:45:57,796  		logging server 10.30.230.90 7 use-vrf management
-2018-03-28 10:45:57,796  
-2018-03-28 10:45:57,796  	NTP configuration: 
-2018-03-28 10:45:57,796  		NTP server not set
-2018-03-28 10:45:57,796  
-2018-03-28 10:45:57,796  	Users validation:
-2018-03-28 10:45:57,803  	User missing:
-2018-03-28 10:45:57,804  		username admin password 5
-2018-03-28 10:45:57,804  		username evogaming password 5
-2018-03-28 10:45:57,804  
-2018-03-28 10:45:57,804  	Incorrent users:
-2018-03-28 10:45:57,804  		username admin password 5 $1$axjLk2q3$eZj.8dWWChj3bR0YEemND1  role network-admin
-2018-03-28 10:45:57,804  		username evogaming password 5 $1$FN/4pmVr$.KyzWEyIt21kEr9Kgm5BC.  role network-admin
-2018-03-28 10:45:57,804  
-2018-03-28 10:45:57,804  	Ethernet config validation:
-2018-03-28 10:45:57,805  
-2018-03-28 10:45:57,805  	Channel ports config validation:
-2018-03-28 10:45:57,805  
-2018-03-28 10:45:57,805  	Console config validation:
-2018-03-28 10:45:57,806  
-2018-03-28 10:45:57,806  	Tacacs config validation:
-2018-03-28 10:45:57,806  
-2018-03-28 10:45:57,806  	Jumbo config validation:
-2018-03-28 10:45:57,806  
-2018-03-28 10:45:57,806  	QOS config validation:
-2018-03-28 10:45:57,806  		service-policy type network-qos jumbo
-2018-03-28 10:45:57,806  
-2018-03-28 10:45:57,806  	Fex config validation:
-2018-03-28 10:45:57,806  
-2018-03-28 10:45:57,806  	Missed config lines: 5
-2018-03-28 10:45:57,814  Validation result for fra1-01-p015-cnx
-2018-03-28 10:45:57,814  	Mandatory config lines missed: 
-2018-03-28 10:45:57,814  		policy-map type network-qos jumbo
-2018-03-28 10:45:57,814  		system qos
-2018-03-28 10:45:57,815  
-2018-03-28 10:45:57,815  	SYSLOG configuration: 
-2018-03-28 10:45:57,816  		SYSLOG server not set
-2018-03-28 10:45:57,817  		logging server 10.8.48.122 5 use-vrf management
-2018-03-28 10:45:57,817  
-2018-03-28 10:45:57,817  	NTP configuration: 
-2018-03-28 10:45:57,817  		NTP server not set
-2018-03-28 10:45:57,817  
-2018-03-28 10:45:57,817  	Users validation:
-2018-03-28 10:45:57,819  	User missing:
-2018-03-28 10:45:57,819  		username admin password 5
-2018-03-28 10:45:57,819  		username evogaming password 5
-2018-03-28 10:45:57,819  
-2018-03-28 10:45:57,819  	Incorrent users:
-2018-03-28 10:45:57,819  		username admin password 5 $5$SQy/tmIj$42hkukNe4ROx4Hs88YzMfOZjdR4r31IZ9l7zwbeElnC  role network-admin
-2018-03-28 10:45:57,819  		username admin role network-operator
-2018-03-28 10:45:57,819  		username evogaming password 5 $5$FLcMhC4I$CLGR7q1xQYCrbLSYvYAC.xXjRu.cweX/Eldzu3wL5T.  role network-admin
-2018-03-28 10:45:57,819  		username evogaming role network-operator
-2018-03-28 10:45:57,819  
-2018-03-28 10:45:57,819  	Ethernet config validation:
-2018-03-28 10:45:57,819  		Ethernet1/7
-2018-03-28 10:45:57,819  			spanning-tree port type edge
-2018-03-28 10:45:57,819  		Ethernet1/51
-2018-03-28 10:45:57,819  			description
-2018-03-28 10:45:57,819  			vpc orphan-port suspend
-2018-03-28 10:45:57,820  		Ethernet1/52
-2018-03-28 10:45:57,820  			description
-2018-03-28 10:45:57,820  			vpc orphan-port suspend
-2018-03-28 10:45:57,820  		Ethernet1/14
-2018-03-28 10:45:57,820  			spanning-tree port type edge
-2018-03-28 10:45:57,820  
-2018-03-28 10:45:57,820  	Channel ports config validation:
-2018-03-28 10:45:57,820  		port-channel114
-2018-03-28 10:45:57,820  			spanning-tree port type edge
-2018-03-28 10:45:57,820  		port-channel107
-2018-03-28 10:45:57,820  			spanning-tree port type edge
-2018-03-28 10:45:57,821  
-2018-03-28 10:45:57,821  	Console config validation:
-2018-03-28 10:45:57,821  
-2018-03-28 10:45:57,821  	Tacacs config validation:
-2018-03-28 10:45:57,821  		server 10.30.32.4
-2018-03-28 10:45:57,821  
-2018-03-28 10:45:57,821  	Jumbo config validation:
-2018-03-28 10:45:57,821  		class type network-qos class-default
-2018-03-28 10:45:57,821  		mtu 9216
-2018-03-28 10:45:57,821  
-2018-03-28 10:45:57,821  	QOS config validation:
-2018-03-28 10:45:57,821  		service-policy type network-qos jumbo
-2018-03-28 10:45:57,821  
-2018-03-28 10:45:57,821  	Fex config validation:
-2018-03-28 10:45:57,821  
-2018-03-28 10:45:57,821  	Missed config lines: 19
-2018-03-28 10:45:57,846  Validation result for rix1-02-p201-cnx
-2018-03-28 10:45:57,846  	Mandatory config lines missed: 
-2018-03-28 10:45:57,846  
-2018-03-28 10:45:57,847  	SYSLOG configuration: 
-2018-03-28 10:45:57,855  		logging server 10.30.230.90 7 use-vrf management
-2018-03-28 10:45:57,855  
-2018-03-28 10:45:57,855  	NTP configuration: 
-2018-03-28 10:45:57,856  		NTP server not set
-2018-03-28 10:45:57,856  
-2018-03-28 10:45:57,856  	Users validation:
-2018-03-28 10:45:57,864  	User missing:
-2018-03-28 10:45:57,864  		username admin password 5
-2018-03-28 10:45:57,864  		username evogaming password 5
-2018-03-28 10:45:57,864  
-2018-03-28 10:45:57,864  	Incorrent users:
-2018-03-28 10:45:57,864  		username admin password 5 $1$axjLk2q3$eZj.8dWWChj3bR0YEemND1  role network-admin
-2018-03-28 10:45:57,864  		username evogaming password 5 $1$FN/4pmVr$.KyzWEyIt21kEr9Kgm5BC.  role network-admin
-2018-03-28 10:45:57,864  
-2018-03-28 10:45:57,865  	Ethernet config validation:
-2018-03-28 10:45:57,865  
-2018-03-28 10:45:57,865  	Channel ports config validation:
-2018-03-28 10:45:57,866  
-2018-03-28 10:45:57,866  	Console config validation:
-2018-03-28 10:45:57,866  
-2018-03-28 10:45:57,866  	Tacacs config validation:
-2018-03-28 10:45:57,866  
-2018-03-28 10:45:57,866  	Jumbo config validation:
-2018-03-28 10:45:57,866  
-2018-03-28 10:45:57,866  	QOS config validation:
-2018-03-28 10:45:57,866  		service-policy type network-qos jumbo
-2018-03-28 10:45:57,866  
-2018-03-28 10:45:57,866  	Fex config validation:
-2018-03-28 10:45:57,866  
-2018-03-28 10:45:57,867  	Missed config lines: 5
-2018-03-28 10:45:57,875  Validation result for hkg2-05-p003-cnx
-2018-03-28 10:45:57,875  	Mandatory config lines missed: 
-2018-03-28 10:45:57,875  
-2018-03-28 10:45:57,875  	SYSLOG configuration: 
-2018-03-28 10:45:57,877  		logging server 10.30.230.90 6 use-vrf management
-2018-03-28 10:45:57,877  
-2018-03-28 10:45:57,877  	NTP configuration: 
-2018-03-28 10:45:57,877  		NTP server not set
-2018-03-28 10:45:57,877  
-2018-03-28 10:45:57,877  	Users validation:
-2018-03-28 10:45:57,879  	User missing:
-2018-03-28 10:45:57,879  		username admin password 5
-2018-03-28 10:45:57,879  		username evogaming password 5
-2018-03-28 10:45:57,879  
-2018-03-28 10:45:57,879  	Incorrent users:
-2018-03-28 10:45:57,879  		username admin password 5 $1$axjLk2q3$eZj.8dWWChj3bR0YEemND1  role network-admin
-2018-03-28 10:45:57,879  		username evogaming password 5 $1$FN/4pmVr$.KyzWEyIt21kEr9Kgm5BC.  role network-admin
-2018-03-28 10:45:57,879  
-2018-03-28 10:45:57,879  	Ethernet config validation:
-2018-03-28 10:45:57,880  		Ethernet1/41
-2018-03-28 10:45:57,880  			vpc orphan-port suspend
-2018-03-28 10:45:57,880  
-2018-03-28 10:45:57,880  	Channel ports config validation:
-2018-03-28 10:45:57,880  
-2018-03-28 10:45:57,880  	Console config validation:
-2018-03-28 10:45:57,880  
-2018-03-28 10:45:57,880  	Tacacs config validation:
-2018-03-28 10:45:57,881  		server 10.30.32.4
-2018-03-28 10:45:57,881  
-2018-03-28 10:45:57,881  	Jumbo config validation:
-2018-03-28 10:45:57,881  
-2018-03-28 10:45:57,881  	QOS config validation:
-2018-03-28 10:45:57,881  		service-policy type network-qos jumbo
-2018-03-28 10:45:57,881  
-2018-03-28 10:45:57,881  	Fex config validation:
-2018-03-28 10:45:57,881  
-2018-03-28 10:45:57,881  	Missed config lines: 7
+2018-03-28 13:49:18,579  Validation result for fra1-wn-p002-cnx
+2018-03-28 13:49:18,580  	Mandatory config lines missed: 
+2018-03-28 13:49:18,580  
+2018-03-28 13:49:18,580  	SYSLOG configuration: 
+2018-03-28 13:49:18,585  
+2018-03-28 13:49:18,585  	NTP configuration: 
+2018-03-28 13:49:18,585  		NTP server not set
+2018-03-28 13:49:18,586  
+2018-03-28 13:49:18,586  	Users validation:
+2018-03-28 13:49:18,590  	User missing:
+2018-03-28 13:49:18,590  		username admin password 5
+2018-03-28 13:49:18,590  		username evogaming password 5
+2018-03-28 13:49:18,590  
+2018-03-28 13:49:18,590  	Incorrent users:
+2018-03-28 13:49:18,590  		username admin password 5 $5$SQy/tmIj$42hkukNe4ROx4Hs88YzMfOZjdR4r31IZ9l7zwbeElnC  role network-admin
+2018-03-28 13:49:18,590  		username admin role network-operator
+2018-03-28 13:49:18,590  		username evogaming password 5 $5$FLcMhC4I$CLGR7q1xQYCrbLSYvYAC.xXjRu.cweX/Eldzu3wL5T.  role network-admin
+2018-03-28 13:49:18,590  		username wan01tMonitor password 5 $5$6DpGqjNm$mHA2Oiscoo571Iobq9mBAUuIC40E40ZC3Tz41xsnec8  role network-operator
+2018-03-28 13:49:18,590  
+2018-03-28 13:49:18,590  	Ethernet config validation:
+2018-03-28 13:49:18,591  		Ethernet2/32
+2018-03-28 13:49:18,591  			spanning-tree port type edge
+2018-03-28 13:49:18,591  		Ethernet2/44
+2018-03-28 13:49:18,591  			vpc orphan-port suspend
+2018-03-28 13:49:18,591  		Ethernet1/5
+2018-03-28 13:49:18,591  			vpc orphan-port suspend
+2018-03-28 13:49:18,592  
+2018-03-28 13:49:18,592  	Channel ports config validation:
+2018-03-28 13:49:18,593  		port-channel4000.1000
+2018-03-28 13:49:18,593  			no snmp trap link-status
+2018-03-28 13:49:18,593  
+2018-03-28 13:49:18,593  	Console config validation:
+2018-03-28 13:49:18,594  
+2018-03-28 13:49:18,594  	Tacacs config validation:
+2018-03-28 13:49:18,594  		server 10.30.32.4
+2018-03-28 13:49:18,594  
+2018-03-28 13:49:18,594  	Jumbo config validation:
+2018-03-28 13:49:18,594  
+2018-03-28 13:49:18,594  	QOS config validation:
+2018-03-28 13:49:18,594  
+2018-03-28 13:49:18,594  	Fex config validation:
+2018-03-28 13:49:18,594  
+2018-03-28 13:49:18,594  	Missed config lines: 8
+2018-03-28 13:49:18,617  Validation result for fra1-wn-p001-cnx
+2018-03-28 13:49:18,618  	Mandatory config lines missed: 
+2018-03-28 13:49:18,618  
+2018-03-28 13:49:18,618  	SYSLOG configuration: 
+2018-03-28 13:49:18,623  
+2018-03-28 13:49:18,623  	NTP configuration: 
+2018-03-28 13:49:18,623  		NTP server not set
+2018-03-28 13:49:18,623  
+2018-03-28 13:49:18,623  	Users validation:
+2018-03-28 13:49:18,627  	User missing:
+2018-03-28 13:49:18,627  		username admin password 5
+2018-03-28 13:49:18,627  		username evogaming password 5
+2018-03-28 13:49:18,627  
+2018-03-28 13:49:18,627  	Incorrent users:
+2018-03-28 13:49:18,627  		username admin password 5 $5$SQy/tmIj$42hkukNe4ROx4Hs88YzMfOZjdR4r31IZ9l7zwbeElnC  role network-admin
+2018-03-28 13:49:18,627  		username admin role network-operator
+2018-03-28 13:49:18,627  		username evogaming password 5 $5$FLcMhC4I$CLGR7q1xQYCrbLSYvYAC.xXjRu.cweX/Eldzu3wL5T.  role network-admin
+2018-03-28 13:49:18,627  		username wan01tMonitor password 5 $5$SU7rbV0j$WxQbuRDLLO2GRqgffSXk9mUQ8YKwkEy0hxASOGwQSL1  role network-operator
+2018-03-28 13:49:18,627  
+2018-03-28 13:49:18,627  	Ethernet config validation:
+2018-03-28 13:49:18,628  		Ethernet2/44
+2018-03-28 13:49:18,628  			vpc orphan-port suspend
+2018-03-28 13:49:18,628  		Ethernet1/5
+2018-03-28 13:49:18,628  			vpc orphan-port suspend
+2018-03-28 13:49:18,629  
+2018-03-28 13:49:18,629  	Channel ports config validation:
+2018-03-28 13:49:18,629  		port-channel4000.1000
+2018-03-28 13:49:18,629  			no snmp trap link-status
+2018-03-28 13:49:18,630  
+2018-03-28 13:49:18,630  	Console config validation:
+2018-03-28 13:49:18,630  
+2018-03-28 13:49:18,630  	Tacacs config validation:
+2018-03-28 13:49:18,630  		server 10.30.32.4
+2018-03-28 13:49:18,630  
+2018-03-28 13:49:18,630  	Jumbo config validation:
+2018-03-28 13:49:18,630  
+2018-03-28 13:49:18,630  	QOS config validation:
+2018-03-28 13:49:18,630  
+2018-03-28 13:49:18,630  	Fex config validation:
+2018-03-28 13:49:18,630  
+2018-03-28 13:49:18,630  	Missed config lines: 7
+2018-03-28 13:49:18,643  Validation result for tbs1-wn-p002-cnx
+2018-03-28 13:49:18,643  	Mandatory config lines missed: 
+2018-03-28 13:49:18,643  
+2018-03-28 13:49:18,643  	SYSLOG configuration: 
+2018-03-28 13:49:18,646  
+2018-03-28 13:49:18,646  	NTP configuration: 
+2018-03-28 13:49:18,646  		NTP server not set
+2018-03-28 13:49:18,647  
+2018-03-28 13:49:18,647  	Users validation:
+2018-03-28 13:49:18,649  	User missing:
+2018-03-28 13:49:18,649  		username admin password 5
+2018-03-28 13:49:18,649  		username evogaming password 5
+2018-03-28 13:49:18,649  
+2018-03-28 13:49:18,649  	Incorrent users:
+2018-03-28 13:49:18,649  		username admin password 5 $5$HDJOCB$Whvp7ro4iT5reliA4AcHm5WaO/Ez5EFS.G4RKpkAF4.  role network-admin
+2018-03-28 13:49:18,649  		username evogaming password 5 $5$COFFAO$KIsY1oFfdeD1u2vnPfQYktDjktH7gw6EwO2dJyfAIn6  role network-admin
+2018-03-28 13:49:18,649  
+2018-03-28 13:49:18,649  	Ethernet config validation:
+2018-03-28 13:49:18,650  
+2018-03-28 13:49:18,650  	Channel ports config validation:
+2018-03-28 13:49:18,650  
+2018-03-28 13:49:18,650  	Console config validation:
+2018-03-28 13:49:18,650  
+2018-03-28 13:49:18,650  	Tacacs config validation:
+2018-03-28 13:49:18,650  		server 10.30.32.4
+2018-03-28 13:49:18,650  
+2018-03-28 13:49:18,650  	Jumbo config validation:
+2018-03-28 13:49:18,650  
+2018-03-28 13:49:18,650  	QOS config validation:
+2018-03-28 13:49:18,650  
+2018-03-28 13:49:18,650  	Fex config validation:
+2018-03-28 13:49:18,650  
+2018-03-28 13:49:18,651  	Missed config lines: 4
+2018-03-28 13:49:18,663  Validation result for tbs1-wn-p001-cnx
+2018-03-28 13:49:18,663  	Mandatory config lines missed: 
+2018-03-28 13:49:18,663  
+2018-03-28 13:49:18,663  	SYSLOG configuration: 
+2018-03-28 13:49:18,666  
+2018-03-28 13:49:18,666  	NTP configuration: 
+2018-03-28 13:49:18,667  		NTP server not set
+2018-03-28 13:49:18,667  
+2018-03-28 13:49:18,667  	Users validation:
+2018-03-28 13:49:18,669  	User missing:
+2018-03-28 13:49:18,669  		username admin password 5
+2018-03-28 13:49:18,669  		username evogaming password 5
+2018-03-28 13:49:18,669  
+2018-03-28 13:49:18,669  	Incorrent users:
+2018-03-28 13:49:18,669  		username admin password 5 $5$PKLFOK$AnALiWXBIqPwtCn9SFGCJ8/Le8D0J7FX0vXR84ZA7ZD  role network-admin
+2018-03-28 13:49:18,669  		username evogaming password 5 $5$FOEFPB$7LltEvn3t3tzwDgEP4oP6Phz2B8P10dh9KUgN4zaKU6  role network-admin
+2018-03-28 13:49:18,669  
+2018-03-28 13:49:18,669  	Ethernet config validation:
+2018-03-28 13:49:18,670  
+2018-03-28 13:49:18,670  	Channel ports config validation:
+2018-03-28 13:49:18,670  
+2018-03-28 13:49:18,670  	Console config validation:
+2018-03-28 13:49:18,670  
+2018-03-28 13:49:18,670  	Tacacs config validation:
+2018-03-28 13:49:18,670  		server 10.30.32.4
+2018-03-28 13:49:18,670  
+2018-03-28 13:49:18,670  	Jumbo config validation:
+2018-03-28 13:49:18,670  
+2018-03-28 13:49:18,670  	QOS config validation:
+2018-03-28 13:49:18,670  
+2018-03-28 13:49:18,670  	Fex config validation:
+2018-03-28 13:49:18,670  
+2018-03-28 13:49:18,671  	Missed config lines: 4
+2018-03-28 13:49:18,684  Validation result for rix3-03-t021-cnx
+2018-03-28 13:49:18,684  	Mandatory config lines missed: 
+2018-03-28 13:49:18,684  
+2018-03-28 13:49:18,684  	SYSLOG configuration: 
+2018-03-28 13:49:18,687  
+2018-03-28 13:49:18,687  	NTP configuration: 
+2018-03-28 13:49:18,687  		NTP server not set
+2018-03-28 13:49:18,687  
+2018-03-28 13:49:18,687  	Users validation:
+2018-03-28 13:49:18,690  	User missing:
+2018-03-28 13:49:18,690  		username admin password 5
+2018-03-28 13:49:18,690  		username evogaming password 5
+2018-03-28 13:49:18,690  
+2018-03-28 13:49:18,690  	Incorrent users:
+2018-03-28 13:49:18,690  		username admin password 5 $1$tRBNy9Ie$v4FEJ1OhRqb96bujqwNNP/  role network-admin
+2018-03-28 13:49:18,691  		username evogaming password 5 !  role network-admin
+2018-03-28 13:49:18,691  
+2018-03-28 13:49:18,691  	Ethernet config validation:
+2018-03-28 13:49:18,691  
+2018-03-28 13:49:18,691  	Channel ports config validation:
+2018-03-28 13:49:18,691  		port-channel153
+2018-03-28 13:49:18,691  			spanning-tree port type edge
+2018-03-28 13:49:18,692  		port-channel13
+2018-03-28 13:49:18,692  			spanning-tree port type edge
+2018-03-28 13:49:18,692  		port-channel11
+2018-03-28 13:49:18,692  			spanning-tree port type edge
+2018-03-28 13:49:18,692  
+2018-03-28 13:49:18,692  	Console config validation:
+2018-03-28 13:49:18,692  
+2018-03-28 13:49:18,692  	Tacacs config validation:
+2018-03-28 13:49:18,692  
+2018-03-28 13:49:18,692  	Jumbo config validation:
+2018-03-28 13:49:18,692  
+2018-03-28 13:49:18,692  	QOS config validation:
+2018-03-28 13:49:18,692  		service-policy type network-qos jumbo
+2018-03-28 13:49:18,692  
+2018-03-28 13:49:18,692  	Fex config validation:
+2018-03-28 13:49:18,692  
+2018-03-28 13:49:18,692  	Missed config lines: 7
+2018-03-28 13:49:18,703  Validation result for rix3-03-t020-cnx
+2018-03-28 13:49:18,703  	Mandatory config lines missed: 
+2018-03-28 13:49:18,703  
+2018-03-28 13:49:18,703  	SYSLOG configuration: 
+2018-03-28 13:49:18,706  
+2018-03-28 13:49:18,706  	NTP configuration: 
+2018-03-28 13:49:18,706  		NTP server not set
+2018-03-28 13:49:18,706  
+2018-03-28 13:49:18,706  	Users validation:
+2018-03-28 13:49:18,709  	User missing:
+2018-03-28 13:49:18,709  		username admin password 5
+2018-03-28 13:49:18,709  		username evogaming password 5
+2018-03-28 13:49:18,709  
+2018-03-28 13:49:18,709  	Incorrent users:
+2018-03-28 13:49:18,709  		username admin password 5 $1$IS5TkEyj$e4uM8OJ4cPFdEmrnJF8vP1  role network-admin
+2018-03-28 13:49:18,709  		username evogaming password 5 $1$FN/4pmVr$.KyzWEyIt21kEr9Kgm5BC.  role network-admin
+2018-03-28 13:49:18,709  
+2018-03-28 13:49:18,709  	Ethernet config validation:
+2018-03-28 13:49:18,709  
+2018-03-28 13:49:18,709  	Channel ports config validation:
+2018-03-28 13:49:18,710  		port-channel153
+2018-03-28 13:49:18,710  			spanning-tree port type edge
+2018-03-28 13:49:18,710  		port-channel13
+2018-03-28 13:49:18,710  			spanning-tree port type edge
+2018-03-28 13:49:18,710  		port-channel11
+2018-03-28 13:49:18,710  			spanning-tree port type edge
+2018-03-28 13:49:18,710  
+2018-03-28 13:49:18,710  	Console config validation:
+2018-03-28 13:49:18,710  
+2018-03-28 13:49:18,710  	Tacacs config validation:
+2018-03-28 13:49:18,710  
+2018-03-28 13:49:18,710  	Jumbo config validation:
+2018-03-28 13:49:18,710  
+2018-03-28 13:49:18,711  	QOS config validation:
+2018-03-28 13:49:18,711  		service-policy type network-qos jumbo
+2018-03-28 13:49:18,711  
+2018-03-28 13:49:18,711  	Fex config validation:
+2018-03-28 13:49:18,711  
+2018-03-28 13:49:18,711  	Missed config lines: 7
+2018-03-28 13:49:18,719  Validation result for van1-02-p199-cnx
+2018-03-28 13:49:18,719  	Mandatory config lines missed: 
+2018-03-28 13:49:18,720  		policy-map type network-qos jumbo
+2018-03-28 13:49:18,720  		system qos
+2018-03-28 13:49:18,720  
+2018-03-28 13:49:18,720  	SYSLOG configuration: 
+2018-03-28 13:49:18,722  
+2018-03-28 13:49:18,722  	NTP configuration: 
+2018-03-28 13:49:18,722  		NTP server not set
+2018-03-28 13:49:18,722  
+2018-03-28 13:49:18,722  	Users validation:
+2018-03-28 13:49:18,725  	User missing:
+2018-03-28 13:49:18,725  		username admin password 5
+2018-03-28 13:49:18,725  		username evogaming password 5
+2018-03-28 13:49:18,725  
+2018-03-28 13:49:18,725  	Incorrent users:
+2018-03-28 13:49:18,725  		username admin password 5 $5$SQy/tmIj$42hkukNe4ROx4Hs88YzMfOZjdR4r31IZ9l7zwbeElnC  role network-admin
+2018-03-28 13:49:18,725  		username admin role network-operator
+2018-03-28 13:49:18,725  		username evogaming password 5 $5$FLcMhC4I$CLGR7q1xQYCrbLSYvYAC.xXjRu.cweX/Eldzu3wL5T.  role network-operator
+2018-03-28 13:49:18,725  		username evogaming role network-admin
+2018-03-28 13:49:18,725  
+2018-03-28 13:49:18,725  	Ethernet config validation:
+2018-03-28 13:49:18,725  
+2018-03-28 13:49:18,725  	Channel ports config validation:
+2018-03-28 13:49:18,726  
+2018-03-28 13:49:18,726  	Console config validation:
+2018-03-28 13:49:18,726  
+2018-03-28 13:49:18,726  	Tacacs config validation:
+2018-03-28 13:49:18,726  		server 10.30.32.4
+2018-03-28 13:49:18,726  
+2018-03-28 13:49:18,726  	Jumbo config validation:
+2018-03-28 13:49:18,726  		class type network-qos class-default
+2018-03-28 13:49:18,726  		mtu 9216
+2018-03-28 13:49:18,726  
+2018-03-28 13:49:18,726  	QOS config validation:
+2018-03-28 13:49:18,726  		service-policy type network-qos jumbo
+2018-03-28 13:49:18,726  
+2018-03-28 13:49:18,726  	Fex config validation:
+2018-03-28 13:49:18,726  
+2018-03-28 13:49:18,726  	Missed config lines: 9
+2018-03-28 13:49:18,737  Validation result for van1-02-p198-cnx
+2018-03-28 13:49:18,737  	Mandatory config lines missed: 
+2018-03-28 13:49:18,737  		policy-map type network-qos jumbo
+2018-03-28 13:49:18,737  		system qos
+2018-03-28 13:49:18,737  
+2018-03-28 13:49:18,738  	SYSLOG configuration: 
+2018-03-28 13:49:18,739  
+2018-03-28 13:49:18,739  	NTP configuration: 
+2018-03-28 13:49:18,740  		NTP server not set
+2018-03-28 13:49:18,740  
+2018-03-28 13:49:18,740  	Users validation:
+2018-03-28 13:49:18,742  	User missing:
+2018-03-28 13:49:18,742  		username admin password 5
+2018-03-28 13:49:18,742  		username evogaming password 5
+2018-03-28 13:49:18,742  
+2018-03-28 13:49:18,742  	Incorrent users:
+2018-03-28 13:49:18,742  		username admin password 5 $5$SQy/tmIj$42hkukNe4ROx4Hs88YzMfOZjdR4r31IZ9l7zwbeElnC  role network-admin
+2018-03-28 13:49:18,742  		username admin role network-operator
+2018-03-28 13:49:18,742  		username evogaming password 5 $5$FLcMhC4I$CLGR7q1xQYCrbLSYvYAC.xXjRu.cweX/Eldzu3wL5T.  role network-admin
+2018-03-28 13:49:18,742  
+2018-03-28 13:49:18,742  	Ethernet config validation:
+2018-03-28 13:49:18,742  
+2018-03-28 13:49:18,742  	Channel ports config validation:
+2018-03-28 13:49:18,743  
+2018-03-28 13:49:18,743  	Console config validation:
+2018-03-28 13:49:18,743  
+2018-03-28 13:49:18,743  	Tacacs config validation:
+2018-03-28 13:49:18,743  		server 10.30.32.4
+2018-03-28 13:49:18,743  
+2018-03-28 13:49:18,743  	Jumbo config validation:
+2018-03-28 13:49:18,743  		class type network-qos class-default
+2018-03-28 13:49:18,743  		mtu 9216
+2018-03-28 13:49:18,743  
+2018-03-28 13:49:18,743  	QOS config validation:
+2018-03-28 13:49:18,743  		service-policy type network-qos jumbo
+2018-03-28 13:49:18,743  
+2018-03-28 13:49:18,743  	Fex config validation:
+2018-03-28 13:49:18,743  
+2018-03-28 13:49:18,743  	Missed config lines: 9
+2018-03-28 13:49:18,756  Validation result for mlt1-04-p198-cnx
+2018-03-28 13:49:18,756  	Mandatory config lines missed: 
+2018-03-28 13:49:18,756  		policy-map type network-qos jumbo
+2018-03-28 13:49:18,756  		system qos
+2018-03-28 13:49:18,756  
+2018-03-28 13:49:18,756  	SYSLOG configuration: 
+2018-03-28 13:49:18,759  
+2018-03-28 13:49:18,760  	NTP configuration: 
+2018-03-28 13:49:18,760  		NTP server not set
+2018-03-28 13:49:18,760  
+2018-03-28 13:49:18,760  	Users validation:
+2018-03-28 13:49:18,763  	User missing:
+2018-03-28 13:49:18,763  		username admin password 5
+2018-03-28 13:49:18,763  		username evogaming password 5
+2018-03-28 13:49:18,763  
+2018-03-28 13:49:18,763  	Incorrent users:
+2018-03-28 13:49:18,763  		username admin password 5 $5$SQy/tmIj$42hkukNe4ROx4Hs88YzMfOZjdR4r31IZ9l7zwbeElnC  role network-admin
+2018-03-28 13:49:18,763  		username admin role network-operator
+2018-03-28 13:49:18,763  		username evogaming password 5 $5$FLcMhC4I$CLGR7q1xQYCrbLSYvYAC.xXjRu.cweX/Eldzu3wL5T.  role network-admin
+2018-03-28 13:49:18,763  
+2018-03-28 13:49:18,763  	Ethernet config validation:
+2018-03-28 13:49:18,764  
+2018-03-28 13:49:18,764  	Channel ports config validation:
+2018-03-28 13:49:18,764  
+2018-03-28 13:49:18,764  	Console config validation:
+2018-03-28 13:49:18,764  
+2018-03-28 13:49:18,764  	Tacacs config validation:
+2018-03-28 13:49:18,764  		server 10.30.32.4
+2018-03-28 13:49:18,764  
+2018-03-28 13:49:18,764  	Jumbo config validation:
+2018-03-28 13:49:18,764  		class type network-qos class-default
+2018-03-28 13:49:18,764  		mtu 9216
+2018-03-28 13:49:18,765  
+2018-03-28 13:49:18,765  	QOS config validation:
+2018-03-28 13:49:18,765  		service-policy type network-qos jumbo
+2018-03-28 13:49:18,765  
+2018-03-28 13:49:18,765  	Fex config validation:
+2018-03-28 13:49:18,765  
+2018-03-28 13:49:18,765  	Missed config lines: 9
+2018-03-28 13:49:18,775  Validation result for van2-12-p198-cnx
+2018-03-28 13:49:18,775  	Mandatory config lines missed: 
+2018-03-28 13:49:18,776  		policy-map type network-qos jumbo
+2018-03-28 13:49:18,776  		system qos
+2018-03-28 13:49:18,776  
+2018-03-28 13:49:18,776  	SYSLOG configuration: 
+2018-03-28 13:49:18,778  
+2018-03-28 13:49:18,778  	NTP configuration: 
+2018-03-28 13:49:18,778  		NTP server not set
+2018-03-28 13:49:18,778  
+2018-03-28 13:49:18,778  	Users validation:
+2018-03-28 13:49:18,780  	User missing:
+2018-03-28 13:49:18,780  		username admin password 5
+2018-03-28 13:49:18,780  		username evogaming password 5
+2018-03-28 13:49:18,780  
+2018-03-28 13:49:18,780  	Incorrent users:
+2018-03-28 13:49:18,781  		username admin password 5 $5$LEHJHA$XqZLwxIzIW8ly7rzlepmQ7iY3aiUVCGx8DoZq6VhKG0  role network-admin
+2018-03-28 13:49:18,781  		username admin role network-operator
+2018-03-28 13:49:18,781  		username evogaming password 5 $5$AMFMDL$4wBlxnehaYxTxsWYwoXE..UJgkWygLvcx0DNbmJJlI0  role network-admin
+2018-03-28 13:49:18,781  
+2018-03-28 13:49:18,781  	Ethernet config validation:
+2018-03-28 13:49:18,781  
+2018-03-28 13:49:18,781  	Channel ports config validation:
+2018-03-28 13:49:18,781  
+2018-03-28 13:49:18,781  	Console config validation:
+2018-03-28 13:49:18,781  
+2018-03-28 13:49:18,781  	Tacacs config validation:
+2018-03-28 13:49:18,781  		server 10.30.32.4
+2018-03-28 13:49:18,782  
+2018-03-28 13:49:18,782  	Jumbo config validation:
+2018-03-28 13:49:18,782  		class type network-qos class-default
+2018-03-28 13:49:18,782  		mtu 9216
+2018-03-28 13:49:18,782  
+2018-03-28 13:49:18,782  	QOS config validation:
+2018-03-28 13:49:18,782  		service-policy type network-qos jumbo
+2018-03-28 13:49:18,782  
+2018-03-28 13:49:18,782  	Fex config validation:
+2018-03-28 13:49:18,782  
+2018-03-28 13:49:18,782  	Missed config lines: 9
+2018-03-28 13:49:18,789  Validation result for van2-12-p199-cnx
+2018-03-28 13:49:18,789  	Mandatory config lines missed: 
+2018-03-28 13:49:18,789  		policy-map type network-qos jumbo
+2018-03-28 13:49:18,789  		system qos
+2018-03-28 13:49:18,789  
+2018-03-28 13:49:18,789  	SYSLOG configuration: 
+2018-03-28 13:49:18,792  
+2018-03-28 13:49:18,792  	NTP configuration: 
+2018-03-28 13:49:18,793  		NTP server not set
+2018-03-28 13:49:18,793  		ntp server 10.4.2.221 use-vrf management
+2018-03-28 13:49:18,793  
+2018-03-28 13:49:18,793  	Users validation:
+2018-03-28 13:49:18,795  	User missing:
+2018-03-28 13:49:18,795  		username admin password 5
+2018-03-28 13:49:18,795  		username evogaming password 5
+2018-03-28 13:49:18,796  
+2018-03-28 13:49:18,796  	Incorrent users:
+2018-03-28 13:49:18,796  		username admin password 5 $5$GFGNMG$04eEvo1vP8UXTOBzbmWri9sAO6n7Q.f/5Uv6/isFmZ8  role network-admin
+2018-03-28 13:49:18,796  		username admin role network-operator
+2018-03-28 13:49:18,796  		username evogaming password 5 $5$NIFCDC$CatELZQ2VhsZqQt5C8iWuRI1ZFAyifUZ6uJffzDVC9A  role network-admin
+2018-03-28 13:49:18,796  
+2018-03-28 13:49:18,796  	Ethernet config validation:
+2018-03-28 13:49:18,796  
+2018-03-28 13:49:18,796  	Channel ports config validation:
+2018-03-28 13:49:18,796  
+2018-03-28 13:49:18,797  	Console config validation:
+2018-03-28 13:49:18,797  
+2018-03-28 13:49:18,797  	Tacacs config validation:
+2018-03-28 13:49:18,797  		server 10.30.32.4
+2018-03-28 13:49:18,797  
+2018-03-28 13:49:18,797  	Jumbo config validation:
+2018-03-28 13:49:18,797  		class type network-qos class-default
+2018-03-28 13:49:18,797  		mtu 9216
+2018-03-28 13:49:18,797  
+2018-03-28 13:49:18,797  	QOS config validation:
+2018-03-28 13:49:18,797  		service-policy type network-qos jumbo
+2018-03-28 13:49:18,797  
+2018-03-28 13:49:18,797  	Fex config validation:
+2018-03-28 13:49:18,797  
+2018-03-28 13:49:18,797  	Missed config lines: 10
+2018-03-28 13:49:18,809  Validation result for mlt1-04-p199-cnx
+2018-03-28 13:49:18,809  	Mandatory config lines missed: 
+2018-03-28 13:49:18,810  		policy-map type network-qos jumbo
+2018-03-28 13:49:18,810  		system qos
+2018-03-28 13:49:18,810  
+2018-03-28 13:49:18,810  	SYSLOG configuration: 
+2018-03-28 13:49:18,813  
+2018-03-28 13:49:18,813  	NTP configuration: 
+2018-03-28 13:49:18,813  		NTP server not set
+2018-03-28 13:49:18,813  
+2018-03-28 13:49:18,813  	Users validation:
+2018-03-28 13:49:18,816  	User missing:
+2018-03-28 13:49:18,816  		username admin password 5
+2018-03-28 13:49:18,816  		username evogaming password 5
+2018-03-28 13:49:18,816  
+2018-03-28 13:49:18,816  	Incorrent users:
+2018-03-28 13:49:18,816  		username admin password 5 $5$zh60RehQ$IOyYx79hSfuuJauuYOq8X/4V9iNIRHqdPa7tvTVSb2D  role network-admin
+2018-03-28 13:49:18,816  		username evogaming password 5 $5$L/A5Uisp$z5Do3xgqUMbWkNcS4H/.mq5M5ArUmzobdy2HIXR4pl3  role network-admin
+2018-03-28 13:49:18,816  
+2018-03-28 13:49:18,816  	Ethernet config validation:
+2018-03-28 13:49:18,817  
+2018-03-28 13:49:18,817  	Channel ports config validation:
+2018-03-28 13:49:18,817  
+2018-03-28 13:49:18,817  	Console config validation:
+2018-03-28 13:49:18,817  
+2018-03-28 13:49:18,817  	Tacacs config validation:
+2018-03-28 13:49:18,817  		server 10.30.32.4
+2018-03-28 13:49:18,817  
+2018-03-28 13:49:18,817  	Jumbo config validation:
+2018-03-28 13:49:18,817  		class type network-qos class-default
+2018-03-28 13:49:18,817  		mtu 9216
+2018-03-28 13:49:18,817  
+2018-03-28 13:49:18,817  	QOS config validation:
+2018-03-28 13:49:18,817  		service-policy type network-qos jumbo
+2018-03-28 13:49:18,818  
+2018-03-28 13:49:18,818  	Fex config validation:
+2018-03-28 13:49:18,818  
+2018-03-28 13:49:18,818  	Missed config lines: 9
+2018-03-28 13:49:18,833  Validation result for rix1-02-p198-cnx
+2018-03-28 13:49:18,833  	Mandatory config lines missed: 
+2018-03-28 13:49:18,834  
+2018-03-28 13:49:18,834  	SYSLOG configuration: 
+2018-03-28 13:49:18,840  
+2018-03-28 13:49:18,840  	NTP configuration: 
+2018-03-28 13:49:18,840  		NTP server not set
+2018-03-28 13:49:18,840  
+2018-03-28 13:49:18,840  	Users validation:
+2018-03-28 13:49:18,845  	User missing:
+2018-03-28 13:49:18,845  		username admin password 5
+2018-03-28 13:49:18,845  		username evogaming password 5
+2018-03-28 13:49:18,845  
+2018-03-28 13:49:18,845  	Incorrent users:
+2018-03-28 13:49:18,845  		username admin password 5 $1$axjLk2q3$eZj.8dWWChj3bR0YEemND1  role network-admin
+2018-03-28 13:49:18,845  		username evogaming password 5 $1$FN/4pmVr$.KyzWEyIt21kEr9Kgm5BC.  role network-operator
+2018-03-28 13:49:18,845  		username evogaming role network-admin
+2018-03-28 13:49:18,845  
+2018-03-28 13:49:18,846  	Ethernet config validation:
+2018-03-28 13:49:18,846  
+2018-03-28 13:49:18,846  	Channel ports config validation:
+2018-03-28 13:49:18,847  
+2018-03-28 13:49:18,847  	Console config validation:
+2018-03-28 13:49:18,847  
+2018-03-28 13:49:18,847  	Tacacs config validation:
+2018-03-28 13:49:18,847  
+2018-03-28 13:49:18,847  	Jumbo config validation:
+2018-03-28 13:49:18,847  
+2018-03-28 13:49:18,847  	QOS config validation:
+2018-03-28 13:49:18,847  		service-policy type network-qos jumbo
+2018-03-28 13:49:18,847  
+2018-03-28 13:49:18,847  	Fex config validation:
+2018-03-28 13:49:18,848  
+2018-03-28 13:49:18,848  	Missed config lines: 4
+2018-03-28 13:49:18,866  Validation result for rix1-02-p199-cnx
+2018-03-28 13:49:18,866  	Mandatory config lines missed: 
+2018-03-28 13:49:18,867  
+2018-03-28 13:49:18,867  	SYSLOG configuration: 
+2018-03-28 13:49:18,874  
+2018-03-28 13:49:18,874  	NTP configuration: 
+2018-03-28 13:49:18,874  		NTP server not set
+2018-03-28 13:49:18,874  
+2018-03-28 13:49:18,874  	Users validation:
+2018-03-28 13:49:18,879  	User missing:
+2018-03-28 13:49:18,879  		username admin password 5
+2018-03-28 13:49:18,879  		username evogaming password 5
+2018-03-28 13:49:18,879  
+2018-03-28 13:49:18,879  	Incorrent users:
+2018-03-28 13:49:18,879  		username admin password 5 $1$axjLk2q3$eZj.8dWWChj3bR0YEemND1  role network-admin
+2018-03-28 13:49:18,880  		username evogaming password 5 $1$FN/4pmVr$.KyzWEyIt21kEr9Kgm5BC.  role network-operator
+2018-03-28 13:49:18,880  		username evogaming role network-admin
+2018-03-28 13:49:18,880  
+2018-03-28 13:49:18,880  	Ethernet config validation:
+2018-03-28 13:49:18,880  
+2018-03-28 13:49:18,880  	Channel ports config validation:
+2018-03-28 13:49:18,880  
+2018-03-28 13:49:18,880  	Console config validation:
+2018-03-28 13:49:18,880  
+2018-03-28 13:49:18,880  	Tacacs config validation:
+2018-03-28 13:49:18,880  
+2018-03-28 13:49:18,880  	Jumbo config validation:
+2018-03-28 13:49:18,881  
+2018-03-28 13:49:18,881  	QOS config validation:
+2018-03-28 13:49:18,881  		service-policy type network-qos jumbo
+2018-03-28 13:49:18,881  
+2018-03-28 13:49:18,881  	Fex config validation:
+2018-03-28 13:49:18,881  
+2018-03-28 13:49:18,881  	Missed config lines: 4
+2018-03-28 13:49:18,887  Validation result for hkg2-05-p004-cnx
+2018-03-28 13:49:18,888  	Mandatory config lines missed: 
+2018-03-28 13:49:18,888  
+2018-03-28 13:49:18,888  	SYSLOG configuration: 
+2018-03-28 13:49:18,890  		logging server 10.30.230.90 6 use-vrf management
+2018-03-28 13:49:18,890  
+2018-03-28 13:49:18,890  	NTP configuration: 
+2018-03-28 13:49:18,890  		NTP server not set
+2018-03-28 13:49:18,890  
+2018-03-28 13:49:18,890  	Users validation:
+2018-03-28 13:49:18,892  	User missing:
+2018-03-28 13:49:18,892  		username admin password 5
+2018-03-28 13:49:18,892  		username evogaming password 5
+2018-03-28 13:49:18,892  
+2018-03-28 13:49:18,892  	Incorrent users:
+2018-03-28 13:49:18,892  		username admin password 5 $1$axjLk2q3$eZj.8dWWChj3bR0YEemND1  role network-admin
+2018-03-28 13:49:18,892  		username evogaming password 5 $1$FN/4pmVr$.KyzWEyIt21kEr9Kgm5BC.  role network-admin
+2018-03-28 13:49:18,892  
+2018-03-28 13:49:18,892  	Ethernet config validation:
+2018-03-28 13:49:18,893  		Ethernet1/41
+2018-03-28 13:49:18,893  			vpc orphan-port suspend
+2018-03-28 13:49:18,893  
+2018-03-28 13:49:18,893  	Channel ports config validation:
+2018-03-28 13:49:18,894  
+2018-03-28 13:49:18,894  	Console config validation:
+2018-03-28 13:49:18,894  
+2018-03-28 13:49:18,894  	Tacacs config validation:
+2018-03-28 13:49:18,894  		server 10.30.32.4
+2018-03-28 13:49:18,894  
+2018-03-28 13:49:18,894  	Jumbo config validation:
+2018-03-28 13:49:18,894  
+2018-03-28 13:49:18,894  	QOS config validation:
+2018-03-28 13:49:18,894  		service-policy type network-qos jumbo
+2018-03-28 13:49:18,894  
+2018-03-28 13:49:18,894  	Fex config validation:
+2018-03-28 13:49:18,894  
+2018-03-28 13:49:18,894  	Missed config lines: 7
+2018-03-28 13:49:18,903  Validation result for rix3-03-p031-cnx
+2018-03-28 13:49:18,903  	Mandatory config lines missed: 
+2018-03-28 13:49:18,903  		policy-map type network-qos jumbo
+2018-03-28 13:49:18,903  		system qos
+2018-03-28 13:49:18,903  
+2018-03-28 13:49:18,904  	SYSLOG configuration: 
+2018-03-28 13:49:18,905  
+2018-03-28 13:49:18,905  	NTP configuration: 
+2018-03-28 13:49:18,905  		NTP server not set
+2018-03-28 13:49:18,905  
+2018-03-28 13:49:18,905  	Users validation:
+2018-03-28 13:49:18,907  	User missing:
+2018-03-28 13:49:18,907  		username admin password 5
+2018-03-28 13:49:18,907  		username evogaming password 5
+2018-03-28 13:49:18,907  
+2018-03-28 13:49:18,907  	Incorrent users:
+2018-03-28 13:49:18,907  		username admin password 5 $5$SQy/tmIj$42hkukNe4ROx4Hs88YzMfOZjdR4r31IZ9l7zwbeElnC  role network-admin
+2018-03-28 13:49:18,907  		username admin role network-operator
+2018-03-28 13:49:18,907  		username evogaming password 5 $5$FLcMhC4I$CLGR7q1xQYCrbLSYvYAC.xXjRu.cweX/Eldzu3wL5T.  role network-admin
+2018-03-28 13:49:18,907  		username evogaming role network-operator
+2018-03-28 13:49:18,907  
+2018-03-28 13:49:18,907  	Ethernet config validation:
+2018-03-28 13:49:18,908  		Ethernet1/52/3
+2018-03-28 13:49:18,908  			vpc orphan-port suspend
+2018-03-28 13:49:18,908  		Ethernet1/52/2
+2018-03-28 13:49:18,908  			vpc orphan-port suspend
+2018-03-28 13:49:18,908  		Ethernet1/52/4
+2018-03-28 13:49:18,908  			vpc orphan-port suspend
+2018-03-28 13:49:18,908  		Ethernet1/21
+2018-03-28 13:49:18,908  			spanning-tree port type edge
+2018-03-28 13:49:18,908  		Ethernet1/20
+2018-03-28 13:49:18,908  			spanning-tree port type edge
+2018-03-28 13:49:18,908  
+2018-03-28 13:49:18,908  	Channel ports config validation:
+2018-03-28 13:49:18,909  
+2018-03-28 13:49:18,909  	Console config validation:
+2018-03-28 13:49:18,909  
+2018-03-28 13:49:18,909  	Tacacs config validation:
+2018-03-28 13:49:18,909  		server 10.30.32.4
+2018-03-28 13:49:18,909  
+2018-03-28 13:49:18,909  	Jumbo config validation:
+2018-03-28 13:49:18,909  		class type network-qos class-default
+2018-03-28 13:49:18,909  		mtu 9216
+2018-03-28 13:49:18,909  
+2018-03-28 13:49:18,909  	QOS config validation:
+2018-03-28 13:49:18,909  		service-policy type network-qos jumbo
+2018-03-28 13:49:18,909  
+2018-03-28 13:49:18,909  	Fex config validation:
+2018-03-28 13:49:18,909  
+2018-03-28 13:49:18,909  	Missed config lines: 14
+2018-03-28 13:49:18,918  Validation result for rix3-03-p030-cnx
+2018-03-28 13:49:18,919  	Mandatory config lines missed: 
+2018-03-28 13:49:18,919  		policy-map type network-qos jumbo
+2018-03-28 13:49:18,919  		system qos
+2018-03-28 13:49:18,919  
+2018-03-28 13:49:18,919  	SYSLOG configuration: 
+2018-03-28 13:49:18,921  
+2018-03-28 13:49:18,921  	NTP configuration: 
+2018-03-28 13:49:18,921  		NTP server not set
+2018-03-28 13:49:18,921  
+2018-03-28 13:49:18,921  	Users validation:
+2018-03-28 13:49:18,922  	User missing:
+2018-03-28 13:49:18,922  		username admin password 5
+2018-03-28 13:49:18,923  		username evogaming password 5
+2018-03-28 13:49:18,923  
+2018-03-28 13:49:18,923  	Incorrent users:
+2018-03-28 13:49:18,923  		username admin password 5 $5$SQy/tmIj$42hkukNe4ROx4Hs88YzMfOZjdR4r31IZ9l7zwbeElnC  role network-admin
+2018-03-28 13:49:18,923  		username admin role network-operator
+2018-03-28 13:49:18,923  		username evogaming password 5 $5$FLcMhC4I$CLGR7q1xQYCrbLSYvYAC.xXjRu.cweX/Eldzu3wL5T.  role network-admin
+2018-03-28 13:49:18,923  		username evogaming role network-operator
+2018-03-28 13:49:18,923  
+2018-03-28 13:49:18,923  	Ethernet config validation:
+2018-03-28 13:49:18,923  		Ethernet1/51/3
+2018-03-28 13:49:18,923  			vpc orphan-port suspend
+2018-03-28 13:49:18,923  		Ethernet1/51/4
+2018-03-28 13:49:18,923  			vpc orphan-port suspend
+2018-03-28 13:49:18,924  		Ethernet1/52/3
+2018-03-28 13:49:18,924  			vpc orphan-port suspend
+2018-03-28 13:49:18,924  		Ethernet1/52/2
+2018-03-28 13:49:18,924  			vpc orphan-port suspend
+2018-03-28 13:49:18,924  		Ethernet1/52/4
+2018-03-28 13:49:18,924  			vpc orphan-port suspend
+2018-03-28 13:49:18,924  		Ethernet1/21
+2018-03-28 13:49:18,924  			spanning-tree port type edge
+2018-03-28 13:49:18,924  		Ethernet1/20
+2018-03-28 13:49:18,924  			spanning-tree port type edge
+2018-03-28 13:49:18,924  
+2018-03-28 13:49:18,924  	Channel ports config validation:
+2018-03-28 13:49:18,925  
+2018-03-28 13:49:18,925  	Console config validation:
+2018-03-28 13:49:18,925  
+2018-03-28 13:49:18,925  	Tacacs config validation:
+2018-03-28 13:49:18,925  		server 10.30.32.4
+2018-03-28 13:49:18,925  
+2018-03-28 13:49:18,925  	Jumbo config validation:
+2018-03-28 13:49:18,925  		class type network-qos class-default
+2018-03-28 13:49:18,925  		mtu 9216
+2018-03-28 13:49:18,925  
+2018-03-28 13:49:18,925  	QOS config validation:
+2018-03-28 13:49:18,925  		service-policy type network-qos jumbo
+2018-03-28 13:49:18,925  
+2018-03-28 13:49:18,926  	Fex config validation:
+2018-03-28 13:49:18,926  
+2018-03-28 13:49:18,926  	Missed config lines: 16
+2018-03-28 13:49:18,933  Validation result for fra1-01-p016-cnx
+2018-03-28 13:49:18,933  	Mandatory config lines missed: 
+2018-03-28 13:49:18,933  		policy-map type network-qos jumbo
+2018-03-28 13:49:18,933  		system qos
+2018-03-28 13:49:18,933  
+2018-03-28 13:49:18,933  	SYSLOG configuration: 
+2018-03-28 13:49:18,935  		SYSLOG server not set
+2018-03-28 13:49:18,935  		logging server 10.8.48.122 5 use-vrf management
+2018-03-28 13:49:18,935  
+2018-03-28 13:49:18,935  	NTP configuration: 
+2018-03-28 13:49:18,935  		NTP server not set
+2018-03-28 13:49:18,935  
+2018-03-28 13:49:18,935  	Users validation:
+2018-03-28 13:49:18,937  	User missing:
+2018-03-28 13:49:18,937  		username admin password 5
+2018-03-28 13:49:18,937  		username evogaming password 5
+2018-03-28 13:49:18,937  
+2018-03-28 13:49:18,937  	Incorrent users:
+2018-03-28 13:49:18,937  		username admin password 5 $5$SQy/tmIj$42hkukNe4ROx4Hs88YzMfOZjdR4r31IZ9l7zwbeElnC  role network-admin
+2018-03-28 13:49:18,937  		username admin role network-operator
+2018-03-28 13:49:18,937  		username evogaming password 5 $5$FLcMhC4I$CLGR7q1xQYCrbLSYvYAC.xXjRu.cweX/Eldzu3wL5T.  role network-admin
+2018-03-28 13:49:18,937  		username evogaming role network-operator
+2018-03-28 13:49:18,937  
+2018-03-28 13:49:18,937  	Ethernet config validation:
+2018-03-28 13:49:18,938  		Ethernet1/9
+2018-03-28 13:49:18,938  			vpc orphan-port suspend
+2018-03-28 13:49:18,938  			spanning-tree port type edge
+2018-03-28 13:49:18,938  		Ethernet1/10
+2018-03-28 13:49:18,938  			vpc orphan-port suspend
+2018-03-28 13:49:18,938  			spanning-tree port type edge
+2018-03-28 13:49:18,938  		Ethernet1/16
+2018-03-28 13:49:18,938  			vpc orphan-port suspend
+2018-03-28 13:49:18,938  			spanning-tree port type edge
+2018-03-28 13:49:18,938  		Ethernet1/17
+2018-03-28 13:49:18,938  			vpc orphan-port suspend
+2018-03-28 13:49:18,938  			spanning-tree port type edge
+2018-03-28 13:49:18,938  		Ethernet1/15
+2018-03-28 13:49:18,938  			vpc orphan-port suspend
+2018-03-28 13:49:18,939  			spanning-tree port type edge
+2018-03-28 13:49:18,939  		Ethernet1/18
+2018-03-28 13:49:18,939  			vpc orphan-port suspend
+2018-03-28 13:49:18,939  			spanning-tree port type edge
+2018-03-28 13:49:18,939  		Ethernet1/19
+2018-03-28 13:49:18,939  			vpc orphan-port suspend
+2018-03-28 13:49:18,939  			spanning-tree port type edge
+2018-03-28 13:49:18,939  
+2018-03-28 13:49:18,939  	Channel ports config validation:
+2018-03-28 13:49:18,939  
+2018-03-28 13:49:18,939  	Console config validation:
+2018-03-28 13:49:18,939  
+2018-03-28 13:49:18,939  	Tacacs config validation:
+2018-03-28 13:49:18,939  		server 10.30.32.4
+2018-03-28 13:49:18,939  
+2018-03-28 13:49:18,940  	Jumbo config validation:
+2018-03-28 13:49:18,940  		class type network-qos class-default
+2018-03-28 13:49:18,940  		mtu 9216
+2018-03-28 13:49:18,940  
+2018-03-28 13:49:18,940  	QOS config validation:
+2018-03-28 13:49:18,940  		service-policy type network-qos jumbo
+2018-03-28 13:49:18,940  
+2018-03-28 13:49:18,940  	Fex config validation:
+2018-03-28 13:49:18,940  
+2018-03-28 13:49:18,940  	Missed config lines: 25
+2018-03-28 13:49:18,962  Validation result for rix1-02-p200-cnx
+2018-03-28 13:49:18,962  	Mandatory config lines missed: 
+2018-03-28 13:49:18,962  
+2018-03-28 13:49:18,963  	SYSLOG configuration: 
+2018-03-28 13:49:18,970  		logging server 10.30.230.90 7 use-vrf management
+2018-03-28 13:49:18,970  
+2018-03-28 13:49:18,970  	NTP configuration: 
+2018-03-28 13:49:18,971  		NTP server not set
+2018-03-28 13:49:18,971  
+2018-03-28 13:49:18,971  	Users validation:
+2018-03-28 13:49:18,978  	User missing:
+2018-03-28 13:49:18,978  		username admin password 5
+2018-03-28 13:49:18,978  		username evogaming password 5
+2018-03-28 13:49:18,978  
+2018-03-28 13:49:18,978  	Incorrent users:
+2018-03-28 13:49:18,978  		username admin password 5 $1$axjLk2q3$eZj.8dWWChj3bR0YEemND1  role network-admin
+2018-03-28 13:49:18,978  		username evogaming password 5 $1$FN/4pmVr$.KyzWEyIt21kEr9Kgm5BC.  role network-admin
+2018-03-28 13:49:18,978  
+2018-03-28 13:49:18,978  	Ethernet config validation:
+2018-03-28 13:49:18,978  
+2018-03-28 13:49:18,978  	Channel ports config validation:
+2018-03-28 13:49:18,979  
+2018-03-28 13:49:18,979  	Console config validation:
+2018-03-28 13:49:18,979  
+2018-03-28 13:49:18,979  	Tacacs config validation:
+2018-03-28 13:49:18,979  
+2018-03-28 13:49:18,979  	Jumbo config validation:
+2018-03-28 13:49:18,979  
+2018-03-28 13:49:18,979  	QOS config validation:
+2018-03-28 13:49:18,979  		service-policy type network-qos jumbo
+2018-03-28 13:49:18,979  
+2018-03-28 13:49:18,979  	Fex config validation:
+2018-03-28 13:49:18,979  
+2018-03-28 13:49:18,979  	Missed config lines: 5
+2018-03-28 13:49:18,987  Validation result for fra1-01-p015-cnx
+2018-03-28 13:49:18,987  	Mandatory config lines missed: 
+2018-03-28 13:49:18,987  		policy-map type network-qos jumbo
+2018-03-28 13:49:18,987  		system qos
+2018-03-28 13:49:18,987  
+2018-03-28 13:49:18,987  	SYSLOG configuration: 
+2018-03-28 13:49:18,989  		SYSLOG server not set
+2018-03-28 13:49:18,989  		logging server 10.8.48.122 5 use-vrf management
+2018-03-28 13:49:18,989  
+2018-03-28 13:49:18,989  	NTP configuration: 
+2018-03-28 13:49:18,989  		NTP server not set
+2018-03-28 13:49:18,989  
+2018-03-28 13:49:18,989  	Users validation:
+2018-03-28 13:49:18,991  	User missing:
+2018-03-28 13:49:18,991  		username admin password 5
+2018-03-28 13:49:18,991  		username evogaming password 5
+2018-03-28 13:49:18,991  
+2018-03-28 13:49:18,991  	Incorrent users:
+2018-03-28 13:49:18,991  		username admin password 5 $5$SQy/tmIj$42hkukNe4ROx4Hs88YzMfOZjdR4r31IZ9l7zwbeElnC  role network-admin
+2018-03-28 13:49:18,991  		username admin role network-operator
+2018-03-28 13:49:18,991  		username evogaming password 5 $5$FLcMhC4I$CLGR7q1xQYCrbLSYvYAC.xXjRu.cweX/Eldzu3wL5T.  role network-admin
+2018-03-28 13:49:18,991  		username evogaming role network-operator
+2018-03-28 13:49:18,991  
+2018-03-28 13:49:18,991  	Ethernet config validation:
+2018-03-28 13:49:18,991  		Ethernet1/7
+2018-03-28 13:49:18,991  			spanning-tree port type edge
+2018-03-28 13:49:18,991  		Ethernet1/51
+2018-03-28 13:49:18,991  			description
+2018-03-28 13:49:18,992  			vpc orphan-port suspend
+2018-03-28 13:49:18,992  		Ethernet1/52
+2018-03-28 13:49:18,992  			description
+2018-03-28 13:49:18,992  			vpc orphan-port suspend
+2018-03-28 13:49:18,992  		Ethernet1/14
+2018-03-28 13:49:18,992  			spanning-tree port type edge
+2018-03-28 13:49:18,992  
+2018-03-28 13:49:18,992  	Channel ports config validation:
+2018-03-28 13:49:18,993  		port-channel114
+2018-03-28 13:49:18,993  			spanning-tree port type edge
+2018-03-28 13:49:18,993  		port-channel107
+2018-03-28 13:49:18,993  			spanning-tree port type edge
+2018-03-28 13:49:18,993  
+2018-03-28 13:49:18,993  	Console config validation:
+2018-03-28 13:49:18,993  
+2018-03-28 13:49:18,993  	Tacacs config validation:
+2018-03-28 13:49:18,993  		server 10.30.32.4
+2018-03-28 13:49:18,994  
+2018-03-28 13:49:18,994  	Jumbo config validation:
+2018-03-28 13:49:18,994  		class type network-qos class-default
+2018-03-28 13:49:18,994  		mtu 9216
+2018-03-28 13:49:18,994  
+2018-03-28 13:49:18,994  	QOS config validation:
+2018-03-28 13:49:18,994  		service-policy type network-qos jumbo
+2018-03-28 13:49:18,994  
+2018-03-28 13:49:18,994  	Fex config validation:
+2018-03-28 13:49:18,994  
+2018-03-28 13:49:18,994  	Missed config lines: 19
+2018-03-28 13:49:19,020  Validation result for rix1-02-p201-cnx
+2018-03-28 13:49:19,020  	Mandatory config lines missed: 
+2018-03-28 13:49:19,021  
+2018-03-28 13:49:19,021  	SYSLOG configuration: 
+2018-03-28 13:49:19,030  		logging server 10.30.230.90 7 use-vrf management
+2018-03-28 13:49:19,030  
+2018-03-28 13:49:19,030  	NTP configuration: 
+2018-03-28 13:49:19,030  		NTP server not set
+2018-03-28 13:49:19,030  
+2018-03-28 13:49:19,030  	Users validation:
+2018-03-28 13:49:19,041  	User missing:
+2018-03-28 13:49:19,041  		username admin password 5
+2018-03-28 13:49:19,041  		username evogaming password 5
+2018-03-28 13:49:19,042  
+2018-03-28 13:49:19,042  	Incorrent users:
+2018-03-28 13:49:19,042  		username admin password 5 $1$axjLk2q3$eZj.8dWWChj3bR0YEemND1  role network-admin
+2018-03-28 13:49:19,042  		username evogaming password 5 $1$FN/4pmVr$.KyzWEyIt21kEr9Kgm5BC.  role network-admin
+2018-03-28 13:49:19,042  
+2018-03-28 13:49:19,042  	Ethernet config validation:
+2018-03-28 13:49:19,042  
+2018-03-28 13:49:19,042  	Channel ports config validation:
+2018-03-28 13:49:19,043  
+2018-03-28 13:49:19,043  	Console config validation:
+2018-03-28 13:49:19,043  
+2018-03-28 13:49:19,043  	Tacacs config validation:
+2018-03-28 13:49:19,043  
+2018-03-28 13:49:19,043  	Jumbo config validation:
+2018-03-28 13:49:19,043  
+2018-03-28 13:49:19,043  	QOS config validation:
+2018-03-28 13:49:19,043  		service-policy type network-qos jumbo
+2018-03-28 13:49:19,043  
+2018-03-28 13:49:19,043  	Fex config validation:
+2018-03-28 13:49:19,044  
+2018-03-28 13:49:19,044  	Missed config lines: 5
+2018-03-28 13:49:19,053  Validation result for hkg2-05-p003-cnx
+2018-03-28 13:49:19,053  	Mandatory config lines missed: 
+2018-03-28 13:49:19,053  
+2018-03-28 13:49:19,053  	SYSLOG configuration: 
+2018-03-28 13:49:19,055  		logging server 10.30.230.90 6 use-vrf management
+2018-03-28 13:49:19,055  
+2018-03-28 13:49:19,055  	NTP configuration: 
+2018-03-28 13:49:19,055  		NTP server not set
+2018-03-28 13:49:19,055  
+2018-03-28 13:49:19,055  	Users validation:
+2018-03-28 13:49:19,056  	User missing:
+2018-03-28 13:49:19,056  		username admin password 5
+2018-03-28 13:49:19,056  		username evogaming password 5
+2018-03-28 13:49:19,056  
+2018-03-28 13:49:19,057  	Incorrent users:
+2018-03-28 13:49:19,057  		username admin password 5 $1$axjLk2q3$eZj.8dWWChj3bR0YEemND1  role network-admin
+2018-03-28 13:49:19,057  		username evogaming password 5 $1$FN/4pmVr$.KyzWEyIt21kEr9Kgm5BC.  role network-admin
+2018-03-28 13:49:19,057  
+2018-03-28 13:49:19,057  	Ethernet config validation:
+2018-03-28 13:49:19,057  		Ethernet1/41
+2018-03-28 13:49:19,057  			vpc orphan-port suspend
+2018-03-28 13:49:19,057  
+2018-03-28 13:49:19,057  	Channel ports config validation:
+2018-03-28 13:49:19,058  
+2018-03-28 13:49:19,058  	Console config validation:
+2018-03-28 13:49:19,058  
+2018-03-28 13:49:19,058  	Tacacs config validation:
+2018-03-28 13:49:19,058  		server 10.30.32.4
+2018-03-28 13:49:19,058  
+2018-03-28 13:49:19,058  	Jumbo config validation:
+2018-03-28 13:49:19,058  
+2018-03-28 13:49:19,058  	QOS config validation:
+2018-03-28 13:49:19,058  		service-policy type network-qos jumbo
+2018-03-28 13:49:19,058  
+2018-03-28 13:49:19,058  	Fex config validation:
+2018-03-28 13:49:19,058  
+2018-03-28 13:49:19,058  	Missed config lines: 7
